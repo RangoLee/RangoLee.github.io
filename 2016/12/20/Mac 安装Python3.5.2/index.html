@@ -1,0 +1,901 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Mac,python3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="1.安装Python3.5.2 MacOS系统10.12.2，终端运行brew install python3  1Rango-MBP:~ Rango$ brew install python3  报警告  1234Warning: You are using OS X 10.12.We do not provide support for this pre-release version.You">
+<meta name="keywords" content="Mac,python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac 安装Python3.5.2">
+<meta property="og:url" content="http://yoursite.com/2016/12/20/Mac 安装Python3.5.2/index.html">
+<meta property="og:site_name" content="CodeNight">
+<meta property="og:description" content="1.安装Python3.5.2 MacOS系统10.12.2，终端运行brew install python3  1Rango-MBP:~ Rango$ brew install python3  报警告  1234Warning: You are using OS X 10.12.We do not provide support for this pre-release version.You">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-12-20T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac 安装Python3.5.2">
+<meta name="twitter:description" content="1.安装Python3.5.2 MacOS系统10.12.2，终端运行brew install python3  1Rango-MBP:~ Rango$ brew install python3  报警告  1234Warning: You are using OS X 10.12.We do not provide support for this pre-release version.You">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Mac 安装Python3.5.2 | CodeNight </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CodeNight</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Try Everything</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Mac 安装Python3.5.2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-20T00:00:00+08:00" content="2016-12-20">
+              2016-12-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python3/" itemprop="url" rel="index">
+                    <span itemprop="name">python3</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/20/Mac 安装Python3.5.2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/20/Mac 安装Python3.5.2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/12/20/Mac 安装Python3.5.2/" class="leancloud_visitors" data-flag-title="Mac 安装Python3.5.2">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-安装Python3-5-2"><a href="#1-安装Python3-5-2" class="headerlink" title="1.安装Python3.5.2"></a>1.安装Python3.5.2</h3><ul>
+<li>MacOS系统10.12.2，终端运行<code>brew install python3</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ brew install python3</div></pre></td></tr></table></figure>
+<ul>
+<li>报警告</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Warning: You are using OS X 10.12.</div><div class="line">We <span class="keyword">do</span> not provide support <span class="keyword">for</span> this pre-release version.</div><div class="line">You may encounter build failures or other breakages.</div><div class="line">Please create pull-requests instead of filing issues.</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>然后开始下载，中间可能有些包需要<strong>科学上网</strong>才能下载下来。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line">==&gt; Installing dependencies <span class="keyword">for</span> python3: xz, sqlite, gdbm, makedepend</div><div class="line">==&gt; Installing python3 dependency: xz</div><div class="line">==&gt; Downloading https://fossies.org/linux/misc/xz-5.2.2.tar.gz</div><div class="line"><span class="comment">######################################################################## 100.0%</span></div><div class="line">==&gt; ./configure --<span class="built_in">disable</span>-silent-rules --prefix=/usr/<span class="built_in">local</span>/Cellar/xz/5.2.2</div><div class="line">==&gt; make install</div><div class="line">🍺  /usr/<span class="built_in">local</span>/Cellar/xz/5.2.2: 91 files, 1.4M, built <span class="keyword">in</span> 2 minutes 28 seconds</div><div class="line">==&gt; Installing python3 dependency: sqlite</div><div class="line">==&gt; Downloading https://sqlite.org/2016/sqlite-autoconf-3130000.tar.gz</div><div class="line"><span class="comment">######################################################################## 100.0%</span></div><div class="line">==&gt; ./configure --prefix=/usr/<span class="built_in">local</span>/Cellar/sqlite/3.13.0 --<span class="built_in">enable</span>-dynamic-extens</div><div class="line">==&gt; make install</div><div class="line">==&gt; Caveats</div><div class="line">This formula is keg-only, <span class="built_in">which</span> means it was not symlinked into /usr/<span class="built_in">local</span>.</div><div class="line"></div><div class="line">OS X provides an older sqlite3.</div><div class="line"></div><div class="line">Generally there are no consequences of this <span class="keyword">for</span> you. If you build your</div><div class="line">own software and it requires this formula, you<span class="string">'ll need to add to your</span></div><div class="line"><span class="string">build variables:</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">    LDFLAGS:  -L/usr/local/opt/sqlite/lib</span></div><div class="line"><span class="string">    CPPFLAGS: -I/usr/local/opt/sqlite/include</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">==&gt; Summary</span></div><div class="line"><span class="string">🍺  /usr/local/Cellar/sqlite/3.13.0: 10 files, 2.9M, built in 1 minute 55 seconds</span></div><div class="line"><span class="string">==&gt; Installing python3 dependency: gdbm</span></div><div class="line"><span class="string">==&gt; Downloading https://ftpmirror.gnu.org/gdbm/gdbm-1.12.tar.gz</span></div><div class="line"><span class="string">==&gt; Downloading from http://mirrors.ustc.edu.cn/gnu/gdbm/gdbm-1.12.tar.gz</span></div><div class="line"><span class="string">######################################################################## 100.0%</span></div><div class="line"><span class="string">==&gt; ./configure --disable-silent-rules --prefix=/usr/local/Cellar/gdbm/1.12</span></div><div class="line"><span class="string">==&gt; make install</span></div><div class="line"><span class="string">🍺  /usr/local/Cellar/gdbm/1.12: 18 files, 486.6K, built in 45 seconds</span></div><div class="line"><span class="string">==&gt; Installing python3 dependency: makedepend</span></div><div class="line"><span class="string">==&gt; Downloading https://xorg.freedesktop.org/releases/individual/util/makedepend</span></div><div class="line"><span class="string">######################################################################## 100.0%</span></div><div class="line"><span class="string">==&gt; Downloading https://xorg.freedesktop.org/releases/individual/proto/xproto-7.</span></div><div class="line"><span class="string">######################################################################## 100.0%</span></div><div class="line"><span class="string">==&gt; ./configure --disable-silent-rules --prefix=/private/tmp/makedepend-20161221</span></div><div class="line"><span class="string">==&gt; make install</span></div><div class="line"><span class="string">==&gt; Downloading https://xorg.freedesktop.org/releases/individual/util/util-macro</span></div><div class="line"><span class="string">######################################################################## 100.0%</span></div><div class="line"><span class="string">==&gt; ./configure --prefix=/private/tmp/makedepend-20161221-37056-vofncx/makedepen</span></div><div class="line"><span class="string">==&gt; make install</span></div><div class="line"><span class="string">==&gt; ./configure --disable-silent-rules --prefix=/usr/local/Cellar/makedepend/1.0</span></div><div class="line"><span class="string">==&gt; make install</span></div><div class="line"><span class="string">🍺  /usr/local/Cellar/makedepend/1.0.5: 7 files, 72.6K, built in 1 minute 3 seconds</span></div><div class="line"><span class="string">==&gt; Installing python3</span></div><div class="line"><span class="string">==&gt; Downloading https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tar.xz</span></div><div class="line"><span class="string">######################################################################## 100.0%</span></div><div class="line"><span class="string">==&gt; ./configure --prefix=/usr/local/Cellar/python3/3.5.2 --enable-ipv6 --dataroo</span></div><div class="line"><span class="string">==&gt; make</span></div><div class="line"><span class="string">==&gt; make install PYTHONAPPSDIR=/usr/local/Cellar/python3/3.5.2</span></div><div class="line"><span class="string">==&gt; make frameworkinstallextras PYTHONAPPSDIR=/usr/local/Cellar/python3/3.5.2/sh</span></div><div class="line"><span class="string">==&gt; Downloading https://pypi.python.org/packages/9f/7c/0a33c528164f1b7ff8cf0684c</span></div><div class="line"><span class="string">######################################################################## 100.0%</span></div><div class="line"><span class="string">==&gt; Downloading https://pypi.python.org/packages/e7/a8/7556133689add8d1a54c0b14a</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">curl: (35) Server aborted the SSL handshake</span></div><div class="line"><span class="string">Error: Failed to download resource "python3--pip"</span></div><div class="line"><span class="string">Download failed: https://pypi.python.org/packages/e7/a8/7556133689add8d1a54c0b14aeff0acb03c64707ce100ecd53934da1aa13/pip-8.1.2.tar.gz</span></div></pre></td></tr></table></figure>
+<ul>
+<li>安装失败，科学上网后继续<code>brew install python3</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ brew install python3</div><div class="line">Warning: You are using OS X 10.12.</div><div class="line">We <span class="keyword">do</span> not provide support <span class="keyword">for</span> this pre-release version.</div><div class="line">You may encounter build failures or other breakages.</div><div class="line">Please create pull-requests instead of filing issues.</div><div class="line">==&gt; Downloading https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tar.xz</div><div class="line">Already downloaded: /Users/Rango/Library/Caches/Homebrew/python3-3.5.2.tar.xz</div><div class="line">==&gt; ./configure --prefix=/usr/<span class="built_in">local</span>/Cellar/python3/3.5.2 --<span class="built_in">enable</span>-ipv6 --dataroo</div><div class="line">==&gt; make</div><div class="line">==&gt; make install PYTHONAPPSDIR=/usr/<span class="built_in">local</span>/Cellar/python3/3.5.2</div><div class="line">==&gt; make frameworkinstallextras PYTHONAPPSDIR=/usr/<span class="built_in">local</span>/Cellar/python3/3.5.2/sh</div><div class="line">==&gt; Downloading https://pypi.python.org/packages/9f/7c/0a33c528164f1b7ff8cf0684c</div><div class="line">Already downloaded: /Users/Rango/Library/Caches/Homebrew/python3--setuptools-23.1.0.tar.gz</div><div class="line">==&gt; Downloading https://pypi.python.org/packages/e7/a8/7556133689add8d1a54c0b14a</div><div class="line"><span class="comment">######################################################################## 100.0%</span></div><div class="line">==&gt; Downloading https://pypi.python.org/packages/<span class="built_in">source</span>/w/wheel/wheel-0.29.0.tar</div><div class="line"><span class="comment">######################################################################## 100.0%</span></div></pre></td></tr></table></figure>
+<ul>
+<li>这次又报错了,没有<strong>brew link</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Error: An unexpected error occurred during the `brew link` step</div><div class="line">The formula built, but is not symlinked into /usr/<span class="built_in">local</span></div><div class="line">Permission denied - /usr/<span class="built_in">local</span>/Frameworks</div><div class="line">Error: Permission denied - /usr/<span class="built_in">local</span>/Frameworks</div></pre></td></tr></table></figure>
+<ul>
+<li>再次尝试,警告⚠️<strong>Warning: python3-3.5.2 already installed, it’s just not linked</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ brew install python3</div><div class="line">Warning: python3-3.5.2 already installed, it<span class="string">'s just not linked</span></div><div class="line"><span class="string">Warning: You are using OS X 10.12.</span></div><div class="line"><span class="string">We do not provide support for this pre-release version.</span></div><div class="line"><span class="string">You may encounter build failures or other breakages.</span></div><div class="line"><span class="string">Please create pull-requests instead of filing issues.</span></div></pre></td></tr></table></figure>
+<ul>
+<li>使用<code>brew doctor</code>查看错误信息</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ brew doctor</div><div class="line">Please note that these warnings are just used to <span class="built_in">help</span> the Homebrew maintainers</div><div class="line">with debugging <span class="keyword">if</span> you file an issue. If everything you use Homebrew <span class="keyword">for</span> is</div><div class="line">working fine: please don<span class="string">'t worry and just ignore them. Thanks!</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">Warning: /usr/local is not writable.</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">You should change the ownership and permissions of /usr/local</span></div><div class="line"><span class="string">back to your user account.</span></div><div class="line"><span class="string">  sudo chown -R $(whoami) /usr/local</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">Warning: /usr/local/sbin isn'</span>t writable.</div><div class="line"></div><div class="line">This can happen <span class="keyword">if</span> you <span class="string">"sudo make install"</span> software that isn<span class="string">'t managed</span></div><div class="line"><span class="string">by Homebrew. If a formula tries to write a file to this directory, the</span></div><div class="line"><span class="string">install will fail during the link step.</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">You should change the ownership and permissions of /usr/local/sbin back to</span></div><div class="line"><span class="string">your user account.</span></div><div class="line"><span class="string">  sudo chown -R $(whoami) /usr/local/sbin</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">Warning: Some directories in /usr/local/share/man aren'</span>t writable.</div><div class="line">This can happen <span class="keyword">if</span> you <span class="string">"sudo make install"</span> software that isn<span class="string">'t managed</span></div><div class="line"><span class="string">by Homebrew. If a brew tries to add locale information to one of these</span></div><div class="line"><span class="string">directories, then the install will fail during the link step.</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">You should `sudo chown -R $(whoami)` them:</span></div><div class="line"><span class="string">    /usr/local/share/man/man8</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">Warning: /usr/local is not writable.</span></div><div class="line"><span class="string">Even if this directory was writable when you installed Homebrew, other</span></div><div class="line"><span class="string">software may change permissions on this directory. For example, upgrading</span></div><div class="line"><span class="string">to OS X El Capitan has been known to do this. Some versions of the</span></div><div class="line"><span class="string">"InstantOn" component of Airfoil or running Cocktail cleanup/optimizations</span></div><div class="line"><span class="string">are known to do this as well.</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">You should change the ownership and permissions of /usr/local back to</span></div><div class="line"><span class="string">your user account.</span></div><div class="line"><span class="string">  sudo chown -R $(whoami) /usr/local</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">Warning: You have unlinked kegs in your Cellar</span></div><div class="line"><span class="string">Leaving kegs unlinked can lead to build-trouble and cause brews that depend on</span></div><div class="line"><span class="string">those kegs to fail to run properly once built. Run `brew link` on these:</span></div><div class="line"><span class="string">    python3</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">Warning: You are using OS X 10.12.</span></div><div class="line"><span class="string">We do not provide support for this pre-release version.</span></div><div class="line"><span class="string">You may encounter build failures or other breakages.</span></div><div class="line"><span class="string">Please create pull-requests instead of filing issues.</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">Warning: Homebrew'</span>s sbin was not found <span class="keyword">in</span> your PATH but you have installed</div><div class="line">formulae that put executables <span class="keyword">in</span> /usr/<span class="built_in">local</span>/sbin.</div><div class="line">Consider setting the PATH <span class="keyword">for</span> example like so</div><div class="line">  <span class="built_in">echo</span> <span class="string">'export PATH="/usr/local/sbin:$PATH"'</span> &gt;&gt; ~/.bash_profile</div><div class="line"></div><div class="line">Warning: Broken symlinks were found. Remove them with `brew prune`:</div><div class="line">    /usr/<span class="built_in">local</span>/bin/2to3</div><div class="line">    /usr/<span class="built_in">local</span>/bin/easy_install-3.5</div><div class="line">    /usr/<span class="built_in">local</span>/bin/pip3</div><div class="line">    /usr/<span class="built_in">local</span>/bin/pip3.5</div><div class="line">    /usr/<span class="built_in">local</span>/bin/prl_convert</div><div class="line">    /usr/<span class="built_in">local</span>/bin/prl_disk_tool</div><div class="line">    /usr/<span class="built_in">local</span>/bin/prl_perf_ctl</div><div class="line">    /usr/<span class="built_in">local</span>/bin/prlcore2dmp</div><div class="line">    /usr/<span class="built_in">local</span>/bin/prlctl</div><div class="line">    /usr/<span class="built_in">local</span>/bin/prlexec</div><div class="line">    /usr/<span class="built_in">local</span>/bin/prlsrvctl</div><div class="line">    /usr/<span class="built_in">local</span>/bin/python3-32</div><div class="line">    /usr/<span class="built_in">local</span>/bin/python3.5-32</div><div class="line">    /usr/<span class="built_in">local</span>/bin/tclvfse</div><div class="line">    /usr/<span class="built_in">local</span>/etc/bash_completion.d/prlctl</div><div class="line">    /usr/<span class="built_in">local</span>/etc/bash_completion.d/prlsrvctl</div><div class="line">    /usr/<span class="built_in">local</span>/share/man/man8/prl_convert.8</div><div class="line">    /usr/<span class="built_in">local</span>/share/man/man8/prl_disk_tool.8</div><div class="line">    /usr/<span class="built_in">local</span>/share/man/man8/prlctl.8</div><div class="line">    /usr/<span class="built_in">local</span>/share/man/man8/prlexec.8</div><div class="line">    /usr/<span class="built_in">local</span>/share/man/man8/prlsrvctl.8</div></pre></td></tr></table></figure>
+<blockquote>
+<p>control + c 退出  </p>
+</blockquote>
+<ul>
+<li><p>根据提示信息做如下修改：<code>chown</code>,<code>export PATH</code>,<code>brew link</code></p>
+</li>
+<li><p><strong>chown</strong></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ sudo chown -R $(whoami) /usr/<span class="built_in">local</span></div><div class="line">Password:</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>export PATH=</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ echo &apos;export PATH=&quot;/usr/local/sbin:$PATH&quot;&apos; &gt;&gt; ~/.bash_profile</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>brew link</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ brew link python3</div><div class="line">Linking /usr/<span class="built_in">local</span>/Cellar/python3/3.5.2... 19 symlinks created</div></pre></td></tr></table></figure>
+<ul>
+<li>至此安装成功！！！</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ brew install python3</div><div class="line">Warning: python3-3.5.2 already installed</div><div class="line">Warning: You are using OS X 10.12.</div><div class="line">We <span class="keyword">do</span> not provide support <span class="keyword">for</span> this pre-release version.</div><div class="line">You may encounter build failures or other breakages.</div><div class="line">Please create pull-requests instead of filing issues.</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mac/" rel="tag">#Mac</a>
+          
+            <a href="/tags/python3/" rel="tag">#python3</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/02/16-1202_STL模板技巧/" rel="next" title="STL模板技巧">
+                <i class="fa fa-chevron-left"></i> STL模板技巧
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/20/C# 1程序结构体/" rel="prev" title="1.C#程序结构体">
+                1.C#程序结构体 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/20/Mac 安装Python3.5.2/"
+           data-title="Mac 安装Python3.5.2" data-url="http://yoursite.com/2016/12/20/Mac 安装Python3.5.2/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Rango_Lee" />
+          <p class="site-author-name" itemprop="name">Rango_Lee</p>
+          <p class="site-description motion-element" itemprop="description">Everyone all only young once!</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">51</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/rangolee" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/rangolee" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/in/RangoLee" target="_blank" title="Linkedin">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  Linkedin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com" title="MacTaik" target="_blank">MacTaik</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://canxi.cc" title="小残曦" target="_blank">小残曦</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装Python3-5-2"><span class="nav-number">1.</span> <span class="nav-text">1.安装Python3.5.2</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016-04 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rango_Lee</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"rangolee"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("5XX2MxfwSIjySsX0lwk0Pz5H-gzGzoHsz", "QxQTCCWqVEFMJTgVpdtkvooD");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>

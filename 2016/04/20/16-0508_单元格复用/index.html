@@ -1,0 +1,870 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="OC,cell," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="1.单元格复用的实现方式 方式1.判断没有可复用的单元格后，由我们自己负责创建 cell 实例。 未完待续。。。  方式2.如果没有取到可复用的单元格，由系统自动依据我们提前说明的类型，帮我们自动创建出 cell的实例。 在 viewDidLoad 中，使用 tableView 的 registerClass 方法，提前注册一个类型，在取不到 cell 的时候，系统会根据我们注册的类型来自动创建">
+<meta name="keywords" content="OC,cell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 中 单元格（cell） 的复用方式">
+<meta property="og:url" content="http://yoursite.com/2016/04/20/16-0508_单元格复用/index.html">
+<meta property="og:site_name" content="CodeNight">
+<meta property="og:description" content="1.单元格复用的实现方式 方式1.判断没有可复用的单元格后，由我们自己负责创建 cell 实例。 未完待续。。。  方式2.如果没有取到可复用的单元格，由系统自动依据我们提前说明的类型，帮我们自动创建出 cell的实例。 在 viewDidLoad 中，使用 tableView 的 registerClass 方法，提前注册一个类型，在取不到 cell 的时候，系统会根据我们注册的类型来自动创建">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-07-17T08:31:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 中 单元格（cell） 的复用方式">
+<meta name="twitter:description" content="1.单元格复用的实现方式 方式1.判断没有可复用的单元格后，由我们自己负责创建 cell 实例。 未完待续。。。  方式2.如果没有取到可复用的单元格，由系统自动依据我们提前说明的类型，帮我们自动创建出 cell的实例。 在 viewDidLoad 中，使用 tableView 的 registerClass 方法，提前注册一个类型，在取不到 cell 的时候，系统会根据我们注册的类型来自动创建">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> iOS 中 单元格（cell） 的复用方式 | CodeNight </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CodeNight</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Try Everything</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS 中 单元格（cell） 的复用方式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-20T00:00:00+08:00" content="2016-04-20">
+              2016-04-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/20/16-0508_单元格复用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/16-0508_单元格复用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/20/16-0508_单元格复用/" class="leancloud_visitors" data-flag-title="iOS 中 单元格（cell） 的复用方式">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="1-单元格复用的实现方式"><a href="#1-单元格复用的实现方式" class="headerlink" title="1.单元格复用的实现方式"></a>1.单元格复用的实现方式</h4><hr>
+<h5 id="方式1-判断没有可复用的单元格后，由我们自己负责创建-cell-实例。"><a href="#方式1-判断没有可复用的单元格后，由我们自己负责创建-cell-实例。" class="headerlink" title="方式1.判断没有可复用的单元格后，由我们自己负责创建 cell 实例。"></a><strong>方式1</strong>.判断没有可复用的单元格后，由我们自己负责创建 cell 实例。</h5><ul>
+<li>未完待续。。。</li>
+</ul>
+<h5 id="方式2-如果没有取到可复用的单元格，由系统自动依据我们提前说明的类型，帮我们自动创建出-cell的实例。"><a href="#方式2-如果没有取到可复用的单元格，由系统自动依据我们提前说明的类型，帮我们自动创建出-cell的实例。" class="headerlink" title="方式2.如果没有取到可复用的单元格，由系统自动依据我们提前说明的类型，帮我们自动创建出 cell的实例。"></a><strong>方式2</strong>.如果没有取到可复用的单元格，由系统自动依据我们提前说明的类型，帮我们自动创建出 cell的实例。</h5><ul>
+<li>在 viewDidLoad 中，使用 tableView 的 registerClass 方法，提前注册一个类型，在取不到 cell 的时候，系统会根据我们注册的类型来自动创建 cell。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//    注册单元格类型</div><div class="line">    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@&quot;cell&quot;];</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>在回答第三问时，使用带有两个参数的 dequeReusableCell 即可</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath &#123;</div><div class="line">     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&quot;cell&quot; forIndexPath:indexPath];</div><div class="line">//    配置 cell</div><div class="line">   	 cell.textLabel.text = @&quot;你好&quot;;</div><div class="line">   	 return cell;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="注意：调用-dequeReusableCell-从队列中取出-cell，如果没有取到，系统会根据我们注册的类型，自动为我们创建。"><a href="#注意：调用-dequeReusableCell-从队列中取出-cell，如果没有取到，系统会根据我们注册的类型，自动为我们创建。" class="headerlink" title="注意：调用 dequeReusableCell 从队列中取出 cell，如果没有取到，系统会根据我们注册的类型，自动为我们创建。"></a><strong>注意</strong>：调用 dequeReusableCell 从队列中取出 cell，如果没有取到，系统会根据我们注册的类型，自动为我们创建。</h5><!--more-->
+<h4 id="2-自定义内容视图"><a href="#2-自定义内容视图" class="headerlink" title="2.自定义内容视图"></a>2.自定义内容视图</h4><hr>
+<h5 id="1-创建显示内容的视图"><a href="#1-创建显示内容的视图" class="headerlink" title="1.创建显示内容的视图"></a>1.创建显示内容的视图</h5><h5 id="2-将这些视图以子视图的形式，添加到-cell-contentView-中即可。"><a href="#2-将这些视图以子视图的形式，添加到-cell-contentView-中即可。" class="headerlink" title="2.将这些视图以子视图的形式，添加到 cell.contentView 中即可。"></a>2.将这些视图以子视图的形式，添加到 cell.contentView 中即可。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//    **2.自定义内容视图</div><div class="line">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath &#123;</div><div class="line">    </div><div class="line">    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&quot;cell&quot; forIndexPath:indexPath];</div><div class="line">    //    配置 cell</div><div class="line">    </div><div class="line">    UILabel *label = [cell.contentView viewWithTag:100];</div><div class="line">    if (label == nil) &#123;//如果 cell 中 没有我们自己定义的这个 label 那么我就创建一个添加到 cell 中</div><div class="line">        </div><div class="line">        label = [[UILabel alloc]init];</div><div class="line">        label.tag = 100;</div><div class="line">        label.frame = CGRectMake(0, 0, cell.bounds.size.width, cell.bounds.size.height);//尽量用 bounds 代替 frame 来设置尺寸</div><div class="line">        label.font = [UIFont italicSystemFontOfSize:18];</div><div class="line">        </div><div class="line">//        添加背景可以覆盖掉之前的内容但是不能这么用。</div><div class="line">//        label.backgroundColor = [UIColor lightGrayColor];</div><div class="line">        </div><div class="line">        label.textColor = [UIColor greenColor];</div><div class="line">        label.textAlignment = NSTextAlignmentCenter;</div><div class="line">    </div><div class="line">        [cell.contentView addSubview:label];</div><div class="line">    &#125;</div><div class="line">    label.text = [NSString stringWithFormat:@&quot;这是第%ld行&quot;,indexPath.row];</div><div class="line">  </div><div class="line">    return cell;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="3-自定义辅助视图"><a href="#3-自定义辅助视图" class="headerlink" title="3.自定义辅助视图"></a>3.自定义辅助视图</h4><hr>
+<h5 id="s1-创建视图实例。"><a href="#s1-创建视图实例。" class="headerlink" title="s1.创建视图实例。"></a>s1.创建视图实例。</h5><h5 id="s2-将视图实例赋值给-cell-accessoryView-即可。"><a href="#s2-将视图实例赋值给-cell-accessoryView-即可。" class="headerlink" title="s2.将视图实例赋值给 cell.accessoryView 即可。"></a>s2.将视图实例赋值给 cell.accessoryView 即可。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//    *************** 自定义辅助视图 *************</div><div class="line">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath &#123;</div><div class="line">    </div><div class="line">    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&quot;cell&quot; forIndexPath:indexPath];</div><div class="line">    //    配置 cell    </div><div class="line">    if (indexPath.row == 2) &#123;</div><div class="line">        UISwitch *mySwitch = [[UISwitch alloc]init];</div><div class="line">        mySwitch.on = YES;</div><div class="line">        </div><div class="line">        [mySwitch addTarget:self action:@selector(clickSwitch:) forControlEvents:UIControlEventValueChanged];</div><div class="line">        cell.accessoryView  = mySwitch;</div><div class="line">    &#125;else&#123;</div><div class="line">//        防止复用时产生多个 Switch 开关</div><div class="line">        cell.accessoryView = nil;</div><div class="line">    &#125;</div><div class="line">	return cell;</div><div class="line">&#125;</div><div class="line">-(void)clickSwitch:(UISwitch*)sender&#123;</div><div class="line">    NSLog(@&quot;当前是%@&quot;,sender.on?@&quot;open&quot;:@&quot;closs&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="4-表格结合各种数据模型的显示"><a href="#4-表格结合各种数据模型的显示" class="headerlink" title="4.表格结合各种数据模型的显示"></a>4.表格结合各种数据模型的显示</h4><h5 id="前提：表格的行数不定，也叫动态表格（例如新闻列表）"><a href="#前提：表格的行数不定，也叫动态表格（例如新闻列表）" class="headerlink" title="前提：表格的行数不定，也叫动态表格（例如新闻列表）"></a>前提：表格的行数不定，也叫动态表格（例如新闻列表）</h5><hr>
+<h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">#import &quot;MyTableViewController.h&quot;</div><div class="line"></div><div class="line">@interface MyTableViewController ()</div><div class="line">//定义两个数组，分别存储 城市和人口信息</div><div class="line">@property(nonatomic,strong) NSArray *allCitys;</div><div class="line">@property(nonatomic,strong) NSArray *allPopulation;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@implementation MyTableViewController</div><div class="line">//推荐懒加载 延迟加载--在第一次使用 的时候，才创建实例</div><div class="line">-(NSArray *)allCitys&#123;</div><div class="line">    if (_allCitys == nil) &#123;//!_allCitys or nil == _allCitys 皆可以</div><div class="line">        _allCitys = @[@&quot;北京&quot;,@&quot;上海&quot;,@&quot;广州&quot;,@&quot;深圳&quot;,@&quot;南京&quot;];</div><div class="line">    &#125;</div><div class="line">    return _allCitys;</div><div class="line">&#125;</div><div class="line">-(NSArray *)allPopulation&#123;</div><div class="line">/*</div><div class="line">    NSNumber *num = @100;//也是一种封装方式</div><div class="line">*/</div><div class="line">    if (!_allPopulation) &#123;</div><div class="line">        _allPopulation = @[@3000,@2000,@2500,@2048,@1500];//??</div><div class="line">    &#125;</div><div class="line">    return _allPopulation;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//</div><div class="line">//    if (!_allPopulation) &#123;</div><div class="line">//        _allPopulation = @[@&quot;3000&quot;,@&quot;2000&quot;,@&quot;2500&quot;,@&quot;2048&quot;,@&quot;1500&quot;];</div><div class="line">//    &#125;</div><div class="line">//    return _allPopulation;</div><div class="line">//&#125;</div><div class="line"></div><div class="line">- (void)viewDidLoad &#123;</div><div class="line">    [super viewDidLoad];</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)didReceiveMemoryWarning &#123;</div><div class="line">    [super didReceiveMemoryWarning];</div><div class="line">    // Dispose of any resources that can be recreated.</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - Table view data source</div><div class="line"></div><div class="line">- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView &#123;</div><div class="line"></div><div class="line">    return 1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section &#123;</div><div class="line"></div><div class="line">    return 5;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath &#123;</div><div class="line">    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&quot;cell&quot; /*forIndexPath:indexPath*/];</div><div class="line">    </div><div class="line">    if (!cell) &#123;      </div><div class="line">        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@&quot;cell&quot;];</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">//    第几行显示第几个元素</div><div class="line">//    </div><div class="line">    cell.textLabel.text = self.allCitys[indexPath.row];</div><div class="line">//    </div><div class="line">//    cell.detailTextLabel.text = self.allPopulation[indexPath.row];</div><div class="line">//</div><div class="line">    cell.detailTextLabel.text = [NSString stringWithFormat:@&quot;%@万&quot;,self.allPopulation[indexPath.row]];</div><div class="line">//    </div><div class="line">    cell.imageView.image = [UIImage imageNamed:@&quot;head&quot;];</div><div class="line">    return cell;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - Table view delegate</div><div class="line">// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:</div><div class="line">- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath &#123;</div><div class="line">    //    获取点中的 cell 实例</div><div class="line">    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];//???</div><div class="line">    NSLog(@&quot;%@的人口是%@&quot;,cell.textLabel.text,cell.detailTextLabel.text);   </div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OC/" rel="tag">#OC</a>
+          
+            <a href="/tags/cell/" rel="tag">#cell</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/19/16-0419_hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/26/16-0426_汇编中的bss、data、text等/" rel="prev" title="汇编中的bss、data、text、rodata、heap、stack的意义？">
+                汇编中的bss、data、text、rodata、heap、stack的意义？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/20/16-0508_单元格复用/"
+           data-title="iOS 中 单元格（cell） 的复用方式" data-url="http://yoursite.com/2016/04/20/16-0508_单元格复用/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Rango_Lee" />
+          <p class="site-author-name" itemprop="name">Rango_Lee</p>
+          <p class="site-description motion-element" itemprop="description">Everyone all only young once!</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">51</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/rangolee" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/rangolee" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.linkedin.com/in/RangoLee" target="_blank" title="Linkedin">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  Linkedin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com" title="MacTaik" target="_blank">MacTaik</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://canxi.cc" title="小残曦" target="_blank">小残曦</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-单元格复用的实现方式"><span class="nav-number">1.</span> <span class="nav-text">1.单元格复用的实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方式1-判断没有可复用的单元格后，由我们自己负责创建-cell-实例。"><span class="nav-number">1.1.</span> <span class="nav-text">方式1.判断没有可复用的单元格后，由我们自己负责创建 cell 实例。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方式2-如果没有取到可复用的单元格，由系统自动依据我们提前说明的类型，帮我们自动创建出-cell的实例。"><span class="nav-number">1.2.</span> <span class="nav-text">方式2.如果没有取到可复用的单元格，由系统自动依据我们提前说明的类型，帮我们自动创建出 cell的实例。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注意：调用-dequeReusableCell-从队列中取出-cell，如果没有取到，系统会根据我们注册的类型，自动为我们创建。"><span class="nav-number">1.3.</span> <span class="nav-text">注意：调用 dequeReusableCell 从队列中取出 cell，如果没有取到，系统会根据我们注册的类型，自动为我们创建。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-自定义内容视图"><span class="nav-number">2.</span> <span class="nav-text">2.自定义内容视图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-创建显示内容的视图"><span class="nav-number">2.1.</span> <span class="nav-text">1.创建显示内容的视图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-将这些视图以子视图的形式，添加到-cell-contentView-中即可。"><span class="nav-number">2.2.</span> <span class="nav-text">2.将这些视图以子视图的形式，添加到 cell.contentView 中即可。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-自定义辅助视图"><span class="nav-number">3.</span> <span class="nav-text">3.自定义辅助视图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#s1-创建视图实例。"><span class="nav-number">3.1.</span> <span class="nav-text">s1.创建视图实例。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#s2-将视图实例赋值给-cell-accessoryView-即可。"><span class="nav-number">3.2.</span> <span class="nav-text">s2.将视图实例赋值给 cell.accessoryView 即可。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-表格结合各种数据模型的显示"><span class="nav-number">4.</span> <span class="nav-text">4.表格结合各种数据模型的显示</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前提：表格的行数不定，也叫动态表格（例如新闻列表）"><span class="nav-number">4.1.</span> <span class="nav-text">前提：表格的行数不定，也叫动态表格（例如新闻列表）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-number">4.2.</span> <span class="nav-text">1.</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016-04 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rango_Lee</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"rangolee"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("5XX2MxfwSIjySsX0lwk0Pz5H-gzGzoHsz", "QxQTCCWqVEFMJTgVpdtkvooD");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
