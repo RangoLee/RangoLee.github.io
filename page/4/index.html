@@ -1061,8 +1061,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/23/-!--文章标题/" itemprop="url">
-                  title
+                <a class="post-title-link" href="/2016/05/23/Mac+MySql+Xcode配置/" itemprop="url">
+                  Mac+MySql+Xcode配置
                 </a>
               
             
@@ -1089,8 +1089,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
                   </a>
                 </span>
 
@@ -1105,8 +1105,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/23/-!--文章标题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/-!--文章标题/" itemprop="commentsCount"></span>
+                <a href="/2016/05/23/Mac+MySql+Xcode配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/Mac+MySql+Xcode配置/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1116,7 +1116,7 @@
 
           
           
-             <span id="/2016/05/23/-!--文章标题/" class="leancloud_visitors" data-flag-title="title">
+             <span id="/2016/05/23/Mac+MySql+Xcode配置/" class="leancloud_visitors" data-flag-title="Mac+MySql+Xcode配置">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1139,25 +1139,26 @@
 
       
         
-          <!--description: MarkDown 文档的基本格式模板-->
-<!--
-|参数|描述|默认值|
-|-----------|-----|--------------|
-|layout:    |布局
-|title:     |标题
-|date:      |建立日期   |文件建立日期
-|updated:   |更新日期   |文件更新日期
-|comments:  |开启文章的评论功能    |true
-|tags:      |标签（不适用于分页
-|categories:|分类（不适用于分页）
-|permalink: |覆盖文章网址
-|description|文章描述信息
--->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/23/-!--文章标题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <h1 id="Mac-MySql-Xcode配置"><a href="#Mac-MySql-Xcode配置" class="headerlink" title="Mac+MySql+Xcode配置"></a>Mac+MySql+Xcode配置</h1><hr>
+<ul>
+<li><strong>安装mysql</strong><ul>
+<li>/usr/local/mysql</li>
+</ul>
+</li>
+<li><strong>安装mysql workbench</strong>(数据库可视化操作软件)</li>
+<li><strong>配置xcode</strong><ul>
+<li>添加<strong>头文件</strong>搜索路径</li>
+<li>项目属性—&gt;Build Setting-&gt;Search Paths-&gt; Header Search Paths 添加<code>/usr/local/mysql/include</code></li>
+<li>添加<strong>库文件</strong>搜索路径</li>
+<li>项目属性—&gt;Build Setting-&gt;Search Paths-&gt; Library Search Paths 添加<code>/usr/local/mysql/lib</code></li>
+<li>添加<strong>链接标记</strong>选项</li>
+<li>项目属性—&gt;Build Setting-&gt;Linking-&gt; Other Linker Flags 添加<code>-lmysqlclient</code> <code>-lm</code> <code>-lz</code><br><img src="Mac+MySql+Xcode%E9%85%8D%E7%BD%AE/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-18%2013.34.07.png" alt=""></li>
+</ul>
+</li>
+</ul>
+
+          
         
       
     </div>
