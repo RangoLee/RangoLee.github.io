@@ -266,7 +266,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/23/C++11_并发指南二/" itemprop="url">
+                <a class="post-title-link" href="/2016/05/23/C++11_并发指南三/" itemprop="url">
                   C++11 并发指南二
                 </a>
               
@@ -310,8 +310,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/23/C++11_并发指南二/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/C++11_并发指南二/" itemprop="commentsCount"></span>
+                <a href="/2016/05/23/C++11_并发指南三/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/C++11_并发指南三/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -321,7 +321,7 @@
 
           
           
-             <span id="/2016/05/23/C++11_并发指南二/" class="leancloud_visitors" data-flag-title="C++11 并发指南二">
+             <span id="/2016/05/23/C++11_并发指南三/" class="leancloud_visitors" data-flag-title="C++11 并发指南二">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -344,344 +344,159 @@
 
       
         
-          <h2 id="C-11-并发指南二"><a href="#C-11-并发指南二" class="headerlink" title="C++11 并发指南二"></a>C++11 并发指南二</h2><hr>
-<blockquote>
-<p>std::thread 在 <thread> 头文件中声明，因此使用 std::thread 时需要包含 <thread> 头文件。</thread></thread></p>
-</blockquote>
-<h3 id="std-thread-构造"><a href="#std-thread-构造" class="headerlink" title="std::thread 构造"></a>std::thread 构造</h3><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>default</td>
-<td>(1)</td>
-<td>thread() noexcept;</td>
-</tr>
-<tr>
-<td>initialization</td>
-<td>(2)</td>
-<td>template <class fn,="" class...="" args=""> explicit thread (Fn&amp;&amp; fn, Args&amp;&amp;… args);</class></td>
-</tr>
-<tr>
-<td>copy [deleted]</td>
-<td>(3)</td>
-<td>thread (const thread&amp;) = delete;</td>
-</tr>
-<tr>
-<td>move</td>
-<td>(4)</td>
-<td>thread (thread&amp;&amp; x) noexcept;</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>(1). 默认构造函数，创建一个空的 thread 执行对象。</li>
-<li>(2). 初始化构造函数，创建一个 thread对象，该 thread对象可被 joinable，新产生的线程会调用 fn 函数，该函数的参数由 args 给出。</li>
-<li>(3). 拷贝构造函数(被禁用)，意味着 thread 不可被拷贝构造。</li>
-<li>(4). move 构造函数，move 构造函数，调用成功之后 x 不代表任何 thread 执行对象。<blockquote>
-<p>注意：可被 joinable 的 thread 对象必须在他们销毁之前被主线程 join 或者将其设置为 detached.<br>std::thread 各种构造函数例子如下（ <a href="http://en.cppreference.com/w/cpp/thread/thread/thread" target="_blank" rel="external">参考</a> ）</p>
-</blockquote>
+          
+            <h2 id="C-11并发指南三（std-mutex）"><a href="#C-11并发指南三（std-mutex）" class="headerlink" title="C++11并发指南三（std::mutex）"></a>C++11并发指南三（std::mutex）</h2><hr>
+<p>#c++</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/23/Mac安装cmake/" itemprop="url">
+                  Mac 安装 cmake
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-23T00:00:00+08:00" content="2016-05-23">
+              2016-05-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index">
+                    <span itemprop="name">Mac</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/23/Mac安装cmake/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/Mac安装cmake/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/23/Mac安装cmake/" class="leancloud_visitors" data-flag-title="Mac 安装 cmake">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-安装包安装-cmake"><a href="#1-安装包安装-cmake" class="headerlink" title="1 安装包安装 cmake"></a>1 安装包安装 cmake</h3><hr>
+<ol>
+<li>从<a href="https://cmake.org/download/" target="_blank" rel="external">官网</a>下载<code>cmake</code>安装包。默认安装</li>
+<li>链接cmake.app 与 terminal <ol>
+<li>打开终端，输入<code>export PATH=/Applications/CMake.app/Contents/bin:$PATH</code></li>
+</ol>
 </li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;utility&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;chrono&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;functional&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;atomic&gt;</span></span></div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f1</span><span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i) &#123;</div><div class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Thread "</span> &lt;&lt; n &lt;&lt; <span class="string">" executing\n"</span>;</div><div class="line">        <span class="built_in">std</span>::this_thread::sleep_for(<span class="built_in">std</span>::chrono::milliseconds(<span class="number">10</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f2</span><span class="params">(<span class="keyword">int</span>&amp; n)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i) &#123;</div><div class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Thread 2 executing\n"</span>;</div><div class="line">        ++n;</div><div class="line">        <span class="built_in">std</span>::this_thread::sleep_for(<span class="built_in">std</span>::chrono::milliseconds(<span class="number">10</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</div><div class="line">    <span class="built_in">std</span>::thread t1; <span class="comment">// t1 is not a thread</span></div><div class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">t2</span><span class="params">(f1, n + <span class="number">1</span>)</span></span>; <span class="comment">// pass by value</span></div><div class="line">    std::thread t3(f2, std::ref(n)); // pass by reference</div><div class="line">    std::thread t4(std::move(t3)); // t4 is now running f2(). t3 is no longer a thread</div><div class="line">    t2.join();</div><div class="line">    t4.join();</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Final value of n is "</span> &lt;&lt; n &lt;&lt; <span class="string">'\n'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/23/C++11_并发指南二/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/23/C++11_并发指南一/" itemprop="url">
-                  C++11 并发指南二
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-23T00:00:00+08:00" content="2016-05-23">
-              2016-05-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/23/C++11_并发指南一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/C++11_并发指南一/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/23/C++11_并发指南一/" class="leancloud_visitors" data-flag-title="C++11 并发指南二">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="C-并发至南一"><a href="#C-并发至南一" class="headerlink" title="C++并发至南一"></a>C++并发至南一</h2><hr>
-<h3 id="与-C-11-多线程相关的头文件"><a href="#与-C-11-多线程相关的头文件" class="headerlink" title="与 C++11 多线程相关的头文件"></a>与 C++11 多线程相关的头文件</h3><p>C++11 新标准中引入了四个头文件来支持多线程编程，他们分别是<atomic> ,<thread>,<mutex>,<condition_variable>和<future>。</future></condition_variable></mutex></thread></atomic></p>
-<ul>
-<li><strong><atomic></atomic></strong>：该头文主要声明了两个类, <code>std::atomic</code> 和 <code>std::atomic_flag</code>，另外还声明了一套 C 风格的原子类型和与 C 兼容的原子操作的函数。</li>
-<li><strong><thread></thread></strong>：该头文件主要声明了 <code>std::thread</code> 类，另外 <code>std::this_thread</code> 命名空间也在该头文件中。</li>
-<li><strong><mutex></mutex></strong>：该头文件主要声明了与互斥量(mutex)相关的类，包括 <code>std::mutex</code> 系列类，<code>std::lock_guard</code>, <code>std::unique_lock</code>, 以及其他的类型和函数。</li>
-<li><strong><condition_variable></condition_variable></strong>：该头文件主要声明了与条件变量相关的类，包括 <code>std::condition_variable</code> 和 <code>std::condition_variable_any</code>。</li>
-<li><strong><future></future></strong>：该头文件主要声明了 <code>std::promise</code>, <code>std::package_task</code> 两个 <strong>Provider</strong> 类，以及 <code>std::future</code> 和 <code>std::shared_future</code> 两个 <strong>Future</strong> 类，另外还有一些与之相关的类型和函数，<code>std::async()</code> 函数就声明在此头文件中。</li>
-</ul>
+<li>配置完成。（以上链接只对本终端窗口有效）</li>
+</ol>
+<h3 id="2-使用-homebrew-安装（推荐）"><a href="#2-使用-homebrew-安装（推荐）" class="headerlink" title="2 使用 homebrew 安装（推荐）"></a>2 使用 homebrew 安装（推荐）</h3><hr>
+<ol>
+<li><p>安装<strong>homebrew</strong> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -e <span class="string">"<span class="variable">$(curl -fsSkL raw.github.com/mxcl/homebrew/Go)</span>"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>使用 <code>brew</code> 安装 <strong>cmake</strong> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install cmake</div></pre></td></tr></table></figure>
+</li>
+</ol>
 <hr>
-<h3 id="std-thread-“Hello-World”"><a href="#std-thread-“Hello-World”" class="headerlink" title="std::thread “Hello World”"></a>std::thread “Hello World”</h3><p>例子：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; // std::cout</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt; // std::thread</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">thread_task</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"hello thread"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">t</span><span class="params">(thread_task)</span></span>;</div><div class="line">    t.join();</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>#c++    #c++thread</p>
+<p>#cmake</p>
 
           
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/23/--!--文章标题/" itemprop="url">
-                  title
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-23T00:00:00+08:00" content="2016-05-23">
-              2016-05-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/23/--!--文章标题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/--!--文章标题/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/23/--!--文章标题/" class="leancloud_visitors" data-flag-title="title">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <!--description: MarkDown 文档的基本格式模板-->
-<!--
-|参数|描述|默认值|
-|-----------|-----|--------------|
-|layout:    |布局
-|title:     |标题
-|date:      |建立日期   |文件建立日期
-|updated:   |更新日期   |文件更新日期
-|comments:  |开启文章的评论功能    |true
-|tags:      |标签（不适用于分页
-|categories:|分类（不适用于分页）
-|permalink: |覆盖文章网址
-|description|文章描述信息
--->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/23/--!--文章标题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
         
       
     </div>
@@ -1004,7 +819,147 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/23/6.C#常量/" itemprop="url">
+                <a class="post-title-link" href="/2016/05/23/4.C#类型转换/" itemprop="url">
+                  4.C#类型转换
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-23T00:00:00+08:00" content="2016-05-23">
+              2016-05-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CShape/" itemprop="url" rel="index">
+                    <span itemprop="name">CShape</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/23/4.C#类型转换/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/4.C#类型转换/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/23/4.C#类型转换/" class="leancloud_visitors" data-flag-title="4.C#类型转换">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="4-类型转换"><a href="#4-类型转换" class="headerlink" title="4.类型转换"></a>4.类型转换</h2><hr>
+<p>类型转换从根本上说是类型铸造，或者说是把数据从一种类型转换为另一种类型。在C#中，类型铸造有两种形式：</p>
+<ul>
+<li>隐式类型转换 - 这些转换是C#默认的以安全的方式进行的转换。例如：从小的整数类型转换为大的整数类型，从派生类转换为基类。</li>
+</ul>
+<ul>
+<li>显示类型转换 - 这些转换是通过用户使用预定义的函数显示完成的。显示转换需要强制转换运算符。<br>强制类型转换：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">namespace TypeConversionApplication</div><div class="line">&#123;</div><div class="line">    class ExplicitConversion</div><div class="line">    &#123;</div><div class="line">        static void Main(string[] args)</div><div class="line">        &#123;</div><div class="line">            double d = 567.89;</div><div class="line">            int i;</div><div class="line">            // 强制转换double 为 int</div><div class="line">            i = (int)d;</div><div class="line">				 Console.WriteLine(i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">567</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/23/4.C#类型转换/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/23/5.C#变量/" itemprop="url">
                   5.C#变量
                 </a>
               
@@ -1048,8 +1003,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/23/6.C#常量/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/6.C#常量/" itemprop="commentsCount"></span>
+                <a href="/2016/05/23/5.C#变量/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/5.C#变量/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1059,7 +1014,7 @@
 
           
           
-             <span id="/2016/05/23/6.C#常量/" class="leancloud_visitors" data-flag-title="5.C#变量">
+             <span id="/2016/05/23/5.C#变量/" class="leancloud_visitors" data-flag-title="5.C#变量">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1082,15 +1037,15 @@
 
       
         
-          
-            <h2 id="6-常量"><a href="#6-常量" class="headerlink" title="6.常量"></a>6.常量</h2><hr>
-<p>常量是固定值，程序执行期间不会改变，常量可以是任何基本数据类型，比如整数常量。浮点数常量。字符常量或者字符串常量，还有枚举值。<br>常量可以被当做常规的变量，只是它们值在定义后不能被修改。</p>
-<h3 id="整数常量"><a href="#整数常量" class="headerlink" title="整数常量"></a>整数常量</h3><p>整数常量可以是十进制。八进制或十六进制的常量。<br>前缀指定基数：0x或0X表示16进制，0表示八进制，没有前缀的表示十进制。<br>整数常量也可以有后缀，可以是U或者L的组合，其中，U和L分别表示unsigned 和long。后缀可以是大写或者小写，多个后缀以任意顺序进行组合。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">212 //</div><div class="line">215U //</div><div class="line">0xFeeL //</div><div class="line">078 // 错误</div><div class="line">032UU // 错误</div></pre></td></tr></table></figure></p>
-<p>浮点常量<br>一个浮点常量是由整数部分，小数部分和指数部分组成。您可以使用小数形式或者指数形式来表示浮点常量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">314159E-5L  //</div></pre></td></tr></table></figure></p>
-<h3 id="字符常量"><a href="#字符常量" class="headerlink" title="字符常量"></a>字符常量</h3><hr>
-<p>#cshape</p>
-
-          
+          <h2 id="5-C-变量"><a href="#5-C-变量" class="headerlink" title="5.C#变量"></a>5.C#变量</h2><hr>
+<p>一个变量只不过是一个供程序操作的存储区的名字。在C#中，每个变量都有一个特定的类型，类型决定了变量的内存大小和布局。范围内的值可以存储在内存中，可以对变量进行一系列的操作<br>C#提供的基本数据类型大致如下：<br>|类型|举例|<br>|-|-|<br>|整数类型    |sbyte、byte、short、ushort、int、uint、long、ulong和char |<br>|浮点数      |floa 和 double |<br>|十进制类型   | decimal|<br>|布尔类型    |true或false，指定的值|<br>|空类型      |可为空值的数据类型 |<br>C#允许定义其他值类型的变量，比如<strong>enum</strong>也允许定义引用类型变量，比如<strong>class</strong>。</p>
+<h3 id="C-中的变量定义"><a href="#C-中的变量定义" class="headerlink" title="C#中的变量定义"></a>C#中的变量定义</h3><p>C#中变量定义的语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;data_type&gt; &lt;variable_list&gt;;</div></pre></td></tr></table></figure></p>
+<p>在这里，data_type必须是一个有效的C#数据类型，可以是char、int、float、double或其他自定义类型的数据类型。variable_list可以由一个或多个逗号分隔符的标识符名称组成。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int i, j, k;</div><div class="line">char ch;</div><div class="line">float salary;</div><div class="line">double d;</div><div class="line">int x = 100; // 定义的时候初始化</div></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/23/5.C#变量/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
