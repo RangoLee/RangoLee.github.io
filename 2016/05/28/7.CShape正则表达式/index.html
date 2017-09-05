@@ -86,18 +86,29 @@
 
 
 
-<meta name="description" content="4.类型转换 类型转换从根本上说是类型铸造，或者说是把数据从一种类型转换为另一种类型。在C#中，类型铸造有两种形式：  隐式类型转换 - 这些转换是C#默认的以安全的方式进行的转换。例如：从小的整数类型转换为大的整数类型，从派生类转换为基类。   显示类型转换 - 这些转换是通过用户使用预定义的函数显示完成的。显示转换需要强制转换运算符。强制类型转换：1234567891011121314name">
+<meta name="description" content="C# 正则表达式 正则表达式是一种匹配文本的模式。.net框架提供了允许这种匹配的正则表达式引擎。模式由一个或多个字符、运算符和结构组成。  定义正则表达式下面列出了用于定义正表达式的各种类别的字符、运算符和结构。  字符转义   字符类 定位点 分组结构 限定符 反向引用构造 备用构造 替换 杂项构造">
 <meta name="keywords" content="CShape">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4.C#类型转换">
-<meta property="og:url" content="http://yoursite.com/2016/05/23/4CShape类型转换/index.html">
+<meta property="og:title" content="C# 正则表达式">
+<meta property="og:url" content="http://yoursite.com/2016/05/28/7.CShape正则表达式/index.html">
 <meta property="og:site_name" content="CodeNight">
-<meta property="og:description" content="4.类型转换 类型转换从根本上说是类型铸造，或者说是把数据从一种类型转换为另一种类型。在C#中，类型铸造有两种形式：  隐式类型转换 - 这些转换是C#默认的以安全的方式进行的转换。例如：从小的整数类型转换为大的整数类型，从派生类转换为基类。   显示类型转换 - 这些转换是通过用户使用预定义的函数显示完成的。显示转换需要强制转换运算符。强制类型转换：1234567891011121314name">
+<meta property="og:description" content="C# 正则表达式 正则表达式是一种匹配文本的模式。.net框架提供了允许这种匹配的正则表达式引擎。模式由一个或多个字符、运算符和结构组成。  定义正则表达式下面列出了用于定义正表达式的各种类别的字符、运算符和结构。  字符转义   字符类 定位点 分组结构 限定符 反向引用构造 备用构造 替换 杂项构造">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2016/05/28/7.CShape正则表达式/C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-28%2022.17.53.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/28/7.CShape正则表达式/C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-29%2023.12.18.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/28/7.CShape正则表达式/C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-29%2023.20.35.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/28/7.CShape正则表达式/C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-29%2023.26.23.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/28/7.CShape正则表达式/C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-30%2022.44.13.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/28/7.CShape正则表达式/C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-30%2022.47.44.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/28/7.CShape正则表达式/C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-30%2022.49.53.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/28/7.CShape正则表达式/C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-30%2022.52.59.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/28/7.CShape正则表达式/C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-30%2022.54.20.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/28/7.CShape正则表达式/C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-30%2022.55.16.png">
 <meta property="og:updated_time" content="2017-02-27T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4.C#类型转换">
-<meta name="twitter:description" content="4.类型转换 类型转换从根本上说是类型铸造，或者说是把数据从一种类型转换为另一种类型。在C#中，类型铸造有两种形式：  隐式类型转换 - 这些转换是C#默认的以安全的方式进行的转换。例如：从小的整数类型转换为大的整数类型，从派生类转换为基类。   显示类型转换 - 这些转换是通过用户使用预定义的函数显示完成的。显示转换需要强制转换运算符。强制类型转换：1234567891011121314name">
+<meta name="twitter:title" content="C# 正则表达式">
+<meta name="twitter:description" content="C# 正则表达式 正则表达式是一种匹配文本的模式。.net框架提供了允许这种匹配的正则表达式引擎。模式由一个或多个字符、运算符和结构组成。  定义正则表达式下面列出了用于定义正表达式的各种类别的字符、运算符和结构。  字符转义   字符类 定位点 分组结构 限定符 反向引用构造 备用构造 替换 杂项构造">
+<meta name="twitter:image" content="http://yoursite.com/2016/05/28/7.CShape正则表达式/C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-28%2022.17.53.png">
 
 
 
@@ -115,7 +126,7 @@
   };
 </script>
 
-  <title> 4.C#类型转换 | CodeNight </title>
+  <title> C# 正则表达式 | CodeNight </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +276,7 @@
             
             
               
-                4.C#类型转换
+                C# 正则表达式
               
             
           </h1>
@@ -277,8 +288,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-23T00:00:00+08:00" content="2016-05-23">
-              2016-05-23
+            <time itemprop="dateCreated" datetime="2016-05-28T00:00:00+08:00" content="2016-05-28">
+              2016-05-28
             </time>
           </span>
 
@@ -307,8 +318,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/23/4CShape类型转换/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/4CShape类型转换/" itemprop="commentsCount"></span>
+                <a href="/2016/05/28/7.CShape正则表达式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/28/7.CShape正则表达式/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -318,7 +329,7 @@
 
           
           
-             <span id="/2016/05/23/4CShape类型转换/" class="leancloud_visitors" data-flag-title="4.C#类型转换">
+             <span id="/2016/05/28/7.CShape正则表达式/" class="leancloud_visitors" data-flag-title="C# 正则表达式">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -340,18 +351,34 @@
       
 
       
-        <h2 id="4-类型转换"><a href="#4-类型转换" class="headerlink" title="4.类型转换"></a>4.类型转换</h2><hr>
-<p>类型转换从根本上说是类型铸造，或者说是把数据从一种类型转换为另一种类型。在C#中，类型铸造有两种形式：</p>
+        <h2 id="C-正则表达式"><a href="#C-正则表达式" class="headerlink" title="C# 正则表达式"></a>C# 正则表达式</h2><hr>
+<p><strong>正则表达式</strong>是一种匹配文本的模式。.net框架提供了允许这种匹配的正则表达式引擎。模式由一个或多个字符、运算符和结构组成。</p>
+<hr>
+<h3 id="定义正则表达式"><a href="#定义正则表达式" class="headerlink" title="定义正则表达式"></a>定义正则表达式</h3><p>下面列出了用于定义正表达式的各种类别的字符、运算符和结构。</p>
 <ul>
-<li>隐式类型转换 - 这些转换是C#默认的以安全的方式进行的转换。例如：从小的整数类型转换为大的整数类型，从派生类转换为基类。</li>
+<li>字符转义</li>
 </ul>
 <ul>
-<li>显示类型转换 - 这些转换是通过用户使用预定义的函数显示完成的。显示转换需要强制转换运算符。<br>强制类型转换：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">namespace TypeConversionApplication</div><div class="line">&#123;</div><div class="line">    class ExplicitConversion</div><div class="line">    &#123;</div><div class="line">        static void Main(string[] args)</div><div class="line">        &#123;</div><div class="line">            double d = 567.89;</div><div class="line">            int i;</div><div class="line">            // 强制转换double 为 int</div><div class="line">            i = (int)d;</div><div class="line">				 Console.WriteLine(i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>字符类</li>
+<li>定位点</li>
+<li>分组结构</li>
+<li>限定符</li>
+<li>反向引用构造</li>
+<li>备用构造</li>
+<li>替换</li>
+<li>杂项构造<a id="more"></a>
+<h4 id="字符转义"><a href="#字符转义" class="headerlink" title="字符转义"></a>字符转义</h4>正则表达式中的反斜杠符号（\）指示其后跟的字符是特殊字符，或应按原义解释该字符。<br><img src="C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-28%2022.17.53.png" alt=""><h3 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h3>字符类与一组字符中的任何一个字符匹配<br><img src="C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-29%2023.12.18.png" alt=""><h3 id="定位点"><a href="#定位点" class="headerlink" title="定位点"></a>定位点</h3>定位点或原子零宽度断言会使匹配成功或失败，具体取决于字符串中的当前位置，但它们不会使引擎在字符串中前进或使用字符。<br><img src="C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-29%2023.20.35.png" alt=""><h3 id="分组构造"><a href="#分组构造" class="headerlink" title="分组构造"></a>分组构造</h3>分组构造描述了正则表达式的子表达式，通常用于捕获输入字符串的子字符串。<br><img src="C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-29%2023.26.23.png" alt=""><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">string input = &quot;1851 1999 1950 1905 2003&quot;;</div><div class="line">string pattern = @&quot;(?&lt;=19)\d&#123;2&#125;\b&quot;;</div><div class="line"></div><div class="line">foreach (Match match in Regex.Matches(input, pattern))</div><div class="line">    Console.WriteLine(match.Value);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">567</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="C-类型转换方法"><a href="#C-类型转换方法" class="headerlink" title="C#类型转换方法"></a>C#类型转换方法</h3><p>C#提供了下列内置的类型转换方法<br>|序号|方法&amp;描述|<br>|———|——————|<br>|1  |ToBoolean 如果可能的话，把类型转换为布尔型|<br>|2  |ToByte 把类型转换为字节类型|<br>|3  |ToChar 把类型转换为单个Unicode字符类型|<br>|4  |ToDataTime 把类型(整数或字符串类型)转换为 日期-时间 结构|<br>|5  |ToDecimal 把浮点或整型类型转换为十进制类型|<br>|6  |ToDouble 把类型转换为双精度浮点数|<br>|7  |ToInt16 把类型转换为16位整数类型|<br>|8  |ToInt32 把类型转换为32位整数类型|<br>|9  |ToInt64 把类型转换为64位整数类型|<br>|10 |ToSbyte 把类型转换为有符号字节类型|<br>|11 |ToSingle 把类型转换为小浮点数类型|<br>|12 |ToString 把类型转换为字符串类型|<br>|13 |ToType 把类型转换为指定类型|<br>|14 |ToUInt16 把类型转换为16位无符号整数类型|<br>|15 |ToUInt32 把类型转换为32位无符号整数类型|<br>|16 |ToUInt64 把类型转换为64位无符号整数类型|</p>
+<h3 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h3><p>限定符指定在输入字符串中必须存在上一个元素（可以是字符。组或字符类）的多少个实例才能出现匹配项。限定符包括下表中列出的语言元素。</p>
+<p><img src="C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-30%2022.44.13.png" alt=""></p>
+<h3 id="反向引用构造"><a href="#反向引用构造" class="headerlink" title="反向引用构造"></a>反向引用构造</h3><p>反向引用构造允许在同一正则表达式中随后标识以前匹配的自表达式。<br><img src="C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-30%2022.47.44.png" alt=""></p>
+<h3 id="备用构造"><a href="#备用构造" class="headerlink" title="备用构造"></a>备用构造</h3><p>备用构造用于修正正则表达式以启用either/or匹配<br><img src="C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-30%2022.49.53.png" alt=""></p>
+<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><p>替换是替换模式中使用的正则表达式<br><img src="C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-30%2022.52.59.png" alt=""></p>
+<h3 id="杂项构造"><a href="#杂项构造" class="headerlink" title="杂项构造"></a>杂项构造</h3><p><img src="C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-30%2022.54.20.png" alt=""></p>
+<h3 id="Regex类"><a href="#Regex类" class="headerlink" title="Regex类"></a>Regex类</h3><p><strong>Regex</strong>类用于表示一个正则表达式<br><img src="C%23%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-30%2022.55.16.png" alt=""><br>如需了解Regex类的完整属性列表，请参阅微软的C#文档</p>
+<hr>
+<h2 id="实例1"><a href="#实例1" class="headerlink" title="实例1"></a>实例1</h2><hr>
 <hr>
 <p>#cshape</p>
 
@@ -384,7 +411,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/23/6CShape常量/" rel="next" title="6.C#常量">
+              <a href="/2016/05/27/6.CShape常量/" rel="next" title="6.C#常量">
                 <i class="fa fa-chevron-left"></i> 6.C#常量
               </a>
             
@@ -392,8 +419,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/23/5CShape变量/" rel="prev" title="5.C#变量">
-                5.C#变量 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/28/16-0528_git+hexo=blog/" rel="prev" title="如何使用hexo搭建git博客">
+                如何使用hexo搭建git博客 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -443,8 +470,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/23/4CShape类型转换/"
-           data-title="4.C#类型转换" data-url="http://yoursite.com/2016/05/23/4CShape类型转换/">
+      <div class="ds-thread" data-thread-key="2016/05/28/7.CShape正则表达式/"
+           data-title="C# 正则表达式" data-url="http://yoursite.com/2016/05/28/7.CShape正则表达式/">
       </div>
     
   </div>
@@ -582,7 +609,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-类型转换"><span class="nav-number">1.</span> <span class="nav-text">4.类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-类型转换方法"><span class="nav-number">1.1.</span> <span class="nav-text">C#类型转换方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-正则表达式"><span class="nav-number">1.</span> <span class="nav-text">C# 正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义正则表达式"><span class="nav-number">1.1.</span> <span class="nav-text">定义正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符转义"><span class="nav-number">1.1.1.</span> <span class="nav-text">字符转义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符类"><span class="nav-number">1.2.</span> <span class="nav-text">字符类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位点"><span class="nav-number">1.3.</span> <span class="nav-text">定位点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组构造"><span class="nav-number">1.4.</span> <span class="nav-text">分组构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限定符"><span class="nav-number">1.5.</span> <span class="nav-text">限定符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向引用构造"><span class="nav-number">1.6.</span> <span class="nav-text">反向引用构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#备用构造"><span class="nav-number">1.7.</span> <span class="nav-text">备用构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换"><span class="nav-number">1.8.</span> <span class="nav-text">替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#杂项构造"><span class="nav-number">1.9.</span> <span class="nav-text">杂项构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regex类"><span class="nav-number">1.10.</span> <span class="nav-text">Regex类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例1"><span class="nav-number">2.</span> <span class="nav-text">实例1</span></a></li></ol></div>
             
           </div>
         </section>
