@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="new,alloc,init," />
+  <meta name="keywords" content="MySQL,openfile," />
 
 
 
@@ -86,18 +86,32 @@
 
 
 
-<meta name="description" content="[className new]和[[className alloc]init]  在实际开发中可能很少用到 new ，一般创建对象咱们看到的都是[[className alloc]init],但是并不是意味着就不会接触到 new ,在一些代码中还是会看到使用 new ,还有面试的时候,也有可能会被问到. 那么,它们之间到底有什么不同呢?  1234567891011121314151617181">
-<meta name="keywords" content="new,alloc,init">
+<meta name="description" content="1. MySQL Wiki 双击 mysql-5.6.12-osx10.7-x86_64.dmg 双击 mysql-5.6.12-osx10.7-x86_64.pkg 双击 MySQL.prefPane 系统偏好设置里启动 MySQL">
+<meta name="keywords" content="MySQL,openfile">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IOS中 new 和 alloc]init 等">
-<meta property="og:url" content="http://yoursite.com/2016/05/20/16-0520_IOS 中 new 与 alloc]init 的区别/index.html">
+<meta property="og:title" content="Mac OS 搭建 mysql 环境">
+<meta property="og:url" content="http://yoursite.com/2016/06/06/16-0606_Mac搭建mysql环境/index.html">
 <meta property="og:site_name" content="CodeNight">
-<meta property="og:description" content="[className new]和[[className alloc]init]  在实际开发中可能很少用到 new ，一般创建对象咱们看到的都是[[className alloc]init],但是并不是意味着就不会接触到 new ,在一些代码中还是会看到使用 new ,还有面试的时候,也有可能会被问到. 那么,它们之间到底有什么不同呢?  1234567891011121314151617181">
+<meta property="og:description" content="1. MySQL Wiki 双击 mysql-5.6.12-osx10.7-x86_64.dmg 双击 mysql-5.6.12-osx10.7-x86_64.pkg 双击 MySQL.prefPane 系统偏好设置里启动 MySQL">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-07-17T08:32:25.000Z">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/741b3941gw1f4lfoni0mzj21kw0zkdtn.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/741b3941gw1f4lfs4wrtrj21kw0zktoo.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/741b3941jw1f4lfxcszf7j21200icjzd.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/741b3941gw1f75vgxdejfj21do13g111.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/741b3941gw1f75vp6dzgcj21kw0zk7i0.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/741b3941gw1f75vqbliioj21kw0zkduc.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/741b3941gw1f75vr60df0j21kw0zkk0n.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/741b3941gw1f75vsfqg7hj20c40n4t9k.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/741b3941gw1f75vt4uw2nj21kw0zkts1.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/741b3941gw1f75vu6qt1uj21kw0zk4j4.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/741b3941gw1f75vumf01aj20c80o4n0i.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/741b3941gw1f75vz2deifj211g0mgjus.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/741b3941gw1f75w3aspm6j21kw12548p.jpg">
+<meta property="og:updated_time" content="2017-09-05T14:15:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IOS中 new 和 alloc]init 等">
-<meta name="twitter:description" content="[className new]和[[className alloc]init]  在实际开发中可能很少用到 new ，一般创建对象咱们看到的都是[[className alloc]init],但是并不是意味着就不会接触到 new ,在一些代码中还是会看到使用 new ,还有面试的时候,也有可能会被问到. 那么,它们之间到底有什么不同呢?  1234567891011121314151617181">
+<meta name="twitter:title" content="Mac OS 搭建 mysql 环境">
+<meta name="twitter:description" content="1. MySQL Wiki 双击 mysql-5.6.12-osx10.7-x86_64.dmg 双击 mysql-5.6.12-osx10.7-x86_64.pkg 双击 MySQL.prefPane 系统偏好设置里启动 MySQL">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/mw690/741b3941gw1f4lfoni0mzj21kw0zkdtn.jpg">
 
 
 
@@ -115,7 +129,7 @@
   };
 </script>
 
-  <title> IOS中 new 和 alloc]init 等 | CodeNight </title>
+  <title> Mac OS 搭建 mysql 环境 | CodeNight </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +279,7 @@
             
             
               
-                IOS中 new 和 alloc]init 等
+                Mac OS 搭建 mysql 环境
               
             
           </h1>
@@ -277,8 +291,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-20T22:09:00+08:00" content="2016-05-20">
-              2016-05-20
+            <time itemprop="dateCreated" datetime="2016-06-06T11:18:00+08:00" content="2016-06-06">
+              2016-06-06
             </time>
           </span>
 
@@ -307,8 +321,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/20/16-0520_IOS 中 new 与 alloc]init 的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/20/16-0520_IOS 中 new 与 alloc]init 的区别/" itemprop="commentsCount"></span>
+                <a href="/2016/06/06/16-0606_Mac搭建mysql环境/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/06/16-0606_Mac搭建mysql环境/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -318,7 +332,7 @@
 
           
           
-             <span id="/2016/05/20/16-0520_IOS 中 new 与 alloc]init 的区别/" class="leancloud_visitors" data-flag-title="IOS中 new 和 alloc]init 等">
+             <span id="/2016/06/06/16-0606_Mac搭建mysql环境/" class="leancloud_visitors" data-flag-title="Mac OS 搭建 mysql 环境">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -340,32 +354,59 @@
       
 
       
-        <!-- 
-|参数|描述|默认值|
-|-----------|-----|--------------|
-|layout:    |布局
-|title:     |标题
-|date:      |建立日期    |文件建立日期
-|updated:   |更新日期    |文件更新日期
-|comments:  |开启文章的评论功能    |true
-|tags:      |标签（不适用于分页
-|categories:|分类（不适用于分页）
-|permalink: |覆盖文章网址
-|description|
--->
-<h4 id="className-new-和-className-alloc-init"><a href="#className-new-和-className-alloc-init" class="headerlink" title="[className new]和[[className alloc]init]"></a><code>[className new]</code>和<code>[[className alloc]init]</code></h4><hr>
-<ol>
-<li>在实际开发中可能很少用到 <code>new</code> ，一般创建对象咱们看到的都是<code>[[className alloc]init]</code>,但是并不是意味着就不会接触到 <code>new</code> ,在一些代码中还是会看到使用 <code>new</code> ,还有面试的时候,也有可能会被问到.</li>
-<li>那么,它们之间到底有什么不同呢?</li>
+        <h4 id="1-MySQL-Wiki"><a href="#1-MySQL-Wiki" class="headerlink" title="1. MySQL Wiki"></a>1. <a href="https://en.wikipedia.org/wiki/MySQL" target="_blank" rel="external">MySQL Wiki</a></h4><ol>
+<li>双击 mysql-5.6.12-osx10.7-x86_64.dmg</li>
+<li>双击 mysql-5.6.12-osx10.7-x86_64.pkg<br><img src="http://ww4.sinaimg.cn/mw690/741b3941gw1f4lfoni0mzj21kw0zkdtn.jpg" alt="2.双击安装"></li>
+<li>双击 MySQL.prefPane<br><img src="http://ww2.sinaimg.cn/mw690/741b3941gw1f4lfs4wrtrj21kw0zktoo.jpg" alt="3.双击安装配置项"></li>
+<li>系统偏好设置里启动 MySQL<br><img src="http://ww4.sinaimg.cn/mw690/741b3941jw1f4lfxcszf7j21200icjzd.jpg" alt="启动 MySQL 服务"></li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">+ new </div><div class="line">&#123; </div><div class="line">id newObject = (*_alloc)((Class)self, 0); </div><div class="line">Class metaClass = self-&gt;isa; </div><div class="line">if (class_getVersion(metaClass) &gt; 1) </div><div class="line">return [newObject init]; </div><div class="line">else </div><div class="line">return newObject; </div><div class="line">&#125; </div><div class="line"> </div><div class="line">//而 alloc/init 像这样： </div><div class="line">+ alloc </div><div class="line">&#123; </div><div class="line">return (*_zoneAlloc)((Class)self, 0, malloc_default_zone());  </div><div class="line">&#125; </div><div class="line">- init </div><div class="line">&#123; </div><div class="line">return self; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>通过源代码中我们可以发现<code>[className new]</code>基本等同于<code>[[className alloc] init]</code>;区别只在于 alloc 分配内存的时候使用了 zone 。这个 zone 是什么东东呢？它是给对象分配内存的时候。把关联的对象分配到一个相邻的内存区域内，以便于使用时消耗很少的代价，提升程序处理速度；</p>
+<a id="more"></a>
 <ol>
-<li>为什么不推荐使用 new 呢？<br> 如果，使用 new 初始化方法被固定为 init，而你又想使用 initWithXXX 怎么办？没办法！<blockquote>
-<p>未完待续。。。</p>
-</blockquote>
+<li><p>验证</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ rango$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/mysql</div><div class="line">Rango-MBP:mysql rango$ <span class="built_in">cd</span> bin</div><div class="line">Rango-MBP:bin rango$ <span class="built_in">pwd</span></div><div class="line">/usr/<span class="built_in">local</span>/mysql/bin</div></pre></td></tr></table></figure>
+</li>
+<li><p>登入MySQL服务器,首次登入无密码,直接回车即可 看到下面这些说明安装成功.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:bin rango$ ./mysql -u root -p</div><div class="line">Enter password:</div><div class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</div><div class="line">Your MySQL connection id is 90</div><div class="line">Server version: 5.6.12 MySQL Community Server (GPL)</div><div class="line">Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.</div><div class="line">Oracle is a registered trademark of Oracle Corporation and/or its</div><div class="line">affiliates. Other names may be trademarks of their respective</div><div class="line">owners.</div><div class="line">Type <span class="string">'help;'</span> or <span class="string">'\h'</span> <span class="keyword">for</span> <span class="built_in">help</span>. Type <span class="string">'\c'</span> to clear the current input statement.</div><div class="line">mysql&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>验证数据库,四个是正常的,如果没有四个重启电脑,开启服务应该就是4个了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mysql&gt; show databases;</div><div class="line">+--------------------+</div><div class="line">| Database           |</div><div class="line">+--------------------+</div><div class="line">| information_schema |</div><div class="line">| mysql              |</div><div class="line">| performance_schema |</div><div class="line">| <span class="built_in">test</span>               |</div><div class="line">+--------------------+</div><div class="line">4 rows <span class="keyword">in</span> <span class="built_in">set</span> (0.00 sec)</div></pre></td></tr></table></figure>
+</li>
+<li><p>退出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt; <span class="built_in">exit</span></div><div class="line">Bye</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改MySQL 的 root 密码 为123456 (次数有限,二次修改很麻烦)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:bin rango$ ./mysqladmin -u root password 123456</div></pre></td></tr></table></figure>
+</li>
+<li><p>输入新密码登入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:bin rango$ ./mysql -u root -p</div><div class="line">Enter password:</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<hr>
+<h4 id="2-安装图形化界面管理软件"><a href="#2-安装图形化界面管理软件" class="headerlink" title="2. 安装图形化界面管理软件"></a>2. 安装图形化界面管理软件</h4><ol>
+<li>双击 mysql-workbench-gpl-5.2.47-osx-i686.dmg<br> <img src="http://ww3.sinaimg.cn/large/741b3941gw1f75vgxdejfj21do13g111.jpg" alt=""></li>
+<li>启动,配置数据库<br> <img src="http://ww3.sinaimg.cn/mw690/741b3941gw1f75vp6dzgcj21kw0zk7i0.jpg" alt=""><br> <img src="http://ww2.sinaimg.cn/mw690/741b3941gw1f75vqbliioj21kw0zkduc.jpg" alt=""></li>
+<li><p>创建数据库（数据库的名字和后面要和服务器关联的名字一致就可以。应该是openfiredb，这里写错了，后面也将用openfiledb这个名字）<br> <img src="http://ww1.sinaimg.cn/mw690/741b3941gw1f75vr60df0j21kw0zkk0n.jpg" alt=""></p>
+</li>
+<li><p>激活目标数据库，用于后面和服务器关联。<br> <img src="http://ww2.sinaimg.cn/mw690/741b3941gw1f75vsfqg7hj20c40n4t9k.jpg" alt=""></p>
+</li>
+<li>创建表(运行脚本)-刷新<br> <img src="http://ww1.sinaimg.cn/mw690/741b3941gw1f75vt4uw2nj21kw0zkts1.jpg" alt=""><br> <img src="http://ww3.sinaimg.cn/mw690/741b3941gw1f75vu6qt1uj21kw0zk4j4.jpg" alt=""><br> <img src="http://ww2.sinaimg.cn/mw690/741b3941gw1f75vumf01aj20c80o4n0i.jpg" alt=""></li>
+</ol>
+<hr>
+<h4 id="3-安装-JDK"><a href="#3-安装-JDK" class="headerlink" title="3.安装 JDK"></a>3.安装 JDK</h4><ol>
+<li><p>检查一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ rango$ java -version</div><div class="line">No Java runtime present, requesting install.</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装 JDK（Java Development Kit）去官网下载安装即可。</p>
+</li>
+</ol>
+<hr>
+<h4 id="4-安装-openfile-3-9-3-dmg"><a href="#4-安装-openfile-3-9-3-dmg" class="headerlink" title="4.安装 openfile_3_9_3.dmg"></a>4.安装 openfile_3_9_3.dmg</h4><pre><code>![](http://ww1.sinaimg.cn/mw690/741b3941gw1f75vyeq7bmj20n60eatav.jpg)
+![](http://ww1.sinaimg.cn/mw690/741b3941gw1f75vz2ildhj21160wy46n.jpg)
+</code></pre><ol>
+<li>确保正在运行中，然后Open Admin Console<br> <img src="http://ww2.sinaimg.cn/mw690/741b3941gw1f75vz2deifj211g0mgjus.jpg" alt=""></li>
+<li>配置 openfile<br> <img src="http://ww1.sinaimg.cn/mw690/741b3941gw1f75w3aspm6j21kw12548p.jpg" alt=""></li>
+</ol>
+<p>Rango-MBP:~ rango$ sudo vi /etc/hosts<br>Password:</p>
 
       
     </div>
@@ -387,11 +428,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/new/" rel="tag">#new</a>
+            <a href="/tags/MySQL/" rel="tag">#MySQL</a>
           
-            <a href="/tags/alloc/" rel="tag">#alloc</a>
-          
-            <a href="/tags/init/" rel="tag">#init</a>
+            <a href="/tags/openfile/" rel="tag">#openfile</a>
           
         </div>
       
@@ -400,16 +439,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/20/16-0520_NSArray 和 NSMutableArray 的相互转换/" rel="next" title="NSArray 和 NSMutableArray 的相互转换">
-                <i class="fa fa-chevron-left"></i> NSArray 和 NSMutableArray 的相互转换
+              <a href="/2016/06/06/16-0606_Mac下安装和配置tomcat/" rel="next" title="mac 安装和配置 tomcat(不借助 eclipse)">
+                <i class="fa fa-chevron-left"></i> mac 安装和配置 tomcat(不借助 eclipse)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/20/16-0420_Xcode中使用自定义字体的方法/" rel="prev" title="Xcode 中使用自定义字体的方法">
-                Xcode 中使用自定义字体的方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/07/16-0607_contentMode和 TextField 的 leftViewMode 和 RightViewMode/" rel="prev" title="UIImageView 的 contentMode 和 TextField 的 leftViewMode 和 rightViewMode">
+                UIImageView 的 contentMode 和 TextField 的 leftViewMode 和 rightViewMode <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -459,8 +498,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/20/16-0520_IOS 中 new 与 alloc]init 的区别/"
-           data-title="IOS中 new 和 alloc]init 等" data-url="http://yoursite.com/2016/05/20/16-0520_IOS 中 new 与 alloc]init 的区别/">
+      <div class="ds-thread" data-thread-key="2016/06/06/16-0606_Mac搭建mysql环境/"
+           data-title="Mac OS 搭建 mysql 环境" data-url="http://yoursite.com/2016/06/06/16-0606_Mac搭建mysql环境/">
       </div>
     
   </div>
@@ -522,7 +561,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -598,7 +637,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#className-new-和-className-alloc-init"><span class="nav-number">1.</span> <span class="nav-text">[className new]和[[className alloc]init]</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-MySQL-Wiki"><span class="nav-number">1.</span> <span class="nav-text">1. MySQL Wiki</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装图形化界面管理软件"><span class="nav-number">2.</span> <span class="nav-text">2. 安装图形化界面管理软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-安装-JDK"><span class="nav-number">3.</span> <span class="nav-text">3.安装 JDK</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-安装-openfile-3-9-3-dmg"><span class="nav-number">4.</span> <span class="nav-text">4.安装 openfile_3_9_3.dmg</span></a></li></ol></div>
             
           </div>
         </section>
