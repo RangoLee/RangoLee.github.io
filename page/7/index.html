@@ -89,7 +89,7 @@
 <meta name="description" content="Everyone all only young once!">
 <meta property="og:type" content="website">
 <meta property="og:title" content="CodeNight">
-<meta property="og:url" content="http://yoursite.com/page/7/index.html">
+<meta property="og:url" content="http://www.rango365.com/page/7/index.html">
 <meta property="og:site_name" content="CodeNight">
 <meta property="og:description" content="Everyone all only young once!">
 <meta property="og:locale" content="zh-Hans">
@@ -266,7 +266,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/23/C++11_并发指南三/" itemprop="url">
+                <a class="post-title-link" href="/2016/05/23/C++11_并发指南一/" itemprop="url">
                   C++11 并发指南二
                 </a>
               
@@ -310,8 +310,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/23/C++11_并发指南三/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/C++11_并发指南三/" itemprop="commentsCount"></span>
+                <a href="/2016/05/23/C++11_并发指南一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/C++11_并发指南一/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -321,7 +321,7 @@
 
           
           
-             <span id="/2016/05/23/C++11_并发指南三/" class="leancloud_visitors" data-flag-title="C++11 并发指南二">
+             <span id="/2016/05/23/C++11_并发指南一/" class="leancloud_visitors" data-flag-title="C++11 并发指南二">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -345,8 +345,156 @@
       
         
           
-            <h2 id="C-11并发指南三（std-mutex）"><a href="#C-11并发指南三（std-mutex）" class="headerlink" title="C++11并发指南三（std::mutex）"></a>C++11并发指南三（std::mutex）</h2><hr>
-<p>#c++</p>
+            <h2 id="C-并发至南一"><a href="#C-并发至南一" class="headerlink" title="C++并发至南一"></a>C++并发至南一</h2><hr>
+<h3 id="与-C-11-多线程相关的头文件"><a href="#与-C-11-多线程相关的头文件" class="headerlink" title="与 C++11 多线程相关的头文件"></a>与 C++11 多线程相关的头文件</h3><p>C++11 新标准中引入了四个头文件来支持多线程编程，他们分别是<atomic> ,<thread>,<mutex>,<condition_variable>和<future>。</future></condition_variable></mutex></thread></atomic></p>
+<ul>
+<li><strong><atomic></atomic></strong>：该头文主要声明了两个类, <code>std::atomic</code> 和 <code>std::atomic_flag</code>，另外还声明了一套 C 风格的原子类型和与 C 兼容的原子操作的函数。</li>
+<li><strong><thread></thread></strong>：该头文件主要声明了 <code>std::thread</code> 类，另外 <code>std::this_thread</code> 命名空间也在该头文件中。</li>
+<li><strong><mutex></mutex></strong>：该头文件主要声明了与互斥量(mutex)相关的类，包括 <code>std::mutex</code> 系列类，<code>std::lock_guard</code>, <code>std::unique_lock</code>, 以及其他的类型和函数。</li>
+<li><strong><condition_variable></condition_variable></strong>：该头文件主要声明了与条件变量相关的类，包括 <code>std::condition_variable</code> 和 <code>std::condition_variable_any</code>。</li>
+<li><strong><future></future></strong>：该头文件主要声明了 <code>std::promise</code>, <code>std::package_task</code> 两个 <strong>Provider</strong> 类，以及 <code>std::future</code> 和 <code>std::shared_future</code> 两个 <strong>Future</strong> 类，另外还有一些与之相关的类型和函数，<code>std::async()</code> 函数就声明在此头文件中。</li>
+</ul>
+<hr>
+<h3 id="std-thread-“Hello-World”"><a href="#std-thread-“Hello-World”" class="headerlink" title="std::thread “Hello World”"></a>std::thread “Hello World”</h3><p>例子：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; // std::cout</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt; // std::thread</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">thread_task</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"hello thread"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">t</span><span class="params">(thread_task)</span></span>;</div><div class="line">    t.join();</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>#c++    #c++thread</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/23/Mysql启动报错/" itemprop="url">
+                  MySQL 报错处理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-23T00:00:00+08:00" content="2016-05-23">
+              2016-05-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/23/Mysql启动报错/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/Mysql启动报错/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/23/Mysql启动报错/" class="leancloud_visitors" data-flag-title="MySQL 报错处理">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="MySQL-报错处理"><a href="#MySQL-报错处理" class="headerlink" title="MySQL 报错处理"></a>MySQL 报错处理</h2><hr>
+<h3 id="1-MySQL-启动报错"><a href="#1-MySQL-启动报错" class="headerlink" title="1. MySQL 启动报错"></a>1. MySQL 启动报错</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Warning:The /usr/local/mysql/data directory is not owned by the &apos;mysql&apos; or &apos;_mysql&apos; user</div></pre></td></tr></table></figure>
+<p><strong>原因</strong>： 未知（可能是某种情况下导致/usr/local/mysql/data的宿主发生了改变）</p>
+<p><strong>解决方法</strong>：终端输入 <code>sudo chown -R mysql /usr/local/mysql/data</code> 即可</p>
+<blockquote>
+<p>mac 下运行 sudo chown -R _mysql:wheel /usr/local/mysql/data<br>-c 显示更改的部分信息<br>-f 忽略错误信息<br>-h 修复符号链接<br>-R 处理指定目录以及其子目录下的所有文件<br>-v 显示详细的处理信息  </p>
+</blockquote>
+<hr>
+<p>#mysql</p>
 
           
         
@@ -490,145 +638,6 @@
 -->
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/23/--!--文章标题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/23/Cmake/" itemprop="url">
-                  cmake
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-23T00:00:00+08:00" content="2016-05-23">
-              2016-05-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/cmake/" itemprop="url" rel="index">
-                    <span itemprop="name">cmake</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/23/Cmake/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/Cmake/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/23/Cmake/" class="leancloud_visitors" data-flag-title="cmake">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-cmake"><a href="#1-cmake" class="headerlink" title="1.cmake"></a>1.cmake</h2><hr>
-<blockquote>
-<p>最大的Qt4程序群(KDE4)采用cmake作为构建系统<br>Qt4的python绑定(pyside)采用了cmake作为构建系统<br>开源的图像处理库 opencv 采用cmake 作为构建系统<br>…<br>看来不学习一下cmake是不行了，一点一点来吧，找个最简单的C程序，慢慢复杂化，试试看：</p>
-</blockquote>
-<p><em>例子一</em><br>单个源文件 main.c<br><em>例子二</em><br>==&gt;分解成多个 main.c hello.h hello.c<br><em>例子三</em><br>==&gt;先生成一个静态库，链接该库<br><em>例子四</em><br>==&gt;将源文件放置到不同的目录<br><em>例子五</em><br>==&gt;控制生成的程序和库所在的目录<br><em>例子六</em><br>==&gt;使用动态库而不是静态库</p>
-<h3 id="例子一"><a href="#例子一" class="headerlink" title="例子一"></a>例子一</h3><hr>
-<p>一个经典的C程序，如何用cmake来进行构建程序呢？</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World!/n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>编写一个 <code>CMakeLists.txt</code> 文件(可看做cmake的工程文件)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">project(HELLO)</div><div class="line">set(SRC_LIST main.c)</div><div class="line">add_executable(hello $&#123;SRC_LIST&#125;)</div></pre></td></tr></table></figure></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/23/Cmake/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1118,8 +1127,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
-               alt="Rango_Lee" />
-          <p class="site-author-name" itemprop="name">Rango_Lee</p>
+               alt="Rango365" />
+          <p class="site-author-name" itemprop="name">Rango365</p>
           <p class="site-description motion-element" itemprop="description">Everyone all only young once!</p>
         </div>
         <nav class="site-state motion-element">
@@ -1230,7 +1239,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Rango_Lee</span>
+  <span class="author" itemprop="copyrightHolder">Rango365</span>
 </div>
 
 <div class="powered-by">
