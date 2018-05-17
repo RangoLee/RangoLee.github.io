@@ -89,7 +89,7 @@
 <meta name="description" content="Everyone all only young once!">
 <meta property="og:type" content="website">
 <meta property="og:title" content="CodeNight">
-<meta property="og:url" content="http://www.rango365.com/page/2/index.html">
+<meta property="og:url" content="http://www.rangolee.top/page/2/index.html">
 <meta property="og:site_name" content="CodeNight">
 <meta property="og:description" content="Everyone all only young once!">
 <meta property="og:locale" content="zh-Hans">
@@ -244,6 +244,167 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/02/16-1202_STL模板技巧/" itemprop="url">
+                  STL模板技巧
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-02T00:22:00+08:00" content="2016-12-02">
+              2016-12-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/02/16-1202_STL模板技巧/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/02/16-1202_STL模板技巧/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/12/02/16-1202_STL模板技巧/" class="leancloud_visitors" data-flag-title="STL模板技巧">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <!--description: MarkDown 文档的基本格式模板-->
+<!--
+|参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期    |文件建立日期
+|updated:   |更新日期    |文件更新日期
+|comments:  |开启文章的评论功能    |true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description|文章描述信息
+-->
+<h3 id="typename"><a href="#typename" class="headerlink" title="typename"></a>typename</h3><hr>
+<p>声明模板参数：<code>template&lt;typename T&gt; ...</code>,只有在这种语境下，<code>typename</code>关键字才可以和<code>class</code>关键字互换</p>
+<blockquote>
+<ul>
+<li><code>class</code>关键字<br>  声明类：<code>class A{...};</code><br>  声明模板参数：<code>template&lt;class T&gt; ...</code></li>
+<li><code>typename</code>关键字<br>  声明模板参数：<code>template&lt;typename T&gt; ...</code><br>  解决嵌套依赖：<code>typename T::A a;</code></li>
+<li>无论是声明模板参数还是解决嵌套依赖，都不能使用<code>struct</code>关键字</li>
+</ul>
+</blockquote>
+<p>解决嵌套依赖</p>
+<ul>
+<li><p>在第一次编译模板代码时，模板参数的具体类型尚不明确，编译器会把依赖于模板参数的嵌套类型理解为某个类的静态成员变量，因此当它看到代码中使用这样的标识符声明其它变量时，会报错误，这就叫嵌套依赖。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span>&#125;; <span class="comment">// A 是X的嵌套类型</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    T::A a; <span class="comment">// 错误</span></div><div class="line">&#125;</div><div class="line">foo&lt;A&gt;();</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>typename</code>关键字旨在告诉编译器，所引用的标识符是个类型名，可以声明变量，具体类型等到实例化时再定<br><code>template&lt;typename T&gt; void foo(){typename T::A a; ....}</code></p>
+</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/02/16-1202_STL模板技巧/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -943,124 +1104,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/25/16-0625_Mac 上 Sublime Text 3 配置 Lua 环境/" itemprop="url">
-                  Mac 上 Sublime Text 3 配置 Lua 环境
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-25T00:49:00+08:00" content="2016-06-25">
-              2016-06-25
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/25/16-0625_Mac 上 Sublime Text 3 配置 Lua 环境/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/25/16-0625_Mac 上 Sublime Text 3 配置 Lua 环境/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/06/25/16-0625_Mac 上 Sublime Text 3 配置 Lua 环境/" class="leancloud_visitors" data-flag-title="Mac 上 Sublime Text 3 配置 Lua 环境">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="1-下载安装"><a href="#1-下载安装" class="headerlink" title="1.下载安装"></a>1.下载安装</h4><hr>
-<h5 id="1-先去Lua官网下载最新版-lua"><a href="#1-先去Lua官网下载最新版-lua" class="headerlink" title="1. 先去Lua官网下载最新版 lua"></a>1. 先去<a href="http://www.lua.org/ftp/" target="_blank" rel="external">Lua官网</a>下载最新版 lua</h5><p><code>Rango-MBP:~ rango$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz</code></p>
-<h5 id="2-然后解压压缩包"><a href="#2-然后解压压缩包" class="headerlink" title="2. 然后解压压缩包"></a>2. 然后解压压缩包</h5><p><code>Rango-MBP:~ rango$ tar zxf lua-5.3.3.tar.gz</code></p>
-<h5 id="3-cd-到解压后的文件夹"><a href="#3-cd-到解压后的文件夹" class="headerlink" title="3. cd 到解压后的文件夹"></a>3. cd 到解压后的文件夹</h5><p><code>Rango-MBP:~ rango$ cd lua-5.3.3</code></p>
-<h5 id="4-然后编译测试"><a href="#4-然后编译测试" class="headerlink" title="4. 然后编译测试"></a>4. 然后编译测试</h5><p><code>Rango-MBP:lua-5.3.3 rango$ make macosx test</code></p>
-<h6 id="正常情况会看到如下信息"><a href="#正常情况会看到如下信息" class="headerlink" title="正常情况会看到如下信息"></a>正常情况会看到如下信息</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">src/lua -v</div><div class="line">Lua 5.3.3  Copyright (C) 1994-2016 Lua.org, PUC-Rio`</div></pre></td></tr></table></figure>
-<h5 id="上面几步总概况"><a href="#上面几步总概况" class="headerlink" title="上面几步总概况"></a>上面几步总概况</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz</div><div class="line">$ tar zxf lua-5.3.3.tar.gz</div><div class="line">$ <span class="built_in">cd</span> lua-5.3.3</div><div class="line">$ make macosx <span class="built_in">test</span></div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/25/16-0625_Mac 上 Sublime Text 3 配置 Lua 环境/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1099,14 +1142,14 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
-               alt="Rango365" />
-          <p class="site-author-name" itemprop="name">Rango365</p>
+               alt="RangoLee" />
+          <p class="site-author-name" itemprop="name">RangoLee</p>
           <p class="site-description motion-element" itemprop="description">Everyone all only young once!</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">51</span>
+              <span class="site-state-item-count">52</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1123,7 +1166,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-count">53</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1206,12 +1249,13 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2016-04 - 
+  &copy;  2016 - 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Rango365</span>
+  <span class="author" itemprop="copyrightHolder">RangoLee</span>
+  <a href="http://www.miitbeian.gov.cn/"> 苏ICP备17054640号 </a>
 </div>
 
 <div class="powered-by">
