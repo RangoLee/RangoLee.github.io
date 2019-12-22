@@ -266,6 +266,552 @@
             
               
                 
+                <a class="post-title-link" href="/2019/09/05/190905_使用 git 克隆 github 上的项目失败/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2019-09-05T01:14:29+08:00" content="2019-09-05">
+              2019-09-05
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2019/09/05/190905_使用 git 克隆 github 上的项目失败/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/09/05/190905_使用 git 克隆 github 上的项目失败/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2019/09/05/190905_使用 git 克隆 github 上的项目失败/" class="leancloud_visitors" data-flag-title="">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="使用-git-克隆-github-上的项目失败"><a href="#使用-git-克隆-github-上的项目失败" class="headerlink" title=" 使用 git 克隆 github 上的项目失败"></a><a href="https://segmentfault.com/a/1190000016992360" target="_blank" rel="external"> 使用 git 克隆 github 上的项目失败</a></h1><p>1</p>
+<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>今天在使用 git clone nextjs demo project 源代码的时， <code>git clone https://github.com/XXXX/next-blog.git</code> 下载速度很慢，然后下载一段时间后，总是提示下面的错误信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">nCloning into &apos;next-blog&apos;...</div><div class="line">remote: Enumerating objects: 111, done.</div><div class="line">remote: Counting objects: 100% (111/111), done.</div><div class="line">remote: Compressing objects: 100% (83/83), done.</div><div class="line">error: RPC failed; curl 18 transfer closed with outstanding read data remaining</div><div class="line">fatal: The remote end hung up unexpectedly</div><div class="line">fatal: early EOF</div><div class="line">fatal: index-pack failed</div></pre></td></tr></table></figure>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>由于Http协议错误，当 pull 或者 clone 的时候，或者是 github 某个CDN被伟大的墙屏蔽所致。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="协议错误"><a href="#协议错误" class="headerlink" title="协议错误"></a>协议错误</h3><ol>
+<li><p>先执行下列命令</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global http.postBuffer 524288000</div></pre></td></tr></table></figure>
+</li>
+<li><p>再执行git pull 或者 git clone命令</p>
+</li>
+</ol>
+<h3 id="墙屏蔽"><a href="#墙屏蔽" class="headerlink" title="墙屏蔽"></a>墙屏蔽</h3><ol>
+<li><p>访问 <a href="http://github.global.ssl.fastly.net.ipaddress.com/#ipinfo" target="_blank" rel="external">http://github.global.ssl.fast…</a><br> 获取cdn域名以及IP地址</p>
+</li>
+<li><p>访问 <a href="http://github.com.ipaddress.com/#ipinfo" target="_blank" rel="external">http://github.com.ipaddress.c…</a> 获取cdn域名以及IP地址<br> <img src="https://segmentfault.com/img/bVbjsCr?w=5120&amp;h=2932" alt="github的cdn域名以及IP地址"></p>
+</li>
+<li><p>将上述获取的IP地址添加到<code>/etc/hosts</code>中</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/hosts</div></pre></td></tr></table></figure>
+<p> <img src="https://segmentfault.com/img/bVbjsCK?w=3376&amp;h=2376" alt="添加IP地址到hosts"></p>
+</li>
+<li><p>刷新dns缓存</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo killall -HUP mDNSResponder</div><div class="line">sudo dscacheutil -flushcache</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>再执行 git clone 的操作的时候，速度飕飕飕的上去了，一下子达到几百Kb啦~</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2019/09/05/190905_pod install速度慢的终极解决方案/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2019-09-05T00:45:57+08:00" content="2019-09-05">
+              2019-09-05
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2019/09/05/190905_pod install速度慢的终极解决方案/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/09/05/190905_pod install速度慢的终极解决方案/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2019/09/05/190905_pod install速度慢的终极解决方案/" class="leancloud_visitors" data-flag-title="">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="pod-install速度慢的终极解决方案"><a href="#pod-install速度慢的终极解决方案" class="headerlink" title="pod install速度慢的终极解决方案"></a>pod install速度慢的终极解决方案</h1><p>相信大家已经感受到pod install速度越来越慢了，网上提供了几种解决方案，但是都没有完全解决速度慢的问题。</p>
+<ol>
+<li><p>使用国内镜像的Specs</p>
+</li>
+<li><p>在pod install时使用命令pod install –no-repo-update</p>
+</li>
+<li><p>使用proxychains使终端命令走代理</p>
+</li>
+</ol>
+<p>下面就来说明一下这几种方法为何没有完全解决问题</p>
+<ol>
+<li>使用国内镜像的Specs<br>这个只是加快了Specs下载更新速度，而且如果使用国内镜像Specs，那么Podfile中就必须指明使用这个Specs。</li>
+<li>在pod install时使用命令pod install –no-repo-update<br>install时不更新本地库，但如果第一次install还是要去github clone代码</li>
+<li>使用proxychains使终端命令走代理<br>这个只是使pod命令走代理，git download的时候不会走代理</li>
+</ol>
+<p>其实真正慢的原因并不在pod命令，而是在于github上的代码库访问速度慢，那么就知道真正的解决方案就是要加快git命令的速度。<br>我使用Shadowsocks代理，默认代理端口为1080，配置好代理之后去终端输入git配置命令，命令如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global http.proxy socks5://127.0.0.1:1080</div></pre></td></tr></table></figure></p>
+<p>上面的命令是给git设置全局代理，但是我们并不希望国内git库也走代理，而是只需要github上的代码库走代理，命令如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:1080</div></pre></td></tr></table></figure></p>
+<p>如此就从根本上解决了问题。</p>
+<blockquote>
+<p>ps：如果要恢复/移除上面设置的git代理，使用如下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global --unset http.proxy</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global --unset http.https://github.com.proxy</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2019/06/30/19-0639-Centos6.1 install Nginx/" itemprop="url">
+                  CentOS 6.1 install Nginx
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2019-06-30T00:00:00+08:00" content="2019-06-30">
+              2019-06-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2019/06/30/19-0639-Centos6.1 install Nginx/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/06/30/19-0639-Centos6.1 install Nginx/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2019/06/30/19-0639-Centos6.1 install Nginx/" class="leancloud_visitors" data-flag-title="CentOS 6.1 install Nginx">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <!--description: MarkDown 文档的基本格式模板-->
+<!--
+|参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期   |文件建立日期
+|updated:   |更新日期   |文件更新日期
+|comments:  |开启文章的评论功能    |true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description|文章描述信息
+-->
+<h1 id="CentOS-6-1-install-Nginx"><a href="#CentOS-6-1-install-Nginx" class="headerlink" title="CentOS 6.1 install Nginx"></a>CentOS 6.1 install Nginx</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install nginx</div></pre></td></tr></table></figure>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 查看版本</span></div><div class="line">nginx -v</div><div class="line"></div><div class="line"><span class="comment"># 检查配置文件是否正确</span></div><div class="line">nginx -t</div><div class="line"></div><div class="line"><span class="comment"># 启动 Nginx</span></div><div class="line">/usr/sbin/nginx </div><div class="line"></div><div class="line"><span class="comment"># 重载配置文件</span></div><div class="line">nginx -s reload</div><div class="line"></div><div class="line"><span class="comment"># 重启 nginx</span></div><div class="line">nginx -s reopen</div><div class="line"></div><div class="line"><span class="comment"># 停止</span></div><div class="line">nginx –s stop</div><div class="line"></div><div class="line"><span class="comment"># 强制关闭</span></div><div class="line">pkill nginx</div></pre></td></tr></table></figure>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl localhost</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2019/06/30/19-0639-Centos6.1 install Nginx/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/12/30/Centos7 install vsftpd/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-12-30T02:29:21+08:00" content="2018-12-30">
+              2018-12-30
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/12/30/Centos7 install vsftpd/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/12/30/Centos7 install vsftpd/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2018/12/30/Centos7 install vsftpd/" class="leancloud_visitors" data-flag-title="">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Centos-7-install-vsftpd"><a href="#Centos-7-install-vsftpd" class="headerlink" title="Centos 7 install vsftpd"></a>Centos 7 install vsftpd</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install -y vsftpd</div></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/vsftpd/vsftpd.conf</div></pre></td></tr></table></figure>
+<h3 id="修改配置项"><a href="#修改配置项" class="headerlink" title="修改配置项"></a>修改配置项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 是否允许匿名访问 </span></div><div class="line">anonymous_enable=NO </div><div class="line"><span class="comment"># 是否限制所有用户不能切换ftp主目录</span></div><div class="line">chroot_local_user=YES</div><div class="line"><span class="comment"># 使用限制列表</span></div><div class="line">chroot_list_enable=YES </div><div class="line"><span class="comment"># 在centos7默认没有chroot_list文件,新建一个即可</span></div><div class="line">chroot_list_file=/etc/vsftpd/chroot_list </div><div class="line"></div><div class="line">allow_writeable_chroot=YES</div></pre></td></tr></table></figure>
+<p><em>注意事项</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#</span></div><div class="line">chroot_local_user=YES</div><div class="line"><span class="comment"># 下面两个是同时使用的</span></div><div class="line">chroot_list_enable=YES </div><div class="line">chroot_list_file=/etc/vsftpd/chroot_list</div><div class="line"><span class="comment"># 限制列表位置,这个文件在centos7默认没有的，新建一个空文件</span></div><div class="line"></div><div class="line"><span class="comment"># 如果 chroot_local_user=YES ,则chroot_list文件中填写的就是允许切换目录的用户</span></div></pre></td></tr></table></figure></p>
+<h3 id="启动-ftp"><a href="#启动-ftp" class="headerlink" title="启动 ftp"></a>启动 ftp</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">systemctl start vsftpd</div><div class="line">```   </div><div class="line">&gt; 开机自启动: `chkconfig vsftpd on`（报错就再执行一遍）</div><div class="line"></div><div class="line"><span class="comment">### 关闭防火墙或者开启防火墙端口</span></div><div class="line">```bash</div><div class="line">iptables -I INPUT -p tcp --dport 21 -j ACCEPT	// 防火墙 开启21端口</div></pre></td></tr></table></figure>
+<h3 id="可选配置-修改默认21端口号-修改以下2处配置"><a href="#可选配置-修改默认21端口号-修改以下2处配置" class="headerlink" title="可选配置,修改默认21端口号,修改以下2处配置"></a>可选配置,修改默认21端口号,修改以下2处配置</h3><ol>
+<li><p><code>vi /etc/vsftpd/vsftpd.conf</code> 在末尾加上下面的:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 这个就是修改后的端口号</span></div><div class="line">listen_port=1021</div><div class="line">pasv_enable=YES</div><div class="line"><span class="comment">#这2个是开启主动模式协议端口范围，记得华为云安全组也要加上</span></div><div class="line">pasv_min_port=40000</div><div class="line">pasv_max_port=40003</div><div class="line">pasv_promiscuous=YES</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>vi /etc/services</code> 找到下面2处，把21修改即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ftp          21/tcp</div><div class="line">ftp          21/tcp</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="新建ftp账号"><a href="#新建ftp账号" class="headerlink" title="新建ftp账号"></a>新建ftp账号</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -d 是ftp指定目录, </span></div><div class="line"><span class="comment"># -s 后面是不允许此用户登录服务器,只能在ftp模式下访问 </span></div><div class="line"><span class="comment"># dev 是用户名</span></div><div class="line">useradd -d /home/ftp/dev -s /sbin/nologin dev</div><div class="line"></div><div class="line"><span class="comment"># 设置用户密码</span></div><div class="line">passwd dev</div></pre></td></tr></table></figure>
+<blockquote>
+<p>(userdel ilee) // 删除 用户命令</p>
+</blockquote>
+<h2 id="赋权"><a href="#赋权" class="headerlink" title="赋权"></a>赋权</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 修改目录所属用户组</span></div><div class="line">chown -R dev.dev /home/ftp/dev</div><div class="line"><span class="comment"># 修改用户权限 可读可写可执行</span></div><div class="line">chmod 777 /home/ftp/dev</div></pre></td></tr></table></figure>
+<h2 id="设置ftp允许上传权限"><a href="#设置ftp允许上传权限" class="headerlink" title="设置ftp允许上传权限"></a>设置ftp允许上传权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># </span></div><div class="line">setsebool -P tftp_home_dir on</div><div class="line"></div><div class="line">setsebool allow_ftpd_full_access on</div></pre></td></tr></table></figure>
+<h2 id="重启下vsftpd"><a href="#重启下vsftpd" class="headerlink" title="重启下vsftpd"></a>重启下vsftpd</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl restart vsftpd</div></pre></td></tr></table></figure>
+<h2 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yum install -y vsftpd	// 安装 vsftpd</div><div class="line">cd /etc/vsftpd 		// 切换到 vsftpd 配置目录</div><div class="line">vim vsftpd.config    // 打开配置文件</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">anonymous_enable=NO</div><div class="line"></div><div class="line">chroot_local_user=YES</div><div class="line">#chroot_list_enable=YES </div><div class="line">#chroot_list_file=/etc/vsftpd/chroot_list（这个文件在centos7默认没有的，新建一个）</div><div class="line"></div><div class="line">allow_writeable_chroot=YES</div></pre></td></tr></table></figure>
+  <!-- 650  vim chroot_list     // 创建 chroot_list 文件 并添加 ilee 用户 -->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">systemctl start vsftpd	// 重启ftp</div><div class="line">chkconfig vsftpd on		// 开机自启动</div><div class="line"></div><div class="line">iptables -I INPUT -p tcp --dport 21 -j ACCEPT	// 防火墙 开启21端口</div><div class="line"></div><div class="line">useradd -d /home/www/dev.rangolee.top -s /sbin/nologin ilee	// 创建用户 ilee 并制定 home 目录 并且 不允许登录服务器</div><div class="line"></div><div class="line">passwd ilee	// 设置密码</div><div class="line"></div><div class="line">chown -R ilee.ilee /home/www/dev.rangolee.top	// 改归属</div><div class="line"></div><div class="line">chmod 777 /home/www/dev.rangolee.top		// 改权限</div><div class="line"></div><div class="line">setsebool -P tftp_home_dir on</div><div class="line">setsebool allow_ftpd_full_access on</div><div class="line"></div><div class="line">systemctl restart vsftpd</div><div class="line"></div><div class="line">ps -ef | grep ftp</div><div class="line"></div><div class="line">cat  /etc/passwd</div><div class="line">cat  /etc/passwd-</div><div class="line"></div><div class="line">vim /etc/vsftpd/vsftpd.conf</div><div class="line">cd /etc/vsftpd/</div><div class="line">mkdir userconfig</div><div class="line">cd userconfig/</div><div class="line">vi ilee</div><div class="line"></div><div class="line"></div><div class="line">systemctl stop vsftpd</div><div class="line">systemctl restart vsftpd</div><div class="line"></div><div class="line">vim /etc/selinux/config </div><div class="line"></div><div class="line">selinux=1</div><div class="line"></div><div class="line">reboot		// 需要重启才能</div><div class="line"></div><div class="line">systemctl restart vsftpd</div><div class="line"></div><div class="line">setsebool allow_ftpd_full_access on</div><div class="line">setsebool -P tftp_home_dir on</div><div class="line"></div><div class="line">setenforce 0</div><div class="line">sestatus -v</div><div class="line"></div><div class="line">systemctl restart vsftpd</div><div class="line">vim /etc/vsftpd/vsftpd.conf</div><div class="line"></div><div class="line">systemctl restart vsftpd</div><div class="line"></div><div class="line">getsebool -a | grep ftp</div></pre></td></tr></table></figure>
+<h2 id="问题-amp-答案"><a href="#问题-amp-答案" class="headerlink" title="问题&amp;答案"></a>问题&amp;答案</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">FTP 550 Failed to change directory </div><div class="line"></div><div class="line">Entering Passive mode  // 不使用 Passive mode 登录 ftp 可解决</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2018/05/17/18-0517-swift3to4/" itemprop="url">
                   禁用Xcode 9 的 Swift 3 @objc 推断
                 </a>
@@ -529,574 +1075,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/09/Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？/" itemprop="url">
-                  Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-09T01:10:00+08:00" content="2017-03-09">
-              2017-03-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Xcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Xcode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/03/09/Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/09/Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/03/09/Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？/" class="leancloud_visitors" data-flag-title="Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Xcode新建cpp文件，头文件默认为-hpp后缀。如何默认创建-h后缀？"><a href="#Xcode新建cpp文件，头文件默认为-hpp后缀。如何默认创建-h后缀？" class="headerlink" title="Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？"></a>Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？</h3><hr>
-<h4 id="1）Go-to-Folder"><a href="#1）Go-to-Folder" class="headerlink" title="1）Go to Folder"></a>1）Go to Folder</h4><p><code>/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates/Source/C++ File.xctemplate/WithHeader</code></p>
-<h4 id="2）将FILEBASENAME文件的-hpp后缀，更改为-h。如下："><a href="#2）将FILEBASENAME文件的-hpp后缀，更改为-h。如下：" class="headerlink" title="2）将FILEBASENAME文件的.hpp后缀，更改为.h。如下："></a>2）将<strong><em>FILEBASENAME</em></strong>文件的.hpp后缀，更改为.h。如下：</h4><ul>
-<li><strong><em>FILEBASENAME</em></strong>.h</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  ___FILENAME___</span></div><div class="line"><span class="comment">//  ___PROJECTNAME___</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  Created by ___FULLUSERNAME___ on ___DATE___.</span></div><div class="line"><span class="comment">//___COPYRIGHT___</span></div><div class="line"><span class="comment">//</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ___FILEBASENAMEASIDENTIFIER____h</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ___FILEBASENAMEASIDENTIFIER____h</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* ___FILEBASENAMEASIDENTIFIER____h */</span></span></div></pre></td></tr></table></figure>
-<ul>
-<li><strong><em>FILEBASENAME</em></strong>.cpp</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  ___FILENAME___</span></div><div class="line"><span class="comment">//  ___PROJECTNAME___</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  Created by ___FULLUSERNAME___ on ___DATE___.</span></div><div class="line"><span class="comment">//___COPYRIGHT___</span></div><div class="line"><span class="comment">//</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"___FILEBASENAME___.h"</span></span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/01/C++_getTime/" itemprop="url">
-                  c++ 获取时间
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-01T15:10:00+08:00" content="2017-01-01">
-              2017-01-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/01/01/C++_getTime/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/01/C++_getTime/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/01/01/C++_getTime/" class="leancloud_visitors" data-flag-title="c++ 获取时间">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <!--description: MarkDown 文档的基本格式模板-->
-<!--
-|参数|描述|默认值|
-|-----------|-----|--------------|
-|layout:    |布局
-|title:     |标题
-|date:      |建立日期   |文件建立日期
-|updated:   |更新日期   |文件更新日期
-|comments:  |开启文章的评论功能    |true
-|tags:      |标签（不适用于分页
-|categories:|分类（不适用于分页）
-|permalink: |覆盖文章网址
-|description|文章描述信息
--->
-<h3 id="获取系统时间"><a href="#获取系统时间" class="headerlink" title="获取系统时间"></a>获取系统时间</h3><hr>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</div><div class="line">    <span class="keyword">time_t</span> tm = time(<span class="number">0</span>);</div><div class="line">    <span class="keyword">char</span> szTime[<span class="number">64</span>];</div><div class="line">    strftime(szTime, <span class="keyword">sizeof</span>(szTime), <span class="string">"%Y/%m/%d %X %A 本年第%j天 %z"</span>,localtime(&amp;tm));</div><div class="line">    <span class="built_in">puts</span>(szTime);</div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * size_t strftime(char *strDest, size_t maxsize, const char *format, const struct tm *timeptr);</span></div><div class="line"><span class="comment">    根据格式字符串生成字符串。</span></div><div class="line"><span class="comment">    struct tm *localtime(const time_t *timer);</span></div><div class="line"><span class="comment">    取得当地时间，localtime获取的结果由结构tm返回</span></div><div class="line"><span class="comment">    返回的字符串可以依下列的格式而定：</span></div><div class="line"><span class="comment">    %a 星期几的缩写。Eg:Tue</span></div><div class="line"><span class="comment">    %A 星期几的全名。 Eg: Tuesday</span></div><div class="line"><span class="comment">    %b 月份名称的缩写。</span></div><div class="line"><span class="comment">    %B 月份名称的全名。</span></div><div class="line"><span class="comment">    %c 本地端日期时间较佳表示字符串。</span></div><div class="line"><span class="comment">    %d 用数字表示本月的第几天 (范围为 00 至 31)。日期</span></div><div class="line"><span class="comment">    %H 用 24 小时制数字表示小时数 (范围为 00 至 23)。</span></div><div class="line"><span class="comment">    %I 用 12 小时制数字表示小时数 (范围为 01 至 12)。</span></div><div class="line"><span class="comment">    %j 以数字表示当年度的第几天 (范围为 001 至 366)。</span></div><div class="line"><span class="comment">    %m 月份的数字 (范围由 1 至 12)。</span></div><div class="line"><span class="comment">    %M 分钟。</span></div><div class="line"><span class="comment">    %p 以 ''AM'' 或 ''PM'' 表示本地端时间。</span></div><div class="line"><span class="comment">    %S 秒数。</span></div><div class="line"><span class="comment">    %U 数字表示为本年度的第几周，第一个星期由第一个周日开始。</span></div><div class="line"><span class="comment">    %W 数字表示为本年度的第几周，第一个星期由第一个周一开始。</span></div><div class="line"><span class="comment">    %w 用数字表示本周的第几天 ( 0 为周日)。</span></div><div class="line"><span class="comment">    %x 不含时间的日期表示法。</span></div><div class="line"><span class="comment">    %X 不含日期的时间表示法。 Eg: 15:26:30</span></div><div class="line"><span class="comment">    %y 二位数字表示年份 (范围由 00 至 99)。</span></div><div class="line"><span class="comment">    %Y 完整的年份数字表示，即四位数。 Eg:2008</span></div><div class="line"><span class="comment">    %Z(%z) 时区或名称缩写。Eg:中国标准时间</span></div><div class="line"><span class="comment">    %% % 字符。</span></div><div class="line"><span class="comment">     */</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/20/1.CShape程序结构体/" itemprop="url">
-                  1.C#程序结构体
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-20T00:00:00+08:00" content="2016-12-20">
-              2016-12-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/CShape/" itemprop="url" rel="index">
-                    <span itemprop="name">CShape</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/12/20/1.CShape程序结构体/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/20/1.CShape程序结构体/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/12/20/1.CShape程序结构体/" class="leancloud_visitors" data-flag-title="1.C#程序结构体">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-C-程序结构体"><a href="#1-C-程序结构体" class="headerlink" title="1.C#程序结构体"></a>1.C#程序结构体</h2><hr>
-<h2 id="C-Hello-World-实例"><a href="#C-Hello-World-实例" class="headerlink" title="C# Hello World 实例"></a>C# Hello World 实例</h2><p>一个C#程序主要包括以下部分：</p>
-<ul>
-<li>命名空间声明（Namespace declaration）</li>
-</ul>
-<ul>
-<li>一个类（class）</li>
-<li>类方法（Class method）</li>
-<li>一个Main函数（Main）</li>
-<li>语句（Statements）&amp; 表达式（Expressions）</li>
-<li>注释<br>helloworld.cs</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">namespace HelloWorldApplication</div><div class="line">&#123;</div><div class="line">	class HelloWorld</div><div class="line">	&#123;</div><div class="line">		static void Main(string[] args)</div><div class="line">		&#123;</div><div class="line">			// 我的第一个 C# 程序</div><div class="line">			Console.WriteLine(&quot;Hello World&quot;);</div><div class="line">			Console.ReadKey();</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello World</div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/20/1.CShape程序结构体/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/20/Mac安装Python3.5.2/" itemprop="url">
-                  Mac 安装Python3.5.2
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-20T00:00:00+08:00" content="2016-12-20">
-              2016-12-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/python3/" itemprop="url" rel="index">
-                    <span itemprop="name">python3</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/12/20/Mac安装Python3.5.2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/20/Mac安装Python3.5.2/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/12/20/Mac安装Python3.5.2/" class="leancloud_visitors" data-flag-title="Mac 安装Python3.5.2">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="1-安装Python3-5-2"><a href="#1-安装Python3-5-2" class="headerlink" title="1.安装Python3.5.2"></a>1.安装Python3.5.2</h3><ul>
-<li>MacOS系统10.12.2，终端运行<code>brew install python3</code></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ brew install python3</div></pre></td></tr></table></figure>
-<ul>
-<li>报警告</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Warning: You are using OS X 10.12.</div><div class="line">We <span class="keyword">do</span> not provide support <span class="keyword">for</span> this pre-release version.</div><div class="line">You may encounter build failures or other breakages.</div><div class="line">Please create pull-requests instead of filing issues.</div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/20/Mac安装Python3.5.2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1137,7 +1120,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-count">56</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1145,7 +1128,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1154,7 +1137,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">56</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1176,24 +1159,6 @@
                 </a>
               </span>
             
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/rangolee" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  Weibo
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.linkedin.com/in/RangoLee" target="_blank" title="Linkedin">
-                  
-                    <i class="fa fa-fw fa-linkedin"></i>
-                  
-                  Linkedin
-                </a>
-              </span>
-            
           
         </div>
 
@@ -1211,10 +1176,6 @@
               
                 <li class="links-of-blogroll-item">
                   <a href="http://macshuo.com" title="MacTaik" target="_blank">MacTaik</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://canxi.cc" title="小残曦" target="_blank">小残曦</a>
                 </li>
               
             </ul>
@@ -1238,7 +1199,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1342,7 +1303,7 @@
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"rangolee"};
+    var duoshuoQuery = {short_name:"rango"};
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
@@ -1488,9 +1449,6 @@
 
 
   
-<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
-</script>
-
 
 </body>
 </html>

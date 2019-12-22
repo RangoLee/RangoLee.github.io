@@ -1,0 +1,823 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Centos 7 install vsftpd安装1yum install -y vsftpd 配置1vim /etc/vsftpd/vsftpd.conf 修改配置项12345678910# 是否允许匿名访问 anonymous_enable=NO # 是否限制所有用户不能切换ftp主目录chroot_local_user=YES# 使用限制列表chroot_list_enable=YES #">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CodeNight">
+<meta property="og:url" content="http://www.rangolee.top/2018/12/30/Centos7 install vsftpd/index.html">
+<meta property="og:site_name" content="CodeNight">
+<meta property="og:description" content="Centos 7 install vsftpd安装1yum install -y vsftpd 配置1vim /etc/vsftpd/vsftpd.conf 修改配置项12345678910# 是否允许匿名访问 anonymous_enable=NO # 是否限制所有用户不能切换ftp主目录chroot_local_user=YES# 使用限制列表chroot_list_enable=YES #">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-30T17:42:03.017Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CodeNight">
+<meta name="twitter:description" content="Centos 7 install vsftpd安装1yum install -y vsftpd 配置1vim /etc/vsftpd/vsftpd.conf 修改配置项12345678910# 是否允许匿名访问 anonymous_enable=NO # 是否限制所有用户不能切换ftp主目录chroot_local_user=YES# 使用限制列表chroot_list_enable=YES #">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title>  | CodeNight </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CodeNight</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Try Everything</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-12-30T02:29:21+08:00" content="2018-12-30">
+              2018-12-30
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/12/30/Centos7 install vsftpd/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/12/30/Centos7 install vsftpd/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2018/12/30/Centos7 install vsftpd/" class="leancloud_visitors" data-flag-title="">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Centos-7-install-vsftpd"><a href="#Centos-7-install-vsftpd" class="headerlink" title="Centos 7 install vsftpd"></a>Centos 7 install vsftpd</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install -y vsftpd</div></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/vsftpd/vsftpd.conf</div></pre></td></tr></table></figure>
+<h3 id="修改配置项"><a href="#修改配置项" class="headerlink" title="修改配置项"></a>修改配置项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 是否允许匿名访问 </span></div><div class="line">anonymous_enable=NO </div><div class="line"><span class="comment"># 是否限制所有用户不能切换ftp主目录</span></div><div class="line">chroot_local_user=YES</div><div class="line"><span class="comment"># 使用限制列表</span></div><div class="line">chroot_list_enable=YES </div><div class="line"><span class="comment"># 在centos7默认没有chroot_list文件,新建一个即可</span></div><div class="line">chroot_list_file=/etc/vsftpd/chroot_list </div><div class="line"></div><div class="line">allow_writeable_chroot=YES</div></pre></td></tr></table></figure>
+<p><em>注意事项</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#</span></div><div class="line">chroot_local_user=YES</div><div class="line"><span class="comment"># 下面两个是同时使用的</span></div><div class="line">chroot_list_enable=YES </div><div class="line">chroot_list_file=/etc/vsftpd/chroot_list</div><div class="line"><span class="comment"># 限制列表位置,这个文件在centos7默认没有的，新建一个空文件</span></div><div class="line"></div><div class="line"><span class="comment"># 如果 chroot_local_user=YES ,则chroot_list文件中填写的就是允许切换目录的用户</span></div></pre></td></tr></table></figure></p>
+<h3 id="启动-ftp"><a href="#启动-ftp" class="headerlink" title="启动 ftp"></a>启动 ftp</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">systemctl start vsftpd</div><div class="line">```   </div><div class="line">&gt; 开机自启动: `chkconfig vsftpd on`（报错就再执行一遍）</div><div class="line"></div><div class="line"><span class="comment">### 关闭防火墙或者开启防火墙端口</span></div><div class="line">```bash</div><div class="line">iptables -I INPUT -p tcp --dport 21 -j ACCEPT	// 防火墙 开启21端口</div></pre></td></tr></table></figure>
+<h3 id="可选配置-修改默认21端口号-修改以下2处配置"><a href="#可选配置-修改默认21端口号-修改以下2处配置" class="headerlink" title="可选配置,修改默认21端口号,修改以下2处配置"></a>可选配置,修改默认21端口号,修改以下2处配置</h3><ol>
+<li><p><code>vi /etc/vsftpd/vsftpd.conf</code> 在末尾加上下面的:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 这个就是修改后的端口号</span></div><div class="line">listen_port=1021</div><div class="line">pasv_enable=YES</div><div class="line"><span class="comment">#这2个是开启主动模式协议端口范围，记得华为云安全组也要加上</span></div><div class="line">pasv_min_port=40000</div><div class="line">pasv_max_port=40003</div><div class="line">pasv_promiscuous=YES</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>vi /etc/services</code> 找到下面2处，把21修改即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ftp          21/tcp</div><div class="line">ftp          21/tcp</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="新建ftp账号"><a href="#新建ftp账号" class="headerlink" title="新建ftp账号"></a>新建ftp账号</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -d 是ftp指定目录, </span></div><div class="line"><span class="comment"># -s 后面是不允许此用户登录服务器,只能在ftp模式下访问 </span></div><div class="line"><span class="comment"># dev 是用户名</span></div><div class="line">useradd -d /home/ftp/dev -s /sbin/nologin dev</div><div class="line"></div><div class="line"><span class="comment"># 设置用户密码</span></div><div class="line">passwd dev</div></pre></td></tr></table></figure>
+<blockquote>
+<p>(userdel ilee) // 删除 用户命令</p>
+</blockquote>
+<h2 id="赋权"><a href="#赋权" class="headerlink" title="赋权"></a>赋权</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 修改目录所属用户组</span></div><div class="line">chown -R dev.dev /home/ftp/dev</div><div class="line"><span class="comment"># 修改用户权限 可读可写可执行</span></div><div class="line">chmod 777 /home/ftp/dev</div></pre></td></tr></table></figure>
+<h2 id="设置ftp允许上传权限"><a href="#设置ftp允许上传权限" class="headerlink" title="设置ftp允许上传权限"></a>设置ftp允许上传权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># </span></div><div class="line">setsebool -P tftp_home_dir on</div><div class="line"></div><div class="line">setsebool allow_ftpd_full_access on</div></pre></td></tr></table></figure>
+<h2 id="重启下vsftpd"><a href="#重启下vsftpd" class="headerlink" title="重启下vsftpd"></a>重启下vsftpd</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl restart vsftpd</div></pre></td></tr></table></figure>
+<h2 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yum install -y vsftpd	// 安装 vsftpd</div><div class="line">cd /etc/vsftpd 		// 切换到 vsftpd 配置目录</div><div class="line">vim vsftpd.config    // 打开配置文件</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">anonymous_enable=NO</div><div class="line"></div><div class="line">chroot_local_user=YES</div><div class="line">#chroot_list_enable=YES </div><div class="line">#chroot_list_file=/etc/vsftpd/chroot_list（这个文件在centos7默认没有的，新建一个）</div><div class="line"></div><div class="line">allow_writeable_chroot=YES</div></pre></td></tr></table></figure>
+  <!-- 650  vim chroot_list     // 创建 chroot_list 文件 并添加 ilee 用户 -->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">systemctl start vsftpd	// 重启ftp</div><div class="line">chkconfig vsftpd on		// 开机自启动</div><div class="line"></div><div class="line">iptables -I INPUT -p tcp --dport 21 -j ACCEPT	// 防火墙 开启21端口</div><div class="line"></div><div class="line">useradd -d /home/www/dev.rangolee.top -s /sbin/nologin ilee	// 创建用户 ilee 并制定 home 目录 并且 不允许登录服务器</div><div class="line"></div><div class="line">passwd ilee	// 设置密码</div><div class="line"></div><div class="line">chown -R ilee.ilee /home/www/dev.rangolee.top	// 改归属</div><div class="line"></div><div class="line">chmod 777 /home/www/dev.rangolee.top		// 改权限</div><div class="line"></div><div class="line">setsebool -P tftp_home_dir on</div><div class="line">setsebool allow_ftpd_full_access on</div><div class="line"></div><div class="line">systemctl restart vsftpd</div><div class="line"></div><div class="line">ps -ef | grep ftp</div><div class="line"></div><div class="line">cat  /etc/passwd</div><div class="line">cat  /etc/passwd-</div><div class="line"></div><div class="line">vim /etc/vsftpd/vsftpd.conf</div><div class="line">cd /etc/vsftpd/</div><div class="line">mkdir userconfig</div><div class="line">cd userconfig/</div><div class="line">vi ilee</div><div class="line"></div><div class="line"></div><div class="line">systemctl stop vsftpd</div><div class="line">systemctl restart vsftpd</div><div class="line"></div><div class="line">vim /etc/selinux/config </div><div class="line"></div><div class="line">selinux=1</div><div class="line"></div><div class="line">reboot		// 需要重启才能</div><div class="line"></div><div class="line">systemctl restart vsftpd</div><div class="line"></div><div class="line">setsebool allow_ftpd_full_access on</div><div class="line">setsebool -P tftp_home_dir on</div><div class="line"></div><div class="line">setenforce 0</div><div class="line">sestatus -v</div><div class="line"></div><div class="line">systemctl restart vsftpd</div><div class="line">vim /etc/vsftpd/vsftpd.conf</div><div class="line"></div><div class="line">systemctl restart vsftpd</div><div class="line"></div><div class="line">getsebool -a | grep ftp</div></pre></td></tr></table></figure>
+<h2 id="问题-amp-答案"><a href="#问题-amp-答案" class="headerlink" title="问题&amp;答案"></a>问题&amp;答案</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">FTP 550 Failed to change directory </div><div class="line"></div><div class="line">Entering Passive mode  // 不使用 Passive mode 登录 ftp 可解决</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/17/18-0517-swift3to4/" rel="next" title="禁用Xcode 9 的 Swift 3 @objc 推断">
+                <i class="fa fa-chevron-left"></i> 禁用Xcode 9 的 Swift 3 @objc 推断
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/30/19-0639-Centos6.1 install Nginx/" rel="prev" title="CentOS 6.1 install Nginx">
+                CentOS 6.1 install Nginx <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/12/30/Centos7 install vsftpd/"
+           data-title="" data-url="http://www.rangolee.top/2018/12/30/Centos7 install vsftpd/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="RangoLee" />
+          <p class="site-author-name" itemprop="name">RangoLee</p>
+          <p class="site-description motion-element" itemprop="description">Everyone all only young once!</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">56</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">56</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/rangolee" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com" title="MacTaik" target="_blank">MacTaik</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Centos-7-install-vsftpd"><span class="nav-number">1.</span> <span class="nav-text">Centos 7 install vsftpd</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.2.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置项"><span class="nav-number">1.2.1.</span> <span class="nav-text">修改配置项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-ftp"><span class="nav-number">1.2.2.</span> <span class="nav-text">启动 ftp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可选配置-修改默认21端口号-修改以下2处配置"><span class="nav-number">1.2.3.</span> <span class="nav-text">可选配置,修改默认21端口号,修改以下2处配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建ftp账号"><span class="nav-number">1.3.</span> <span class="nav-text">新建ftp账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋权"><span class="nav-number">1.4.</span> <span class="nav-text">赋权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置ftp允许上传权限"><span class="nav-number">1.5.</span> <span class="nav-text">设置ftp允许上传权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启下vsftpd"><span class="nav-number">1.6.</span> <span class="nav-text">重启下vsftpd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关命令"><span class="nav-number">1.7.</span> <span class="nav-text">相关命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题-amp-答案"><span class="nav-number">1.8.</span> <span class="nav-text">问题&答案</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RangoLee</span>
+  <a href="http://www.miitbeian.gov.cn/"> 苏ICP备17054640号 </a>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"rango"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("5XX2MxfwSIjySsX0lwk0Pz5H-gzGzoHsz", "QxQTCCWqVEFMJTgVpdtkvooD");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

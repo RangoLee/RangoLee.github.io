@@ -266,6 +266,562 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/28/16-0528_git+hexo=blog/" itemprop="url">
+                  如何使用hexo搭建git博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-28T16:34:33+08:00" content="2016-05-28">
+              2016-05-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index">
+                    <span itemprop="name">Mac</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/28/16-0528_git+hexo=blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/28/16-0528_git+hexo=blog/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/28/16-0528_git+hexo=blog/" class="leancloud_visitors" data-flag-title="如何使用hexo搭建git博客">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Hexo-Git-Blog-安装流程"><a href="#Hexo-Git-Blog-安装流程" class="headerlink" title="Hexo+Git=Blog 安装流程"></a>Hexo+Git=Blog 安装流程</h3><hr>
+<ul>
+<li>hexo 环境配置流程图<br><img src="http://ww3.sinaimg.cn/large/741b3941gw1f4b10z0s9ij20lj0andhh.jpg" alt="hexo 环境配置"></li>
+</ul>
+<h3 id="1-安装-Git"><a href="#1-安装-Git" class="headerlink" title="1. 安装 Git"></a>1. 安装 <strong>Git</strong></h3><ul>
+<li>安装过 Xcode 可以直接跳过这步，因为 Xcode 自带 Git</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 通过 ruby 安装 HomeBrew （已安装过HomeBrew的可以直接执行下一行）</div><div class="line">$ /usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div><div class="line"></div><div class="line">$ brew install git   // 通过 HomeBrew 安装Git</div></pre></td></tr></table></figure>
+<p>也可以通过下载<a href="https://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">Git安装程序</a>来安装</p>
+<h6 id="1-1-注册账户"><a href="#1-1-注册账户" class="headerlink" title="1.1 注册账户"></a>1.1 注册账户</h6><p>首先需要注册一个<a href="https://github.com" target="_blank" rel="external">Github</a>的账户，已有的可以直接跳过去下一步了。<img src="http://ww4.sinaimg.cn/large/741b3941gw1f4o6u0ii97j218a12qam1.jpg" alt="注册github"></p>
+<h6 id="1-2-创建仓库"><a href="#1-2-创建仓库" class="headerlink" title="1.2 创建仓库"></a>1.2 创建仓库</h6><p>登入进去之后再界面的右上角点那个加号，创建一个仓库（<code>new repository</code>）来存放我们的博客网站。Respository name 中 填写 <code>username.github.io</code> ，这里的 <code>username</code>.github.io 就是你以后的博客域名，这个 <code>username</code> 可以认真想一个了。<img src="http://ww1.sinaimg.cn/large/741b3941gw1f4o7csyrspj21kw1027dr.jpg" alt="创建github仓库"></p>
+<h3 id="2-安装-nvm"><a href="#2-安装-nvm" class="headerlink" title="2. 安装 nvm"></a>2. 安装 <strong>nvm</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/creationix/nvm.git ~/.nvm</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/28/16-0528_git+hexo=blog/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/28/7.CShape正则表达式/" itemprop="url">
+                  C# 正则表达式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-28T00:00:00+08:00" content="2016-05-28">
+              2016-05-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CShape/" itemprop="url" rel="index">
+                    <span itemprop="name">CShape</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/28/7.CShape正则表达式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/28/7.CShape正则表达式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/28/7.CShape正则表达式/" class="leancloud_visitors" data-flag-title="C# 正则表达式">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="C-正则表达式"><a href="#C-正则表达式" class="headerlink" title="C# 正则表达式"></a>C# 正则表达式</h2><hr>
+<p><strong>正则表达式</strong>是一种匹配文本的模式。.net框架提供了允许这种匹配的正则表达式引擎。模式由一个或多个字符、运算符和结构组成。</p>
+<hr>
+<h3 id="定义正则表达式"><a href="#定义正则表达式" class="headerlink" title="定义正则表达式"></a>定义正则表达式</h3><p>下面列出了用于定义正表达式的各种类别的字符、运算符和结构。</p>
+<ul>
+<li>字符转义</li>
+</ul>
+<ul>
+<li>字符类</li>
+<li>定位点</li>
+<li>分组结构</li>
+<li>限定符</li>
+<li>反向引用构造</li>
+<li>备用构造</li>
+<li>替换</li>
+<li>杂项构造
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/28/7.CShape正则表达式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/27/6.CShape常量/" itemprop="url">
+                  6.C#常量
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-27T00:00:00+08:00" content="2016-05-27">
+              2016-05-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CShape/" itemprop="url" rel="index">
+                    <span itemprop="name">CShape</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/27/6.CShape常量/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/6.CShape常量/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/27/6.CShape常量/" class="leancloud_visitors" data-flag-title="6.C#常量">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="6-常量"><a href="#6-常量" class="headerlink" title="6.常量"></a>6.常量</h2><hr>
+<p>常量是固定值，程序执行期间不会改变，常量可以是任何基本数据类型，比如整数常量。浮点数常量。字符常量或者字符串常量，还有枚举值。<br>常量可以被当做常规的变量，只是它们值在定义后不能被修改。</p>
+<h3 id="整数常量"><a href="#整数常量" class="headerlink" title="整数常量"></a>整数常量</h3><p>整数常量可以是十进制。八进制或十六进制的常量。<br>前缀指定基数：0x或0X表示16进制，0表示八进制，没有前缀的表示十进制。<br>整数常量也可以有后缀，可以是U或者L的组合，其中，U和L分别表示unsigned 和long。后缀可以是大写或者小写，多个后缀以任意顺序进行组合。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">212 //</div><div class="line">215U //</div><div class="line">0xFeeL //</div><div class="line">078 // 错误</div><div class="line">032UU // 错误</div></pre></td></tr></table></figure></p>
+<p>浮点常量<br>一个浮点常量是由整数部分，小数部分和指数部分组成。您可以使用小数形式或者指数形式来表示浮点常量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">314159E-5L  //</div></pre></td></tr></table></figure></p>
+<h3 id="字符常量"><a href="#字符常量" class="headerlink" title="字符常量"></a>字符常量</h3><hr>
+<p>#cshape</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/26/5.CShape变量/" itemprop="url">
+                  5.C#变量
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-26T00:00:00+08:00" content="2016-05-26">
+              2016-05-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CShape/" itemprop="url" rel="index">
+                    <span itemprop="name">CShape</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/26/5.CShape变量/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/26/5.CShape变量/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/26/5.CShape变量/" class="leancloud_visitors" data-flag-title="5.C#变量">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="5-C-变量"><a href="#5-C-变量" class="headerlink" title="5.C#变量"></a>5.C#变量</h2><hr>
+<p>一个变量只不过是一个供程序操作的存储区的名字。在C#中，每个变量都有一个特定的类型，类型决定了变量的内存大小和布局。范围内的值可以存储在内存中，可以对变量进行一系列的操作<br>C#提供的基本数据类型大致如下：<br>|类型|举例|<br>|-|-|<br>|整数类型    |sbyte、byte、short、ushort、int、uint、long、ulong和char |<br>|浮点数      |floa 和 double |<br>|十进制类型   | decimal|<br>|布尔类型    |true或false，指定的值|<br>|空类型      |可为空值的数据类型 |<br>C#允许定义其他值类型的变量，比如<strong>enum</strong>也允许定义引用类型变量，比如<strong>class</strong>。</p>
+<h3 id="C-中的变量定义"><a href="#C-中的变量定义" class="headerlink" title="C#中的变量定义"></a>C#中的变量定义</h3><p>C#中变量定义的语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;data_type&gt; &lt;variable_list&gt;;</div></pre></td></tr></table></figure></p>
+<p>在这里，data_type必须是一个有效的C#数据类型，可以是char、int、float、double或其他自定义类型的数据类型。variable_list可以由一个或多个逗号分隔符的标识符名称组成。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int i, j, k;</div><div class="line">char ch;</div><div class="line">float salary;</div><div class="line">double d;</div><div class="line">int x = 100; // 定义的时候初始化</div></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/26/5.CShape变量/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/25/4.CShape类型转换/" itemprop="url">
                   4.C#类型转换
                 </a>
@@ -538,650 +1094,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/24/16-0524_MapKit_Framework/" itemprop="url">
-                  MapKit Framework
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-24T09:00:00+08:00" content="2016-05-24">
-              2016-05-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/24/16-0524_MapKit_Framework/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/24/16-0524_MapKit_Framework/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/24/16-0524_MapKit_Framework/" class="leancloud_visitors" data-flag-title="MapKit Framework">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <!-- |参数|描述|默认值|
-|-----------|-----|--------------|
-|layout:    |布局
-|title:     |标题
-|date:      |建立日期    |文件建立日期
-|updated:   |更新日期    |文件更新日期
-|comments:  |开启文章的评论功能    |true
-|tags:      |标签（不适用于分页
-|categories:|分类（不适用于分页）
-|permalink: |覆盖文章网址
-|description| -->
-<h3 id="MapKit-Framework"><a href="#MapKit-Framework" class="headerlink" title="MapKit Framework"></a>MapKit Framework</h3><hr>
-<ol>
-<li>下面三项是理解（看懂代码：掌握流程）<ol>
-<li>添加大头针对象（<code>Annotation</code>）标注<ul>
-<li>【样例】在地图上添加系统默认提供好的大头针类（对象标注）修改大头针的默认颜色，添加标注视图（弹出框标题的坐标和右边）</li>
-<li>【Demo01_MKMapView】</li>
-<li>总结：<ul>
-<li>系统自动添加用户所在位置的蓝色圈（<code>MKUserLocation</code> 类型）</li>
-<li>如何添加大头针对象到地图视图上</li>
-<li>地图视图区域的概念（<code>center</code> 中心 + <code>span</code> 跨度）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>修改两个点<ul>
-<li>用户位置默认的蓝色圈（标注对象）颜色变成自定义颜色</li>
-<li>点中标注对象，不显示弹出框</li>
-</ul>
-</li>
-<li>【样例】设置自定义的标注对象的图片【Demo02_MKAnnotationView】<ul>
-<li>此时只能使用父类 <code>MKAnnotationView</code>（IOS9）
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/24/16-0524_MapKit_Framework/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/24/3.CShape数据类型/" itemprop="url">
-                  3.C#数据类型
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-24T00:00:00+08:00" content="2016-05-24">
-              2016-05-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/CShape/" itemprop="url" rel="index">
-                    <span itemprop="name">CShape</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/24/3.CShape数据类型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/24/3.CShape数据类型/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/24/3.CShape数据类型/" class="leancloud_visitors" data-flag-title="3.C#数据类型">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3.数据类型"></a>3.数据类型</h2><hr>
-<p>在C#中变量分为以下几种类型</p>
-<ul>
-<li>值类型（value types）</li>
-</ul>
-<ul>
-<li>引用类型（reference types）</li>
-</ul>
-<ul>
-<li>指针类型（pointer types）<h3 id="值类型（Values-Types）"><a href="#值类型（Values-Types）" class="headerlink" title="值类型（Values Types）"></a>值类型（Values Types）</h3>值类型变量可以直接分配给一个值。它们是从类System.ValuesTypes中派生的。<br>值类型直接包含数据。比如int，char，float，它们分别存储数字、字母、浮点数。当你声明一个int类型时，系统分配内存来存储值。<br>C# 2010值类型<br><img src="3.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-23%2000.35.49.png" alt=""><br>如需要得到一个类型或一个变量在特定平台上的准确大小，可以使用sizeof运算符。表达式sizeof(type)产生以字节为存储单位对象或类型的存储尺寸。下面举例获取任何机器上int类型的存储尺寸<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">namespace DataTypeApplication</div><div class="line">&#123;</div><div class="line">    class Program</div><div class="line">    &#123;</div><div class="line">	       static void Main(string[] args)</div><div class="line">        &#123;</div><div class="line">            Console.WriteLine(&quot;Size of int:&#123;0&#125;&quot;, sizeof(int));</div><div class="line">            Console.ReadLine();</div><div class="line">        &#125; </div><div class="line">	   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/24/3.CShape数据类型/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/23/16-0523_OC中的Block/" itemprop="url">
-                  OC 中的 Block
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-23T09:00:00+08:00" content="2016-05-23">
-              2016-05-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/23/16-0523_OC中的Block/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/16-0523_OC中的Block/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/23/16-0523_OC中的Block/" class="leancloud_visitors" data-flag-title="OC 中的 Block">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <!-- |参数|描述|默认值|
-|-----------|-----|--------------|
-|layout:    |布局
-|title:     |标题
-|date:      |建立日期    |文件建立日期
-|updated:   |更新日期    |文件更新日期
-|comments:  |开启文章的评论功能    |true
-|tags:      |标签（不适用于分页
-|categories:|分类（不适用于分页）
-|permalink: |覆盖文章网址
-|description| -->
-<h3 id="OC-中-block-的严格定义，语法，格式，调用"><a href="#OC-中-block-的严格定义，语法，格式，调用" class="headerlink" title="OC 中 block 的严格定义，语法，格式，调用"></a>OC 中 <strong>block</strong> 的严格定义，语法，格式，调用</h3><hr>
-<ol>
-<li>是C语言的功能，iOS4.0之后可以使用。和其他动态语言的闭包（closure）类似，和 swift 中的 closure 闭包几乎一样。</li>
-<li>严格定义：块对象就是把可执行的代码和代码中的可以访问的变量“封装”起来，之后在某个时间点处理的包。</li>
-<li>Block 的作用：<ul>
-<li>可以作为函数/方法的参数</li>
-<li>可以作为函数/方法的返回对象</li>
-</ul>
-</li>
-<li>明确三个 Block 术语<ul>
-<li>Block 声明（Block declaration）<ul>
-<li><blockquote>
-<p>通用词：Block （变量）声明</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>Block 定义（Block literal：块句法）<ul>
-<li><blockquote>
-<p>通用词：Block （对象）定义</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>Block 调用：执行的 Block 体（Block body）中的逻辑</li>
-</ul>
-</li>
-<li>Block 声明的语法：<ul>
-<li><code>return_type(^block_name)(param_type,param_type...)</code><ul>
-<li><code>return_type</code>:返回值类型</li>
-<li><code>block_name</code>：Block 变量名字</li>
-<li><code>param_type</code>：参数类型</li>
-<li>例子：<code>int（^blockName）(int)</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Block 定义的语法：<ul>
-<li><code>^(param_type  param_name,param_type param_name...){block body}</code><ul>
-<li><code>param_type</code>:参数类型</li>
-<li><code>param_name</code>:参数的名字</li>
-<li>例子：<code>^(int index){printf(&quot;%d\n&quot;,index);return index * 2};</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>结合声明和定义<ul>
-<li><code>int（^blockName）(int) = ^(int index){printf(&quot;%d\n&quot;,index);return index * 2;};</code></li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>未完待续。。。</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/23/C++11_并发指南一/" itemprop="url">
-                  C++11 并发指南二
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-23T00:00:00+08:00" content="2016-05-23">
-              2016-05-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/23/C++11_并发指南一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/C++11_并发指南一/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/23/C++11_并发指南一/" class="leancloud_visitors" data-flag-title="C++11 并发指南二">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="C-并发至南一"><a href="#C-并发至南一" class="headerlink" title="C++并发至南一"></a>C++并发至南一</h2><hr>
-<h3 id="与-C-11-多线程相关的头文件"><a href="#与-C-11-多线程相关的头文件" class="headerlink" title="与 C++11 多线程相关的头文件"></a>与 C++11 多线程相关的头文件</h3><p>C++11 新标准中引入了四个头文件来支持多线程编程，他们分别是<atomic> ,<thread>,<mutex>,<condition_variable>和<future>。</future></condition_variable></mutex></thread></atomic></p>
-<ul>
-<li><strong><atomic></atomic></strong>：该头文主要声明了两个类, <code>std::atomic</code> 和 <code>std::atomic_flag</code>，另外还声明了一套 C 风格的原子类型和与 C 兼容的原子操作的函数。</li>
-<li><strong><thread></thread></strong>：该头文件主要声明了 <code>std::thread</code> 类，另外 <code>std::this_thread</code> 命名空间也在该头文件中。</li>
-<li><strong><mutex></mutex></strong>：该头文件主要声明了与互斥量(mutex)相关的类，包括 <code>std::mutex</code> 系列类，<code>std::lock_guard</code>, <code>std::unique_lock</code>, 以及其他的类型和函数。</li>
-<li><strong><condition_variable></condition_variable></strong>：该头文件主要声明了与条件变量相关的类，包括 <code>std::condition_variable</code> 和 <code>std::condition_variable_any</code>。</li>
-<li><strong><future></future></strong>：该头文件主要声明了 <code>std::promise</code>, <code>std::package_task</code> 两个 <strong>Provider</strong> 类，以及 <code>std::future</code> 和 <code>std::shared_future</code> 两个 <strong>Future</strong> 类，另外还有一些与之相关的类型和函数，<code>std::async()</code> 函数就声明在此头文件中。</li>
-</ul>
-<hr>
-<h3 id="std-thread-“Hello-World”"><a href="#std-thread-“Hello-World”" class="headerlink" title="std::thread “Hello World”"></a>std::thread “Hello World”</h3><p>例子：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; // std::cout</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt; // std::thread</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">thread_task</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"hello thread"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">t</span><span class="params">(thread_task)</span></span>;</div><div class="line">    t.join();</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>#c++    #c++thread</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1222,7 +1139,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-count">56</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1230,7 +1147,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1239,7 +1156,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">56</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1261,24 +1178,6 @@
                 </a>
               </span>
             
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/rangolee" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  Weibo
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.linkedin.com/in/RangoLee" target="_blank" title="Linkedin">
-                  
-                    <i class="fa fa-fw fa-linkedin"></i>
-                  
-                  Linkedin
-                </a>
-              </span>
-            
           
         </div>
 
@@ -1296,10 +1195,6 @@
               
                 <li class="links-of-blogroll-item">
                   <a href="http://macshuo.com" title="MacTaik" target="_blank">MacTaik</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://canxi.cc" title="小残曦" target="_blank">小残曦</a>
                 </li>
               
             </ul>
@@ -1323,7 +1218,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1427,7 +1322,7 @@
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"rangolee"};
+    var duoshuoQuery = {short_name:"rango"};
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
@@ -1573,9 +1468,6 @@
 
 
   
-<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
-</script>
-
 
 </body>
 </html>

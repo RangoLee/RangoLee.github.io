@@ -266,6 +266,569 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/09/Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？/" itemprop="url">
+                  Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-09T01:10:00+08:00" content="2017-03-09">
+              2017-03-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Xcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Xcode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/09/Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/09/Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/09/Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？/" class="leancloud_visitors" data-flag-title="Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Xcode新建cpp文件，头文件默认为-hpp后缀。如何默认创建-h后缀？"><a href="#Xcode新建cpp文件，头文件默认为-hpp后缀。如何默认创建-h后缀？" class="headerlink" title="Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？"></a>Xcode新建cpp文件，头文件默认为.hpp后缀。如何默认创建.h后缀？</h3><hr>
+<h4 id="1）Go-to-Folder"><a href="#1）Go-to-Folder" class="headerlink" title="1）Go to Folder"></a>1）Go to Folder</h4><p><code>/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates/Source/C++ File.xctemplate/WithHeader</code></p>
+<h4 id="2）将FILEBASENAME文件的-hpp后缀，更改为-h。如下："><a href="#2）将FILEBASENAME文件的-hpp后缀，更改为-h。如下：" class="headerlink" title="2）将FILEBASENAME文件的.hpp后缀，更改为.h。如下："></a>2）将<strong><em>FILEBASENAME</em></strong>文件的.hpp后缀，更改为.h。如下：</h4><ul>
+<li><strong><em>FILEBASENAME</em></strong>.h</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  ___FILENAME___</span></div><div class="line"><span class="comment">//  ___PROJECTNAME___</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  Created by ___FULLUSERNAME___ on ___DATE___.</span></div><div class="line"><span class="comment">//___COPYRIGHT___</span></div><div class="line"><span class="comment">//</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ___FILEBASENAMEASIDENTIFIER____h</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ___FILEBASENAMEASIDENTIFIER____h</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* ___FILEBASENAMEASIDENTIFIER____h */</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong><em>FILEBASENAME</em></strong>.cpp</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  ___FILENAME___</span></div><div class="line"><span class="comment">//  ___PROJECTNAME___</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  Created by ___FULLUSERNAME___ on ___DATE___.</span></div><div class="line"><span class="comment">//___COPYRIGHT___</span></div><div class="line"><span class="comment">//</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"___FILEBASENAME___.h"</span></span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/01/C++_getTime/" itemprop="url">
+                  c++ 获取时间
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-01T15:10:00+08:00" content="2017-01-01">
+              2017-01-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/01/C++_getTime/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/01/C++_getTime/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/01/C++_getTime/" class="leancloud_visitors" data-flag-title="c++ 获取时间">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!--description: MarkDown 文档的基本格式模板-->
+<!--
+|参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期   |文件建立日期
+|updated:   |更新日期   |文件更新日期
+|comments:  |开启文章的评论功能    |true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description|文章描述信息
+-->
+<h3 id="获取系统时间"><a href="#获取系统时间" class="headerlink" title="获取系统时间"></a>获取系统时间</h3><hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</div><div class="line">    <span class="keyword">time_t</span> tm = time(<span class="number">0</span>);</div><div class="line">    <span class="keyword">char</span> szTime[<span class="number">64</span>];</div><div class="line">    strftime(szTime, <span class="keyword">sizeof</span>(szTime), <span class="string">"%Y/%m/%d %X %A 本年第%j天 %z"</span>,localtime(&amp;tm));</div><div class="line">    <span class="built_in">puts</span>(szTime);</div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * size_t strftime(char *strDest, size_t maxsize, const char *format, const struct tm *timeptr);</span></div><div class="line"><span class="comment">    根据格式字符串生成字符串。</span></div><div class="line"><span class="comment">    struct tm *localtime(const time_t *timer);</span></div><div class="line"><span class="comment">    取得当地时间，localtime获取的结果由结构tm返回</span></div><div class="line"><span class="comment">    返回的字符串可以依下列的格式而定：</span></div><div class="line"><span class="comment">    %a 星期几的缩写。Eg:Tue</span></div><div class="line"><span class="comment">    %A 星期几的全名。 Eg: Tuesday</span></div><div class="line"><span class="comment">    %b 月份名称的缩写。</span></div><div class="line"><span class="comment">    %B 月份名称的全名。</span></div><div class="line"><span class="comment">    %c 本地端日期时间较佳表示字符串。</span></div><div class="line"><span class="comment">    %d 用数字表示本月的第几天 (范围为 00 至 31)。日期</span></div><div class="line"><span class="comment">    %H 用 24 小时制数字表示小时数 (范围为 00 至 23)。</span></div><div class="line"><span class="comment">    %I 用 12 小时制数字表示小时数 (范围为 01 至 12)。</span></div><div class="line"><span class="comment">    %j 以数字表示当年度的第几天 (范围为 001 至 366)。</span></div><div class="line"><span class="comment">    %m 月份的数字 (范围由 1 至 12)。</span></div><div class="line"><span class="comment">    %M 分钟。</span></div><div class="line"><span class="comment">    %p 以 ''AM'' 或 ''PM'' 表示本地端时间。</span></div><div class="line"><span class="comment">    %S 秒数。</span></div><div class="line"><span class="comment">    %U 数字表示为本年度的第几周，第一个星期由第一个周日开始。</span></div><div class="line"><span class="comment">    %W 数字表示为本年度的第几周，第一个星期由第一个周一开始。</span></div><div class="line"><span class="comment">    %w 用数字表示本周的第几天 ( 0 为周日)。</span></div><div class="line"><span class="comment">    %x 不含时间的日期表示法。</span></div><div class="line"><span class="comment">    %X 不含日期的时间表示法。 Eg: 15:26:30</span></div><div class="line"><span class="comment">    %y 二位数字表示年份 (范围由 00 至 99)。</span></div><div class="line"><span class="comment">    %Y 完整的年份数字表示，即四位数。 Eg:2008</span></div><div class="line"><span class="comment">    %Z(%z) 时区或名称缩写。Eg:中国标准时间</span></div><div class="line"><span class="comment">    %% % 字符。</span></div><div class="line"><span class="comment">     */</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/20/2016-12-20-CShape程序结构体/" itemprop="url">
+                  1.C#程序结构体
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-20T00:00:00+08:00" content="2016-12-20">
+              2016-12-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CShape/" itemprop="url" rel="index">
+                    <span itemprop="name">CShape</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/20/2016-12-20-CShape程序结构体/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/20/2016-12-20-CShape程序结构体/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/12/20/2016-12-20-CShape程序结构体/" class="leancloud_visitors" data-flag-title="1.C#程序结构体">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-C-程序结构体"><a href="#1-C-程序结构体" class="headerlink" title="1.C#程序结构体"></a>1.C#程序结构体</h2><hr>
+<h2 id="C-Hello-World-实例"><a href="#C-Hello-World-实例" class="headerlink" title="C# Hello World 实例"></a>C# Hello World 实例</h2><p>一个C#程序主要包括以下部分：</p>
+<ul>
+<li>命名空间声明（Namespace declaration）</li>
+</ul>
+<ul>
+<li>一个类（class）</li>
+<li>类方法（Class method）</li>
+<li>一个Main函数（Main）</li>
+<li>语句（Statements）&amp; 表达式（Expressions）</li>
+<li>注释<br>helloworld.cs</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">namespace HelloWorldApplication</div><div class="line">&#123;</div><div class="line">	class HelloWorld</div><div class="line">	&#123;</div><div class="line">		static void Main(string[] args)</div><div class="line">		&#123;</div><div class="line">			// 我的第一个 C# 程序</div><div class="line">			Console.WriteLine(&quot;Hello World&quot;);</div><div class="line">			Console.ReadKey();</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello World</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/20/2016-12-20-CShape程序结构体/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/20/Mac安装Python3.5.2/" itemprop="url">
+                  Mac 安装Python3.5.2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-20T00:00:00+08:00" content="2016-12-20">
+              2016-12-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python3/" itemprop="url" rel="index">
+                    <span itemprop="name">python3</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/20/Mac安装Python3.5.2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/20/Mac安装Python3.5.2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/12/20/Mac安装Python3.5.2/" class="leancloud_visitors" data-flag-title="Mac 安装Python3.5.2">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="1-安装Python3-5-2"><a href="#1-安装Python3-5-2" class="headerlink" title="1.安装Python3.5.2"></a>1.安装Python3.5.2</h3><ul>
+<li>MacOS系统10.12.2，终端运行<code>brew install python3</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ brew install python3</div></pre></td></tr></table></figure>
+<ul>
+<li>报警告</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Warning: You are using OS X 10.12.</div><div class="line">We <span class="keyword">do</span> not provide support <span class="keyword">for</span> this pre-release version.</div><div class="line">You may encounter build failures or other breakages.</div><div class="line">Please create pull-requests instead of filing issues.</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/20/Mac安装Python3.5.2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/12/02/16-1202_STL模板技巧/" itemprop="url">
                   STL模板技巧
                 </a>
@@ -546,569 +1109,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/27/16-1127_类模板/" itemprop="url">
-                  C++_STL_类模板
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-27T00:00:00+08:00" content="2016-11-27">
-              2016-11-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/11/27/16-1127_类模板/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/16-1127_类模板/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/11/27/16-1127_类模板/" class="leancloud_visitors" data-flag-title="C++_STL_类模板">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <!--description: MarkDown 文档的基本格式模板-->
-<!-----
-|参数|描述|默认值|
-|-----------|-----|--------------|
-|layout:    |布局
-|title:     |标题
-|date:      |建立日期    |文件建立日期
-|updated:   |更新日期    |文件更新日期
-|comments:  |开启文章的评论功能    |true
-|tags:      |标签（不适用于分页
-|categories:|分类（不适用于分页）
-|permalink: |覆盖文章网址
-|description|文章描述信息-->
-<h3 id="1-类模板的定义"><a href="#1-类模板的定义" class="headerlink" title="1.类模板的定义"></a>1.类模板的定义</h3><hr>
-<h5 id="类模板的语法形式"><a href="#类模板的语法形式" class="headerlink" title="类模板的语法形式"></a>类模板的语法形式</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> 类型参数<span class="number">1</span>, <span class="keyword">typename</span> 类型参数<span class="number">2</span>,...&gt;</div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A, <span class="keyword">typename</span> b, <span class="keyword">typename</span> C&gt;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    A m_a;</div><div class="line">    <span class="function">b <span class="title">foo</span><span class="params">(C c)</span></span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h5 id="类型参数"><a href="#类型参数" class="headerlink" title="类型参数"></a>类型参数</h5><p>在类模板内部，类型参数可以像其它任何具体类型一样，用于成员变量、成员函数、成员类型（内部类型），甚至基类的说明<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> M, <span class="keyword">typename</span> R, <span class="keyword">typename</span> A, <span class="keyword">typename</span> V, <span class="keyword">typename</span> T, <span class="keyword">typename</span> B&gt;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> :</span> <span class="keyword">public</span></div><div class="line">&#123;</div><div class="line">    M m_mem;</div><div class="line">    <span class="function">R <span class="title">function</span><span class="params">(A arg)</span></span>&#123;... V var ...&#125;</div><div class="line">    <span class="keyword">typename</span> T* pointer;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/27/16-1127_类模板/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/27/16-1127-Mac_Sublime_Text3_Compile_cpp_error/" itemprop="url">
-                  Mac Sublime Text compile Source.cpp error
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-27T00:00:00+08:00" content="2016-11-27">
-              2016-11-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/11/27/16-1127-Mac_Sublime_Text3_Compile_cpp_error/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/16-1127-Mac_Sublime_Text3_Compile_cpp_error/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/11/27/16-1127-Mac_Sublime_Text3_Compile_cpp_error/" class="leancloud_visitors" data-flag-title="Mac Sublime Text compile Source.cpp error">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="Mac-Sublime-Text-compile-Source-cpp-error-bin-bash-shell-session-update-command-not-found"><a href="#Mac-Sublime-Text-compile-Source-cpp-error-bin-bash-shell-session-update-command-not-found" class="headerlink" title="Mac Sublime Text compile Source.cpp error //bin/bash: shell_session_update: command not found"></a>Mac Sublime Text compile Source.cpp error //bin/bash: shell_session_update: command not found</h4><hr>
-<ol>
-<li><p>get the rvm version</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ rvm -v</div></pre></td></tr></table></figure>
-</li>
-<li><p>make sure the version at least 1.26 above</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ rvm -v</div><div class="line">rvm 1.27.0 (master) by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal Papis &lt;mpapis@gmail.com&gt; [https://rvm.io/]</div></pre></td></tr></table></figure>
-</li>
-<li><p>then go ahead</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Rango-MBP:~ Rango$ rvm get head</div></pre></td></tr></table></figure>
-</li>
-<li><p>wait Downloading…</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Downloading https://get.rvm.io</div><div class="line">No GPG software exists to validate rvm-installer, skipping.</div><div class="line">Downloading https://github.com/rvm/rvm/archive/master.tar.gz</div><div class="line"></div><div class="line">Upgrading the RVM installation <span class="keyword">in</span> /Users/Rango/.rvm/</div><div class="line">    RVM PATH line found <span class="keyword">in</span> /Users/Rango/.mkshrc /Users/Rango/.profile /Users/Rango/.bashrc /Users/Rango/.zshrc.</div><div class="line">    RVM sourcing line found <span class="keyword">in</span> /Users/Rango/.profile /Users/Rango/.bash_profile /Users/Rango/.zlogin.</div><div class="line">Upgrade of RVM <span class="keyword">in</span> /Users/Rango/.rvm/ is complete.</div></pre></td></tr></table></figure>
-</li>
-<li><p>just work</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/30/16-0930_删除Mac下的MySQL/" itemprop="url">
-                  删除mac下的MySQL
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-30T00:09:00+08:00" content="2016-09-30">
-              2016-09-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Mac/" itemprop="url" rel="index">
-                    <span itemprop="name">Mac</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/30/16-0930_删除Mac下的MySQL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/16-0930_删除Mac下的MySQL/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/30/16-0930_删除Mac下的MySQL/" class="leancloud_visitors" data-flag-title="删除mac下的MySQL">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="删除Mac下的MySQL"><a href="#删除Mac下的MySQL" class="headerlink" title="删除Mac下的MySQL"></a>删除Mac下的MySQL</h5><hr>
-<h6 id="首先在系统偏好设置中设置MySQL设置，停止其服务然后依次执行如下语句即可。"><a href="#首先在系统偏好设置中设置MySQL设置，停止其服务然后依次执行如下语句即可。" class="headerlink" title="首先在系统偏好设置中设置MySQL设置，停止其服务然后依次执行如下语句即可。"></a>首先在系统偏好设置中设置MySQL设置，停止其服务然后依次执行如下语句即可。</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo rm /usr/<span class="built_in">local</span>/mysql</div><div class="line">sudo rm -rf /usr/<span class="built_in">local</span>/mysql*</div><div class="line">sudo rm -rf /Library/StartupItems/MySQLCOM</div><div class="line">sudo rm -rf /Library/PreferencePanes/My*</div><div class="line">sudo rm -rf /Library/Receipts/mysql*</div><div class="line">sudo rm -rf /Library/Receipts/MySQL*</div><div class="line">sudo rm -rf /var/db/receipts/com.mysql.*</div></pre></td></tr></table></figure>
-<blockquote>
-<blockquote>
-<p>如果在 /etc/hostconfig 中有 <code>MYSQLCOM=-YES</code>这一行删除即可。</p>
-</blockquote>
-</blockquote>
-<h5 id="删除Mac下的openfire"><a href="#删除Mac下的openfire" class="headerlink" title="删除Mac下的openfire"></a>删除Mac下的openfire</h5><hr>
-<h6 id="首先在系统偏好设置中设置openfire设置，停止其服务，然后依次执行如下语句即可。"><a href="#首先在系统偏好设置中设置openfire设置，停止其服务，然后依次执行如下语句即可。" class="headerlink" title="首先在系统偏好设置中设置openfire设置，停止其服务，然后依次执行如下语句即可。"></a>首先在系统偏好设置中设置openfire设置，停止其服务，然后依次执行如下语句即可。</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo rm -rf /Library/PreferencePanes/Openfire.prefPane</div><div class="line">sudo rm -rf /usr/<span class="built_in">local</span>/openfire</div><div class="line">sudo rm -rf /Library/LaunchDaemons/org.jivesoftware.openfire.plist</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/14/16-1111_Windows下SublimeText3的C++11开发环境配置/" itemprop="url">
-                  Sublime Text3 配置C/C++11开发环境
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-14T12:01:38+08:00" content="2016-08-14">
-              2016-08-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/14/16-1111_Windows下SublimeText3的C++11开发环境配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/14/16-1111_Windows下SublimeText3的C++11开发环境配置/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/08/14/16-1111_Windows下SublimeText3的C++11开发环境配置/" class="leancloud_visitors" data-flag-title="Sublime Text3 配置C/C++11开发环境">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <!--description: MarkDown 文档的基本格式模板-->
-<h2 id=""><a href="#" class="headerlink" title="#####"></a>#####</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="string">"cmd"</span>: [<span class="string">"bash"</span>, <span class="string">"-c"</span>, <span class="string">"g++ -Wall -std=c++11 -O2 '<span class="variable">$&#123;file&#125;</span>' -o '<span class="variable">$&#123;file_path&#125;</span>/<span class="variable">$&#123;file_base_name&#125;</span>' &amp;&amp; osascript -e 'tell application \"Terminal\" to activate do script \" cd \\\"<span class="variable">$&#123;file_path&#125;</span>\\\" &amp;&amp;start_ms=\\<span class="variable">$(ruby -e \\\"puts (Time.now.to_f * 1000)</span>.to_i\\\")&amp;&amp;clear&amp;&amp;\\\"<span class="variable">$&#123;file_path&#125;</span>/<span class="variable">$&#123;file_base_name&#125;</span>\\\" &amp;&amp;elapsed_ms=\\<span class="variable">$((\\$(ruby -e \\\"puts (Time.now.to_f * 1000)</span>.to_i\\\") - start_ms))&amp;&amp; read -p \\\"Press Enter to exit(\\<span class="variable">$elapsed_ms</span> ms).\\\"&amp;&amp;exit\"'"</span>],</div><div class="line"> 	<span class="string">"file_regex"</span>: <span class="string">"^(..&#123;FNXX==XXFN&#125;*):([0-9]+):?([0-9]+)?:? (.*)$"</span>,</div><div class="line">    <span class="string">"working_dir"</span>: <span class="string">"<span class="variable">$&#123;file_path&#125;</span>"</span>,</div><div class="line">    <span class="string">"selector"</span>: <span class="string">"source.c, source.c++"</span>,</div><div class="line">	<span class="string">"variants"</span>:</div><div class="line">	[</div><div class="line">		&#123;</div><div class="line">			<span class="string">"name"</span>: <span class="string">"Run"</span>,</div><div class="line">			<span class="string">"cmd"</span>: [<span class="string">"bash"</span>, <span class="string">"-c"</span>, <span class="string">"g++ '<span class="variable">$&#123;file&#125;</span>' -o '<span class="variable">$&#123;file_path&#125;</span>/<span class="variable">$&#123;file_base_name&#125;</span>' &amp;&amp; '<span class="variable">$&#123;file_path&#125;</span>/<span class="variable">$&#123;file_base_name&#125;</span>'"</span>]</div><div class="line">		&#125;</div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1149,7 +1154,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-count">56</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1157,7 +1162,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1166,7 +1171,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">56</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1188,24 +1193,6 @@
                 </a>
               </span>
             
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/rangolee" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  Weibo
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.linkedin.com/in/RangoLee" target="_blank" title="Linkedin">
-                  
-                    <i class="fa fa-fw fa-linkedin"></i>
-                  
-                  Linkedin
-                </a>
-              </span>
-            
           
         </div>
 
@@ -1223,10 +1210,6 @@
               
                 <li class="links-of-blogroll-item">
                   <a href="http://macshuo.com" title="MacTaik" target="_blank">MacTaik</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://canxi.cc" title="小残曦" target="_blank">小残曦</a>
                 </li>
               
             </ul>
@@ -1250,7 +1233,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1354,7 +1337,7 @@
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"rangolee"};
+    var duoshuoQuery = {short_name:"rango"};
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
@@ -1500,9 +1483,6 @@
 
 
   
-<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
-</script>
-
 
 </body>
 </html>
