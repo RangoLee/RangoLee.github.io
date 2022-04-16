@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iOS on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/categories/ios/</link>
+    <description>Recent content in iOS on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 29 Feb 2020 21:37:19 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/categories/ios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS 之 keyPath 自动提示宏</title>
+      <link>https://rangolee.github.io/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/</link>
+      <pubDate>Sat, 29 Feb 2020 21:37:19 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/</guid>
+      <description>自动提示宏 这个宏可以在使用keyPath时自动提示属性字符串，防止输入出现错误。 1 2 3 4 // 自动替换宏 #define keyPath(objc, keyPath) @(((void)objc.keyPath,#keyPath)) NSLog(@&amp;#34;%@&amp;#34;, [keyPath(self.layer, position) class]); // NSTaggedPointerString NSLog(@&amp;#34;%@&amp;#34;, keyPath(self.layer, position)); // position c语言字符</description>
+    </item>
+    
+    <item>
+      <title>禁用 Xcode 9 的 Swift 3 中 @objc 推断</title>
+      <link>https://rangolee.github.io/post/swift/swift3to4/</link>
+      <pubDate>Thu, 17 May 2018 23:36:05 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/swift/swift3to4/</guid>
+      <description>swift3 to swift4 === 使用 xcode 9 自动从 swift3 升级到 swift4 后改动并不多, 选择 deployment target 8.0 时,编译代码提示下面警告⚠️ 1 The use of Swift 3 @objc inference in Swift 4 mode is deprecated. Please address deprecated @objc inference warnings, test your code with “Use</description>
+    </item>
+    
+    <item>
+      <title>iOS8中UIActionSheet弹出UIImagePickerController异常的处理方法</title>
+      <link>https://rangolee.github.io/post/ios/16-0621_ios8%E4%B8%ADuiactionsheet%E5%BC%B9%E5%87%BAuiimagepickercontroller%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Tue, 21 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0621_ios8%E4%B8%ADuiactionsheet%E5%BC%B9%E5%87%BAuiimagepickercontroller%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/</guid>
+      <description>iOS8之后，UIActionSheet 更改父类于 UIAlertController 带来的兼容性问题。 最近在做项目中遇到一个UIAlertController弹窗的问题，困</description>
+    </item>
+    
+    <item>
+      <title>cell的间隔线（tableView.separatorStyle）</title>
+      <link>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</link>
+      <pubDate>Sun, 19 Jun 2016 16:58:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</guid>
+      <description>cell 的间隔线 tableView 的一个属性 separatorStyle 可以设置 cell 之间的间隔线样式(三种) 1 2 3 4 5 typedef NS_ENUM(NSInteger, UITableViewCellSeparatorStyle) { UITableViewCellSeparatorStyleNone, UITableViewCellSeparatorStyleSingleLine, UITableViewCellSeparatorStyleSingleLineEtched // This separator style is only supported for grouped style table views currently } __TVOS_PROHIBITED; 默认样式有一条线 1 tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine; 设置</description>
+    </item>
+    
+    <item>
+      <title>Mac OS 搭建 mysql 环境</title>
+      <link>https://rangolee.github.io/post/16-0606_mac%E6%90%AD%E5%BB%BAmysql%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 06 Jun 2016 11:18:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0606_mac%E6%90%AD%E5%BB%BAmysql%E7%8E%AF%E5%A2%83/</guid>
+      <description>1. MySQL Wiki 双击 mysql-5.6.12-osx10.7-x86_64.dmg 双击 mysql-5.6.12-osx10.7-x86_64.pkg 双击 MySQL.prefPane 系统偏好设置里启动 MySQL 验证 1 2 3 4 Rango-MBP:~ rango$ cd /usr/local/mysql Rango-MBP:mysql rango$ cd bin Rango-MBP:bin rango$ pwd /usr/local/mysql/bin 登入MySQL服务器,首次登入无密码,直接回车即可 看到下面这</description>
+    </item>
+    
+    <item>
+      <title>FMDB</title>
+      <link>https://rangolee.github.io/post/ios/16-0604_fmdb/</link>
+      <pubDate>Sat, 04 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0604_fmdb/</guid>
+      <description>1.创建表 create table people(id integer,name text,height real); 有主键字段特征：自增性，唯一性 create table student(id integer,name text,height real); 2.增（student 表、有主键字段表） - 直接插入（保证 id 字段的唯一性） insert into</description>
+    </item>
+    
+    <item>
+      <title>SQLite 返回值</title>
+      <link>https://rangolee.github.io/post/ios/16-0603_sqlite%E8%BF%94%E5%9B%9E%E5%80%BC/</link>
+      <pubDate>Fri, 03 Jun 2016 21:36:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0603_sqlite%E8%BF%94%E5%9B%9E%E5%80%BC/</guid>
+      <description>SQLite 返回值 1 2 3 4 5 6 7 8 9 10 11 /* ** CAPI3REF: Result Codes //返回码 ** KEYWORDS: {result code definitions} ** ** Many SQLite functions return an integer result code from the set shown ** here in order to indicate success or failure. ** ** New error codes may be added in future versions of SQLite. ** ** See also:</description>
+    </item>
+    
+    <item>
+      <title>CoreLocation Framework</title>
+      <link>https://rangolee.github.io/post/ios/16-0524_location_corelocation-/</link>
+      <pubDate>Tue, 24 May 2016 19:09:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0524_location_corelocation-/</guid>
+      <description>单纯获取用户位置 CoreLocation Framework 常用类多以：CL开头。 CLLocation描述用户的位置的类（经longitude，纬latitude度两个值） CLLo</description>
+    </item>
+    
+    <item>
+      <title>MapKit Framework</title>
+      <link>https://rangolee.github.io/post/ios/16-0524_mapkit_framework/</link>
+      <pubDate>Tue, 24 May 2016 09:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0524_mapkit_framework/</guid>
+      <description>&lt;!-- |参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期	|文件建立日期
+|updated:   |更新日期	|文件更新日期
+|comments:  |开启文章的评论功能	|true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description| --&gt;
+&lt;h3 id=&#34;mapkit-framework&#34;&gt;MapKit Framework&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;下面三项是理解（看懂代码：掌握流程）
+&lt;ol&gt;
+&lt;li&gt;添加大头针对象（&lt;code&gt;Annotation&lt;/code&gt;）标注
+&lt;ul&gt;
+&lt;li&gt;【样例】在地图上添加系统默认提供好的大头针类（对象标注）修改大头针的默认颜色，添加标注视图（弹出框标题的坐标和右边）&lt;/li&gt;
+&lt;li&gt;【Demo01_MKMapView】&lt;/li&gt;
+&lt;li&gt;总结：
+&lt;ul&gt;
+&lt;li&gt;系统自动添加用户所在位置的蓝色圈（&lt;code&gt;MKUserLocation&lt;/code&gt; 类型）&lt;/li&gt;
+&lt;li&gt;如何添加大头针对象到地图视图上&lt;/li&gt;
+&lt;li&gt;地图视图区域的概念（&lt;code&gt;center&lt;/code&gt; 中心 + &lt;code&gt;span&lt;/code&gt; 跨度）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;修改两个点
+&lt;ul&gt;
+&lt;li&gt;用户位置默认的蓝色圈（标注对象）颜色变成自定义颜色&lt;/li&gt;
+&lt;li&gt;点中标注对象，不显示弹出框&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;【样例】设置自定义的标注对象的图片【Demo02_MKAnnotationView】
+&lt;ul&gt;
+&lt;li&gt;此时只能使用父类 &lt;code&gt;MKAnnotationView&lt;/code&gt;（IOS9）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>OC 中的 Block</title>
+      <link>https://rangolee.github.io/post/ios/16-0523_oc%E4%B8%AD%E7%9A%84block/</link>
+      <pubDate>Mon, 23 May 2016 09:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0523_oc%E4%B8%AD%E7%9A%84block/</guid>
+      <description>OC 中 block 的严格定义，语法，格式，调用 是C语言的功能，iOS4.0之后可以使用。和其他动态语言的闭包（closure）类似，和 swift 中的 closure 闭包几乎一</description>
+    </item>
+    
+    <item>
+      <title>Xcode 中使用自定义字体的方法</title>
+      <link>https://rangolee.github.io/post/ios/16-0420_xcode%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 20 May 2016 22:10:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0420_xcode%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description>设置自定义字体 将下载好的 .otf字体文件直接拖拽到 Xcode 中，然后通过 storyboard 找到字体的实际名称，然后使用下面的方法，看到网上许多人说需要在 plist 中添加字体</description>
+    </item>
+    
+    <item>
+      <title>IOS中 new 和 alloc]init 等</title>
+      <link>https://rangolee.github.io/post/ios/16-0520_ios%E4%B8%ADnew%E4%B8%8Eallocinit%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Fri, 20 May 2016 22:09:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0520_ios%E4%B8%ADnew%E4%B8%8Eallocinit%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>[className new]和[[className alloc]init] 在实际开发中可能很少用到 new ，一般创建对象咱们看到的都是[[className alloc]init],但是</description>
+    </item>
+    
+    <item>
+      <title>NSArray 和 NSMutableArray 的相互转换</title>
+      <link>https://rangolee.github.io/post/ios/16-0520_nsarray-%E5%92%8C-nsmutablearray-%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Fri, 20 May 2016 22:07:24 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0520_nsarray-%E5%92%8C-nsmutablearray-%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2/</guid>
+      <description>1 2 3 4 5 // NSArray --&amp;gt; NSMutableArray NSMutableArray *myMutableArray = [myArray mutableCopy]; // NSMutableArray --&amp;gt; NSArray NSArray *myArray = [myMutableArray copy];</description>
+    </item>
+    
+    <item>
+      <title>Cocoa Pods 的安装过程</title>
+      <link>https://rangolee.github.io/post/ios/16-0520_cocoapods%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Wed, 18 May 2016 11:20:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0520_cocoapods%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;!--
+|参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期	|文件建立日期
+|updated:   |更新日期	|文件更新日期
+|comments:  |开启文章的评论功能	|true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description|
+--&gt;
+&lt;h3 id=&#34;关于-cocoa-pods&#34;&gt;关于 Cocoa Pods&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;cocoa-pods-是什么&#34;&gt;Cocoa Pods 是什么？&lt;/h4&gt;
+&lt;p&gt;当你开发iOS应用时，会经常使用到很多第三方开源类库，比如JSONKit，AFNetWorking等等。而如何有效且方便的管理这些类库就不是很容易了。主要有两方面的问题：&lt;/p&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;可能你需要使用的某个类库又可能会用到其他类库，所以要使用它，必须得另外下载其他类库，而这个其他类库又有可能用到另外的类库。如果,手动去一个个下载所需类库这就有点麻烦了。&lt;/li&gt;
+&lt;li&gt;另外一种常见情况是，你项目中用到的类库有更新，你必须得重新下载新版本，重新加入到项目中，十分麻烦。如果能有什么工具能解决这些恼人的问题，那就太好了，而CocoaPods就是这样一款具有这些功能的管理类库的工具。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;CocoaPods应该是iOS最常用和最有名的类库管理工具了，上述两个烦人的问题，通过cocoaPods，只需要一行命令就可以完美解决，当然前提是你必须正确设置它。重要的是，绝大部分有名的开源类库，都支持CocoaPods。所以，作为iOS程序员的我们，掌握CocoaPods的使用是必不可少的基本技能了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>KVC 和 KVO</title>
+      <link>https://rangolee.github.io/post/ios/kvc-%E5%92%8C-kvo/</link>
+      <pubDate>Mon, 16 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/kvc-%E5%92%8C-kvo/</guid>
+      <description>KVC KVC（KeyValueCoding）：（键值编码）非正式协议（Informal Protocol）【非正式协议：不需要遵循】 1. 能做什么？ *</description>
+    </item>
+    
+    <item>
+      <title>NSAttributedString</title>
+      <link>https://rangolee.github.io/post/ios/16-0518_nsattributedstring/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0518_nsattributedstring/</guid>
+      <description>&lt;h4 id=&#34;字符属性&#34;&gt;字符属性&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-objective-c&#34; data-lang=&#34;objective-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; 字符属性可以应用于 attributed string 的文本中。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSFontAttributeName;(字体) 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSParagraphStyleAttributeName;(段落) 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSForegroundColorAttributeName;(字体颜色) 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSBackgroundColorAttributeName;(字体背景色)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSLigatureAttributeName;(连字符)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSKernAttributeName;(字间距)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSStrikethroughStyleAttributeName;(删除线)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSUnderlineStyleAttributeName;(下划线)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSStrokeColorAttributeName;(边线颜色)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSStrokeWidthAttributeName;(边线宽度)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSShadowAttributeName;(阴影)(横竖排版 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSVerticalGlyphFormAttributeName;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>iOS 中 单元格（cell） 的复用方式</title>
+      <link>https://rangolee.github.io/post/ios/16-0508_%E5%8D%95%E5%85%83%E6%A0%BC%E5%A4%8D%E7%94%A8/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0508_%E5%8D%95%E5%85%83%E6%A0%BC%E5%A4%8D%E7%94%A8/</guid>
+      <description>&lt;h4 id=&#34;1单元格复用的实现方式&#34;&gt;1.单元格复用的实现方式&lt;/h4&gt;
+&lt;hr&gt;
+&lt;h5 id=&#34;方式1判断没有可复用的单元格后由我们自己负责创建-cell-实例&#34;&gt;&lt;strong&gt;方式1&lt;/strong&gt;.判断没有可复用的单元格后，由我们自己负责创建 cell 实例。&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;未完待续。。。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;方式2如果没有取到可复用的单元格由系统自动依据我们提前说明的类型帮我们自动创建出-cell的实例&#34;&gt;&lt;strong&gt;方式2&lt;/strong&gt;.如果没有取到可复用的单元格，由系统自动依据我们提前说明的类型，帮我们自动创建出 cell的实例。&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;在 viewDidLoad 中，使用 tableView 的 registerClass 方法，提前注册一个类型，在取不到 cell 的时候，系统会根据我们注册的类型来自动创建 cell。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-objective-c&#34; data-lang=&#34;objective-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//    注册单元格类型
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tableView&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;registerClass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UITableViewCell&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;forCellReuseIdentifier&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;@&amp;#34;cell&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

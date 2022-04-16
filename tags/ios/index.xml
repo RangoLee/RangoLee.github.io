@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iOS on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/ios/</link>
+    <description>Recent content in iOS on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 29 Feb 2020 21:37:19 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS 之 keyPath 自动提示宏</title>
+      <link>https://rangolee.github.io/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/</link>
+      <pubDate>Sat, 29 Feb 2020 21:37:19 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/</guid>
+      <description>自动提示宏 这个宏可以在使用keyPath时自动提示属性字符串，防止输入出现错误。 1 2 3 4 // 自动替换宏 #define keyPath(objc, keyPath) @(((void)objc.keyPath,#keyPath)) NSLog(@&amp;#34;%@&amp;#34;, [keyPath(self.layer, position) class]); // NSTaggedPointerString NSLog(@&amp;#34;%@&amp;#34;, keyPath(self.layer, position)); // position c语言字符</description>
+    </item>
+    
+    <item>
+      <title>禁用 Xcode 9 的 Swift 3 中 @objc 推断</title>
+      <link>https://rangolee.github.io/post/swift/swift3to4/</link>
+      <pubDate>Thu, 17 May 2018 23:36:05 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/swift/swift3to4/</guid>
+      <description>swift3 to swift4 === 使用 xcode 9 自动从 swift3 升级到 swift4 后改动并不多, 选择 deployment target 8.0 时,编译代码提示下面警告⚠️ 1 The use of Swift 3 @objc inference in Swift 4 mode is deprecated. Please address deprecated @objc inference warnings, test your code with “Use</description>
+    </item>
+    
+    <item>
+      <title>cell的间隔线（tableView.separatorStyle）</title>
+      <link>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</link>
+      <pubDate>Sun, 19 Jun 2016 16:58:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</guid>
+      <description>cell 的间隔线 tableView 的一个属性 separatorStyle 可以设置 cell 之间的间隔线样式(三种) 1 2 3 4 5 typedef NS_ENUM(NSInteger, UITableViewCellSeparatorStyle) { UITableViewCellSeparatorStyleNone, UITableViewCellSeparatorStyleSingleLine, UITableViewCellSeparatorStyleSingleLineEtched // This separator style is only supported for grouped style table views currently } __TVOS_PROHIBITED; 默认样式有一条线 1 tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine; 设置</description>
+    </item>
+    
+    <item>
+      <title>Cocoa Pods 的安装过程</title>
+      <link>https://rangolee.github.io/post/ios/16-0520_cocoapods%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Wed, 18 May 2016 11:20:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0520_cocoapods%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;!--
+|参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期	|文件建立日期
+|updated:   |更新日期	|文件更新日期
+|comments:  |开启文章的评论功能	|true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description|
+--&gt;
+&lt;h3 id=&#34;关于-cocoa-pods&#34;&gt;关于 Cocoa Pods&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;cocoa-pods-是什么&#34;&gt;Cocoa Pods 是什么？&lt;/h4&gt;
+&lt;p&gt;当你开发iOS应用时，会经常使用到很多第三方开源类库，比如JSONKit，AFNetWorking等等。而如何有效且方便的管理这些类库就不是很容易了。主要有两方面的问题：&lt;/p&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;可能你需要使用的某个类库又可能会用到其他类库，所以要使用它，必须得另外下载其他类库，而这个其他类库又有可能用到另外的类库。如果,手动去一个个下载所需类库这就有点麻烦了。&lt;/li&gt;
+&lt;li&gt;另外一种常见情况是，你项目中用到的类库有更新，你必须得重新下载新版本，重新加入到项目中，十分麻烦。如果能有什么工具能解决这些恼人的问题，那就太好了，而CocoaPods就是这样一款具有这些功能的管理类库的工具。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;CocoaPods应该是iOS最常用和最有名的类库管理工具了，上述两个烦人的问题，通过cocoaPods，只需要一行命令就可以完美解决，当然前提是你必须正确设置它。重要的是，绝大部分有名的开源类库，都支持CocoaPods。所以，作为iOS程序员的我们，掌握CocoaPods的使用是必不可少的基本技能了。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

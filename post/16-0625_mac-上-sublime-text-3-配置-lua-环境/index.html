@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Mac 上 Sublime Text 3 配置 Lua 环境 - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="1.下载安装  1. 先去Lua官网下载最新版 lua Rango-MBP:~ rango$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz
+2. 然后解压压缩包 Rango-MBP:~ rango$ tar zxf lua-5.3.3.tar.gz
+3. cd 到解压后的文件夹 Rango-MBP:~ rango$ cd lua-5.3.3
+4. 然后编译测试 Rango-MBP:lua-5.3.3 rango$ make macosx test
+正常情况会看到如下信息 1 2  src/lua -v Lua 5.3.3 Copyright (C) 1994-2016 Lua.org, PUC-Rio`   上面几步总概况 1 2 3 4  $ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz $ tar zxf lua-5.3.3.tar.gz $ cd lua-5.3.3 $ make macosx test   " />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/16-0625_mac-%E4%B8%8A-sublime-text-3-%E9%85%8D%E7%BD%AE-lua-%E7%8E%AF%E5%A2%83/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Mac 上 Sublime Text 3 配置 Lua 环境" />
+<meta property="og:description" content="1.下载安装
+
+1. 先去Lua官网下载最新版 lua
+Rango-MBP:~ rango$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz
+2. 然后解压压缩包
+Rango-MBP:~ rango$ tar zxf lua-5.3.3.tar.gz
+3. cd 到解压后的文件夹
+Rango-MBP:~ rango$ cd lua-5.3.3
+4. 然后编译测试
+Rango-MBP:lua-5.3.3 rango$ make macosx test
+正常情况会看到如下信息
+
+
+1
+2
+
+
+src/lua -v
+Lua 5.3.3  Copyright (C) 1994-2016 Lua.org, PUC-Rio`
+
+
+上面几步总概况
+
+
+1
+2
+3
+4
+
+
+$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz
+$ tar zxf lua-5.3.3.tar.gz
+$ cd lua-5.3.3
+$ make macosx test
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/16-0625_mac-%E4%B8%8A-sublime-text-3-%E9%85%8D%E7%BD%AE-lua-%E7%8E%AF%E5%A2%83/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-06-25T00:49:00+00:00" />
+<meta property="article:modified_time" content="2016-06-25T00:49:00+00:00" />
+
+<meta itemprop="name" content="Mac 上 Sublime Text 3 配置 Lua 环境">
+<meta itemprop="description" content="1.下载安装
+
+1. 先去Lua官网下载最新版 lua
+Rango-MBP:~ rango$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz
+2. 然后解压压缩包
+Rango-MBP:~ rango$ tar zxf lua-5.3.3.tar.gz
+3. cd 到解压后的文件夹
+Rango-MBP:~ rango$ cd lua-5.3.3
+4. 然后编译测试
+Rango-MBP:lua-5.3.3 rango$ make macosx test
+正常情况会看到如下信息
+
+
+1
+2
+
+
+src/lua -v
+Lua 5.3.3  Copyright (C) 1994-2016 Lua.org, PUC-Rio`
+
+
+上面几步总概况
+
+
+1
+2
+3
+4
+
+
+$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz
+$ tar zxf lua-5.3.3.tar.gz
+$ cd lua-5.3.3
+$ make macosx test
+
+
+"><meta itemprop="datePublished" content="2016-06-25T00:49:00+00:00" />
+<meta itemprop="dateModified" content="2016-06-25T00:49:00+00:00" />
+<meta itemprop="wordCount" content="441">
+<meta itemprop="keywords" content="Lua,Sublime Text 3," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mac 上 Sublime Text 3 配置 Lua 环境"/>
+<meta name="twitter:description" content="1.下载安装
+
+1. 先去Lua官网下载最新版 lua
+Rango-MBP:~ rango$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz
+2. 然后解压压缩包
+Rango-MBP:~ rango$ tar zxf lua-5.3.3.tar.gz
+3. cd 到解压后的文件夹
+Rango-MBP:~ rango$ cd lua-5.3.3
+4. 然后编译测试
+Rango-MBP:lua-5.3.3 rango$ make macosx test
+正常情况会看到如下信息
+
+
+1
+2
+
+
+src/lua -v
+Lua 5.3.3  Copyright (C) 1994-2016 Lua.org, PUC-Rio`
+
+
+上面几步总概况
+
+
+1
+2
+3
+4
+
+
+$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz
+$ tar zxf lua-5.3.3.tar.gz
+$ cd lua-5.3.3
+$ make macosx test
+
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Mac 上 Sublime Text 3 配置 Lua 环境</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-25 </span>
+        
+          <span class="more-meta"> 约 441 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h4 id="1下载安装">1.下载安装</h4>
+<hr>
+<h5 id="1-先去lua官网httpwwwluaorgftp下载最新版-lua">1. 先去<a href="http://www.lua.org/ftp/">Lua官网</a>下载最新版 lua</h5>
+<p><code>Rango-MBP:~ rango$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz</code></p>
+<h5 id="2-然后解压压缩包">2. 然后解压压缩包</h5>
+<p><code>Rango-MBP:~ rango$ tar zxf lua-5.3.3.tar.gz</code></p>
+<h5 id="3-cd-到解压后的文件夹">3. cd 到解压后的文件夹</h5>
+<p><code>Rango-MBP:~ rango$ cd lua-5.3.3</code></p>
+<h5 id="4-然后编译测试">4. 然后编译测试</h5>
+<p><code>Rango-MBP:lua-5.3.3 rango$ make macosx test</code></p>
+<h6 id="正常情况会看到如下信息">正常情况会看到如下信息</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">src/lua -v
+</span></span><span class="line"><span class="cl">Lua 5.3.3  Copyright <span class="o">(</span>C<span class="o">)</span> 1994-2016 Lua.org, PUC-Rio<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="上面几步总概况">上面几步总概况</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz
+</span></span><span class="line"><span class="cl">$ tar zxf lua-5.3.3.tar.gz
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> lua-5.3.3
+</span></span><span class="line"><span class="cl">$ make macosx <span class="nb">test</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="5-安装-lua-需要输入开机密码">5. 安装 lua 需要输入开机密码</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:lua-5.3.3 rango$  sudo make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h6 id="安装完成后输入lua--v看到出现如下信息则安装成功">安装完成后输入<code>lua -v</code>看到出现如下信息则安装成功</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:lua-5.3.3 rango$ lua -v
+</span></span><span class="line"><span class="cl">Lua 5.3.3  Copyright <span class="o">(</span>C<span class="o">)</span> 1994-2016 Lua.org, PUC-Rio
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2-配置-sublime-text-3-的-lua-编译环境">2. 配置 Sublime Text 3 的 Lua 编译环境</h4>
+<hr>
+<h5 id="1-下载-sublime-text-3-安装">1. 下载 Sublime Text 3 安装</h5>
+<h5 id="2-在-sublime-text-3中选择-toolsbuild-systemnew-build-system">2. 在 Sublime Text 3中选择 Tools/Build System/New Build System</h5>
+<p><img src="http://ww2.sinaimg.cn/large/741b3941jw1f56t0cxgecj21aw0pwqam.jpg" alt=""></p>
+<h5 id="3-将shell_cmd-make替换为如下信息">3. 将<code>&quot;shell_cmd&quot;: &quot;make&quot;</code>替换为如下信息</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="s2">&#34;cmd&#34;</span>: <span class="o">[</span><span class="s2">&#34;/usr/local/bin/lua&#34;</span>, <span class="s2">&#34;</span><span class="nv">$file</span><span class="s2">&#34;</span><span class="o">]</span>,  
+</span></span><span class="line"><span class="cl"> 	<span class="s2">&#34;file_regex&#34;</span>: <span class="s2">&#34;^(...*?):([0-9]*):?([0-9]*)&#34;</span>,  
+</span></span><span class="line"><span class="cl"> 	<span class="s2">&#34;selector&#34;</span>: <span class="s2">&#34;source.lua&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="4-保存为-lua-或者-mylua随你心情然后重启-sublime-text-3">4. 保存为 Lua （或者 myLua）随你心情，然后重启 Sublime Text 3.</h5>
+<h5 id="5-新建测试文件-mylualua注意这里要新建文件并保存成lua之后再向里面添加数据">5. 新建测试文件 myLua.lua,注意这里要新建文件，并保存成.lua之后再向里面添加数据。</h5>
+<h5 id="6-经典的测试代码printhelloworld选择lua编译环境httpww1sinaimgcnlarge741b3941jw1f56t5aqif4j211g0l044kjpg">6. 经典的测试代码<code>print(&quot;hello&quot;..&quot;world&quot;);</code>选择lua编译环境:<img src="http://ww1.sinaimg.cn/large/741b3941jw1f56t5aqif4j211g0l044k.jpg" alt=""></h5>
+<h5 id="7-commond--b-编译查看结果helloworld这样就配置完成了可以愉快的敲代码啦啦啦">7. commond + b 编译查看结果<code>helloworld</code>这样就配置完成了，可以愉快的敲代码~(≧▽≦)/~啦啦啦</h5>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-06-25
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/lua/">Lua</a>
+          <a href="/tags/sublime-text-3/">Sublime Text 3</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/cpp/windows%E4%B8%8Bsublimetext3%E7%9A%84c&#43;&#43;11%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Windows平台配置Sublime Text3的C/C&#43;&#43;11开发环境</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/ios/16-0621_ios8%E4%B8%ADuiactionsheet%E5%BC%B9%E5%87%BAuiimagepickercontroller%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/">
+            <span class="next-text nav-default">iOS8中UIActionSheet弹出UIImagePickerController异常的处理方法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>other on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/categories/other/</link>
+    <description>Recent content in other on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 26 Apr 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/categories/other/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>汇编中的bss、data、text、rodata、heap、stack的意义？</title>
+      <link>https://rangolee.github.io/post/assembly/16-0426_%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84bssdatatext%E7%AD%89/</link>
+      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/assembly/16-0426_%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84bssdatatext%E7%AD%89/</guid>
+      <description>bss 段： BSS段（bsssegment）通常是指用来存放程序中未初始化的全局变量的一块内存区域。BSS是英文BlockStarted by Symb</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cmake on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/cmake/</link>
+    <description>Recent content in cmake on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 23 May 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/cmake/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac 安装 cmake</title>
+      <link>https://rangolee.github.io/post/mac%E5%AE%89%E8%A3%85cmake/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/mac%E5%AE%89%E8%A3%85cmake/</guid>
+      <description>1 安装包安装 cmake 从官网下载cmake安装包。默认安装 链接cmake.app 与 terminal 打开终端，输入export PATH=/Applications/CMake.app/Contents/bin:$PATH 配置完成。（以上链接只对本终端窗口</description>
+    </item>
+    
+  </channel>
+</rss>

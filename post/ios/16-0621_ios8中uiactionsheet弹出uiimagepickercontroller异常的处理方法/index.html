@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>iOS8中UIActionSheet弹出UIImagePickerController异常的处理方法 - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="iOS8之后，UIActionSheet 更改父类于 UIAlertController 带来的兼容性问题。 最近在做项目中遇到一个UIAlertController弹窗的问题，困" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/ios/16-0621_ios8%E4%B8%ADuiactionsheet%E5%BC%B9%E5%87%BAuiimagepickercontroller%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="iOS8中UIActionSheet弹出UIImagePickerController异常的处理方法" />
+<meta property="og:description" content="iOS8之后，UIActionSheet 更改父类于 UIAlertController 带来的兼容性问题。 最近在做项目中遇到一个UIAlertController弹窗的问题，困" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/ios/16-0621_ios8%E4%B8%ADuiactionsheet%E5%BC%B9%E5%87%BAuiimagepickercontroller%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-06-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-06-21T00:00:00+00:00" />
+
+<meta itemprop="name" content="iOS8中UIActionSheet弹出UIImagePickerController异常的处理方法">
+<meta itemprop="description" content="iOS8之后，UIActionSheet 更改父类于 UIAlertController 带来的兼容性问题。 最近在做项目中遇到一个UIAlertController弹窗的问题，困"><meta itemprop="datePublished" content="2016-06-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-06-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1224">
+<meta itemprop="keywords" content="iOS8,UIActionSheet,UIImagePickerController,UIAlertController," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="iOS8中UIActionSheet弹出UIImagePickerController异常的处理方法"/>
+<meta name="twitter:description" content="iOS8之后，UIActionSheet 更改父类于 UIAlertController 带来的兼容性问题。 最近在做项目中遇到一个UIAlertController弹窗的问题，困"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">iOS8中UIActionSheet弹出UIImagePickerController异常的处理方法</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-21 </span>
+        <div class="post-category">
+            <a href="/categories/ios/"> iOS </a>
+            </div>
+          <span class="more-meta"> 约 1224 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h4 id="ios8之后uiactionsheet-更改父类于-uialertcontroller-带来的兼容性问题">iOS8之后，UIActionSheet 更改父类于 UIAlertController 带来的兼容性问题。</h4>
+<hr>
+<h5 id="最近在做项目中遇到一个uialertcontroller弹窗的问题困扰了我很久今天终于解决了特此记录一下以便日后查阅">最近在做项目中遇到一个UIAlertController弹窗的问题，困扰了我很久。今天终于解决了，特此记录一下，以便日后查阅。</h5>
+<h5 id="第一次的代码如下">第一次的代码如下：</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-objective-c" data-lang="objective-c"><span class="line"><span class="cl"><span class="cp">#pragma mark - &lt;----------- 打开相册或者相机 --------------&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">openCameraOrPhotoLibrary</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//    创建对话框控制器对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">UIAlertController</span> <span class="o">*</span><span class="n">alertController</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIAlertController</span> <span class="nl">alertControllerWithTitle</span><span class="p">:</span><span class="s">@&#34;提示&#34;</span> <span class="nl">message</span><span class="p">:</span><span class="s">@&#34;请选择相机或相册&#34;</span> <span class="nl">preferredStyle</span><span class="p">:</span><span class="n">UIAlertControllerStyleActionSheet</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//    创建事件按键
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">UIAlertAction</span> <span class="o">*</span><span class="n">cancel</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIAlertAction</span> <span class="nl">actionWithTitle</span><span class="p">:</span><span class="s">@&#34;取消&#34;</span> <span class="nl">style</span><span class="p">:</span> <span class="n">UIAlertActionStyleCancel</span> <span class="nl">handler</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">UIAlertAction</span> <span class="o">*</span><span class="n">camera</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIAlertAction</span> <span class="nl">actionWithTitle</span><span class="p">:</span><span class="s">@&#34;相机&#34;</span> <span class="nl">style</span><span class="p">:</span><span class="n">UIAlertActionStyleDefault</span> <span class="nl">handler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">UIAlertAction</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">action</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//        选择相机的方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">[</span><span class="nb">self</span> <span class="nl">chooseHeadImage</span><span class="p">:</span><span class="n">UIImagePickerControllerSourceTypeCamera</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">UIAlertAction</span> <span class="o">*</span><span class="n">photoLibrary</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIAlertAction</span> <span class="nl">actionWithTitle</span><span class="p">:</span><span class="s">@&#34;相册&#34;</span> <span class="nl">style</span><span class="p">:</span> <span class="n">UIAlertActionStyleDefault</span> <span class="nl">handler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">UIAlertAction</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">action</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//        选择相册的方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">[</span><span class="nb">self</span> <span class="nl">chooseHeadImage</span><span class="p">:</span><span class="n">UIImagePickerControllerSourceTypePhotoLibrary</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}];</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//    添加事件按键到控制器对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">[</span><span class="n">alertController</span> <span class="nl">addAction</span><span class="p">:</span><span class="n">cancel</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="n">alertController</span> <span class="nl">addAction</span><span class="p">:</span><span class="n">camera</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="n">alertController</span> <span class="nl">addAction</span><span class="p">:</span><span class="n">photoLibrary</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//    弹窗对话框视图
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">[</span><span class="nb">self</span> <span class="nl">presentViewController</span><span class="p">:</span><span class="n">alertController</span> <span class="nl">animated</span><span class="p">:</span><span class="nb">YES</span> <span class="nl">completion</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><!-- more -->
+<h5 id="在-iphone-模拟器上测试没有任何问题但是当我换成-ipad-模拟器时在运行完这个方法后直接崩溃了而且没有任何崩溃信息提示在-ipad-真机上测试也是直接崩溃闪退">在 <code>iPhone 模拟器</code>上测试没有任何问题，但是当我换成 <code>iPad 模拟器</code>时，在运行完这个方法后，直接崩溃了，而且没有任何崩溃信息提示。在 iPad 真机上测试也是直接崩溃闪退。</h5>
+<h5 id="刚开始以为是还以为是访问相册出错了各种查资料看到网上有说是什么横竖屏的问题难道是我把横屏模式关了导致的于是把控制横竖屏的-landscape-left-和-landscape-right都打开还是一样的崩溃">刚开始以为是还以为是访问相册出错了，各种查资料，看到网上有说是什么横竖屏的问题，难道是我把横屏模式关了导致的？于是把控制横竖屏的<code> Landscape Left</code> 和 <code>Landscape Right</code>都打开，还是一样的崩溃。</h5>
+<!-- more -->
+<h5 id="最后通过breakpoint调试发现运行到最后一步需要弹窗时崩溃的self-presentviewcontrolleralertcontroller-animatedyes-completionnil这就尴尬了难道是这个方法用错了吗不能呀">最后通过<strong>Breakpoint</strong>调试发现，运行到最后一步需要弹窗时崩溃的。<code>[self presentViewController:alertController animated:YES completion:nil];</code>这就尴尬了。难道是这个方法用错了吗？不能呀。</h5>
+<h5 id="最后又想到-uialertcontroller对之前的-ios-版本兼容性有问题吗于是把-deployment-target-从80-一路上升到-92-还是同样一到需要弹窗这一步就崩溃">最后又想到 UIAlertController对之前的 iOS 版本兼容性有问题吗？于是把 Deployment Target 从8.0 一路上升到 9.2 还是同样一到需要弹窗这一步就崩溃。</h5>
+<h5 id="最后的最后没办法了那就换成之前的-uiactionsheet-这总可以了吧于是代码又变成了下面这样">最后的最后没办法了，那就换成之前的 UIActionSheet 这总可以了吧。于是代码又变成了下面这样：</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-objective-c" data-lang="objective-c"><span class="line"><span class="cl">	<span class="n">UIActionSheet</span> <span class="o">*</span><span class="n">sheet</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIActionSheet</span> <span class="n">alloc</span><span class="p">]</span><span class="nl">initWithTitle</span><span class="p">:</span><span class="s">@&#34;请选择&#34;</span> <span class="nl">delegate</span><span class="p">:</span><span class="nb">self</span> <span class="nl">cancelButtonTitle</span><span class="p">:</span><span class="s">@&#34;取消&#34;</span> <span class="nl">destructiveButtonTitle</span><span class="p">:</span><span class="s">@&#34;相机&#34;</span> <span class="nl">otherButtonTitles</span><span class="p">:</span><span class="s">@&#34;相册&#34;</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="n">sheet</span> <span class="nl">showInView</span><span class="p">:</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">];</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="到这一步可以弹窗了难道真是这么个问题">到这一步可以弹窗了，难道真是这么个问题？？</h5>
+<h5 id="于是遵循两个协议实现代理方法-先是按常规用了这个方法">于是遵循两个协议，实现代理方法 先是按常规用了这个方法</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-objective-c" data-lang="objective-c"><span class="line"><span class="cl"><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">actionSheet:</span><span class="p">(</span><span class="n">UIActionSheet</span> <span class="o">*</span><span class="p">)</span><span class="nv">actionSheet</span> <span class="n">clickedButtonAtIndex</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>结果这次倒是没有崩溃，却是抛出了一个异常</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-objective-c" data-lang="objective-c"><span class="line"><span class="cl"><span class="nl">Warning</span><span class="p">:</span> <span class="n">Attempt</span> <span class="n">to</span> <span class="n">present</span> <span class="o">&lt;</span><span class="nl">UIImagePickerController</span><span class="p">:</span> <span class="mh">0x7fc19c8c7e00</span><span class="o">&gt;</span>  <span class="n">on</span> <span class="o">&lt;</span><span class="nl">RLConfigHeadImageViewController</span><span class="p">:</span> <span class="mh">0x7fc19e174120</span><span class="o">&gt;</span> <span class="n">which</span> <span class="n">is</span> <span class="n">already</span> <span class="n">presenting</span> <span class="p">(</span><span class="n">null</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我去，这是什么鬼东西，网上查了查，还是兼容性问题。</p>
+<h5 id="在ios8以前的方法里直接在click的委托事件里处理点击按键的事件就可以了">在iOS8以前的方法里，直接在Click的委托事件里处理点击按键的事件就可以了</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-objective-c" data-lang="objective-c"><span class="line"><span class="cl"><span class="p">-(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">actionSheet:</span><span class="p">(</span><span class="n">UIActionSheet</span> <span class="o">*</span><span class="p">)</span><span class="nv">actionSheet</span> <span class="nf">clickedButtonAtIndex:</span><span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">buttonIndex</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="但是-ios8之后就不行了抛出这个警告并且取消弹出imagepicker行为原因在警告里说得比较明白了因为已经有actionsheet存在了不能present新的此时我们选择新的委托方法diddismisswithbuttonindex把之前需要的-click-方法里写的写在这个方法里就好了这次就没有什么其他问题了">但是 iOS8之后就不行了，抛出这个警告，并且取消弹出ImagePicker行为。原因在警告里说得比较明白了，因为已经有actionsheet存在了，不能present新的。此时我们选择新的委托方法<code>didDismissWithButtonIndex</code>，把之前需要的 click 方法里写的写在这个方法里就好了。这次就没有什么其他问题了。</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-objective-c" data-lang="objective-c"><span class="line"><span class="cl"><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">actionSheet:</span><span class="p">(</span><span class="n">UIActionSheet</span> <span class="o">*</span><span class="p">)</span><span class="nv">actionSheet</span> <span class="nf">didDismissWithButtonIndex:</span><span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">buttonIndex</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="在-iphone-模拟器和-ipad-模拟器都没问题了">在 iPhone 模拟器和 iPad 模拟器都没问题了。</h5>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-06-21
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ios8/">iOS8</a>
+          <a href="/tags/uiactionsheet/">UIActionSheet</a>
+          <a href="/tags/uiimagepickercontroller/">UIImagePickerController</a>
+          <a href="/tags/uialertcontroller/">UIAlertController</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/16-0625_mac-%E4%B8%8A-sublime-text-3-%E9%85%8D%E7%BD%AE-lua-%E7%8E%AF%E5%A2%83/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Mac 上 Sublime Text 3 配置 Lua 环境</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/">
+            <span class="next-text nav-default">cell的间隔线（tableView.separatorStyle）</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

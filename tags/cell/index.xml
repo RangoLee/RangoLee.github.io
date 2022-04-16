@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cell on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/cell/</link>
+    <description>Recent content in cell on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/cell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS 中 单元格（cell） 的复用方式</title>
+      <link>https://rangolee.github.io/post/ios/16-0508_%E5%8D%95%E5%85%83%E6%A0%BC%E5%A4%8D%E7%94%A8/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0508_%E5%8D%95%E5%85%83%E6%A0%BC%E5%A4%8D%E7%94%A8/</guid>
+      <description>&lt;h4 id=&#34;1单元格复用的实现方式&#34;&gt;1.单元格复用的实现方式&lt;/h4&gt;
+&lt;hr&gt;
+&lt;h5 id=&#34;方式1判断没有可复用的单元格后由我们自己负责创建-cell-实例&#34;&gt;&lt;strong&gt;方式1&lt;/strong&gt;.判断没有可复用的单元格后，由我们自己负责创建 cell 实例。&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;未完待续。。。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;方式2如果没有取到可复用的单元格由系统自动依据我们提前说明的类型帮我们自动创建出-cell的实例&#34;&gt;&lt;strong&gt;方式2&lt;/strong&gt;.如果没有取到可复用的单元格，由系统自动依据我们提前说明的类型，帮我们自动创建出 cell的实例。&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;在 viewDidLoad 中，使用 tableView 的 registerClass 方法，提前注册一个类型，在取不到 cell 的时候，系统会根据我们注册的类型来自动创建 cell。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-objective-c&#34; data-lang=&#34;objective-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//    注册单元格类型
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tableView&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;registerClass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UITableViewCell&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;forCellReuseIdentifier&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;@&amp;#34;cell&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

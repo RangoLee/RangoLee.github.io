@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MapKit Framework on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/mapkit-framework/</link>
+    <description>Recent content in MapKit Framework on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 24 May 2016 09:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/mapkit-framework/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MapKit Framework</title>
+      <link>https://rangolee.github.io/post/ios/16-0524_mapkit_framework/</link>
+      <pubDate>Tue, 24 May 2016 09:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0524_mapkit_framework/</guid>
+      <description>&lt;!-- |参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期	|文件建立日期
+|updated:   |更新日期	|文件更新日期
+|comments:  |开启文章的评论功能	|true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description| --&gt;
+&lt;h3 id=&#34;mapkit-framework&#34;&gt;MapKit Framework&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;下面三项是理解（看懂代码：掌握流程）
+&lt;ol&gt;
+&lt;li&gt;添加大头针对象（&lt;code&gt;Annotation&lt;/code&gt;）标注
+&lt;ul&gt;
+&lt;li&gt;【样例】在地图上添加系统默认提供好的大头针类（对象标注）修改大头针的默认颜色，添加标注视图（弹出框标题的坐标和右边）&lt;/li&gt;
+&lt;li&gt;【Demo01_MKMapView】&lt;/li&gt;
+&lt;li&gt;总结：
+&lt;ul&gt;
+&lt;li&gt;系统自动添加用户所在位置的蓝色圈（&lt;code&gt;MKUserLocation&lt;/code&gt; 类型）&lt;/li&gt;
+&lt;li&gt;如何添加大头针对象到地图视图上&lt;/li&gt;
+&lt;li&gt;地图视图区域的概念（&lt;code&gt;center&lt;/code&gt; 中心 + &lt;code&gt;span&lt;/code&gt; 跨度）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;修改两个点
+&lt;ul&gt;
+&lt;li&gt;用户位置默认的蓝色圈（标注对象）颜色变成自定义颜色&lt;/li&gt;
+&lt;li&gt;点中标注对象，不显示弹出框&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;【样例】设置自定义的标注对象的图片【Demo02_MKAnnotationView】
+&lt;ul&gt;
+&lt;li&gt;此时只能使用父类 &lt;code&gt;MKAnnotationView&lt;/code&gt;（IOS9）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

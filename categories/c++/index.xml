@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/categories/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 12 Mar 2017 21:56:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/categories/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; 中new和new()的区别</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;%E4%B8%ADnew%E5%92%8Cnew%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Sun, 12 Mar 2017 21:56:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;%E4%B8%ADnew%E5%92%8Cnew%E5%8C%BA%E5%88%AB/</guid>
+      <description>C++ 中new和new()的区别 结论：new()调用没有参数的构造函数，new调用默认构造函数或唯一构造函数。 C++在new时的初始化规律可能为</description>
+    </item>
+    
+    <item>
+      <title>Xcode如何创建默认后缀是 .h 的 c&#43;&#43; 头文件？</title>
+      <link>https://rangolee.github.io/post/cpp/xcode%E6%96%B0%E5%BB%BAcpp%E5%A4%B4%E6%96%87%E4%BB%B6%E6%97%B6%E9%BB%98%E8%AE%A4%E4%B8%BA.h%E5%90%8E%E7%BC%80/</link>
+      <pubDate>Thu, 09 Mar 2017 01:10:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/xcode%E6%96%B0%E5%BB%BAcpp%E5%A4%B4%E6%96%87%E4%BB%B6%E6%97%B6%E9%BB%98%E8%AE%A4%E4%B8%BA.h%E5%90%8E%E7%BC%80/</guid>
+      <description>Xcode 在新建 cpp 文件时,自动生成的头文件是 .hpp 的后缀,如果想改变默认生成的头文件后缀为 .h,应该如何操作呢? 1. 找到 C++ 头文件的模板文件位置 1 2 // Xcode 13.x /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\</description>
+    </item>
+    
+    <item>
+      <title>c&#43;&#43; 获取时间</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Sun, 01 Jan 2017 15:10:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/</guid>
+      <description>获取系统时间 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 #include &amp;lt;ctime&amp;gt;int main(int argc, char const *argv[]) { time_t tm = time(0); char szTime[64]; strftime(szTime, sizeof(szTime), &amp;#34;%Y/%m/%d %X %A 本年第%j天 %z&amp;#34;,localtime(&amp;amp;tm));</description>
+    </item>
+    
+    <item>
+      <title>STL模板技巧</title>
+      <link>https://rangolee.github.io/post/cpp/stl%E6%A8%A1%E6%9D%BF%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Fri, 02 Dec 2016 00:22:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/stl%E6%A8%A1%E6%9D%BF%E6%8A%80%E5%B7%A7/</guid>
+      <description>typename 声明模板参数：template&amp;lt;typename T&amp;gt; ...,只有在这种语境下，typename关键字才可以和class关键字互换 cla</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;_STL_类模板</title>
+      <link>https://rangolee.github.io/post/cpp/stl%E7%B1%BB%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/stl%E7%B1%BB%E6%A8%A1%E6%9D%BF/</guid>
+      <description>1.类模板的定义 类模板的语法形式 1 2 3 4 5 6 7 8 9 template &amp;lt;typename 类型参数1, typename 类型参数2,...&amp;gt; template &amp;lt;typename A, typename b, typename C&amp;gt; class MyClass { public: A m_a; b foo(C c); }; 类型参数 在类</description>
+    </item>
+    
+    <item>
+      <title>Mac Sublime Text compile Source.cpp error</title>
+      <link>https://rangolee.github.io/post/cpp/mac_sublime_text3_compile_cpp_error/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/mac_sublime_text3_compile_cpp_error/</guid>
+      <description>Mac Sublime Text compile Source.cpp error //bin/bash: shell_session_update: command not found   get the rvm version  1  Rango-MBP:~ Rango$ rvm -v   make sure the version at least 1.26 above  1 2  Rango-MBP:~ Rango$ rvm -v rvm 1.27.0 (master) by Wayne E. Seguin &amp;lt;wayneeseguin@gmail.com&amp;gt;, Michal Papis &amp;lt;mpapis@gmail.com&amp;gt; [https://rvm.io/]   then go ahead  1  Rango-MBP:~ Rango$ rvm get head   wait Downloading&amp;hellip;  1 2 3 4 5 6 7 8  Downloading https://get.</description>
+    </item>
+    
+    <item>
+      <title>Windows平台配置Sublime Text3的C/C&#43;&#43;11开发环境</title>
+      <link>https://rangolee.github.io/post/cpp/windows%E4%B8%8Bsublimetext3%E7%9A%84c&#43;&#43;11%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 14 Aug 2016 12:01:38 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/windows%E4%B8%8Bsublimetext3%E7%9A%84c&#43;&#43;11%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>Sublime Text3 配置C/C++11开发环境 1 2 3 4 5 6 7 8 9 10 11 12 13 { &amp;#34;cmd&amp;#34;: [&amp;#34;bash&amp;#34;, &amp;#34;-c&amp;#34;, &amp;#34;g++ -Wall -std=c++11 -O2 &amp;#39;${file}&amp;#39; -o &amp;#39;${file_path}/${file_base_name}&amp;#39; &amp;amp;&amp;amp; osascript -e &amp;#39;tell application \&amp;#34;Terminal\&amp;#34; to activate do script \&amp;#34; cd \\\&amp;#34;${file_path}\\\&amp;#34; &amp;amp;&amp;amp;start_ms=\\$(ruby -e \\\&amp;#34;puts (Time.now.to_f * 1000).to_i\\\&amp;#34;)&amp;amp;&amp;amp;clear&amp;amp;&amp;amp;\\\&amp;#34;${file_path}/${file_base_name}\\\&amp;#34; &amp;amp;&amp;amp;elapsed_ms=\\$((\\$(ruby -e \\\&amp;#34;puts (Time.now.to_f * 1000).to_i\\\&amp;#34;) - start_ms))&amp;amp;&amp;amp; read -p \\\&amp;#34;Press Enter</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;11 并发指南一</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</guid>
+      <description>C++并发至南一 与 C++11 多线程相关的头文件 C++11 新标准中引入了四个头文件来支持多线程编程，他们分别是 ,,,&amp;lt;condition_variabl</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;11 并发指南三</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%973/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%973/</guid>
+      <description>C++11并发指南三（std::mutex）</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;11 并发指南二</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</guid>
+      <description>C++11 并发指南二 std::thread 在 &amp;lt;thread&amp;gt; 头文件中声明，因此使用 std::thread 时需要包含 &amp;lt;thread&amp;gt; 头文件。 std::thread 构造 default (1) thread() noexcept; initialization (2) template &amp;lt;class Fn, class... Args&amp;gt; explicit thread (Fn&amp;amp;&amp;amp; fn, Args&amp;amp;&amp;amp;&amp;hellip; args); copy [deleted] (3) thread (const thread&amp;amp;) = delete; move (4) thread (thread&amp;amp;&amp;amp; x) noexcept; (1). 默认构造</description>
+    </item>
+    
+  </channel>
+</rss>

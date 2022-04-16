@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>如何使用hexo搭建git博客 - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="Hexo&#43;Git=Blog 安装流程   hexo 环境配置流程图   1. 安装 Git  安装过 Xcode 可以直接跳过这步，因为 Xcode 自带 Git  1 2 3 4  // 通过 ruby 安装 HomeBrew （已安装过HomeBrew的可以直接执行下一行） $ /usr/bin/ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34; $ brew install git // 通过 HomeBrew 安装Git   也可以通过下载Git安装程序来安装
+1.1 注册账户 首先需要注册一个Github的账户，已有的可以直接跳过去下一步了。1.2 创建仓库 登入进去之后再界面的右上角点那个加号，创建一个仓库（new repository）来存放我们的博客网站。Respository name 中 填写 username.github.io ，这里的 username.github.io 就是你以后的博客域名，这个 username 可以认真想一个了。2. 安装 nvm 1  git clone https://github.com/creationix/nvm.git ~/.nvm   " />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/others/git&#43;hexoblog/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="如何使用hexo搭建git博客" />
+<meta property="og:description" content="Hexo&#43;Git=Blog 安装流程
+
+
+hexo 环境配置流程图
+
+
+1. 安装 Git
+
+安装过 Xcode 可以直接跳过这步，因为 Xcode 自带 Git
+
+
+
+1
+2
+3
+4
+
+
+ // 通过 ruby 安装 HomeBrew （已安装过HomeBrew的可以直接执行下一行）
+ $ /usr/bin/ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34;
+
+ $ brew install git   // 通过 HomeBrew 安装Git
+
+
+也可以通过下载Git安装程序来安装
+1.1 注册账户
+首先需要注册一个Github的账户，已有的可以直接跳过去下一步了。
+1.2 创建仓库
+登入进去之后再界面的右上角点那个加号，创建一个仓库（new repository）来存放我们的博客网站。Respository name 中 填写 username.github.io ，这里的 username.github.io 就是你以后的博客域名，这个 username 可以认真想一个了。
+2. 安装 nvm
+
+
+1
+
+
+git clone https://github.com/creationix/nvm.git ~/.nvm
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/others/git&#43;hexoblog/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-05-28T16:34:33+00:00" />
+<meta property="article:modified_time" content="2016-05-28T16:34:33+00:00" />
+
+<meta itemprop="name" content="如何使用hexo搭建git博客">
+<meta itemprop="description" content="Hexo&#43;Git=Blog 安装流程
+
+
+hexo 环境配置流程图
+
+
+1. 安装 Git
+
+安装过 Xcode 可以直接跳过这步，因为 Xcode 自带 Git
+
+
+
+1
+2
+3
+4
+
+
+ // 通过 ruby 安装 HomeBrew （已安装过HomeBrew的可以直接执行下一行）
+ $ /usr/bin/ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34;
+
+ $ brew install git   // 通过 HomeBrew 安装Git
+
+
+也可以通过下载Git安装程序来安装
+1.1 注册账户
+首先需要注册一个Github的账户，已有的可以直接跳过去下一步了。
+1.2 创建仓库
+登入进去之后再界面的右上角点那个加号，创建一个仓库（new repository）来存放我们的博客网站。Respository name 中 填写 username.github.io ，这里的 username.github.io 就是你以后的博客域名，这个 username 可以认真想一个了。
+2. 安装 nvm
+
+
+1
+
+
+git clone https://github.com/creationix/nvm.git ~/.nvm
+
+
+"><meta itemprop="datePublished" content="2016-05-28T16:34:33+00:00" />
+<meta itemprop="dateModified" content="2016-05-28T16:34:33+00:00" />
+<meta itemprop="wordCount" content="2789">
+<meta itemprop="keywords" content="nvm,node.js,hexo,git," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="如何使用hexo搭建git博客"/>
+<meta name="twitter:description" content="Hexo&#43;Git=Blog 安装流程
+
+
+hexo 环境配置流程图
+
+
+1. 安装 Git
+
+安装过 Xcode 可以直接跳过这步，因为 Xcode 自带 Git
+
+
+
+1
+2
+3
+4
+
+
+ // 通过 ruby 安装 HomeBrew （已安装过HomeBrew的可以直接执行下一行）
+ $ /usr/bin/ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34;
+
+ $ brew install git   // 通过 HomeBrew 安装Git
+
+
+也可以通过下载Git安装程序来安装
+1.1 注册账户
+首先需要注册一个Github的账户，已有的可以直接跳过去下一步了。
+1.2 创建仓库
+登入进去之后再界面的右上角点那个加号，创建一个仓库（new repository）来存放我们的博客网站。Respository name 中 填写 username.github.io ，这里的 username.github.io 就是你以后的博客域名，这个 username 可以认真想一个了。
+2. 安装 nvm
+
+
+1
+
+
+git clone https://github.com/creationix/nvm.git ~/.nvm
+
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">如何使用hexo搭建git博客</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-28 </span>
+        <div class="post-category">
+            <a href="/categories/mac/"> Mac </a>
+            </div>
+          <span class="more-meta"> 约 2789 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#hexogitblog-安装流程">Hexo+Git=Blog 安装流程</a></li>
+            <li><a href="#1-安装-git">1. 安装 <strong>Git</strong></a></li>
+            <li><a href="#2-安装-nvm">2. 安装 <strong>nvm</strong></a></li>
+            <li><a href="#3-安装-nodejs">3. 安装 <strong>node.js</strong></a></li>
+            <li><a href="#4-安装-hexohttpshexoiozh-cnindexhtml-了">4. 安装 <strong><a href="https://hexo.io/zh-cn/index.html">Hexo</a></strong> 了！！！</a></li>
+            <li><a href="#5-初始化本地文件夹">5. 初始化本地文件夹</a></li>
+            <li><a href="#6-更改配置">6. 更改配置</a></li>
+            <li><a href="#7-本地测试及发布">7. 本地测试及发布</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="hexogitblog-安装流程">Hexo+Git=Blog 安装流程</h3>
+<hr>
+<ul>
+<li>hexo 环境配置流程图
+<img src="http://ww3.sinaimg.cn/large/741b3941gw1f4b10z0s9ij20lj0andhh.jpg" alt="hexo 环境配置"></li>
+</ul>
+<h3 id="1-安装-git">1. 安装 <strong>Git</strong></h3>
+<ul>
+<li>安装过 Xcode 可以直接跳过这步，因为 Xcode 自带 Git</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> // 通过 ruby 安装 HomeBrew （已安装过HomeBrew的可以直接执行下一行）
+</span></span><span class="line"><span class="cl"> $ /usr/bin/ruby -e <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> $ brew install git   // 通过 HomeBrew 安装Git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>也可以通过下载<a href="https://sourceforge.net/projects/git-osx-installer/">Git安装程序</a>来安装</p>
+<h6 id="11-注册账户">1.1 注册账户</h6>
+<p>首先需要注册一个<a href="https://github.com">Github</a>的账户，已有的可以直接跳过去下一步了。<img src="http://ww4.sinaimg.cn/large/741b3941gw1f4o6u0ii97j218a12qam1.jpg" alt="注册github"></p>
+<h6 id="12-创建仓库">1.2 创建仓库</h6>
+<p>登入进去之后再界面的右上角点那个加号，创建一个仓库（<code>new repository</code>）来存放我们的博客网站。Respository name 中 填写 <code>username.github.io</code> ，这里的 <code>username</code>.github.io 就是你以后的博客域名，这个 <code>username</code> 可以认真想一个了。<img src="http://ww1.sinaimg.cn/large/741b3941gw1f4o7csyrspj21kw1027dr.jpg" alt="创建github仓库"></p>
+<h3 id="2-安装-nvm">2. 安装 <strong>nvm</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/creationix/nvm.git ~/.nvm
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>配置终端启动时自动执行 <code>source ~/.nvm/nvm.sh</code> 否则每次打开终端都要配置一下<code>nvm</code>环境。在 ~/.bashrc, ~/.bash_profile, ~/.profile, 或 ~/.zshrc 随便哪一个文件内添加一行配置命令就可以。<code>vim .profile</code>打开配置文件，在配置文件内添加下面这一行代码，保存退出。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> ~/.nvm/nvm.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>查看本地是否安装成功，终端输入<code>nvm</code>显示如下信息说明安装成功。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Node Version Manager
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Note: &lt;version&gt; refers to any version-like string nvm understands. This includes:
+</span></span><span class="line"><span class="cl">  - full or partial version numbers, starting with an optional <span class="s2">&#34;v&#34;</span> <span class="o">(</span>0.10, v0.1.2, v1<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  - default <span class="o">(</span>built-in<span class="o">)</span> aliases: node, stable, unstable, iojs, system
+</span></span><span class="line"><span class="cl">  - custom aliases you define with <span class="sb">`</span>nvm <span class="nb">alias</span> foo<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">******
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Note:
+</span></span><span class="line"><span class="cl">  to remove, delete, or uninstall nvm - just remove the <span class="sb">`</span><span class="nv">$NVM_DIR</span><span class="sb">`</span> folder <span class="o">(</span>usually <span class="sb">`</span>~/.nvm<span class="sb">`</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-安装-nodejs">3. 安装 <strong>node.js</strong></h3>
+<ul>
+<li>输入<code>nvm ls</code>看到如下信息说明还没有安装任何 <strong>node.js</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">	N/A
+</span></span><span class="line"><span class="cl">node -&gt; stable <span class="o">(</span>-&gt; N/A<span class="o">)</span> <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">iojs -&gt; N/A <span class="o">(</span>default<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>输入<code>nvm ls-remote</code>查看可供安装的 node.js 和 iojs的版本</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">	......
+</span></span><span class="line"><span class="cl">    iojs-v3.0.0
+</span></span><span class="line"><span class="cl">    iojs-v3.1.0
+</span></span><span class="line"><span class="cl">    iojs-v3.2.0
+</span></span><span class="line"><span class="cl">    iojs-v3.3.0
+</span></span><span class="line"><span class="cl">    iojs-v3.3.1
+</span></span><span class="line"><span class="cl">	......
+</span></span><span class="line"><span class="cl">         v5.9.1
+</span></span><span class="line"><span class="cl">        v5.10.0
+</span></span><span class="line"><span class="cl">        v5.10.1
+</span></span><span class="line"><span class="cl">        v5.11.0
+</span></span><span class="line"><span class="cl">        v5.11.1
+</span></span><span class="line"><span class="cl">         v6.0.0
+</span></span><span class="line"><span class="cl">         v6.1.0
+</span></span><span class="line"><span class="cl">         v6.2.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>选择需要安装的版本执行安装<code>nvm install v6.2.0</code> 这里可以安装多个版本</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:nvm rango$ nvm install v6.2.0
+</span></span><span class="line"><span class="cl">Downloading https://nodejs.org/dist/v6.2.0/node-v6.2.0-darwin-x64.tar.gz...
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#####################</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#######################################</span>
+</span></span><span class="line"><span class="cl"><span class="c1">######################################################################## 100.0%</span>
+</span></span><span class="line"><span class="cl">Now using node v6.2.0 <span class="o">(</span>npm v3.8.9<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Creating default alias: default -&gt; v6.2.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>查看一下，显示如下信息，安装成功</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:nvm rango$ nvm ls
+</span></span><span class="line"><span class="cl">-&gt;       v6.2.0
+</span></span><span class="line"><span class="cl">default -&gt; v6.2.0
+</span></span><span class="line"><span class="cl">node -&gt; stable <span class="o">(</span>-&gt; v6.2.0<span class="o">)</span> <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">stable -&gt; 6.2 <span class="o">(</span>-&gt; v6.2.0<span class="o">)</span> <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">iojs -&gt; N/A <span class="o">(</span>default<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>顺便安装一下 <strong>iojs</strong> 不安装也不影响使用</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:nvm rango$ nvm install iojs-v3.3.1
+</span></span><span class="line"><span class="cl">Downloading https://iojs.org/dist/v3.3.1/iojs-v3.3.1-darwin-x64.tar.gz...
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#####################</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#######################################</span>
+</span></span><span class="line"><span class="cl"><span class="c1">######################################################################## 100.0%</span>
+</span></span><span class="line"><span class="cl">Now using io.js v3.3.1 <span class="o">(</span>npm v2.14.3<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>查看一下，是否安装成功</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:nvm rango$ nvm ls
+</span></span><span class="line"><span class="cl">-&gt;  iojs-v3.3.1
+</span></span><span class="line"><span class="cl">         v6.2.0
+</span></span><span class="line"><span class="cl">default -&gt; v6.2.0
+</span></span><span class="line"><span class="cl">node -&gt; stable <span class="o">(</span>-&gt; v6.2.0<span class="o">)</span> <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">stable -&gt; 6.2 <span class="o">(</span>-&gt; v6.2.0<span class="o">)</span> <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">iojs -&gt; iojs-v3.3 <span class="o">(</span>-&gt; iojs-v3.3.1<span class="o">)</span> <span class="o">(</span>default<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>更改需要使用的 nvm 版本（如果没有安装 iojs 则不需要，其实 iojs 和 node.js 安任何一个应该都是可以的）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:nvm rango$ nvm use v6.2.0
+</span></span><span class="line"><span class="cl">Now using node v6.2.0 <span class="o">(</span>npm v3.8.9<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>查看一下，更改成功</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:nvm rango$ nvm ls
+</span></span><span class="line"><span class="cl">    iojs-v3.3.1
+</span></span><span class="line"><span class="cl">-&gt;       v6.2.0
+</span></span><span class="line"><span class="cl">default -&gt; v6.2.0
+</span></span><span class="line"><span class="cl">node -&gt; stable <span class="o">(</span>-&gt; v6.2.0<span class="o">)</span> <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">stable -&gt; 6.2 <span class="o">(</span>-&gt; v6.2.0<span class="o">)</span> <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">iojs -&gt; iojs-v3.3 <span class="o">(</span>-&gt; iojs-v3.3.1<span class="o">)</span> <span class="o">(</span>default<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>安装了 node.js 之后 npm 也就安装好了。（它们之间的关系我还不太清晰）</p>
+</blockquote>
+<h3 id="4-安装-hexohttpshexoiozh-cnindexhtml-了">4. 安装 <strong><a href="https://hexo.io/zh-cn/index.html">Hexo</a></strong> 了！！！</h3>
+<ul>
+<li>输入<code>sudo npm install -g hexo-cli</code>开始[-g 全局]安装 <strong>hexo</strong>（中间有几个警告，好像是因为我之前系统里安装过）（前方高能&hellip;）</li>
+<li>如果遇到 npm err 可以试试切换 node.js 版本</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:nvm rango$ sudo npm install hexo -g
+</span></span><span class="line"><span class="cl">loadRequestedDeps → netwo ▐ ╢██████░░░░░░░░░░░░░░░░░░░░░░░░╟
+</span></span><span class="line"><span class="cl">Rango-MBP:nvm rango$ npm install hexo -g
+</span></span><span class="line"><span class="cl">npm WARN deprecated cross-spawn-async@2.2.4: cross-spawn no longer requires a build toolchain, use it instead!
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">**********
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  └─┬ warehouse@2.2.0
+</span></span><span class="line"><span class="cl">    ├─┬ cuid@1.3.8
+</span></span><span class="line"><span class="cl">    │ ├── browser-fingerprint@0.0.1
+</span></span><span class="line"><span class="cl">    │ ├── core-js@1.2.6
+</span></span><span class="line"><span class="cl">    │ └── node-fingerprint@0.0.2
+</span></span><span class="line"><span class="cl">    ├─┬ is-plain-object@2.0.1
+</span></span><span class="line"><span class="cl">    │ └── isobject@1.0.2
+</span></span><span class="line"><span class="cl">    └─┬ JSONStream@1.1.1
+</span></span><span class="line"><span class="cl">      ├── jsonparse@1.2.0
+</span></span><span class="line"><span class="cl">      └── through@2.3.8
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>看到上面这一大坨应该就是安装好了吧。。。
+经过部落测试发现直接用npm安装话经常出现卡住而导致无法正常安装，解决办法就是修改npm的安装源，以下三种方法任选一个即可（正常的朋友不用执行这一步）。
+1.通过config命令:
+<code>npm config set registry https://registry.cnpmjs.org</code>
+<code>npm info underscore</code> （如果上面配置正确这个命令会有字符串response）
+2.命令行指定
+<code>npm --registry https://registry.cnpmjs.org info underscore</code>
+3.编辑 ~/.npmrc 加入下面内容
+<code>registry = https://registry.cnpmjs.org</code></p>
+</blockquote>
+<ul>
+<li>查看一下，嗯，有了，说明安装好了</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:nvm rango$  hexo
+</span></span><span class="line"><span class="cl">Usage: hexo &lt;command&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Commands:
+</span></span><span class="line"><span class="cl">  <span class="nb">help</span>     Get <span class="nb">help</span> on a command.
+</span></span><span class="line"><span class="cl">  init     Create a new Hexo folder.
+</span></span><span class="line"><span class="cl">  version  Display version information.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Global Options:
+</span></span><span class="line"><span class="cl">  --config  Specify config file instead of using _config.yml
+</span></span><span class="line"><span class="cl">  --cwd     Specify the CWD
+</span></span><span class="line"><span class="cl">  --debug   Display all verbose messages in the terminal
+</span></span><span class="line"><span class="cl">  --draft   Display draft posts
+</span></span><span class="line"><span class="cl">  --safe    Disable all plugins and scripts
+</span></span><span class="line"><span class="cl">  --silent  Hide output on console
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">For more help, you can use <span class="s1">&#39;hexo help [command]&#39;</span> <span class="k">for</span> the detailed information
+</span></span><span class="line"><span class="cl">or you can check the docs: http://hexo.io/docs/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>查看安装的 hexo 版本</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:nvm rango$ hexo version
+</span></span><span class="line"><span class="cl">hexo-cli: 1.0.1
+</span></span><span class="line"><span class="cl">os: Darwin 15.5.0 darwin x64
+</span></span><span class="line"><span class="cl">http_parser: 2.7.0
+</span></span><span class="line"><span class="cl">node: 6.2.0
+</span></span><span class="line"><span class="cl">v8: 5.0.71.47
+</span></span><span class="line"><span class="cl">uv: 1.9.1
+</span></span><span class="line"><span class="cl">zlib: 1.2.8
+</span></span><span class="line"><span class="cl">ares: 1.10.1-DEV
+</span></span><span class="line"><span class="cl">icu: 57.1
+</span></span><span class="line"><span class="cl">modules: <span class="m">48</span>
+</span></span><span class="line"><span class="cl">openssl: 1.0.2h
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>更新 <strong>hexo</strong> <code>npm update hexo -g</code> 这一步看心情，更不更都可以，以后更新<strong>hexo</strong>可以用这个，也可以用上面的安装方法，安装最新的版本，完全看心情看需要了。</li>
+</ul>
+<blockquote>
+<p>进行到这里 hexo 和 github 仓库都有了，下面就可以生成博客，部署到 github 仓库发布了。</p>
+</blockquote>
+<h3 id="5-初始化本地文件夹">5. 初始化本地文件夹</h3>
+<ul>
+<li>输入 <code>hexo init username</code>会在主目录下(如果不想在主目录下，也可以 <code>cd</code> 到你希望的文件夹下再执行这个初始化操作)创建一个 <code>username</code> 文件夹，并初始化（这里的 <code>username</code> 就是想要初始化的文件夹名称，需要什么名称就写什么名称），。输入下面的命令之后又是一大坨信息，最后看到<code>INFO  Start blogging with Hexo!</code>就说明初始化成功了。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:~ rango$ hexo init username
+</span></span><span class="line"><span class="cl">INFO  Cloning hexo-starter to ~/username
+</span></span><span class="line"><span class="cl">Cloning into <span class="s1">&#39;/Users/rango/username&#39;</span>...
+</span></span><span class="line"><span class="cl">......
+</span></span><span class="line"><span class="cl">......
+</span></span><span class="line"><span class="cl">INFO  Start blogging with Hexo!
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="6-更改配置">6. 更改配置</h3>
+<p>为了使博客不太难看，这里选择安装一个主题，切换到刚刚生成的目录下<code>cd username</code>，安装主题。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/iissnan/hexo-theme-next themes/next
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里安装的是一个极简主题<a href="https://github.com/iissnan/hexo-theme-next"><code>next</code></a>，当然你也可以安装其他主题，Hexo也有<a href="https://hexo.io/themes/">其他主题</a>可供选择。
+安装好了之后，需要配置一下，找到username/_config.yml 修改几个键值对，下面列出必须要改的几个值，其他的配置请参考<a href="https://hexo.io/zh-cn/docs/configuration.html">官方设置文档</a>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># Site</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">CodeNight //博客的名字</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l">Rango_Lee //你的名字</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l">zh-Hans //语言 中文</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l">next   //刚刚安装的主题名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">deploy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">git    //使用 Git 发布</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l">https://github.com/username/username.github.io.git    // 刚创建的Github仓库</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>接下来就是主题配置了，配置文件在 username/themes/next/_config.yml 中修改，这里就不一一配置了，详细配置可以参考<a href="http://theme-next.iissnan.com/getting-started.html#theme-settings">官方配置文档</a></p>
+<h3 id="7-本地测试及发布">7. 本地测试及发布</h3>
+<ul>
+<li>到了这里所有的基础框架都已经创建完成了，下面来发布我们的博客吧。
+输入命令<code>cd username/source/_posts</code>跳转到这个文件夹<code>_posts</code>这个文件就是以后存放<code>.md</code>文件的地方。（用 Markdown 写.md 博客文档）
+默认在 username/sources/_posts/下会有一篇 hellWorld.md 博文。</li>
+<li>启动本地测试，你可以在浏览器中输入 <a href="https://localhost:4000">https://localhost:4000</a> 来访问，（ 在终端状态 control+c 结束测试 ）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hexo s --debug 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>安装 Git 自动部署工具</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install hexo-deployer-git --save
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>发布测试没有问题之后，就可以生成静态网页，然后发步到我们的 github pages 中了。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hexo clean <span class="o">&amp;&amp;</span> hexo g <span class="o">&amp;&amp;</span> hexo d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>如果这是你第一次使用 Git 部署，终端会需要你输入 Github 的邮箱和密码，正确输入后，稍等一会会看到刷刷的进度，最后看到下面的信息<code>INFO  Deploy done: git</code>，就说明你的博客已经上传至Github 了。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">INFO  Deploy <span class="k">done</span>: git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>以后在 _posts 文件夹下写好<code>.md</code>文件也只需要 在终端 切换到这个文件夹下然后执行上面这行命令就可以发布博客了。
+到这里，你的博客已经完成，在浏览器中输入 <a href="http://rangolee.github.io">http://rangolee.github.io</a> 就能够访问了。</p>
+</blockquote>
+<hr>
+<h5 id="生成ssh秘钥">生成SSH秘钥</h5>
+<h6 id="1设置git的user-name和email">1.设置Git的user name和email：</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git config --global user.name <span class="s2">&#34;yourname&#34;</span>
+</span></span><span class="line"><span class="cl">$ git config --global user.email <span class="s2">&#34;youremailaddress&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h6 id="2生成ssh密钥过程">2.生成SSH密钥过程：</h6>
+<ul>
+<li>查看是否已经有了ssh密钥 <code>~cd ~/.ssh</code> 如果没有密钥则不会有此文件夹，有则备份删除(如果里面没有id_rsa和id_rsa.pub不删除也无所谓)</li>
+<li>生成密钥：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:~ Rango$ ssh-keygen -t rsa -C <span class="s2">&#34;848***256@qq.com&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>按3个回车，密码为空。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Your identification has been saved in /Users/Rango/.ssh/id_rsa.
+</span></span><span class="line"><span class="cl">Your public key has been saved in /Users/Rango/.ssh/id_rsa.pub.
+</span></span><span class="line"><span class="cl">The key fingerprint is:
+</span></span><span class="line"><span class="cl">......
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>最后得到了两个文件：<code>id_rsa</code>和<code>id_rsa.pub</code></li>
+<li>在github上添加ssh密钥，这要添加的<code>id_rsa.pub</code>里面的公钥。打开<code>https://github.com/</code> 登录，添加</li>
+<li>测试：<code>ssh git@github.com</code></li>
+</ul>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-05-28
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/nvm/">nvm</a>
+          <a href="/tags/node.js/">node.js</a>
+          <a href="/tags/hexo/">hexo</a>
+          <a href="/tags/git/">git</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ios/16-0603_sqlite%E8%BF%94%E5%9B%9E%E5%80%BC/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">SQLite 返回值</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/cshape/07_c#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+            <span class="next-text nav-default">C# 正则表达式</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

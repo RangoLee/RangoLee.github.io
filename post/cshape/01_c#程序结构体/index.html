@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>1.C#程序结构体 - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="1.C#程序结构体 C# Hello World 实例 一个C#程序主要包括以下部分： 命名空间声明（Namespace declaration） 一个类（class 类方法（" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/cshape/01_c#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%BD%93/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="1.C#程序结构体" />
+<meta property="og:description" content="1.C#程序结构体 C# Hello World 实例 一个C#程序主要包括以下部分： 命名空间声明（Namespace declaration） 一个类（class 类方法（" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/cshape/01_c#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%BD%93/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-12-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-12-20T00:00:00+00:00" />
+
+<meta itemprop="name" content="1.C#程序结构体">
+<meta itemprop="description" content="1.C#程序结构体 C# Hello World 实例 一个C#程序主要包括以下部分： 命名空间声明（Namespace declaration） 一个类（class 类方法（"><meta itemprop="datePublished" content="2016-12-20T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-12-20T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1022">
+<meta itemprop="keywords" content="CShape," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="1.C#程序结构体"/>
+<meta name="twitter:description" content="1.C#程序结构体 C# Hello World 实例 一个C#程序主要包括以下部分： 命名空间声明（Namespace declaration） 一个类（class 类方法（"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">1.C#程序结构体</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-12-20 </span>
+        <div class="post-category">
+            <a href="/categories/cshape/"> CShape </a>
+            </div>
+          <span class="more-meta"> 约 1022 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1c程序结构体">1.C#程序结构体</a></li>
+        <li><a href="#c-hello-world-实例">C# Hello World 实例</a>
+          <ul>
+            <li><a href="#编译执行-c程序">编译&amp;执行 C#程序</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="1c程序结构体">1.C#程序结构体</h2>
+<hr>
+<h2 id="c-hello-world-实例">C# Hello World 实例</h2>
+<p>一个C#程序主要包括以下部分：</p>
+<ul>
+<li>
+<p>命名空间声明（Namespace declaration）</p>
+</li>
+<li>
+<p>一个类（class</p>
+</li>
+<li>
+<p>类方法（Class method）</p>
+</li>
+<li>
+<p>一个Main函数（Main）</p>
+</li>
+<li>
+<p>语句（Statements）&amp; 表达式（Expressions）</p>
+</li>
+<li>
+<p>注释
+helloworld.cs</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">HelloWorldApplication</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"> <span class="k">class</span> <span class="nc">HelloWorld</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">// 我的第一个 C# 程序</span>
+</span></span><span class="line"><span class="cl">   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Hello World&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">   <span class="n">Console</span><span class="p">.</span><span class="n">ReadKey</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Hello World
+</span></span></code></pre></td></tr></table>
+</div>
+</div><!-- more -->
+<p>分析这个程序的各个部分：</p>
+<ul>
+<li><strong>using System;</strong>
+<ul>
+<li><code>using</code> 关键字 用于在程序中包含System命名空间。一个程序一般有多个using语句。</li>
+</ul>
+</li>
+<li><strong>namespace</strong> 声明
+<ul>
+<li>一个<code>namespace</code>是一系列类。_HelloWorldApplication_命名空间包含了_HelloWorld_类。</li>
+</ul>
+</li>
+<li><strong>class</strong> 声明
+<ul>
+<li>类_HelloWorld_包含了程序使用的数据和方法的声明。类一般包含多个方法。方法定义了类的行为。在这里_HelloWorld_类只有一个Main方法。</li>
+</ul>
+</li>
+<li><strong>Main</strong>
+<ul>
+<li>是所有C#程序是入口点。<strong>Main</strong>方法说明当执行时类将做什么动作。</li>
+</ul>
+</li>
+<li>/**/ // 注释 将会被编译器忽略</li>
+<li>Main方法通过**Console.WriteLine(“Hello World”);**指定了它的行为。</li>
+<li>**Console.ReadKey();**是针对<code>VS .NET</code>用户的。使得程序等待一个按键的动作，防止程序从<code>Visual Studio .NET</code>启动时屏幕会快速运行并关闭。</li>
+</ul>
+<blockquote>
+<p><strong>以下几点值得注意：</strong><br>
+<code>C#</code>是大小写敏感的语言。<br>
+所有的语句和表达式必须以 ; 结尾。<br>
+程序的执行从<code>Main</code>函数开始<br>
+与<code>Java</code>不同的是，文件名可以不同于类的名称</p>
+</blockquote>
+<h3 id="编译执行-c程序">编译&amp;执行 C#程序</h3>
+<h4 id="1-如果您使用-visual-studio-net-编译和执行-c-程序请按下面的步骤进行">1. 如果您使用 <code>Visual Studio .Net</code> 编译和执行 <code>C#</code> 程序，请按下面的步骤进行</h4>
+<ul>
+<li>启动 Visual Studio。</li>
+<li>在菜单栏上，选择 <code>File -&gt; New -&gt; Project</code>。</li>
+<li>从模板中选择 <code>Visual C#</code>，然后选择 Windows。</li>
+<li>选择 <code>Console Application</code>。</li>
+<li>为您的项目制定一个名称，然后点击 OK 按钮。</li>
+<li>新项目会出现在解决方案资源管理器（Solution Explorer）中。</li>
+<li>在代码编辑器（Code Editor）中编写代码。</li>
+<li>点击 Run 按钮或者按下 F5 键来运行程序。会出现一个命令提示符窗口（Command Prompt window），显示 <code>Hello World</code>。</li>
+</ul>
+<h4 id="2-您也可以使用命令行代替-visual-studio-ide-来编译-c-程序">2. 您也可以使用命令行代替 Visual Studio IDE 来编译 C# 程序</h4>
+<ul>
+<li>打开一个文本编辑器，添加上面提到的代码。</li>
+<li>保存文件为 helloworld.cs。</li>
+<li>打开命令提示符工具，定位到文件所保存的目录。</li>
+<li>键入 csc helloworld.cs 并按下 enter 键来编译代码。</li>
+<li>如果代码没有错误，命令提示符会进入下一行，并生成 helloworld.exe 可执行文件。</li>
+<li>接下来，键入 helloworld 来执行程序。</li>
+<li>您将看到 &ldquo;Hello World&rdquo; 打印在屏幕上。</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-12-20
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/cshape/">CShape</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/cpp/c&#43;&#43;%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">c&#43;&#43; 获取时间</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/python/mac%E5%AE%89%E8%A3%85python3.5.2/">
+            <span class="next-text nav-default">Mac 安装Python3.5.2</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

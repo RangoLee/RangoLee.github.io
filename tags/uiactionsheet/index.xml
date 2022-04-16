@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UIActionSheet on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/uiactionsheet/</link>
+    <description>Recent content in UIActionSheet on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 21 Jun 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/uiactionsheet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS8中UIActionSheet弹出UIImagePickerController异常的处理方法</title>
+      <link>https://rangolee.github.io/post/ios/16-0621_ios8%E4%B8%ADuiactionsheet%E5%BC%B9%E5%87%BAuiimagepickercontroller%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Tue, 21 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0621_ios8%E4%B8%ADuiactionsheet%E5%BC%B9%E5%87%BAuiimagepickercontroller%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/</guid>
+      <description>iOS8之后，UIActionSheet 更改父类于 UIAlertController 带来的兼容性问题。 最近在做项目中遇到一个UIAlertController弹窗的问题，困</description>
+    </item>
+    
+  </channel>
+</rss>

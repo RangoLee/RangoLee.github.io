@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>class template on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/class-template/</link>
+    <description>Recent content in class template on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 27 Nov 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/class-template/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;_STL_类模板</title>
+      <link>https://rangolee.github.io/post/cpp/stl%E7%B1%BB%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/stl%E7%B1%BB%E6%A8%A1%E6%9D%BF/</guid>
+      <description>1.类模板的定义 类模板的语法形式 1 2 3 4 5 6 7 8 9 template &amp;lt;typename 类型参数1, typename 类型参数2,...&amp;gt; template &amp;lt;typename A, typename b, typename C&amp;gt; class MyClass { public: A m_a; b foo(C c); }; 类型参数 在类</description>
+    </item>
+    
+  </channel>
+</rss>

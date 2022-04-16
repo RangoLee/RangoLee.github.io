@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NSMutableArray on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/nsmutablearray/</link>
+    <description>Recent content in NSMutableArray on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 20 May 2016 22:07:24 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/nsmutablearray/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NSArray 和 NSMutableArray 的相互转换</title>
+      <link>https://rangolee.github.io/post/ios/16-0520_nsarray-%E5%92%8C-nsmutablearray-%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Fri, 20 May 2016 22:07:24 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0520_nsarray-%E5%92%8C-nsmutablearray-%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2/</guid>
+      <description>1 2 3 4 5 // NSArray --&amp;gt; NSMutableArray NSMutableArray *myMutableArray = [myArray mutableCopy]; // NSMutableArray --&amp;gt; NSArray NSArray *myArray = [myMutableArray copy];</description>
+    </item>
+    
+  </channel>
+</rss>

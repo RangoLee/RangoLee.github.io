@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/linux/</link>
+    <description>Recent content in Linux on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 30 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS6.1 install Nginx</title>
+      <link>https://rangolee.github.io/post/2019-06-39-centos6.1-install-nginx/</link>
+      <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/2019-06-39-centos6.1-install-nginx/</guid>
+      <description>CentOS 6.1 install Nginx 安装 1 yum install nginx 启动 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # 查看版本 nginx -v # 检查配置文件是否正确 nginx -t # 启动 Nginx /usr/sbin/nginx # 重载配置文件 nginx -s reload # 重启</description>
+    </item>
+    
+  </channel>
+</rss>

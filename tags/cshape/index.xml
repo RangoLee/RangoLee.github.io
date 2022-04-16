@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CShape on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/cshape/</link>
+    <description>Recent content in CShape on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Dec 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/cshape/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.C#程序结构体</title>
+      <link>https://rangolee.github.io/post/cshape/01_c#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%BD%93/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/01_c#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%BD%93/</guid>
+      <description>1.C#程序结构体 C# Hello World 实例 一个C#程序主要包括以下部分： 命名空间声明（Namespace declaration） 一个类（class 类方法（</description>
+    </item>
+    
+    <item>
+      <title>C# 正则表达式</title>
+      <link>https://rangolee.github.io/post/cshape/07_c#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+      <pubDate>Sat, 28 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/07_c#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+      <description>C# 正则表达式 正则表达式是一种匹配文本的模式。.net框架提供了允许这种匹配的正则表达式引擎。模式由一个或多个字符、运算符和结构组成。 定义正则</description>
+    </item>
+    
+    <item>
+      <title>6.C#常量</title>
+      <link>https://rangolee.github.io/post/cshape/06_c#%E5%B8%B8%E9%87%8F/</link>
+      <pubDate>Fri, 27 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/06_c#%E5%B8%B8%E9%87%8F/</guid>
+      <description>6.常量 常量是固定值，程序执行期间不会改变，常量可以是任何基本数据类型，比如整数常量。浮点数常量。字符常量或者字符串常量，还有枚举值。 常量可</description>
+    </item>
+    
+    <item>
+      <title>5.C#变量</title>
+      <link>https://rangolee.github.io/post/cshape/05_c#%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/05_c#%E5%8F%98%E9%87%8F/</guid>
+      <description>5.C#变量 一个变量只不过是一个供程序操作的存储区的名字。在C#中，每个变量都有一个特定的类型，类型决定了变量的内存大小和布局。范围内的值可</description>
+    </item>
+    
+    <item>
+      <title>4.C#类型转换</title>
+      <link>https://rangolee.github.io/post/cshape/04_c#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Wed, 25 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/04_c#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
+      <description>4.类型转换 类型转换从根本上说是类型铸造，或者说是把数据从一种类型转换为另一种类型。在C#中，类型铸造有两种形式： 隐式类型转换 - 这些转换是C</description>
+    </item>
+    
+    <item>
+      <title>3.C#数据类型</title>
+      <link>https://rangolee.github.io/post/cshape/03_c#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Tue, 24 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/03_c#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>3.数据类型 在C#中变量分为以下几种类型 值类型（value types） 引用类型（reference types） 指针类型（pointer typ</description>
+    </item>
+    
+    <item>
+      <title>2.C#基本语法</title>
+      <link>https://rangolee.github.io/post/cshape/02_c#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/02_c#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>2.C#基本语法 C# 是一种面向对象的编程语言。在面向对象的程序设计方法中，程序由各种相互交互的对象组成。相同种类的对象通常具有相同的类型，或者</description>
+    </item>
+    
+    <item>
+      <title>StringComparison</title>
+      <link>https://rangolee.github.io/post/cshape/stringcomparison/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/stringcomparison/</guid>
+      <description>StringComparison枚举 1 2 3 4 5 6 7 8 public enum StringComparison { CurrentCulture, CurrentCultureIgnoreCase, InvariantCulture, InvariantCultureIgnoreCase, Ordinal, OrdinalIgnoreCase } CurrentCulture 使用区域敏感排序规则和当前区域比较字符串。 CurrentCultureIgnoreCase 使用区域敏感排序规则</description>
+    </item>
+    
+  </channel>
+</rss>

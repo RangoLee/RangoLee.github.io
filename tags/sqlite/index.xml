@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQLite on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/sqlite/</link>
+    <description>Recent content in SQLite on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 03 Jun 2016 21:36:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQLite 返回值</title>
+      <link>https://rangolee.github.io/post/ios/16-0603_sqlite%E8%BF%94%E5%9B%9E%E5%80%BC/</link>
+      <pubDate>Fri, 03 Jun 2016 21:36:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0603_sqlite%E8%BF%94%E5%9B%9E%E5%80%BC/</guid>
+      <description>SQLite 返回值 1 2 3 4 5 6 7 8 9 10 11 /* ** CAPI3REF: Result Codes //返回码 ** KEYWORDS: {result code definitions} ** ** Many SQLite functions return an integer result code from the set shown ** here in order to indicate success or failure. ** ** New error codes may be added in future versions of SQLite. ** ** See also:</description>
+    </item>
+    
+  </channel>
+</rss>

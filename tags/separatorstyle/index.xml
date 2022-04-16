@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>separatorStyle on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/separatorstyle/</link>
+    <description>Recent content in separatorStyle on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Jun 2016 16:58:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/separatorstyle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cell的间隔线（tableView.separatorStyle）</title>
+      <link>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</link>
+      <pubDate>Sun, 19 Jun 2016 16:58:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</guid>
+      <description>cell 的间隔线 tableView 的一个属性 separatorStyle 可以设置 cell 之间的间隔线样式(三种) 1 2 3 4 5 typedef NS_ENUM(NSInteger, UITableViewCellSeparatorStyle) { UITableViewCellSeparatorStyleNone, UITableViewCellSeparatorStyleSingleLine, UITableViewCellSeparatorStyleSingleLineEtched // This separator style is only supported for grouped style table views currently } __TVOS_PROHIBITED; 默认样式有一条线 1 tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine; 设置</description>
+    </item>
+    
+  </channel>
+</rss>

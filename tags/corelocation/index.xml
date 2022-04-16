@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CoreLocation on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/corelocation/</link>
+    <description>Recent content in CoreLocation on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 24 May 2016 19:09:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/corelocation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CoreLocation Framework</title>
+      <link>https://rangolee.github.io/post/ios/16-0524_location_corelocation-/</link>
+      <pubDate>Tue, 24 May 2016 19:09:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0524_location_corelocation-/</guid>
+      <description>单纯获取用户位置 CoreLocation Framework 常用类多以：CL开头。 CLLocation描述用户的位置的类（经longitude，纬latitude度两个值） CLLo</description>
+    </item>
+    
+  </channel>
+</rss>

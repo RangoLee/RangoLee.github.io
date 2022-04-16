@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>KVC 和 KVO - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="KVC KVC（KeyValueCoding）：（键值编码）非正式协议（Informal Protocol）【非正式协议：不需要遵循】 1. 能做什么？ *" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/ios/kvc-%E5%92%8C-kvo/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="KVC 和 KVO" />
+<meta property="og:description" content="KVC KVC（KeyValueCoding）：（键值编码）非正式协议（Informal Protocol）【非正式协议：不需要遵循】 1. 能做什么？ *" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/ios/kvc-%E5%92%8C-kvo/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-05-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-04-16T00:00:00+00:00" />
+
+<meta itemprop="name" content="KVC 和 KVO">
+<meta itemprop="description" content="KVC KVC（KeyValueCoding）：（键值编码）非正式协议（Informal Protocol）【非正式协议：不需要遵循】 1. 能做什么？ *"><meta itemprop="datePublished" content="2016-05-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-04-16T00:00:00+00:00" />
+<meta itemprop="wordCount" content="722">
+<meta itemprop="keywords" content="KVC,KVO," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="KVC 和 KVO"/>
+<meta name="twitter:description" content="KVC KVC（KeyValueCoding）：（键值编码）非正式协议（Informal Protocol）【非正式协议：不需要遵循】 1. 能做什么？ *"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">KVC 和 KVO</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-16 </span>
+        <div class="post-category">
+            <a href="/categories/ios/"> iOS </a>
+            </div>
+          <span class="more-meta"> 约 722 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#kvc">KVC</a>
+          <ul>
+            <li><a href="#1-能做什么">1. 能做什么？</a></li>
+            <li><a href="#2-适用场景什么样的类型满足-kvc-">2. 适用场景（什么样的类型满足 KVC ）</a></li>
+            <li><a href="#3-怎么做">3. 怎么做？</a></li>
+            <li><a href="#4-总结">4. 总结</a></li>
+          </ul>
+        </li>
+        <li><a href="#kvo">KVO</a>
+          <ul>
+            <li><a href="#1-使用范围">1. 使用范围</a></li>
+            <li><a href="#2-能做什么">2. 能做什么？</a></li>
+            <li><a href="#3-如何做">3. 如何做？</a></li>
+            <li><a href="#kvo-和-nsnotification-的区别">KVO 和 NSNotification 的区别？</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="kvc">KVC</h2>
+<blockquote>
+<p>KVC（KeyValueCoding）：（键值编码）非正式协议（Informal Protocol）【<strong>非正式协议：不需要遵循</strong>】</p>
+</blockquote>
+<h3 id="1-能做什么">1. 能做什么？</h3>
+<pre><code>* 可以通过 `name（key）` 去**隐式**地访问某个对象的属性(**`注意点：name（key）必须和属性名字一样。`**)。
+</code></pre>
+<h3 id="2-适用场景什么样的类型满足-kvc-">2. 适用场景（什么样的类型满足 KVC ）</h3>
+<blockquote>
+<p>只要继承自 <code>NSObject</code> 的类都是满足 KVC 的</p>
+</blockquote>
+<p>显示的访问某个对象的属性的方式：</p>
+<ul>
+<li>方式1：setter/getter 方法</li>
+<li>方式2：(.xx)点语法直接访问（读/写）</li>
+</ul>
+<h3 id="3-怎么做">3. 怎么做？</h3>
+<h4 id="方式1">方式1</h4>
+<p>设置属性值
+<code>-(void)setValue:(nullable id)value forKey:(NSString *)key;</code>
+获取属性值
+<code>-(id)valueForKey:(NSString *)key;</code></p>
+<h4 id="方式2">方式2</h4>
+<p>设置属性值
+<code>-(void)setValue:(nullable id)value forKeyPath:(NSString *)keyPath;</code>
+获取属性值
+<code>-(id)valueForKeyPath:(NSString *)keyPath;</code></p>
+<h3 id="4-总结">4. 总结</h3>
+<ol>
+<li>KVC 利用动态语言（OC/Ruby。。。）运行的机制</li>
+<li>KVC 两种设置和获取的方式（key/keyPath）；遵循原则：key/keyPath 中包含值和属性值名字一样</li>
+<li>优势：
+<ul>
+<li>可以使用 KVC 方式对私有属性进行访问（设置/获取）;</li>
+<li>可以访问（设置/获取）嵌套属性的值（只能用 keyPath）</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="kvo">KVO</h2>
+<blockquote>
+<p>KeyValueObserver(键值观察机制)</p>
+</blockquote>
+<h3 id="1-使用范围">1. 使用范围</h3>
+<blockquote>
+<p>只要是继承自 NSObject 的类都适用 <code>KVO</code> 机制</p>
+</blockquote>
+<h3 id="2-能做什么">2. 能做什么？</h3>
+<ul>
+<li>监听某个、某些属性值的变化，做出响应的机制</li>
+<li>当被观察者的值发生变化，会自动发送通知给观察者，进而观察者作出相应的感应（更新数据到界面&hellip;）</li>
+</ul>
+<h3 id="3-如何做">3. 如何做？</h3>
+<p>执行三步</p>
+<ol>
+<li>明确观察者和被观察者；创建两个对象</li>
+<li>被观察者对象需要调用 <code>addObserver</code> 方法，注册观察者对象</li>
+<li>观察者需要实现 <code>observeValueForKeyPath</code> 方法，获取观察（监听） 的值（包含初始值、旧值、更新后的值）</li>
+</ol>
+<h3 id="kvo-和-nsnotification-的区别">KVO 和 NSNotification 的区别？</h3>
+<ol>
+<li>前者是<strong>观察者对象</strong>和<strong>被观察者对象</strong>建立联系,监听和被监听的关系(<strong>直接联系</strong>）;后者是<strong>监听对象</strong>和<strong>被监听对象</strong>与<strong>通知中心</strong>建立的联系，（<strong>间接联系</strong>）</li>
+<li>当前者监听到值变化，自动触发方法;后者监听到变化时需要自己写触发方法<code>select</code>。</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-04-16
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/kvc/">KVC</a>
+          <a href="/tags/kvo/">KVO</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ios/16-0520_cocoapods%E7%9A%84%E5%AE%89%E8%A3%85/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Cocoa Pods 的安装过程</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E5%86%85%E5%AD%98%E4%B8%AD%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/">
+            <span class="next-text nav-default">内存中堆和栈的区别</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

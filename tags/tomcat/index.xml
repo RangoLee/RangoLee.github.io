@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tomcat on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/tomcat/</link>
+    <description>Recent content in tomcat on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Jun 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/tomcat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mac 安装和配置 tomcat(不借助 eclipse)</title>
+      <link>https://rangolee.github.io/post/16-0606_mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEtomcat/</link>
+      <pubDate>Mon, 06 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0606_mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEtomcat/</guid>
+      <description>&lt;h3 id=&#34;1安装-tomcat&#34;&gt;1.安装 tomcat&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h5 id=&#34;1-去-java官网httpwwworaclecomtechnetworkjavajavasedownloadsindexhtml下载-jdk-安装包然后一步一步先安装jdk&#34;&gt;1. 去 &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/index.html&#34;&gt;Java官网&lt;/a&gt;下载 JDK 安装包,然后一步一步先安装JDK&lt;/h5&gt;
+&lt;h5 id=&#34;2-去-apache官网httptomcatapacheorgindexhtml下载-mac-版本的完整-targz-文件包解压拷贝到主目录并重新命名为-tomcat其他目录页可以&#34;&gt;2. 去 &lt;a href=&#34;http://tomcat.apache.org/index.html&#34;&gt;Apache官网&lt;/a&gt;下载 Mac 版本的完整 &lt;code&gt;***tar.gz&lt;/code&gt; 文件包,解压拷贝到&lt;code&gt;~/&lt;/code&gt;主目录,并重新命名为 tomcat(其他目录页可以).&lt;/h5&gt;
+&lt;h5 id=&#34;3-修改文件权限进入终端-cd-到刚才的目录&#34;&gt;3. 修改文件权限,进入终端 &lt;code&gt;cd&lt;/code&gt; 到刚才的目录&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Rango-MBP:~ rango$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; tomcat/bin/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;5-修改文件权限需要输入登录密码输入后按回车就可&#34;&gt;5. 修改文件权限,需要输入登录密码,输入后按回车就可&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Rango-MBP:bin rango$ sudo chmod &lt;span class=&#34;m&#34;&gt;755&lt;/span&gt; *.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Password:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

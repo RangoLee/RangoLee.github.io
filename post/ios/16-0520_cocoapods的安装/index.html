@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Cocoa Pods 的安装过程 - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="本文主要介绍了 Cocoa Pods 在 MAC 下的终端里的安装过程和如何使用 `cocoa pods`, 也是自己一步一步安装过来的，当然也是从网上的各种教程中综合出来的方法，如有不对的地方还望指正，当然我是安装成功了的，嘿嘿！" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/ios/16-0520_cocoapods%E7%9A%84%E5%AE%89%E8%A3%85/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Cocoa Pods 的安装过程" />
+<meta property="og:description" content="本文主要介绍了 Cocoa Pods 在 MAC 下的终端里的安装过程和如何使用 `cocoa pods`, 也是自己一步一步安装过来的，当然也是从网上的各种教程中综合出来的方法，如有不对的地方还望指正，当然我是安装成功了的，嘿嘿！" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/ios/16-0520_cocoapods%E7%9A%84%E5%AE%89%E8%A3%85/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-05-18T11:20:00+00:00" />
+<meta property="article:modified_time" content="2016-05-18T11:20:00+00:00" />
+
+<meta itemprop="name" content="Cocoa Pods 的安装过程">
+<meta itemprop="description" content="本文主要介绍了 Cocoa Pods 在 MAC 下的终端里的安装过程和如何使用 `cocoa pods`, 也是自己一步一步安装过来的，当然也是从网上的各种教程中综合出来的方法，如有不对的地方还望指正，当然我是安装成功了的，嘿嘿！"><meta itemprop="datePublished" content="2016-05-18T11:20:00+00:00" />
+<meta itemprop="dateModified" content="2016-05-18T11:20:00+00:00" />
+<meta itemprop="wordCount" content="2546">
+<meta itemprop="keywords" content="cocoa pods,Mac,iOS," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cocoa Pods 的安装过程"/>
+<meta name="twitter:description" content="本文主要介绍了 Cocoa Pods 在 MAC 下的终端里的安装过程和如何使用 `cocoa pods`, 也是自己一步一步安装过来的，当然也是从网上的各种教程中综合出来的方法，如有不对的地方还望指正，当然我是安装成功了的，嘿嘿！"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Cocoa Pods 的安装过程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-18 </span>
+        <div class="post-category">
+            <a href="/categories/ios/"> iOS </a>
+            </div>
+          <span class="more-meta"> 约 2546 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#关于-cocoa-pods">关于 Cocoa Pods</a></li>
+            <li><a href="#安装环境">安装环境</a></li>
+            <li><a href="#安装过程">安装过程</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <!--
+|参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期	|文件建立日期
+|updated:   |更新日期	|文件更新日期
+|comments:  |开启文章的评论功能	|true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description|
+-->
+<h3 id="关于-cocoa-pods">关于 Cocoa Pods</h3>
+<hr>
+<h4 id="cocoa-pods-是什么">Cocoa Pods 是什么？</h4>
+<p>当你开发iOS应用时，会经常使用到很多第三方开源类库，比如JSONKit，AFNetWorking等等。而如何有效且方便的管理这些类库就不是很容易了。主要有两方面的问题：</p>
+<hr>
+<ol>
+<li>可能你需要使用的某个类库又可能会用到其他类库，所以要使用它，必须得另外下载其他类库，而这个其他类库又有可能用到另外的类库。如果,手动去一个个下载所需类库这就有点麻烦了。</li>
+<li>另外一种常见情况是，你项目中用到的类库有更新，你必须得重新下载新版本，重新加入到项目中，十分麻烦。如果能有什么工具能解决这些恼人的问题，那就太好了，而CocoaPods就是这样一款具有这些功能的管理类库的工具。</li>
+</ol>
+<p>CocoaPods应该是iOS最常用和最有名的类库管理工具了，上述两个烦人的问题，通过cocoaPods，只需要一行命令就可以完美解决，当然前提是你必须正确设置它。重要的是，绝大部分有名的开源类库，都支持CocoaPods。所以，作为iOS程序员的我们，掌握CocoaPods的使用是必不可少的基本技能了。</p>
+<p><strong>Cocoa Pods 简单来说就两句话<code>集成/更新第三方类库</code>和<code>简化第三方类库的使用</code></strong></p>
+<h3 id="安装环境">安装环境</h3>
+<hr>
+<p>这是我的安装环境。<code>2015款 Mac Book Pro 13寸 系统版本 10.11.4</code>
+<img src="http://ww1.sinaimg.cn/large/741b3941gw1f3wfzudivfj20d608ygn9.jpg" alt=""></p>
+<h3 id="安装过程">安装过程</h3>
+<hr>
+<p>以下安装都是在终端（Terminator）下执行的，如果你不知道什么是**<code>终端</code>**的话，请自行Google。这里不做介绍了。</p>
+<p>安装之前请确认本地已经部署好了 Ruby 环境（MAC 系统好像自带 Ruby 环境），但是为了保险还是确认一下的好。在终端里输入<code>ruby -v</code>查看一下当前系统 ruby 的版本信息。这是我的系统中 Ruby 版本信息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:~ rango$ ruby -v
+</span></span><span class="line"><span class="cl">ruby 2.0.0p648 <span class="o">(</span>2015-12-16 revision 53162<span class="o">)</span> <span class="o">[</span>universal.x86_64-darwin15<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>顺便再输入<code>gem -v</code>查看一下 gem 的版本信息，不要问我 gem 是什么我还真不知道😄。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:~ rango$ gem -v
+</span></span><span class="line"><span class="cl">2.6.4
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果你觉得 gem 版本太低 可以用这行命令<code>sudo gem update --system</code>来更新一下 gem ，好了既然这两个都没有问题了，下面要开始正式安装了。</p>
+<hr>
+<ol>
+<li>在终端输入以下命令<code>sudo gem install cocoapods</code>（ 因为我的系统版本是OS X EL Capitan <code>10.11.4</code> 所以需要输入以下命令），不要问我为什么，我也不知道，反正这么输入就对了（如果输入<code>sudo gem install cocoapods</code>有反应就优先这个吧）。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo gem install -n /usr/local/bin cocoapods
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>你可能会发现没有任何反应，什么原因呢，因为被墙了(我靠，这都被墙！)，那要怎么办呢？我们可以用淘宝的 ruby 镜像来访问。
+2. 接下来在终端中输入以下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gem sources --remove https://rubygems.org/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>等有了反应之后再输入以下命令：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gem sources -a https://ruby.taobao.org/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>然后验证一下，查看是否替换成功。在终端输入</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> gem sources -l
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>当你的终端出现以下文字时，说明替换成功了（如果没有出现这个信息那就把上面步骤 2 和步骤3 再执行一遍吧）。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> *** CURRENT SOURCES ***
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> https://ruby.taobao.org/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>这个时候再次在终端中输入之前的命令<code>sudo gem install cocoapods</code> 我这里 需要输入</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo gem install -n /usr/local/bin cocoapods
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>敲入以上命令后，等待一会，Cocoa Pods 就安装好了，这时候终端上应该是类似这样的
+<img src="http://ww2.sinaimg.cn/large/741b3941gw1f3wi54mcflj20zg0vuqn9.jpg" alt="">
+心想，我靠，太爽了，终于安装好了吧。</li>
+</ol>
+<blockquote>
+<p>（如果提示ruby版本过低请按照<a href="">此方法</a>升级ruby）。
+期间可能会问你 sudo 管理员密码，以及自动通过 Homebrew 安装依赖包，等待一段时间后就可以成功安装好 RVM。</p>
+</blockquote>
+<ol start="8">
+<li>接下来还有一步需要执行，在终端下输入以下命令(下载服务器中所有第三方框架/类库信息，缓存到电脑本地)</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pod setup
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后你就发现我擦什么鬼？终端出现一行代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Setting up CocoaPods master repo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我靠，这是什么东东，不要怕有这行命令说明 Cocoa Pods 正在将一些文件下载到<code>~/.cocoapods</code> 这个文件夹里。这可能是一个漫长的过程，至少我在下载时，就过了好久才提示成功的。如果你不放心是否是正在下载中，可以再开一个终端页面，然后在<code>cd ~/</code>到主目录下，然后输入以下命令查看一个这个<code>.cocoapods</code>文件夹的大小。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">du -sh .cocoapods
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>多查看几次，如果发现文件夹大小正在增长那就没问题了，那接下就是漫长的等待了，等它下载完成就好了（我从其他处看到的都是说文件大小在100MB左右，说好的100MB 左右的呢，我最终查看到的文件夹大小是702MB）。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">du -sh .cocoapods
+</span></span><span class="line"><span class="cl">702M	.cocoapods
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下载完成后会在终端提示以下信息的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Rango-MBP:~ rango$ pod setup
+</span></span><span class="line"><span class="cl">Setting up CocoaPods master repo
+</span></span><span class="line"><span class="cl">Setup completed
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样就安装完成了。</p>
+<blockquote>
+<p>PS:当然这里也可能下载不下来，如果下载不下来那就只好科学上网了（或者更换第三方框架仓库源。
+1）移除本地的缓存仓库<code>pod repo remove master</code>
+2）<code>pod repo add master http://git.oschina.net/akuandev/Specs.git</code>若失败则替换为 <code>https://gitcafe.com/akuandev/Specs.git</code>
+3） 重新缓存<code>pod setup</code>）。</p>
+</blockquote>
+<h4 id="如何使用-cocoapods">如何使用 cocoapods？</h4>
+<hr>
+<p>新建一个 Xcode 工程（例如 Demo_Cocoapods）,我的这个工程路径就放在桌面（路径为<code>/Users/rango/Desktop/Demo_Cocoapods</code>）。然后在终端中输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /Users/rango/Desktop/Demo_Cocoapods
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>进入到这个项目的文件夹下，然后执行初始化操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Pod init
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>现在<code>ls</code>查看一下当前路径下是不是多了一个 <code>PodFile</code> 文件,然后用<code>vim</code>打开这个文件，编辑一下这个配置文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vim Podfile
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我的配置文件打开默认是这样的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Uncomment this line to define a global platform for yo    ur project</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># platform :ios, &#39;9.0&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">target <span class="s1">&#39;Demo_Cocoapods&#39;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># Uncomment this line if you&#39;re using Swift or would like to use dynamic frameworks</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># use_frameworks!</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1"># Pods for Demo_Cocoapods</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">end      
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里我们需要修改一下,在后面加入我需要的第三方类库名字<code>AFNetworking</code> 和版本号<code>3.0</code>等信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Uncomment this line to define a global platform for your project</span>
+</span></span><span class="line"><span class="cl">platform :ios, <span class="s1">&#39;9.0&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">target <span class="s1">&#39;Demo_Cocoapods&#39;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># Uncomment this line if you&#39;re using Swift or would like to use dynamic frameworks</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># use_frameworks!</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1"># Pods for Demo_Cocoapods</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> <span class="s1">&#39;https://github.com/CocoaPods/Specs.git&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">pod <span class="s1">&#39;AFNetworking&#39;</span>, <span class="s1">&#39;~&gt; 3.0&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">end      
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后保存退出。接下来就是联网安装 Podfile 中添加的类库了。输入 <code>pod install</code>。会根据Podfile.lock文件记录的版本号, 去下载对应版本的第三方框架</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:Demo_Cocoapods rango$ pod install
+</span></span><span class="line"><span class="cl">Analyzing dependencies
+</span></span><span class="line"><span class="cl">Downloading dependencies
+</span></span><span class="line"><span class="cl">Installing AFNetworking <span class="o">(</span>3.1.0<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Generating Pods project
+</span></span><span class="line"><span class="cl">Integrating client project
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>!<span class="o">]</span> Please close any current Xcode sessions and use <span class="sb">`</span>Demo_Cocoapods.xcworkspace<span class="sb">`</span> <span class="k">for</span> this project from now on.
+</span></span><span class="line"><span class="cl">Sending stats
+</span></span><span class="line"><span class="cl">Pod installation complete! There is <span class="m">1</span> dependency from the
+</span></span><span class="line"><span class="cl">Podfile and <span class="m">1</span> total pod installed.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>看到这些信息，就说明安装成功了。这时候我们看一下，项目文件夹下多了一些文件和文件夹。
+<img src="http://ww1.sinaimg.cn/large/741b3941gw1f426gn9wd3j20qg06o40n.jpg" alt="">
+这样就说明安装成功了，这时候我们就可以愉快的使用 cocoapods 来管理项目中的第三方类库了，这里需要注意的是我们需要使用哪个<code>.xcworkspace</code>结尾的文件打开项目。</p>
+<blockquote>
+<p>更新第三方框架
+pod update
+如果Podfile中, 第三方框架没有明确声明版本号, 就会自动将第三方框架升级到最新版本, 并且更新Podfile.lock文件</p>
+</blockquote>
+<h4 id="安装中的常见错误及解决办法">安装中的常见错误及解决办法</h4>
+<hr>
+<ol>
+<li>如果你之前对 <code>Xcode.app</code> 改过名字，例如改成了<code>Xcode7.1.app</code>这样就很可能会安装失败。如果没有那最好。</li>
+<li>系统升级到10.11之后，CocoaPods报错: command not found, 解决方案</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo gem update --system
+</span></span><span class="line"><span class="cl">sudo gem uninstall cocoapods
+</span></span><span class="line"><span class="cl">sudo gem install -n /usr/local/bin cocoa pods
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-05-18
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/cocoa-pods/">cocoa pods</a>
+          <a href="/tags/mac/">Mac</a>
+          <a href="/tags/ios/">iOS</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ios/16-0520_nsarray-%E5%92%8C-nsmutablearray-%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">NSArray 和 NSMutableArray 的相互转换</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/ios/kvc-%E5%92%8C-kvo/">
+            <span class="next-text nav-default">KVC 和 KVO</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

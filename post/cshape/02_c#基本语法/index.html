@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>2.C#基本语法 - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="2.C#基本语法 C# 是一种面向对象的编程语言。在面向对象的程序设计方法中，程序由各种相互交互的对象组成。相同种类的对象通常具有相同的类型，或者" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/cshape/02_c#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="2.C#基本语法" />
+<meta property="og:description" content="2.C#基本语法 C# 是一种面向对象的编程语言。在面向对象的程序设计方法中，程序由各种相互交互的对象组成。相同种类的对象通常具有相同的类型，或者" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/cshape/02_c#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-05-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-05-23T00:00:00+00:00" />
+
+<meta itemprop="name" content="2.C#基本语法">
+<meta itemprop="description" content="2.C#基本语法 C# 是一种面向对象的编程语言。在面向对象的程序设计方法中，程序由各种相互交互的对象组成。相同种类的对象通常具有相同的类型，或者"><meta itemprop="datePublished" content="2016-05-23T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-05-23T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1152">
+<meta itemprop="keywords" content="CShape," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2.C#基本语法"/>
+<meta name="twitter:description" content="2.C#基本语法 C# 是一种面向对象的编程语言。在面向对象的程序设计方法中，程序由各种相互交互的对象组成。相同种类的对象通常具有相同的类型，或者"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">2.C#基本语法</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-23 </span>
+        <div class="post-category">
+            <a href="/categories/cshape/"> CShape </a>
+            </div>
+          <span class="more-meta"> 约 1152 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#2c基本语法">2.C#基本语法</a>
+          <ul>
+            <li><a href="#using">using</a></li>
+            <li><a href="#c-中的注释">C# 中的注释</a></li>
+            <li><a href="#成员变量">成员变量</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="2c基本语法">2.C#基本语法</h2>
+<p>C# 是一种面向对象的编程语言。在面向对象的程序设计方法中，程序由各种相互交互的对象组成。相同种类的对象通常具有相同的类型，或者说，是在相同的 class 中。
+例如，以 <code>Rectangle</code>（矩形）对象为例。它具有 <code>length</code> 和 <code>width</code> 属性。根据设计，它可能需要接受这些属性值、计算面积和显示细节。
+让我们来看看一个 Rectangle（矩形）类的实现，并借此讨论 C# 的基本语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">RectangleApplication</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"> <span class="k">class</span> <span class="nc">Rectangle</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 成员变量</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">double</span> <span class="n">dLength</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">double</span> <span class="n">dWidth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">public</span> <span class="k">void</span> <span class="n">Acceptdetails</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="n">dLength</span> <span class="p">=</span> <span class="m">4.5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="n">dWidth</span> <span class="p">=</span> <span class="m">3.5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">public</span> <span class="kt">double</span> <span class="n">GetArea</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="n">dLength</span> <span class="p">*</span> <span class="n">dWidth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">public</span> <span class="k">void</span> <span class="n">Display</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Length:{0}&#34;</span><span class="p">,</span><span class="n">dLength</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Width:{0}&#34;</span><span class="p">,</span><span class="n">dWidth</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Area:{0}&#34;</span><span class="p">,</span><span class="n">GetArea</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="k">class</span> <span class="nc">ExecuteRectangle</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="n">Rectangle</span> <span class="n">rect</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">   <span class="n">rect</span><span class="p">.</span><span class="n">Acceptdetails</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">   <span class="n">rect</span><span class="p">.</span><span class="n">Display</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">   <span class="n">Console</span><span class="p">.</span><span class="n">ReadKey</span><span class="p">();</span> 
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="n">Length</span><span class="p">:</span> <span class="m">4.5</span>
+</span></span><span class="line"><span class="cl"><span class="n">Width</span><span class="p">:</span> <span class="m">3.5</span>
+</span></span><span class="line"><span class="cl"><span class="n">Area</span><span class="p">:</span> <span class="m">15.75</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><!-- more -->
+<h3 id="using">using</h3>
+<p>在任何C#程序中第一条语句都是：<code>using System</code>
+using 关键字用于在程序中包含命名空间。一个程序可以包含多个using语句</p>
+<h4 id="class">class</h4>
+<p>class 用于声明一个类</p>
+<h3 id="c-中的注释">C# 中的注释</h3>
+<p>注释是用于解释代码。编译器会忽略注释。在C#中，多行注释以/<em>开始，并以</em>/终止。例如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="cm">/* This program demonstrates
+</span></span></span><span class="line"><span class="cl"><span class="cm">The basic syntax of C# programming 
+</span></span></span><span class="line"><span class="cl"><span class="cm">Language */</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>单行注释以 // 表示 例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="p">}</span><span class="c1">// end class Rectangle</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="成员变量">成员变量</h3>
+<p>变量是类的属性或数据成员，用于存储数据。在上面的Rectangle类有两个成员变量，length和width。</p>
+<h4 id="成员函数">成员函数</h4>
+<p>函数是一系列执行指定任务的语句。类的成员函数是在类内声明的。我们举例的类Rectangle包含了三个成员函数：AcceptDEtail、GetArea和Display。</p>
+<h4 id="实例化一个类">实例化一个类</h4>
+<p>在上面的程序中，类ExecuteRectangle是一个包含Main()函数和实例化Rectangle类的类。</p>
+<h4 id="标识符">标识符</h4>
+<p>标识符是用来识别类、变量、函数或者任何其它用户定义的项目。在C#中，类的命名必须遵循如下基本原则：</p>
+<blockquote>
+<p>1,标识符必须以字母或下划线<code>_</code>开头，后面可以跟一系列的字母、数字（0-9）或者下划线<code>_</code>。标识符中的第一个字符不能使数字。<br>
+标识符必须不包含任何嵌入的空格或者符号，比如：<code>? - +! @ # % ^ &amp; * ( ) [ ] { } . ; : &quot; ' / \</code>。但是，可以使用下划线<code>_</code>.<br>
+标识符不能是C#关键字</p>
+</blockquote>
+<h4 id="c关键字">C#关键字</h4>
+<p>关键字是C#编译器定义的保留字。这些关键字不能用作标识符，但是，如果您想使用这些关键字作为标识符，可以在关键字前面加上@字符作为前缀。
+在C#中，有些标识符在代码的上下文中有特殊的意义，如get何set，这些被称为上下文关键字（contextual keywords）。
+下表列出类C#中保留的关键字（Reserved Keywords）和上下文关键字（Contextual KeyWords）。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">保留关键字
+</span></span><span class="line"><span class="cl">abstract as base bool <span class="nb">break</span> byte <span class="k">case</span>
+</span></span><span class="line"><span class="cl">catch char checked class const <span class="k">continue</span> decimal
+</span></span><span class="line"><span class="cl">default delegate <span class="k">do</span> double <span class="k">else</span> enum event
+</span></span><span class="line"><span class="cl">explicit extern <span class="nb">false</span> finally fixed float <span class="k">for</span>
+</span></span><span class="line"><span class="cl">foreach goto <span class="k">if</span> implicit in in <span class="o">(</span>generic
+</span></span><span class="line"><span class="cl">modifier<span class="o">)</span> int
+</span></span><span class="line"><span class="cl">interface internal is lock long namespace new
+</span></span><span class="line"><span class="cl">null object operator out out
+</span></span><span class="line"><span class="cl"><span class="o">(</span>generic
+</span></span><span class="line"><span class="cl">modifier<span class="o">)</span> override params
+</span></span><span class="line"><span class="cl">private protected public <span class="nb">readonly</span> ref <span class="k">return</span> sbyte
+</span></span><span class="line"><span class="cl">sealed short sizeof stackalloc static string struct
+</span></span><span class="line"><span class="cl">switch this throw <span class="nb">true</span> try typeof uint
+</span></span><span class="line"><span class="cl">ulong unchecked unsafe ushort using virtual void
+</span></span><span class="line"><span class="cl">volatile <span class="k">while</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">上下文关键字
+</span></span><span class="line"><span class="cl">add <span class="nb">alias</span> ascending descending dynamic from get
+</span></span><span class="line"><span class="cl">global group into join <span class="nb">let</span> orderby partial
+</span></span><span class="line"><span class="cl"><span class="o">(</span><span class="nb">type</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">partial
+</span></span><span class="line"><span class="cl"><span class="o">(</span>method<span class="o">)</span> remove <span class="k">select</span> <span class="nb">set</span>   
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-05-23
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/cshape/">CShape</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ios/16-0523_oc%E4%B8%AD%E7%9A%84block/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">OC 中的 Block</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/">
+            <span class="next-text nav-default">C&#43;&#43;11 并发指南一</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

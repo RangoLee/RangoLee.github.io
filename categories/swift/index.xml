@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>swift on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/categories/swift/</link>
+    <description>Recent content in swift on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 17 May 2018 23:36:05 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/categories/swift/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>禁用 Xcode 9 的 Swift 3 中 @objc 推断</title>
+      <link>https://rangolee.github.io/post/swift/swift3to4/</link>
+      <pubDate>Thu, 17 May 2018 23:36:05 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/swift/swift3to4/</guid>
+      <description>swift3 to swift4 === 使用 xcode 9 自动从 swift3 升级到 swift4 后改动并不多, 选择 deployment target 8.0 时,编译代码提示下面警告⚠️ 1 The use of Swift 3 @objc inference in Swift 4 mode is deprecated. Please address deprecated @objc inference warnings, test your code with “Use</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/post/</link>
+    <description>Recent content in Posts on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 29 Feb 2020 21:37:19 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS 之 keyPath 自动提示宏</title>
+      <link>https://rangolee.github.io/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/</link>
+      <pubDate>Sat, 29 Feb 2020 21:37:19 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/</guid>
+      <description>自动提示宏 这个宏可以在使用keyPath时自动提示属性字符串，防止输入出现错误。 1 2 3 4 // 自动替换宏 #define keyPath(objc, keyPath) @(((void)objc.keyPath,#keyPath)) NSLog(@&amp;#34;%@&amp;#34;, [keyPath(self.layer, position) class]); // NSTaggedPointerString NSLog(@&amp;#34;%@&amp;#34;, keyPath(self.layer, position)); // position c语言字符</description>
+    </item>
+    
+    <item>
+      <title>pod install 速度慢的终极解决方案</title>
+      <link>https://rangolee.github.io/post/pod-install%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/pod-install%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description>问题 如今新版本的 pod 已经是默认走 CDN 的方式,不再是 master repo 的模式,但是,依然会有这个问题. 相信大家已经感受到 pod install 速度越来越慢了，网上提供了几种解决方</description>
+    </item>
+    
+    <item>
+      <title>使用 git 克隆 github 上的项目失败</title>
+      <link>https://rangolee.github.io/post/2019-09-05-%E4%BD%BF%E7%94%A8-git-%E5%85%8B%E9%9A%86-github-%E4%B8%8A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/2019-09-05-%E4%BD%BF%E7%94%A8-git-%E5%85%8B%E9%9A%86-github-%E4%B8%8A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</guid>
+      <description>使用 git 克隆 github 上的项目失败 现象 今天在使用 git clone nextjs demo project 源代码的时， git clone https://github.com/XXXX/next-blog.git 下载速度很慢，然后下载一段时间后，总是提示下面的错误信息 1 2 3 4 5 6 7 8 nCloning</description>
+    </item>
+    
+    <item>
+      <title>CentOS6.1 install Nginx</title>
+      <link>https://rangolee.github.io/post/2019-06-39-centos6.1-install-nginx/</link>
+      <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/2019-06-39-centos6.1-install-nginx/</guid>
+      <description>CentOS 6.1 install Nginx 安装 1 yum install nginx 启动 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # 查看版本 nginx -v # 检查配置文件是否正确 nginx -t # 启动 Nginx /usr/sbin/nginx # 重载配置文件 nginx -s reload # 重启</description>
+    </item>
+    
+    <item>
+      <title>CentOS 7 install vsftpd</title>
+      <link>https://rangolee.github.io/post/centos7-install-vsftpd/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/centos7-install-vsftpd/</guid>
+      <description>Centos 7 install vsftpd 安装 1 yum install -y vsftpd 配置 1 vim /etc/vsftpd/vsftpd.conf 修改配置项 1 2 3 4 5 6 7 8 9 10 # 是否允许匿名访问 anonymous_enable=NO # 是否限制所有用户不能切换ftp主目录 chroot_local_user=YES # 使用限制列表 chroot_list_enable=YES #</description>
+    </item>
+    
+    <item>
+      <title>禁用 Xcode 9 的 Swift 3 中 @objc 推断</title>
+      <link>https://rangolee.github.io/post/swift/swift3to4/</link>
+      <pubDate>Thu, 17 May 2018 23:36:05 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/swift/swift3to4/</guid>
+      <description>swift3 to swift4 === 使用 xcode 9 自动从 swift3 升级到 swift4 后改动并不多, 选择 deployment target 8.0 时,编译代码提示下面警告⚠️ 1 The use of Swift 3 @objc inference in Swift 4 mode is deprecated. Please address deprecated @objc inference warnings, test your code with “Use</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; 中new和new()的区别</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;%E4%B8%ADnew%E5%92%8Cnew%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Sun, 12 Mar 2017 21:56:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;%E4%B8%ADnew%E5%92%8Cnew%E5%8C%BA%E5%88%AB/</guid>
+      <description>C++ 中new和new()的区别 结论：new()调用没有参数的构造函数，new调用默认构造函数或唯一构造函数。 C++在new时的初始化规律可能为</description>
+    </item>
+    
+    <item>
+      <title>Xcode如何创建默认后缀是 .h 的 c&#43;&#43; 头文件？</title>
+      <link>https://rangolee.github.io/post/cpp/xcode%E6%96%B0%E5%BB%BAcpp%E5%A4%B4%E6%96%87%E4%BB%B6%E6%97%B6%E9%BB%98%E8%AE%A4%E4%B8%BA.h%E5%90%8E%E7%BC%80/</link>
+      <pubDate>Thu, 09 Mar 2017 01:10:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/xcode%E6%96%B0%E5%BB%BAcpp%E5%A4%B4%E6%96%87%E4%BB%B6%E6%97%B6%E9%BB%98%E8%AE%A4%E4%B8%BA.h%E5%90%8E%E7%BC%80/</guid>
+      <description>Xcode 在新建 cpp 文件时,自动生成的头文件是 .hpp 的后缀,如果想改变默认生成的头文件后缀为 .h,应该如何操作呢? 1. 找到 C++ 头文件的模板文件位置 1 2 // Xcode 13.x /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\</description>
+    </item>
+    
+    <item>
+      <title>c&#43;&#43; 获取时间</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Sun, 01 Jan 2017 15:10:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/</guid>
+      <description>获取系统时间 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 #include &amp;lt;ctime&amp;gt;int main(int argc, char const *argv[]) { time_t tm = time(0); char szTime[64]; strftime(szTime, sizeof(szTime), &amp;#34;%Y/%m/%d %X %A 本年第%j天 %z&amp;#34;,localtime(&amp;amp;tm));</description>
+    </item>
+    
+    <item>
+      <title>1.C#程序结构体</title>
+      <link>https://rangolee.github.io/post/cshape/01_c#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%BD%93/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/01_c#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%BD%93/</guid>
+      <description>1.C#程序结构体 C# Hello World 实例 一个C#程序主要包括以下部分： 命名空间声明（Namespace declaration） 一个类（class 类方法（</description>
+    </item>
+    
+    <item>
+      <title>Mac 安装Python3.5.2</title>
+      <link>https://rangolee.github.io/post/python/mac%E5%AE%89%E8%A3%85python3.5.2/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/python/mac%E5%AE%89%E8%A3%85python3.5.2/</guid>
+      <description>1.安装Python3.5.2 MacOS系统10.12.2，终端运行brew install python3 1 Rango-MBP:~ Rango$ brew install python3 报警告 1 2 3 4 Warning: You are using OS X 10.12. We do not provide support for this pre-release version. You</description>
+    </item>
+    
+    <item>
+      <title>STL模板技巧</title>
+      <link>https://rangolee.github.io/post/cpp/stl%E6%A8%A1%E6%9D%BF%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Fri, 02 Dec 2016 00:22:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/stl%E6%A8%A1%E6%9D%BF%E6%8A%80%E5%B7%A7/</guid>
+      <description>typename 声明模板参数：template&amp;lt;typename T&amp;gt; ...,只有在这种语境下，typename关键字才可以和class关键字互换 cla</description>
+    </item>
+    
+    <item>
+      <title>hexo[报错]DTraceProviderBindings MODULE_NOT_FOUND</title>
+      <link>https://rangolee.github.io/post/others/hexo_module_not_found/</link>
+      <pubDate>Mon, 28 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/others/hexo_module_not_found/</guid>
+      <description>hexo 报错 1 2 3 { [Error: Cannot find module &amp;#39;./build/Release/DTraceProviderBindings&amp;#39;] code: &amp;#39;MODULE_NOT_FOUND&amp;#39; } { [Error: Cannot find module &amp;#39;./build/default/DTraceProviderBindings&amp;#39;] code: &amp;#39;MODULE_NOT_FOUND&amp;#39; } { [Error: Cannot find module &amp;#39;./build/Debug/DTraceProviderBindings&amp;#39;] code: &amp;#39;MODULE_NOT_FOUND&amp;#39; } 比较靠谱的解决办法 1 $ npm install hexo --no-optional 但是好像并没有什么用，通过一通尝试最后是这么</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;_STL_类模板</title>
+      <link>https://rangolee.github.io/post/cpp/stl%E7%B1%BB%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/stl%E7%B1%BB%E6%A8%A1%E6%9D%BF/</guid>
+      <description>1.类模板的定义 类模板的语法形式 1 2 3 4 5 6 7 8 9 template &amp;lt;typename 类型参数1, typename 类型参数2,...&amp;gt; template &amp;lt;typename A, typename b, typename C&amp;gt; class MyClass { public: A m_a; b foo(C c); }; 类型参数 在类</description>
+    </item>
+    
+    <item>
+      <title>Mac Sublime Text compile Source.cpp error</title>
+      <link>https://rangolee.github.io/post/cpp/mac_sublime_text3_compile_cpp_error/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/mac_sublime_text3_compile_cpp_error/</guid>
+      <description>Mac Sublime Text compile Source.cpp error //bin/bash: shell_session_update: command not found   get the rvm version  1  Rango-MBP:~ Rango$ rvm -v   make sure the version at least 1.26 above  1 2  Rango-MBP:~ Rango$ rvm -v rvm 1.27.0 (master) by Wayne E. Seguin &amp;lt;wayneeseguin@gmail.com&amp;gt;, Michal Papis &amp;lt;mpapis@gmail.com&amp;gt; [https://rvm.io/]   then go ahead  1  Rango-MBP:~ Rango$ rvm get head   wait Downloading&amp;hellip;  1 2 3 4 5 6 7 8  Downloading https://get.</description>
+    </item>
+    
+    <item>
+      <title>删除mac下的MySQL</title>
+      <link>https://rangolee.github.io/post/16-0930_%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</link>
+      <pubDate>Fri, 30 Sep 2016 00:09:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0930_%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</guid>
+      <description>删除Mac下的MySQL 首先在系统偏好设置中设置MySQL设置，停止其服务然后依次执行如下语句即可。 1 2 3 4 5 6 7 sudo rm /usr/local/mysql sudo rm -rf /usr/local/mysql* sudo rm -rf /Library/StartupItems/MySQLCOM sudo rm</description>
+    </item>
+    
+    <item>
+      <title>Windows平台配置Sublime Text3的C/C&#43;&#43;11开发环境</title>
+      <link>https://rangolee.github.io/post/cpp/windows%E4%B8%8Bsublimetext3%E7%9A%84c&#43;&#43;11%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 14 Aug 2016 12:01:38 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/windows%E4%B8%8Bsublimetext3%E7%9A%84c&#43;&#43;11%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>Sublime Text3 配置C/C++11开发环境 1 2 3 4 5 6 7 8 9 10 11 12 13 { &amp;#34;cmd&amp;#34;: [&amp;#34;bash&amp;#34;, &amp;#34;-c&amp;#34;, &amp;#34;g++ -Wall -std=c++11 -O2 &amp;#39;${file}&amp;#39; -o &amp;#39;${file_path}/${file_base_name}&amp;#39; &amp;amp;&amp;amp; osascript -e &amp;#39;tell application \&amp;#34;Terminal\&amp;#34; to activate do script \&amp;#34; cd \\\&amp;#34;${file_path}\\\&amp;#34; &amp;amp;&amp;amp;start_ms=\\$(ruby -e \\\&amp;#34;puts (Time.now.to_f * 1000).to_i\\\&amp;#34;)&amp;amp;&amp;amp;clear&amp;amp;&amp;amp;\\\&amp;#34;${file_path}/${file_base_name}\\\&amp;#34; &amp;amp;&amp;amp;elapsed_ms=\\$((\\$(ruby -e \\\&amp;#34;puts (Time.now.to_f * 1000).to_i\\\&amp;#34;) - start_ms))&amp;amp;&amp;amp; read -p \\\&amp;#34;Press Enter</description>
+    </item>
+    
+    <item>
+      <title>Mac 上 Sublime Text 3 配置 Lua 环境</title>
+      <link>https://rangolee.github.io/post/16-0625_mac-%E4%B8%8A-sublime-text-3-%E9%85%8D%E7%BD%AE-lua-%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sat, 25 Jun 2016 00:49:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0625_mac-%E4%B8%8A-sublime-text-3-%E9%85%8D%E7%BD%AE-lua-%E7%8E%AF%E5%A2%83/</guid>
+      <description>&lt;h4 id=&#34;1下载安装&#34;&gt;1.下载安装&lt;/h4&gt;
+&lt;hr&gt;
+&lt;h5 id=&#34;1-先去lua官网httpwwwluaorgftp下载最新版-lua&#34;&gt;1. 先去&lt;a href=&#34;http://www.lua.org/ftp/&#34;&gt;Lua官网&lt;/a&gt;下载最新版 lua&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;Rango-MBP:~ rango$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;2-然后解压压缩包&#34;&gt;2. 然后解压压缩包&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;Rango-MBP:~ rango$ tar zxf lua-5.3.3.tar.gz&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;3-cd-到解压后的文件夹&#34;&gt;3. cd 到解压后的文件夹&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;Rango-MBP:~ rango$ cd lua-5.3.3&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;4-然后编译测试&#34;&gt;4. 然后编译测试&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;Rango-MBP:lua-5.3.3 rango$ make macosx test&lt;/code&gt;&lt;/p&gt;
+&lt;h6 id=&#34;正常情况会看到如下信息&#34;&gt;正常情况会看到如下信息&lt;/h6&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;src/lua -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Lua 5.3.3  Copyright &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;C&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; 1994-2016 Lua.org, PUC-Rio&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;上面几步总概况&#34;&gt;上面几步总概况&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ tar zxf lua-5.3.3.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; lua-5.3.3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ make macosx &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>iOS8中UIActionSheet弹出UIImagePickerController异常的处理方法</title>
+      <link>https://rangolee.github.io/post/ios/16-0621_ios8%E4%B8%ADuiactionsheet%E5%BC%B9%E5%87%BAuiimagepickercontroller%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Tue, 21 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0621_ios8%E4%B8%ADuiactionsheet%E5%BC%B9%E5%87%BAuiimagepickercontroller%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/</guid>
+      <description>iOS8之后，UIActionSheet 更改父类于 UIAlertController 带来的兼容性问题。 最近在做项目中遇到一个UIAlertController弹窗的问题，困</description>
+    </item>
+    
+    <item>
+      <title>cell的间隔线（tableView.separatorStyle）</title>
+      <link>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</link>
+      <pubDate>Sun, 19 Jun 2016 16:58:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</guid>
+      <description>cell 的间隔线 tableView 的一个属性 separatorStyle 可以设置 cell 之间的间隔线样式(三种) 1 2 3 4 5 typedef NS_ENUM(NSInteger, UITableViewCellSeparatorStyle) { UITableViewCellSeparatorStyleNone, UITableViewCellSeparatorStyleSingleLine, UITableViewCellSeparatorStyleSingleLineEtched // This separator style is only supported for grouped style table views currently } __TVOS_PROHIBITED; 默认样式有一条线 1 tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine; 设置</description>
+    </item>
+    
+    <item>
+      <title>UIImageView 的 contentMode 和 TextField 的 leftViewMode 和 rightViewMode</title>
+      <link>https://rangolee.github.io/post/ios/16-0607_contentmode%E5%92%8C-textfield-%E7%9A%84-leftviewmode-%E5%92%8C-rightviewmode/</link>
+      <pubDate>Tue, 07 Jun 2016 18:28:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0607_contentmode%E5%92%8C-textfield-%E7%9A%84-leftviewmode-%E5%92%8C-rightviewmode/</guid>
+      <description>&lt;h3 id=&#34;1uiimageview-的-contentmode&#34;&gt;1.UIImageView 的 contentMode&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h5 id=&#34;uiimageview-的-contentmode-属性用来设置图片的显示方式如居中局左是否缩放等contentmode-是-uiviewcontentmode枚举类型-的属性主要有下面这些样式可供选择&#34;&gt;UIImageView 的 contentMode 属性用来设置图片的显示方式,如居中,局左,是否缩放等,contentMode 是 UIViewContentMode(枚举类型) 的属性,主要有下面这些样式可供选择&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-objective-c&#34; data-lang=&#34;objective-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;NS_ENUM&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;NSInteger&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;UIViewContentMode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeScaleToFill&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;//会导致图片变形
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeScaleAspectFit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;      &lt;span class=&#34;c1&#34;&gt;// contents scaled to fit with fixed aspect. remainder is transparent --&amp;gt;保证图片比例不变的最大显示图片,可能会有留白部分
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeScaleAspectFill&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;     &lt;span class=&#34;c1&#34;&gt;// contents scaled to fill with fixed aspect. some portion of content may be clipped. --&amp;gt; 保证图片比例不变的情况下,填充整个 imageView 视图,可能只有部分图片显示
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeRedraw&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;              &lt;span class=&#34;c1&#34;&gt;// redraw on bounds change (calls -setNeedsDisplay)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeCenter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;              &lt;span class=&#34;c1&#34;&gt;// contents remain same size. positioned adjusted.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeTop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeBottom&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeLeft&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeRight&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeTopLeft&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeTopRight&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeBottomLeft&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;UIViewContentModeBottomRight&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;以上这些模式,带有 scale 的,当图片尺寸超过 imageView 的尺寸( frame)时,可能造成只有部分图片 内容会显示在 imageView 中,可以通过剪裁命令剪裁掉不在 imageView 视图之内的图片内容&lt;code&gt;self.myImageView.clipsToBounds = YES;&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mac OS 搭建 mysql 环境</title>
+      <link>https://rangolee.github.io/post/16-0606_mac%E6%90%AD%E5%BB%BAmysql%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 06 Jun 2016 11:18:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0606_mac%E6%90%AD%E5%BB%BAmysql%E7%8E%AF%E5%A2%83/</guid>
+      <description>1. MySQL Wiki 双击 mysql-5.6.12-osx10.7-x86_64.dmg 双击 mysql-5.6.12-osx10.7-x86_64.pkg 双击 MySQL.prefPane 系统偏好设置里启动 MySQL 验证 1 2 3 4 Rango-MBP:~ rango$ cd /usr/local/mysql Rango-MBP:mysql rango$ cd bin Rango-MBP:bin rango$ pwd /usr/local/mysql/bin 登入MySQL服务器,首次登入无密码,直接回车即可 看到下面这</description>
+    </item>
+    
+    <item>
+      <title>mac 安装和配置 tomcat(不借助 eclipse)</title>
+      <link>https://rangolee.github.io/post/16-0606_mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEtomcat/</link>
+      <pubDate>Mon, 06 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0606_mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEtomcat/</guid>
+      <description>&lt;h3 id=&#34;1安装-tomcat&#34;&gt;1.安装 tomcat&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h5 id=&#34;1-去-java官网httpwwworaclecomtechnetworkjavajavasedownloadsindexhtml下载-jdk-安装包然后一步一步先安装jdk&#34;&gt;1. 去 &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/index.html&#34;&gt;Java官网&lt;/a&gt;下载 JDK 安装包,然后一步一步先安装JDK&lt;/h5&gt;
+&lt;h5 id=&#34;2-去-apache官网httptomcatapacheorgindexhtml下载-mac-版本的完整-targz-文件包解压拷贝到主目录并重新命名为-tomcat其他目录页可以&#34;&gt;2. 去 &lt;a href=&#34;http://tomcat.apache.org/index.html&#34;&gt;Apache官网&lt;/a&gt;下载 Mac 版本的完整 &lt;code&gt;***tar.gz&lt;/code&gt; 文件包,解压拷贝到&lt;code&gt;~/&lt;/code&gt;主目录,并重新命名为 tomcat(其他目录页可以).&lt;/h5&gt;
+&lt;h5 id=&#34;3-修改文件权限进入终端-cd-到刚才的目录&#34;&gt;3. 修改文件权限,进入终端 &lt;code&gt;cd&lt;/code&gt; 到刚才的目录&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Rango-MBP:~ rango$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; tomcat/bin/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;5-修改文件权限需要输入登录密码输入后按回车就可&#34;&gt;5. 修改文件权限,需要输入登录密码,输入后按回车就可&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Rango-MBP:bin rango$ sudo chmod &lt;span class=&#34;m&#34;&gt;755&lt;/span&gt; *.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Password:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>FMDB</title>
+      <link>https://rangolee.github.io/post/ios/16-0604_fmdb/</link>
+      <pubDate>Sat, 04 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0604_fmdb/</guid>
+      <description>1.创建表 create table people(id integer,name text,height real); 有主键字段特征：自增性，唯一性 create table student(id integer,name text,height real); 2.增（student 表、有主键字段表） - 直接插入（保证 id 字段的唯一性） insert into</description>
+    </item>
+    
+    <item>
+      <title>SQLite 返回值</title>
+      <link>https://rangolee.github.io/post/ios/16-0603_sqlite%E8%BF%94%E5%9B%9E%E5%80%BC/</link>
+      <pubDate>Fri, 03 Jun 2016 21:36:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0603_sqlite%E8%BF%94%E5%9B%9E%E5%80%BC/</guid>
+      <description>SQLite 返回值 1 2 3 4 5 6 7 8 9 10 11 /* ** CAPI3REF: Result Codes //返回码 ** KEYWORDS: {result code definitions} ** ** Many SQLite functions return an integer result code from the set shown ** here in order to indicate success or failure. ** ** New error codes may be added in future versions of SQLite. ** ** See also:</description>
+    </item>
+    
+    <item>
+      <title>如何使用hexo搭建git博客</title>
+      <link>https://rangolee.github.io/post/others/git&#43;hexoblog/</link>
+      <pubDate>Sat, 28 May 2016 16:34:33 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/others/git&#43;hexoblog/</guid>
+      <description>&lt;h3 id=&#34;hexogitblog-安装流程&#34;&gt;Hexo+Git=Blog 安装流程&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;hexo 环境配置流程图
+&lt;img src=&#34;http://ww3.sinaimg.cn/large/741b3941gw1f4b10z0s9ij20lj0andhh.jpg&#34; alt=&#34;hexo 环境配置&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;1-安装-git&#34;&gt;1. 安装 &lt;strong&gt;Git&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;安装过 Xcode 可以直接跳过这步，因为 Xcode 自带 Git&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; // 通过 ruby 安装 HomeBrew （已安装过HomeBrew的可以直接执行下一行）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; $ /usr/bin/ruby -e &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; $ brew install git   // 通过 HomeBrew 安装Git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;也可以通过下载&lt;a href=&#34;https://sourceforge.net/projects/git-osx-installer/&#34;&gt;Git安装程序&lt;/a&gt;来安装&lt;/p&gt;
+&lt;h6 id=&#34;11-注册账户&#34;&gt;1.1 注册账户&lt;/h6&gt;
+&lt;p&gt;首先需要注册一个&lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;的账户，已有的可以直接跳过去下一步了。&lt;img src=&#34;http://ww4.sinaimg.cn/large/741b3941gw1f4o6u0ii97j218a12qam1.jpg&#34; alt=&#34;注册github&#34;&gt;&lt;/p&gt;
+&lt;h6 id=&#34;12-创建仓库&#34;&gt;1.2 创建仓库&lt;/h6&gt;
+&lt;p&gt;登入进去之后再界面的右上角点那个加号，创建一个仓库（&lt;code&gt;new repository&lt;/code&gt;）来存放我们的博客网站。Respository name 中 填写 &lt;code&gt;username.github.io&lt;/code&gt; ，这里的 &lt;code&gt;username&lt;/code&gt;.github.io 就是你以后的博客域名，这个 &lt;code&gt;username&lt;/code&gt; 可以认真想一个了。&lt;img src=&#34;http://ww1.sinaimg.cn/large/741b3941gw1f4o7csyrspj21kw1027dr.jpg&#34; alt=&#34;创建github仓库&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-安装-nvm&#34;&gt;2. 安装 &lt;strong&gt;nvm&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/creationix/nvm.git ~/.nvm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>C# 正则表达式</title>
+      <link>https://rangolee.github.io/post/cshape/07_c#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+      <pubDate>Sat, 28 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/07_c#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+      <description>C# 正则表达式 正则表达式是一种匹配文本的模式。.net框架提供了允许这种匹配的正则表达式引擎。模式由一个或多个字符、运算符和结构组成。 定义正则</description>
+    </item>
+    
+    <item>
+      <title>6.C#常量</title>
+      <link>https://rangolee.github.io/post/cshape/06_c#%E5%B8%B8%E9%87%8F/</link>
+      <pubDate>Fri, 27 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/06_c#%E5%B8%B8%E9%87%8F/</guid>
+      <description>6.常量 常量是固定值，程序执行期间不会改变，常量可以是任何基本数据类型，比如整数常量。浮点数常量。字符常量或者字符串常量，还有枚举值。 常量可</description>
+    </item>
+    
+    <item>
+      <title>5.C#变量</title>
+      <link>https://rangolee.github.io/post/cshape/05_c#%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/05_c#%E5%8F%98%E9%87%8F/</guid>
+      <description>5.C#变量 一个变量只不过是一个供程序操作的存储区的名字。在C#中，每个变量都有一个特定的类型，类型决定了变量的内存大小和布局。范围内的值可</description>
+    </item>
+    
+    <item>
+      <title>4.C#类型转换</title>
+      <link>https://rangolee.github.io/post/cshape/04_c#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Wed, 25 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/04_c#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
+      <description>4.类型转换 类型转换从根本上说是类型铸造，或者说是把数据从一种类型转换为另一种类型。在C#中，类型铸造有两种形式： 隐式类型转换 - 这些转换是C</description>
+    </item>
+    
+    <item>
+      <title>CoreLocation Framework</title>
+      <link>https://rangolee.github.io/post/ios/16-0524_location_corelocation-/</link>
+      <pubDate>Tue, 24 May 2016 19:09:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0524_location_corelocation-/</guid>
+      <description>单纯获取用户位置 CoreLocation Framework 常用类多以：CL开头。 CLLocation描述用户的位置的类（经longitude，纬latitude度两个值） CLLo</description>
+    </item>
+    
+    <item>
+      <title>MapKit Framework</title>
+      <link>https://rangolee.github.io/post/ios/16-0524_mapkit_framework/</link>
+      <pubDate>Tue, 24 May 2016 09:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0524_mapkit_framework/</guid>
+      <description>&lt;!-- |参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期	|文件建立日期
+|updated:   |更新日期	|文件更新日期
+|comments:  |开启文章的评论功能	|true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description| --&gt;
+&lt;h3 id=&#34;mapkit-framework&#34;&gt;MapKit Framework&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;下面三项是理解（看懂代码：掌握流程）
+&lt;ol&gt;
+&lt;li&gt;添加大头针对象（&lt;code&gt;Annotation&lt;/code&gt;）标注
+&lt;ul&gt;
+&lt;li&gt;【样例】在地图上添加系统默认提供好的大头针类（对象标注）修改大头针的默认颜色，添加标注视图（弹出框标题的坐标和右边）&lt;/li&gt;
+&lt;li&gt;【Demo01_MKMapView】&lt;/li&gt;
+&lt;li&gt;总结：
+&lt;ul&gt;
+&lt;li&gt;系统自动添加用户所在位置的蓝色圈（&lt;code&gt;MKUserLocation&lt;/code&gt; 类型）&lt;/li&gt;
+&lt;li&gt;如何添加大头针对象到地图视图上&lt;/li&gt;
+&lt;li&gt;地图视图区域的概念（&lt;code&gt;center&lt;/code&gt; 中心 + &lt;code&gt;span&lt;/code&gt; 跨度）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;修改两个点
+&lt;ul&gt;
+&lt;li&gt;用户位置默认的蓝色圈（标注对象）颜色变成自定义颜色&lt;/li&gt;
+&lt;li&gt;点中标注对象，不显示弹出框&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;【样例】设置自定义的标注对象的图片【Demo02_MKAnnotationView】
+&lt;ul&gt;
+&lt;li&gt;此时只能使用父类 &lt;code&gt;MKAnnotationView&lt;/code&gt;（IOS9）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>3.C#数据类型</title>
+      <link>https://rangolee.github.io/post/cshape/03_c#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Tue, 24 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/03_c#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>3.数据类型 在C#中变量分为以下几种类型 值类型（value types） 引用类型（reference types） 指针类型（pointer typ</description>
+    </item>
+    
+    <item>
+      <title>OC 中的 Block</title>
+      <link>https://rangolee.github.io/post/ios/16-0523_oc%E4%B8%AD%E7%9A%84block/</link>
+      <pubDate>Mon, 23 May 2016 09:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0523_oc%E4%B8%AD%E7%9A%84block/</guid>
+      <description>OC 中 block 的严格定义，语法，格式，调用 是C语言的功能，iOS4.0之后可以使用。和其他动态语言的闭包（closure）类似，和 swift 中的 closure 闭包几乎一</description>
+    </item>
+    
+    <item>
+      <title>2.C#基本语法</title>
+      <link>https://rangolee.github.io/post/cshape/02_c#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/02_c#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>2.C#基本语法 C# 是一种面向对象的编程语言。在面向对象的程序设计方法中，程序由各种相互交互的对象组成。相同种类的对象通常具有相同的类型，或者</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;11 并发指南一</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</guid>
+      <description>C++并发至南一 与 C++11 多线程相关的头文件 C++11 新标准中引入了四个头文件来支持多线程编程，他们分别是 ,,,&amp;lt;condition_variabl</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;11 并发指南三</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%973/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%973/</guid>
+      <description>C++11并发指南三（std::mutex）</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;11 并发指南二</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</guid>
+      <description>C++11 并发指南二 std::thread 在 &amp;lt;thread&amp;gt; 头文件中声明，因此使用 std::thread 时需要包含 &amp;lt;thread&amp;gt; 头文件。 std::thread 构造 default (1) thread() noexcept; initialization (2) template &amp;lt;class Fn, class... Args&amp;gt; explicit thread (Fn&amp;amp;&amp;amp; fn, Args&amp;amp;&amp;amp;&amp;hellip; args); copy [deleted] (3) thread (const thread&amp;amp;) = delete; move (4) thread (thread&amp;amp;&amp;amp; x) noexcept; (1). 默认构造</description>
+    </item>
+    
+    <item>
+      <title>Mac 安装 cmake</title>
+      <link>https://rangolee.github.io/post/mac%E5%AE%89%E8%A3%85cmake/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/mac%E5%AE%89%E8%A3%85cmake/</guid>
+      <description>1 安装包安装 cmake 从官网下载cmake安装包。默认安装 链接cmake.app 与 terminal 打开终端，输入export PATH=/Applications/CMake.app/Contents/bin:$PATH 配置完成。（以上链接只对本终端窗口</description>
+    </item>
+    
+    <item>
+      <title>Mac&#43;MySql&#43;Xcode配置</title>
+      <link>https://rangolee.github.io/post/mac&#43;mysql&#43;xcode%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/mac&#43;mysql&#43;xcode%E9%85%8D%E7%BD%AE/</guid>
+      <description>Mac+MySql+Xcode配置 安装mysql /usr/local/mysql 安装mysql workbench(数据库可视化操作软件) 配置xcode 添加__头文件__搜</description>
+    </item>
+    
+    <item>
+      <title>Mac下升级Ruby</title>
+      <link>https://rangolee.github.io/post/16-0714_mac%E5%8D%87%E7%BA%A7ruby/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0714_mac%E5%8D%87%E7%BA%A7ruby/</guid>
+      <description>Mac下升级Ruby 1. 安装rvm（ruby版本管理器）ruby -v 先查看一下当前ruby版本 1 2 Rango-MBP:~ Rango$ ruby -v ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15] 1 Rango-MBP:~ Rango$ curl -L get.rvm.io | bash -s stable 2. 配置</description>
+    </item>
+    
+    <item>
+      <title>MySQL 报错处理</title>
+      <link>https://rangolee.github.io/post/mysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/mysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</guid>
+      <description>MySQL 报错处理 1. MySQL 启动报错 1 Warning:The /usr/local/mysql/data directory is not owned by the &amp;#39;mysql&amp;#39; or &amp;#39;_mysql&amp;#39; user 原因： 未知（可能是某种情况下导致/usr/local/mysql/data的宿主发生了改变）</description>
+    </item>
+    
+    <item>
+      <title>StringComparison</title>
+      <link>https://rangolee.github.io/post/cshape/stringcomparison/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cshape/stringcomparison/</guid>
+      <description>StringComparison枚举 1 2 3 4 5 6 7 8 public enum StringComparison { CurrentCulture, CurrentCultureIgnoreCase, InvariantCulture, InvariantCultureIgnoreCase, Ordinal, OrdinalIgnoreCase } CurrentCulture 使用区域敏感排序规则和当前区域比较字符串。 CurrentCultureIgnoreCase 使用区域敏感排序规则</description>
+    </item>
+    
+    <item>
+      <title>Mac终端(Terminal)常用命令</title>
+      <link>https://rangolee.github.io/post/16-0520_mac%E7%BB%88%E7%AB%AFterminal%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 20 May 2016 22:15:52 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0520_mac%E7%BB%88%E7%AB%AFterminal%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>1. 使用caffeinate阻止Mac运行屏幕保护和睡眠 caffeinate 能阻止 mac 进入睡眠状态和屏保的的激活。可以用-t命令为命令加入具体时间。例如输入如下命</description>
+    </item>
+    
+    <item>
+      <title>Xcode 中使用自定义字体的方法</title>
+      <link>https://rangolee.github.io/post/ios/16-0420_xcode%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 20 May 2016 22:10:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0420_xcode%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description>设置自定义字体 将下载好的 .otf字体文件直接拖拽到 Xcode 中，然后通过 storyboard 找到字体的实际名称，然后使用下面的方法，看到网上许多人说需要在 plist 中添加字体</description>
+    </item>
+    
+    <item>
+      <title>IOS中 new 和 alloc]init 等</title>
+      <link>https://rangolee.github.io/post/ios/16-0520_ios%E4%B8%ADnew%E4%B8%8Eallocinit%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Fri, 20 May 2016 22:09:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0520_ios%E4%B8%ADnew%E4%B8%8Eallocinit%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>[className new]和[[className alloc]init] 在实际开发中可能很少用到 new ，一般创建对象咱们看到的都是[[className alloc]init],但是</description>
+    </item>
+    
+    <item>
+      <title>NSArray 和 NSMutableArray 的相互转换</title>
+      <link>https://rangolee.github.io/post/ios/16-0520_nsarray-%E5%92%8C-nsmutablearray-%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Fri, 20 May 2016 22:07:24 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0520_nsarray-%E5%92%8C-nsmutablearray-%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2/</guid>
+      <description>1 2 3 4 5 // NSArray --&amp;gt; NSMutableArray NSMutableArray *myMutableArray = [myArray mutableCopy]; // NSMutableArray --&amp;gt; NSArray NSArray *myArray = [myMutableArray copy];</description>
+    </item>
+    
+    <item>
+      <title>Cocoa Pods 的安装过程</title>
+      <link>https://rangolee.github.io/post/ios/16-0520_cocoapods%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Wed, 18 May 2016 11:20:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0520_cocoapods%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;!--
+|参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期	|文件建立日期
+|updated:   |更新日期	|文件更新日期
+|comments:  |开启文章的评论功能	|true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description|
+--&gt;
+&lt;h3 id=&#34;关于-cocoa-pods&#34;&gt;关于 Cocoa Pods&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;cocoa-pods-是什么&#34;&gt;Cocoa Pods 是什么？&lt;/h4&gt;
+&lt;p&gt;当你开发iOS应用时，会经常使用到很多第三方开源类库，比如JSONKit，AFNetWorking等等。而如何有效且方便的管理这些类库就不是很容易了。主要有两方面的问题：&lt;/p&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;可能你需要使用的某个类库又可能会用到其他类库，所以要使用它，必须得另外下载其他类库，而这个其他类库又有可能用到另外的类库。如果,手动去一个个下载所需类库这就有点麻烦了。&lt;/li&gt;
+&lt;li&gt;另外一种常见情况是，你项目中用到的类库有更新，你必须得重新下载新版本，重新加入到项目中，十分麻烦。如果能有什么工具能解决这些恼人的问题，那就太好了，而CocoaPods就是这样一款具有这些功能的管理类库的工具。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;CocoaPods应该是iOS最常用和最有名的类库管理工具了，上述两个烦人的问题，通过cocoaPods，只需要一行命令就可以完美解决，当然前提是你必须正确设置它。重要的是，绝大部分有名的开源类库，都支持CocoaPods。所以，作为iOS程序员的我们，掌握CocoaPods的使用是必不可少的基本技能了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>KVC 和 KVO</title>
+      <link>https://rangolee.github.io/post/ios/kvc-%E5%92%8C-kvo/</link>
+      <pubDate>Mon, 16 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/kvc-%E5%92%8C-kvo/</guid>
+      <description>KVC KVC（KeyValueCoding）：（键值编码）非正式协议（Informal Protocol）【非正式协议：不需要遵循】 1. 能做什么？ *</description>
+    </item>
+    
+    <item>
+      <title>内存中堆和栈的区别</title>
+      <link>https://rangolee.github.io/post/%E5%86%85%E5%AD%98%E4%B8%AD%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Mon, 09 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/%E5%86%85%E5%AD%98%E4%B8%AD%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>对堆和栈的理解一直比较模糊，在看了网友的各种解释后，记录一下，以便日后查看。 数据结构中的栈和堆 首先，我们要知道堆栈是两种数据结构：堆和栈。 堆</description>
+    </item>
+    
+    <item>
+      <title>Github上的 MarkDown 前页格式</title>
+      <link>https://rangolee.github.io/post/others/front-matter/</link>
+      <pubDate>Sun, 08 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/others/front-matter/</guid>
+      <description>Front-matter 是文件最上方以 - - - 分隔的区域，用于指定个别文件的变量，举例来说： 1 2 3 title: Hello World date: 2013/7/13 20:46:25 --- 以下是预先定义的参数，您可在模板中使用这些参数值并加</description>
+    </item>
+    
+    <item>
+      <title>NSAttributedString</title>
+      <link>https://rangolee.github.io/post/ios/16-0518_nsattributedstring/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0518_nsattributedstring/</guid>
+      <description>&lt;h4 id=&#34;字符属性&#34;&gt;字符属性&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-objective-c&#34; data-lang=&#34;objective-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; 字符属性可以应用于 attributed string 的文本中。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSFontAttributeName;(字体) 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSParagraphStyleAttributeName;(段落) 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSForegroundColorAttributeName;(字体颜色) 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSBackgroundColorAttributeName;(字体背景色)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSLigatureAttributeName;(连字符)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSKernAttributeName;(字间距)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSStrikethroughStyleAttributeName;(删除线)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSUnderlineStyleAttributeName;(下划线)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSStrokeColorAttributeName;(边线颜色)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSStrokeWidthAttributeName;(边线宽度)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSShadowAttributeName;(阴影)(横竖排版 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; NSString *const NSVerticalGlyphFormAttributeName;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>汇编中的bss、data、text、rodata、heap、stack的意义？</title>
+      <link>https://rangolee.github.io/post/assembly/16-0426_%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84bssdatatext%E7%AD%89/</link>
+      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/assembly/16-0426_%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84bssdatatext%E7%AD%89/</guid>
+      <description>bss 段： BSS段（bsssegment）通常是指用来存放程序中未初始化的全局变量的一块内存区域。BSS是英文BlockStarted by Symb</description>
+    </item>
+    
+    <item>
+      <title>iOS 中 单元格（cell） 的复用方式</title>
+      <link>https://rangolee.github.io/post/ios/16-0508_%E5%8D%95%E5%85%83%E6%A0%BC%E5%A4%8D%E7%94%A8/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0508_%E5%8D%95%E5%85%83%E6%A0%BC%E5%A4%8D%E7%94%A8/</guid>
+      <description>&lt;h4 id=&#34;1单元格复用的实现方式&#34;&gt;1.单元格复用的实现方式&lt;/h4&gt;
+&lt;hr&gt;
+&lt;h5 id=&#34;方式1判断没有可复用的单元格后由我们自己负责创建-cell-实例&#34;&gt;&lt;strong&gt;方式1&lt;/strong&gt;.判断没有可复用的单元格后，由我们自己负责创建 cell 实例。&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;未完待续。。。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;方式2如果没有取到可复用的单元格由系统自动依据我们提前说明的类型帮我们自动创建出-cell的实例&#34;&gt;&lt;strong&gt;方式2&lt;/strong&gt;.如果没有取到可复用的单元格，由系统自动依据我们提前说明的类型，帮我们自动创建出 cell的实例。&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;在 viewDidLoad 中，使用 tableView 的 registerClass 方法，提前注册一个类型，在取不到 cell 的时候，系统会根据我们注册的类型来自动创建 cell。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-objective-c&#34; data-lang=&#34;objective-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//    注册单元格类型
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tableView&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;registerClass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UITableViewCell&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;forCellReuseIdentifier&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;@&amp;#34;cell&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

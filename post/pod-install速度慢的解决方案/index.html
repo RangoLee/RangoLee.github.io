@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>pod install 速度慢的终极解决方案 - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="问题 如今新版本的 pod 已经是默认走 CDN 的方式,不再是 master repo 的模式,但是,依然会有这个问题. 相信大家已经感受到 pod install 速度越来越慢了，网上提供了几种解决方" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/pod-install%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="pod install 速度慢的终极解决方案" />
+<meta property="og:description" content="问题 如今新版本的 pod 已经是默认走 CDN 的方式,不再是 master repo 的模式,但是,依然会有这个问题. 相信大家已经感受到 pod install 速度越来越慢了，网上提供了几种解决方" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/pod-install%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-09-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-04-16T00:00:00+00:00" />
+
+<meta itemprop="name" content="pod install 速度慢的终极解决方案">
+<meta itemprop="description" content="问题 如今新版本的 pod 已经是默认走 CDN 的方式,不再是 master repo 的模式,但是,依然会有这个问题. 相信大家已经感受到 pod install 速度越来越慢了，网上提供了几种解决方"><meta itemprop="datePublished" content="2019-09-05T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-04-16T00:00:00+00:00" />
+<meta itemprop="wordCount" content="518">
+<meta itemprop="keywords" content="pod,cocoapod," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="pod install 速度慢的终极解决方案"/>
+<meta name="twitter:description" content="问题 如今新版本的 pod 已经是默认走 CDN 的方式,不再是 master repo 的模式,但是,依然会有这个问题. 相信大家已经感受到 pod install 速度越来越慢了，网上提供了几种解决方"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">pod install 速度慢的终极解决方案</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-09-05 </span>
+        <div class="post-category">
+            <a href="/categories/pod/"> pod </a>
+            </div>
+          <span class="more-meta"> 约 518 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#问题">问题</a></li>
+        <li><a href="#方案">方案</a>
+          <ul>
+            <li><a href="#配置代理">配置代理</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="问题">问题</h2>
+<blockquote>
+<p>如今新版本的 pod 已经是默认走 <code>CDN</code> 的方式,不再是 master repo 的模式,但是,依然会有这个问题.</p>
+</blockquote>
+<p>相信大家已经感受到 <code>pod install</code> 速度越来越慢了，网上提供了几种解决方案，但是都没有完全解决速度慢的问题。</p>
+<ol>
+<li>使用国内镜像的<code>Specs</code></li>
+<li>在<code>pod install</code>时使用命令<code>pod install --no-repo-update</code></li>
+</ol>
+<p>下面就来说明一下这几种方法为何没有完全解决问题</p>
+<ol>
+<li>使用国内镜像的<code>Specs</code><br>
+这个只是加快了<code>Specs</code>下载更新速度，而且如果使用国内镜像<code>Specs</code>，那么 <code>Podfile</code> 中就必须指明使用这个<code>Specs</code>。</li>
+<li>在<code>pod install</code>时使用命令<code>pod install --no-repo-update</code><br>
+这个只是在 <code>install</code> 时不更新本地 pod 库，但如果第一次 <code>install</code> 还是要去 <code>github</code> clone 代码,一样很漫长的时间</li>
+</ol>
+<h2 id="方案">方案</h2>
+<p>其实真正慢的原因并不在 <code>pod</code> 命令，而是<strong>在于 <code>github</code> 上的代码库访问速度慢</strong>，那么真正的解决方案就是要加快 <code>git</code> 命令的速度。</p>
+<h3 id="配置代理">配置代理</h3>
+<blockquote>
+<p>下面的 1087 和 1080 都是本地代理的端口号</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">// 临时设置终端所有的下载都走代理
+</span></span><span class="line"><span class="cl">// 终端窗口关闭,则此代理设置就会失效
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span>http://127.0.0.1:1087<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span>http://127.0.0.1:1087<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">ALL_PROXY</span><span class="o">=</span>socks5://127.0.0.1:1080
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>或者</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">// 设置 git 的 http 走代理
+</span></span><span class="line"><span class="cl">git config --global http.proxy socks5://127.0.0.1:1080
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的命令是给 <code>git</code> 设置全局代理，如果我们不希望 <strong>国内 <code>git</code> 库</strong> 也走代理，而是只需要 <code>github</code> 上的代码库走代理，命令如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如此就从根本上解决了问题。</p>
+<blockquote>
+<p>ps：如果要恢复/移除上面设置的git代理，使用如下命令</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git config --global --unset http.proxy
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>或者</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git config --global --unset http.https://github.com.proxy
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-04-16
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/pod/">pod</a>
+          <a href="/tags/cocoapod/">cocoapod</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">iOS 之 keyPath 自动提示宏</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2019-09-05-%E4%BD%BF%E7%94%A8-git-%E5%85%8B%E9%9A%86-github-%E4%B8%8A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/">
+            <span class="next-text nav-default">使用 git 克隆 github 上的项目失败</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

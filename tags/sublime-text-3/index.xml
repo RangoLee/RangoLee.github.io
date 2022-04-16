@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sublime Text 3 on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/sublime-text-3/</link>
+    <description>Recent content in Sublime Text 3 on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 27 Nov 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/sublime-text-3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac Sublime Text compile Source.cpp error</title>
+      <link>https://rangolee.github.io/post/cpp/mac_sublime_text3_compile_cpp_error/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/mac_sublime_text3_compile_cpp_error/</guid>
+      <description>Mac Sublime Text compile Source.cpp error //bin/bash: shell_session_update: command not found   get the rvm version  1  Rango-MBP:~ Rango$ rvm -v   make sure the version at least 1.26 above  1 2  Rango-MBP:~ Rango$ rvm -v rvm 1.27.0 (master) by Wayne E. Seguin &amp;lt;wayneeseguin@gmail.com&amp;gt;, Michal Papis &amp;lt;mpapis@gmail.com&amp;gt; [https://rvm.io/]   then go ahead  1  Rango-MBP:~ Rango$ rvm get head   wait Downloading&amp;hellip;  1 2 3 4 5 6 7 8  Downloading https://get.</description>
+    </item>
+    
+    <item>
+      <title>Windows平台配置Sublime Text3的C/C&#43;&#43;11开发环境</title>
+      <link>https://rangolee.github.io/post/cpp/windows%E4%B8%8Bsublimetext3%E7%9A%84c&#43;&#43;11%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 14 Aug 2016 12:01:38 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/windows%E4%B8%8Bsublimetext3%E7%9A%84c&#43;&#43;11%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>Sublime Text3 配置C/C++11开发环境 1 2 3 4 5 6 7 8 9 10 11 12 13 { &amp;#34;cmd&amp;#34;: [&amp;#34;bash&amp;#34;, &amp;#34;-c&amp;#34;, &amp;#34;g++ -Wall -std=c++11 -O2 &amp;#39;${file}&amp;#39; -o &amp;#39;${file_path}/${file_base_name}&amp;#39; &amp;amp;&amp;amp; osascript -e &amp;#39;tell application \&amp;#34;Terminal\&amp;#34; to activate do script \&amp;#34; cd \\\&amp;#34;${file_path}\\\&amp;#34; &amp;amp;&amp;amp;start_ms=\\$(ruby -e \\\&amp;#34;puts (Time.now.to_f * 1000).to_i\\\&amp;#34;)&amp;amp;&amp;amp;clear&amp;amp;&amp;amp;\\\&amp;#34;${file_path}/${file_base_name}\\\&amp;#34; &amp;amp;&amp;amp;elapsed_ms=\\$((\\$(ruby -e \\\&amp;#34;puts (Time.now.to_f * 1000).to_i\\\&amp;#34;) - start_ms))&amp;amp;&amp;amp; read -p \\\&amp;#34;Press Enter</description>
+    </item>
+    
+    <item>
+      <title>Mac 上 Sublime Text 3 配置 Lua 环境</title>
+      <link>https://rangolee.github.io/post/16-0625_mac-%E4%B8%8A-sublime-text-3-%E9%85%8D%E7%BD%AE-lua-%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sat, 25 Jun 2016 00:49:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0625_mac-%E4%B8%8A-sublime-text-3-%E9%85%8D%E7%BD%AE-lua-%E7%8E%AF%E5%A2%83/</guid>
+      <description>&lt;h4 id=&#34;1下载安装&#34;&gt;1.下载安装&lt;/h4&gt;
+&lt;hr&gt;
+&lt;h5 id=&#34;1-先去lua官网httpwwwluaorgftp下载最新版-lua&#34;&gt;1. 先去&lt;a href=&#34;http://www.lua.org/ftp/&#34;&gt;Lua官网&lt;/a&gt;下载最新版 lua&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;Rango-MBP:~ rango$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;2-然后解压压缩包&#34;&gt;2. 然后解压压缩包&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;Rango-MBP:~ rango$ tar zxf lua-5.3.3.tar.gz&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;3-cd-到解压后的文件夹&#34;&gt;3. cd 到解压后的文件夹&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;Rango-MBP:~ rango$ cd lua-5.3.3&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;4-然后编译测试&#34;&gt;4. 然后编译测试&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;Rango-MBP:lua-5.3.3 rango$ make macosx test&lt;/code&gt;&lt;/p&gt;
+&lt;h6 id=&#34;正常情况会看到如下信息&#34;&gt;正常情况会看到如下信息&lt;/h6&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;src/lua -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Lua 5.3.3  Copyright &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;C&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; 1994-2016 Lua.org, PUC-Rio&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;上面几步总概况&#34;&gt;上面几步总概况&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ tar zxf lua-5.3.3.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; lua-5.3.3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ make macosx &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

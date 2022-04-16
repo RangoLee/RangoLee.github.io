@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Mac OS 搭建 mysql 环境 - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="1. MySQL Wiki 双击 mysql-5.6.12-osx10.7-x86_64.dmg 双击 mysql-5.6.12-osx10.7-x86_64.pkg 双击 MySQL.prefPane 系统偏好设置里启动 MySQL 验证 1 2 3 4 Rango-MBP:~ rango$ cd /usr/local/mysql Rango-MBP:mysql rango$ cd bin Rango-MBP:bin rango$ pwd /usr/local/mysql/bin 登入MySQL服务器,首次登入无密码,直接回车即可 看到下面这" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/16-0606_mac%E6%90%AD%E5%BB%BAmysql%E7%8E%AF%E5%A2%83/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Mac OS 搭建 mysql 环境" />
+<meta property="og:description" content="1. MySQL Wiki 双击 mysql-5.6.12-osx10.7-x86_64.dmg 双击 mysql-5.6.12-osx10.7-x86_64.pkg 双击 MySQL.prefPane 系统偏好设置里启动 MySQL 验证 1 2 3 4 Rango-MBP:~ rango$ cd /usr/local/mysql Rango-MBP:mysql rango$ cd bin Rango-MBP:bin rango$ pwd /usr/local/mysql/bin 登入MySQL服务器,首次登入无密码,直接回车即可 看到下面这" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/16-0606_mac%E6%90%AD%E5%BB%BAmysql%E7%8E%AF%E5%A2%83/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-06-06T11:18:00+00:00" />
+<meta property="article:modified_time" content="2016-06-06T11:18:00+00:00" />
+
+<meta itemprop="name" content="Mac OS 搭建 mysql 环境">
+<meta itemprop="description" content="1. MySQL Wiki 双击 mysql-5.6.12-osx10.7-x86_64.dmg 双击 mysql-5.6.12-osx10.7-x86_64.pkg 双击 MySQL.prefPane 系统偏好设置里启动 MySQL 验证 1 2 3 4 Rango-MBP:~ rango$ cd /usr/local/mysql Rango-MBP:mysql rango$ cd bin Rango-MBP:bin rango$ pwd /usr/local/mysql/bin 登入MySQL服务器,首次登入无密码,直接回车即可 看到下面这"><meta itemprop="datePublished" content="2016-06-06T11:18:00+00:00" />
+<meta itemprop="dateModified" content="2016-06-06T11:18:00+00:00" />
+<meta itemprop="wordCount" content="506">
+<meta itemprop="keywords" content="MySQL,openfile," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mac OS 搭建 mysql 环境"/>
+<meta name="twitter:description" content="1. MySQL Wiki 双击 mysql-5.6.12-osx10.7-x86_64.dmg 双击 mysql-5.6.12-osx10.7-x86_64.pkg 双击 MySQL.prefPane 系统偏好设置里启动 MySQL 验证 1 2 3 4 Rango-MBP:~ rango$ cd /usr/local/mysql Rango-MBP:mysql rango$ cd bin Rango-MBP:bin rango$ pwd /usr/local/mysql/bin 登入MySQL服务器,首次登入无密码,直接回车即可 看到下面这"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Mac OS 搭建 mysql 环境</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-06 </span>
+        <div class="post-category">
+            <a href="/categories/ios/"> iOS </a>
+            </div>
+          <span class="more-meta"> 约 506 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h4 id="1-mysql-wikihttpsenwikipediaorgwikimysql">1. <a href="https://en.wikipedia.org/wiki/MySQL">MySQL Wiki</a></h4>
+<ol>
+<li>双击 mysql-5.6.12-osx10.7-x86_64.dmg</li>
+<li>双击 mysql-5.6.12-osx10.7-x86_64.pkg
+<img src="http://ww4.sinaimg.cn/mw690/741b3941gw1f4lfoni0mzj21kw0zkdtn.jpg" alt="2.双击安装"></li>
+<li>双击 MySQL.prefPane
+<img src="http://ww2.sinaimg.cn/mw690/741b3941gw1f4lfs4wrtrj21kw0zktoo.jpg" alt="3.双击安装配置项"></li>
+<li>系统偏好设置里启动 MySQL
+<img src="http://ww4.sinaimg.cn/mw690/741b3941jw1f4lfxcszf7j21200icjzd.jpg" alt="启动 MySQL 服务"></li>
+</ol>
+<!-- more -->
+<ol start="5">
+<li>验证</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:~ rango$ <span class="nb">cd</span> /usr/local/mysql
+</span></span><span class="line"><span class="cl">Rango-MBP:mysql rango$ <span class="nb">cd</span> bin
+</span></span><span class="line"><span class="cl">Rango-MBP:bin rango$ <span class="nb">pwd</span>
+</span></span><span class="line"><span class="cl">/usr/local/mysql/bin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>登入MySQL服务器,首次登入无密码,直接回车即可 看到下面这些说明安装成功.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:bin rango$ ./mysql -u root -p
+</span></span><span class="line"><span class="cl">Enter password:
+</span></span><span class="line"><span class="cl">Welcome to the MySQL monitor.  Commands end with <span class="p">;</span> or <span class="se">\g</span>.
+</span></span><span class="line"><span class="cl">Your MySQL connection id is <span class="m">90</span>
+</span></span><span class="line"><span class="cl">Server version: 5.6.12 MySQL Community Server <span class="o">(</span>GPL<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Copyright <span class="o">(</span>c<span class="o">)</span> 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+</span></span><span class="line"><span class="cl">Oracle is a registered trademark of Oracle Corporation and/or its
+</span></span><span class="line"><span class="cl">affiliates. Other names may be trademarks of their respective
+</span></span><span class="line"><span class="cl">owners.
+</span></span><span class="line"><span class="cl">Type <span class="s1">&#39;help;&#39;</span> or <span class="s1">&#39;\h&#39;</span> <span class="k">for</span> help. Type <span class="s1">&#39;\c&#39;</span> to clear the current input statement.
+</span></span><span class="line"><span class="cl">mysql&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>验证数据库,四个是正常的,如果没有四个重启电脑,开启服务应该就是4个了</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mysql&gt; show databases<span class="p">;</span>
+</span></span><span class="line"><span class="cl">+--------------------+
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Database           <span class="p">|</span>
+</span></span><span class="line"><span class="cl">+--------------------+
+</span></span><span class="line"><span class="cl"><span class="p">|</span> information_schema <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> mysql              <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> performance_schema <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="nb">test</span>               <span class="p">|</span>
+</span></span><span class="line"><span class="cl">+--------------------+
+</span></span><span class="line"><span class="cl"><span class="m">4</span> rows in <span class="nb">set</span> <span class="o">(</span>0.00 sec<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="8">
+<li>退出</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mysql&gt; <span class="nb">exit</span>
+</span></span><span class="line"><span class="cl">Bye
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="9">
+<li>修改MySQL 的 root 密码 为123456 (次数有限,二次修改很麻烦)</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:bin rango$ ./mysqladmin -u root password <span class="m">123456</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="10">
+<li>输入新密码登入</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:bin rango$ ./mysql -u root -p
+</span></span><span class="line"><span class="cl">Enter password:
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h4 id="2-安装图形化界面管理软件">2. 安装图形化界面管理软件</h4>
+<ol>
+<li>
+<p>双击 mysql-workbench-gpl-5.2.47-osx-i686.dmg
+<img src="http://ww3.sinaimg.cn/large/741b3941gw1f75vgxdejfj21do13g111.jpg" alt=""></p>
+</li>
+<li>
+<p>启动,配置数据库
+<img src="http://ww3.sinaimg.cn/mw690/741b3941gw1f75vp6dzgcj21kw0zk7i0.jpg" alt="">
+<img src="http://ww2.sinaimg.cn/mw690/741b3941gw1f75vqbliioj21kw0zkduc.jpg" alt=""></p>
+</li>
+<li>
+<p>创建数据库（数据库的名字和后面要和服务器关联的名字一致就可以。应该是openfiredb，这里写错了，后面也将用openfiledb这个名字）
+<img src="http://ww1.sinaimg.cn/mw690/741b3941gw1f75vr60df0j21kw0zkk0n.jpg" alt=""></p>
+</li>
+<li>
+<p>激活目标数据库，用于后面和服务器关联。
+<img src="http://ww2.sinaimg.cn/mw690/741b3941gw1f75vsfqg7hj20c40n4t9k.jpg" alt=""></p>
+</li>
+<li>
+<p>创建表(运行脚本)-刷新
+<img src="http://ww1.sinaimg.cn/mw690/741b3941gw1f75vt4uw2nj21kw0zkts1.jpg" alt="">
+<img src="http://ww3.sinaimg.cn/mw690/741b3941gw1f75vu6qt1uj21kw0zk4j4.jpg" alt="">
+<img src="http://ww2.sinaimg.cn/mw690/741b3941gw1f75vumf01aj20c80o4n0i.jpg" alt=""></p>
+</li>
+</ol>
+<hr>
+<h4 id="3安装-jdk">3.安装 JDK</h4>
+<ol>
+<li>检查一下</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:~ rango$ java -version
+</span></span><span class="line"><span class="cl">No Java runtime present, requesting install.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>安装 JDK（Java Development Kit）去官网下载安装即可。</li>
+</ol>
+<hr>
+<h4 id="4安装-openfile_3_9_3dmg">4.安装 openfile_3_9_3.dmg</h4>
+<pre><code>![](http://ww1.sinaimg.cn/mw690/741b3941gw1f75vyeq7bmj20n60eatav.jpg)
+![](http://ww1.sinaimg.cn/mw690/741b3941gw1f75vz2ildhj21160wy46n.jpg)
+</code></pre>
+<ol>
+<li>确保正在运行中，然后Open Admin Console
+<img src="http://ww2.sinaimg.cn/mw690/741b3941gw1f75vz2deifj211g0mgjus.jpg" alt=""></li>
+<li>配置 openfile
+<img src="http://ww1.sinaimg.cn/mw690/741b3941gw1f75w3aspm6j21kw12548p.jpg" alt=""></li>
+</ol>
+<p>Rango-MBP:~ rango$ sudo vi /etc/hosts
+Password:</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-06-06
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/mysql/">MySQL</a>
+          <a href="/tags/openfile/">openfile</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ios/16-0607_contentmode%E5%92%8C-textfield-%E7%9A%84-leftviewmode-%E5%92%8C-rightviewmode/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">UIImageView 的 contentMode 和 TextField 的 leftViewMode 和 rightViewMode</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/16-0606_mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEtomcat/">
+            <span class="next-text nav-default">mac 安装和配置 tomcat(不借助 eclipse)</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

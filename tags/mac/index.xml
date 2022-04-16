@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/mac/</link>
+    <description>Recent content in Mac on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Dec 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac 安装Python3.5.2</title>
+      <link>https://rangolee.github.io/post/python/mac%E5%AE%89%E8%A3%85python3.5.2/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/python/mac%E5%AE%89%E8%A3%85python3.5.2/</guid>
+      <description>1.安装Python3.5.2 MacOS系统10.12.2，终端运行brew install python3 1 Rango-MBP:~ Rango$ brew install python3 报警告 1 2 3 4 Warning: You are using OS X 10.12. We do not provide support for this pre-release version. You</description>
+    </item>
+    
+    <item>
+      <title>Mac Sublime Text compile Source.cpp error</title>
+      <link>https://rangolee.github.io/post/cpp/mac_sublime_text3_compile_cpp_error/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/mac_sublime_text3_compile_cpp_error/</guid>
+      <description>Mac Sublime Text compile Source.cpp error //bin/bash: shell_session_update: command not found   get the rvm version  1  Rango-MBP:~ Rango$ rvm -v   make sure the version at least 1.26 above  1 2  Rango-MBP:~ Rango$ rvm -v rvm 1.27.0 (master) by Wayne E. Seguin &amp;lt;wayneeseguin@gmail.com&amp;gt;, Michal Papis &amp;lt;mpapis@gmail.com&amp;gt; [https://rvm.io/]   then go ahead  1  Rango-MBP:~ Rango$ rvm get head   wait Downloading&amp;hellip;  1 2 3 4 5 6 7 8  Downloading https://get.</description>
+    </item>
+    
+    <item>
+      <title>删除mac下的MySQL</title>
+      <link>https://rangolee.github.io/post/16-0930_%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</link>
+      <pubDate>Fri, 30 Sep 2016 00:09:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0930_%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</guid>
+      <description>删除Mac下的MySQL 首先在系统偏好设置中设置MySQL设置，停止其服务然后依次执行如下语句即可。 1 2 3 4 5 6 7 sudo rm /usr/local/mysql sudo rm -rf /usr/local/mysql* sudo rm -rf /Library/StartupItems/MySQLCOM sudo rm</description>
+    </item>
+    
+    <item>
+      <title>Windows平台配置Sublime Text3的C/C&#43;&#43;11开发环境</title>
+      <link>https://rangolee.github.io/post/cpp/windows%E4%B8%8Bsublimetext3%E7%9A%84c&#43;&#43;11%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 14 Aug 2016 12:01:38 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/cpp/windows%E4%B8%8Bsublimetext3%E7%9A%84c&#43;&#43;11%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>Sublime Text3 配置C/C++11开发环境 1 2 3 4 5 6 7 8 9 10 11 12 13 { &amp;#34;cmd&amp;#34;: [&amp;#34;bash&amp;#34;, &amp;#34;-c&amp;#34;, &amp;#34;g++ -Wall -std=c++11 -O2 &amp;#39;${file}&amp;#39; -o &amp;#39;${file_path}/${file_base_name}&amp;#39; &amp;amp;&amp;amp; osascript -e &amp;#39;tell application \&amp;#34;Terminal\&amp;#34; to activate do script \&amp;#34; cd \\\&amp;#34;${file_path}\\\&amp;#34; &amp;amp;&amp;amp;start_ms=\\$(ruby -e \\\&amp;#34;puts (Time.now.to_f * 1000).to_i\\\&amp;#34;)&amp;amp;&amp;amp;clear&amp;amp;&amp;amp;\\\&amp;#34;${file_path}/${file_base_name}\\\&amp;#34; &amp;amp;&amp;amp;elapsed_ms=\\$((\\$(ruby -e \\\&amp;#34;puts (Time.now.to_f * 1000).to_i\\\&amp;#34;) - start_ms))&amp;amp;&amp;amp; read -p \\\&amp;#34;Press Enter</description>
+    </item>
+    
+    <item>
+      <title>mac 安装和配置 tomcat(不借助 eclipse)</title>
+      <link>https://rangolee.github.io/post/16-0606_mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEtomcat/</link>
+      <pubDate>Mon, 06 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0606_mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEtomcat/</guid>
+      <description>&lt;h3 id=&#34;1安装-tomcat&#34;&gt;1.安装 tomcat&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h5 id=&#34;1-去-java官网httpwwworaclecomtechnetworkjavajavasedownloadsindexhtml下载-jdk-安装包然后一步一步先安装jdk&#34;&gt;1. 去 &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/index.html&#34;&gt;Java官网&lt;/a&gt;下载 JDK 安装包,然后一步一步先安装JDK&lt;/h5&gt;
+&lt;h5 id=&#34;2-去-apache官网httptomcatapacheorgindexhtml下载-mac-版本的完整-targz-文件包解压拷贝到主目录并重新命名为-tomcat其他目录页可以&#34;&gt;2. 去 &lt;a href=&#34;http://tomcat.apache.org/index.html&#34;&gt;Apache官网&lt;/a&gt;下载 Mac 版本的完整 &lt;code&gt;***tar.gz&lt;/code&gt; 文件包,解压拷贝到&lt;code&gt;~/&lt;/code&gt;主目录,并重新命名为 tomcat(其他目录页可以).&lt;/h5&gt;
+&lt;h5 id=&#34;3-修改文件权限进入终端-cd-到刚才的目录&#34;&gt;3. 修改文件权限,进入终端 &lt;code&gt;cd&lt;/code&gt; 到刚才的目录&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Rango-MBP:~ rango$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; tomcat/bin/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;5-修改文件权限需要输入登录密码输入后按回车就可&#34;&gt;5. 修改文件权限,需要输入登录密码,输入后按回车就可&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Rango-MBP:bin rango$ sudo chmod &lt;span class=&#34;m&#34;&gt;755&lt;/span&gt; *.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Password:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mac 安装 cmake</title>
+      <link>https://rangolee.github.io/post/mac%E5%AE%89%E8%A3%85cmake/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/mac%E5%AE%89%E8%A3%85cmake/</guid>
+      <description>1 安装包安装 cmake 从官网下载cmake安装包。默认安装 链接cmake.app 与 terminal 打开终端，输入export PATH=/Applications/CMake.app/Contents/bin:$PATH 配置完成。（以上链接只对本终端窗口</description>
+    </item>
+    
+    <item>
+      <title>Mac&#43;MySql&#43;Xcode配置</title>
+      <link>https://rangolee.github.io/post/mac&#43;mysql&#43;xcode%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/mac&#43;mysql&#43;xcode%E9%85%8D%E7%BD%AE/</guid>
+      <description>Mac+MySql+Xcode配置 安装mysql /usr/local/mysql 安装mysql workbench(数据库可视化操作软件) 配置xcode 添加__头文件__搜</description>
+    </item>
+    
+    <item>
+      <title>Mac终端(Terminal)常用命令</title>
+      <link>https://rangolee.github.io/post/16-0520_mac%E7%BB%88%E7%AB%AFterminal%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 20 May 2016 22:15:52 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0520_mac%E7%BB%88%E7%AB%AFterminal%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>1. 使用caffeinate阻止Mac运行屏幕保护和睡眠 caffeinate 能阻止 mac 进入睡眠状态和屏保的的激活。可以用-t命令为命令加入具体时间。例如输入如下命</description>
+    </item>
+    
+    <item>
+      <title>Cocoa Pods 的安装过程</title>
+      <link>https://rangolee.github.io/post/ios/16-0520_cocoapods%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Wed, 18 May 2016 11:20:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0520_cocoapods%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;!--
+|参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期	|文件建立日期
+|updated:   |更新日期	|文件更新日期
+|comments:  |开启文章的评论功能	|true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description|
+--&gt;
+&lt;h3 id=&#34;关于-cocoa-pods&#34;&gt;关于 Cocoa Pods&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;cocoa-pods-是什么&#34;&gt;Cocoa Pods 是什么？&lt;/h4&gt;
+&lt;p&gt;当你开发iOS应用时，会经常使用到很多第三方开源类库，比如JSONKit，AFNetWorking等等。而如何有效且方便的管理这些类库就不是很容易了。主要有两方面的问题：&lt;/p&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;可能你需要使用的某个类库又可能会用到其他类库，所以要使用它，必须得另外下载其他类库，而这个其他类库又有可能用到另外的类库。如果,手动去一个个下载所需类库这就有点麻烦了。&lt;/li&gt;
+&lt;li&gt;另外一种常见情况是，你项目中用到的类库有更新，你必须得重新下载新版本，重新加入到项目中，十分麻烦。如果能有什么工具能解决这些恼人的问题，那就太好了，而CocoaPods就是这样一款具有这些功能的管理类库的工具。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;CocoaPods应该是iOS最常用和最有名的类库管理工具了，上述两个烦人的问题，通过cocoaPods，只需要一行命令就可以完美解决，当然前提是你必须正确设置它。重要的是，绝大部分有名的开源类库，都支持CocoaPods。所以，作为iOS程序员的我们，掌握CocoaPods的使用是必不可少的基本技能了。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

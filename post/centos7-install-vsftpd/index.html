@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>CentOS 7 install vsftpd - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="Centos 7 install vsftpd 安装 1 yum install -y vsftpd 配置 1 vim /etc/vsftpd/vsftpd.conf 修改配置项 1 2 3 4 5 6 7 8 9 10 # 是否允许匿名访问 anonymous_enable=NO # 是否限制所有用户不能切换ftp主目录 chroot_local_user=YES # 使用限制列表 chroot_list_enable=YES #" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/centos7-install-vsftpd/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="CentOS 7 install vsftpd" />
+<meta property="og:description" content="Centos 7 install vsftpd 安装 1 yum install -y vsftpd 配置 1 vim /etc/vsftpd/vsftpd.conf 修改配置项 1 2 3 4 5 6 7 8 9 10 # 是否允许匿名访问 anonymous_enable=NO # 是否限制所有用户不能切换ftp主目录 chroot_local_user=YES # 使用限制列表 chroot_list_enable=YES #" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/centos7-install-vsftpd/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-05-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-05-01T00:00:00+00:00" />
+
+<meta itemprop="name" content="CentOS 7 install vsftpd">
+<meta itemprop="description" content="Centos 7 install vsftpd 安装 1 yum install -y vsftpd 配置 1 vim /etc/vsftpd/vsftpd.conf 修改配置项 1 2 3 4 5 6 7 8 9 10 # 是否允许匿名访问 anonymous_enable=NO # 是否限制所有用户不能切换ftp主目录 chroot_local_user=YES # 使用限制列表 chroot_list_enable=YES #"><meta itemprop="datePublished" content="2019-05-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-05-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="883">
+<meta itemprop="keywords" content="CentOS," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS 7 install vsftpd"/>
+<meta name="twitter:description" content="Centos 7 install vsftpd 安装 1 yum install -y vsftpd 配置 1 vim /etc/vsftpd/vsftpd.conf 修改配置项 1 2 3 4 5 6 7 8 9 10 # 是否允许匿名访问 anonymous_enable=NO # 是否限制所有用户不能切换ftp主目录 chroot_local_user=YES # 使用限制列表 chroot_list_enable=YES #"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">CentOS 7 install vsftpd</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-05-01 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            </div>
+          <span class="more-meta"> 约 883 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#centos-7-install-vsftpd">Centos 7 install vsftpd</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#配置">配置</a>
+          <ul>
+            <li><a href="#修改配置项">修改配置项</a></li>
+            <li><a href="#启动-ftp">启动 ftp</a></li>
+            <li><a href="#关闭防火墙或者开启防火墙端口">关闭防火墙或者开启防火墙端口</a></li>
+            <li><a href="#可选配置修改默认21端口号修改以下2处配置">可选配置,修改默认21端口号,修改以下2处配置</a></li>
+          </ul>
+        </li>
+        <li><a href="#新建ftp账号">新建ftp账号</a></li>
+        <li><a href="#赋权">赋权</a></li>
+        <li><a href="#设置ftp允许上传权限">设置ftp允许上传权限</a></li>
+        <li><a href="#重启下vsftpd">重启下vsftpd</a></li>
+        <li><a href="#相关命令">相关命令</a></li>
+        <li><a href="#问题答案">问题&amp;答案</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="centos-7-install-vsftpd">Centos 7 install vsftpd</h1>
+<h2 id="安装">安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum install -y vsftpd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="配置">配置</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/vsftpd/vsftpd.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="修改配置项">修改配置项</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 是否允许匿名访问 </span>
+</span></span><span class="line"><span class="cl"><span class="nv">anonymous_enable</span><span class="o">=</span>NO 
+</span></span><span class="line"><span class="cl"><span class="c1"># 是否限制所有用户不能切换ftp主目录</span>
+</span></span><span class="line"><span class="cl"><span class="nv">chroot_local_user</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用限制列表</span>
+</span></span><span class="line"><span class="cl"><span class="nv">chroot_list_enable</span><span class="o">=</span>YES 
+</span></span><span class="line"><span class="cl"><span class="c1"># 在centos7默认没有chroot_list文件,新建一个即可</span>
+</span></span><span class="line"><span class="cl"><span class="nv">chroot_list_file</span><span class="o">=</span>/etc/vsftpd/chroot_list 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">allow_writeable_chroot</span><span class="o">=</span>YES
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><em>注意事项</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="nv">chroot_local_user</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="c1"># 下面两个是同时使用的</span>
+</span></span><span class="line"><span class="cl"><span class="nv">chroot_list_enable</span><span class="o">=</span>YES 
+</span></span><span class="line"><span class="cl"><span class="nv">chroot_list_file</span><span class="o">=</span>/etc/vsftpd/chroot_list
+</span></span><span class="line"><span class="cl"><span class="c1"># 限制列表位置,这个文件在centos7默认没有的，新建一个空文件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果 chroot_local_user=YES ,则chroot_list文件中填写的就是允许切换目录的用户</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><!-- more -->
+<h3 id="启动-ftp">启动 ftp</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start vsftpd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>开机自启动: <code>chkconfig vsftpd on</code>（报错就再执行一遍）</p>
+</blockquote>
+<h3 id="关闭防火墙或者开启防火墙端口">关闭防火墙或者开启防火墙端口</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">iptables -I INPUT -p tcp --dport <span class="m">21</span> -j ACCEPT	// 防火墙 开启21端口
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="可选配置修改默认21端口号修改以下2处配置">可选配置,修改默认21端口号,修改以下2处配置</h3>
+<ol>
+<li><code>vi /etc/vsftpd/vsftpd.conf</code> 在末尾加上下面的:</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 这个就是修改后的端口号</span>
+</span></span><span class="line"><span class="cl"><span class="nv">listen_port</span><span class="o">=</span><span class="m">1021</span>
+</span></span><span class="line"><span class="cl"><span class="nv">pasv_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="c1">#这2个是开启主动模式协议端口范围，记得华为云安全组也要加上</span>
+</span></span><span class="line"><span class="cl"><span class="nv">pasv_min_port</span><span class="o">=</span><span class="m">40000</span>
+</span></span><span class="line"><span class="cl"><span class="nv">pasv_max_port</span><span class="o">=</span><span class="m">40003</span>
+</span></span><span class="line"><span class="cl"><span class="nv">pasv_promiscuous</span><span class="o">=</span>YES
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li><code>vi /etc/services</code> 找到下面2处，把21修改即可</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ftp          21/tcp
+</span></span><span class="line"><span class="cl">ftp          21/tcp
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="新建ftp账号">新建ftp账号</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># -d 是ftp指定目录, </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -s 后面是不允许此用户登录服务器,只能在ftp模式下访问 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># dev 是用户名</span>
+</span></span><span class="line"><span class="cl">useradd -d /home/ftp/dev -s /sbin/nologin dev
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置用户密码</span>
+</span></span><span class="line"><span class="cl">passwd dev
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>(userdel ilee) // 删除 用户命令</p>
+</blockquote>
+<h2 id="赋权">赋权</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 修改目录所属用户组</span>
+</span></span><span class="line"><span class="cl">chown -R dev.dev /home/ftp/dev
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改用户权限 可读可写可执行</span>
+</span></span><span class="line"><span class="cl">chmod <span class="m">777</span> /home/ftp/dev
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="设置ftp允许上传权限">设置ftp允许上传权限</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl">setsebool -P tftp_home_dir on
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">setsebool allow_ftpd_full_access on
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="重启下vsftpd">重启下vsftpd</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl restart vsftpd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="相关命令">相关命令</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">yum install -y vsftpd	// 安装 vsftpd
+</span></span><span class="line"><span class="cl">cd /etc/vsftpd 		// 切换到 vsftpd 配置目录
+</span></span><span class="line"><span class="cl">vim vsftpd.config    // 打开配置文件 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">anonymous_enable=NO
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">chroot_local_user=YES
+</span></span><span class="line"><span class="cl">#chroot_list_enable=YES 
+</span></span><span class="line"><span class="cl">#chroot_list_file=/etc/vsftpd/chroot_list（这个文件在centos7默认没有的，新建一个）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">allow_writeable_chroot=YES
+</span></span></code></pre></td></tr></table>
+</div>
+</div>  <!-- 650  vim chroot_list 	// 创建 chroot_list 文件 并添加 ilee 用户 -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl start vsftpd	// 重启ftp
+</span></span><span class="line"><span class="cl">chkconfig vsftpd on		// 开机自启动
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">iptables -I INPUT -p tcp --dport 21 -j ACCEPT	// 防火墙 开启21端口
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">useradd -d /home/www/dev.rangolee.top -s /sbin/nologin ilee	// 创建用户 ilee 并制定 home 目录 并且 不允许登录服务器
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">passwd ilee	// 设置密码
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">chown -R ilee.ilee /home/www/dev.rangolee.top	// 改归属
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">chmod 777 /home/www/dev.rangolee.top		// 改权限
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">setsebool -P tftp_home_dir on
+</span></span><span class="line"><span class="cl">setsebool allow_ftpd_full_access on
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl restart vsftpd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ps -ef | grep ftp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat  /etc/passwd
+</span></span><span class="line"><span class="cl">cat  /etc/passwd-
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">vim /etc/vsftpd/vsftpd.conf
+</span></span><span class="line"><span class="cl">cd /etc/vsftpd/
+</span></span><span class="line"><span class="cl">mkdir userconfig
+</span></span><span class="line"><span class="cl">cd userconfig/
+</span></span><span class="line"><span class="cl">vi ilee
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl stop vsftpd
+</span></span><span class="line"><span class="cl">systemctl restart vsftpd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">vim /etc/selinux/config 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">selinux=1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">reboot		// 需要重启才能
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl restart vsftpd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">setsebool allow_ftpd_full_access on
+</span></span><span class="line"><span class="cl">setsebool -P tftp_home_dir on
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">setenforce 0
+</span></span><span class="line"><span class="cl">sestatus -v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl restart vsftpd
+</span></span><span class="line"><span class="cl">vim /etc/vsftpd/vsftpd.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl restart vsftpd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">getsebool -a | grep ftp
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="问题答案">问题&amp;答案</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">FTP 550 Failed to change directory 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Entering Passive mode  // 不使用 Passive mode 登录 ftp 可解决
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-05-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/centos/">CentOS</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2019-06-39-centos6.1-install-nginx/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">CentOS6.1 install Nginx</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/swift/swift3to4/">
+            <span class="next-text nav-default">禁用 Xcode 9 的 Swift 3 中 @objc 推断</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

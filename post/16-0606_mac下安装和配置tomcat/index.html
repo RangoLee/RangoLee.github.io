@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>mac 安装和配置 tomcat(不借助 eclipse) - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="1.安装 tomcat  1. 去 Java官网下载 JDK 安装包,然后一步一步先安装JDK 2. 去 Apache官网下载 Mac 版本的完整 ***tar.gz 文件包,解压拷贝到~/主目录,并重新命名为 tomcat(其他目录页可以). 3. 修改文件权限,进入终端 cd 到刚才的目录 1  Rango-MBP:~ rango$ cd tomcat/bin/   5. 修改文件权限,需要输入登录密码,输入后按回车就可 1 2  Rango-MBP:bin rango$ sudo chmod 755 *.sh Password:   " />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/16-0606_mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEtomcat/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="mac 安装和配置 tomcat(不借助 eclipse)" />
+<meta property="og:description" content="1.安装 tomcat
+
+1. 去 Java官网下载 JDK 安装包,然后一步一步先安装JDK
+2. 去 Apache官网下载 Mac 版本的完整 ***tar.gz 文件包,解压拷贝到~/主目录,并重新命名为 tomcat(其他目录页可以).
+3. 修改文件权限,进入终端 cd 到刚才的目录
+
+
+1
+
+
+Rango-MBP:~ rango$ cd tomcat/bin/
+
+
+5. 修改文件权限,需要输入登录密码,输入后按回车就可
+
+
+1
+2
+
+
+Rango-MBP:bin rango$ sudo chmod 755 *.sh
+Password:
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/16-0606_mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEtomcat/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-06-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-06-06T00:00:00+00:00" />
+
+<meta itemprop="name" content="mac 安装和配置 tomcat(不借助 eclipse)">
+<meta itemprop="description" content="1.安装 tomcat
+
+1. 去 Java官网下载 JDK 安装包,然后一步一步先安装JDK
+2. 去 Apache官网下载 Mac 版本的完整 ***tar.gz 文件包,解压拷贝到~/主目录,并重新命名为 tomcat(其他目录页可以).
+3. 修改文件权限,进入终端 cd 到刚才的目录
+
+
+1
+
+
+Rango-MBP:~ rango$ cd tomcat/bin/
+
+
+5. 修改文件权限,需要输入登录密码,输入后按回车就可
+
+
+1
+2
+
+
+Rango-MBP:bin rango$ sudo chmod 755 *.sh
+Password:
+
+
+"><meta itemprop="datePublished" content="2016-06-06T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-06-06T00:00:00+00:00" />
+<meta itemprop="wordCount" content="559">
+<meta itemprop="keywords" content="tomcat,Mac," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="mac 安装和配置 tomcat(不借助 eclipse)"/>
+<meta name="twitter:description" content="1.安装 tomcat
+
+1. 去 Java官网下载 JDK 安装包,然后一步一步先安装JDK
+2. 去 Apache官网下载 Mac 版本的完整 ***tar.gz 文件包,解压拷贝到~/主目录,并重新命名为 tomcat(其他目录页可以).
+3. 修改文件权限,进入终端 cd 到刚才的目录
+
+
+1
+
+
+Rango-MBP:~ rango$ cd tomcat/bin/
+
+
+5. 修改文件权限,需要输入登录密码,输入后按回车就可
+
+
+1
+2
+
+
+Rango-MBP:bin rango$ sudo chmod 755 *.sh
+Password:
+
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">mac 安装和配置 tomcat(不借助 eclipse)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-06 </span>
+        <div class="post-category">
+            <a href="/categories/mac/"> Mac </a>
+            </div>
+          <span class="more-meta"> 约 559 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1安装-tomcat">1.安装 tomcat</a></li>
+            <li><a href="#2封装简化启动和安装步骤">2.封装简化启动和安装步骤</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="1安装-tomcat">1.安装 tomcat</h3>
+<hr>
+<h5 id="1-去-java官网httpwwworaclecomtechnetworkjavajavasedownloadsindexhtml下载-jdk-安装包然后一步一步先安装jdk">1. 去 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java官网</a>下载 JDK 安装包,然后一步一步先安装JDK</h5>
+<h5 id="2-去-apache官网httptomcatapacheorgindexhtml下载-mac-版本的完整-targz-文件包解压拷贝到主目录并重新命名为-tomcat其他目录页可以">2. 去 <a href="http://tomcat.apache.org/index.html">Apache官网</a>下载 Mac 版本的完整 <code>***tar.gz</code> 文件包,解压拷贝到<code>~/</code>主目录,并重新命名为 tomcat(其他目录页可以).</h5>
+<h5 id="3-修改文件权限进入终端-cd-到刚才的目录">3. 修改文件权限,进入终端 <code>cd</code> 到刚才的目录</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:~ rango$ <span class="nb">cd</span> tomcat/bin/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="5-修改文件权限需要输入登录密码输入后按回车就可">5. 修改文件权限,需要输入登录密码,输入后按回车就可</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:bin rango$ sudo chmod <span class="m">755</span> *.sh
+</span></span><span class="line"><span class="cl">Password:
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="6-查看一下修改过权限之后的文件这里只列出部分发现凡是sh结尾的都是-rwxr-xr-x就说明对了">6. 查看一下修改过权限之后的文件(这里只列出部分),发现凡是<code>.sh</code>结尾的都是<code>-rwxr-xr-x@</code>就说明对了</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">-rwxr-xr-x@  <span class="m">1</span> rango  staff    <span class="m">1966</span>  <span class="m">2</span>  <span class="m">2</span> 02:08 startup.sh
+</span></span><span class="line"><span class="cl">-rw-r--r--@  <span class="m">1</span> rango  staff   <span class="m">32385</span>  <span class="m">2</span>  <span class="m">2</span> 02:08 tomcat-juli.jar
+</span></span><span class="line"><span class="cl">-rw-r--r--@  <span class="m">1</span> rango  staff  <span class="m">372464</span>  <span class="m">2</span>  <span class="m">2</span> 02:08 tomcat-native.tar.gz
+</span></span><span class="line"><span class="cl">-rw-r--r--@  <span class="m">1</span> rango  staff    <span class="m">3410</span>  <span class="m">2</span>  <span class="m">2</span> 02:08 tool-wrapper.bat
+</span></span><span class="line"><span class="cl">-rwxr-xr-x@  <span class="m">1</span> rango  staff    <span class="m">3410</span>  <span class="m">2</span>  <span class="m">2</span> 02:08 tool-wrapper.sh
+</span></span><span class="line"><span class="cl">-rw-r--r--@  <span class="m">1</span> rango  staff    <span class="m">2050</span>  <span class="m">2</span>  <span class="m">2</span> 02:08 version.bat
+</span></span><span class="line"><span class="cl">-rwxr-xr-x@  <span class="m">1</span> rango  staff    <span class="m">1575</span>  <span class="m">2</span>  <span class="m">2</span> 02:08 version.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="7-启动-tomcat-服务">7. 启动 tomcat 服务</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:bin rango$ sudo sh startup.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="8-看到如下信息说明启成功">8. 看到如下信息说明启成功</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Using CATALINA_BASE:   /Users/rango/tomcat
+</span></span><span class="line"><span class="cl">Using CATALINA_HOME:   /Users/rango/tomcat
+</span></span><span class="line"><span class="cl">Using CATALINA_TMPDIR: /Users/rango/tomcat/temp
+</span></span><span class="line"><span class="cl">Using JRE_HOME:        /Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home
+</span></span><span class="line"><span class="cl">Using CLASSPATH:       /Users/rango/tomcat/bin/bootstrap.jar
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>将 allRunServer 文件夹拷贝到 tomcat/ 验证</p>
+</blockquote>
+<h5 id="9-关闭-tomcat-服务">9. 关闭 tomcat 服务</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:bin rango$ sudo sh shutdown.sh
+</span></span><span class="line"><span class="cl">Password:
+</span></span><span class="line"><span class="cl">Using CATALINA_BASE:   /Users/rango/tomcat
+</span></span><span class="line"><span class="cl">Using CATALINA_HOME:   /Users/rango/tomcat
+</span></span><span class="line"><span class="cl">Using CATALINA_TMPDIR: /Users/rango/tomcat/temp
+</span></span><span class="line"><span class="cl">Using JRE_HOME:        /Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home
+</span></span><span class="line"><span class="cl">Using CLASSPATH:       /Users/rango/tomcat/bin/bootstrap.jar
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2封装简化启动和安装步骤">2.封装简化启动和安装步骤</h3>
+<hr>
+<h5 id="1新建一个文件-tomcat-下面是文件内容">1.新建一个文件 <code>tomcat</code> 下面是文件内容</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="nv">$1</span> in
+</span></span><span class="line"><span class="cl">start<span class="o">)</span>
+</span></span><span class="line"><span class="cl">sh /users/rango/tomcat/bin/startup.sh
+</span></span><span class="line"><span class="cl"><span class="p">;;</span>
+</span></span><span class="line"><span class="cl">stop<span class="o">)</span>
+</span></span><span class="line"><span class="cl">sh /users/rango/tomcat/bin/shutdown.sh
+</span></span><span class="line"><span class="cl"><span class="p">;;</span>
+</span></span><span class="line"><span class="cl">restart<span class="o">)</span>
+</span></span><span class="line"><span class="cl">sh /users/rango/tomcat/bin/shutdown.sh
+</span></span><span class="line"><span class="cl">sh /users/rango/tomcat/bin/startup.sh
+</span></span><span class="line"><span class="cl"><span class="p">;;</span>
+</span></span><span class="line"><span class="cl">*<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> “Usage: start<span class="p">|</span>stop<span class="p">|</span>restart”
+</span></span><span class="line"><span class="cl"><span class="p">;;</span>
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span> <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="2修改tomcat权限为可读可写可执行">2.修改<code>tomcat</code>权限为可读可写可执行</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Rango-MBP:desktop rango$ chmod <span class="m">777</span> tomcat
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="2将tomcat移动到终端包含的文件夹例如usrlocalbin下次直接在终端输入-tomcat-start-和-tomcat-stop-就可以启动和关闭tomcat服务了">2.将<code>tomcat</code>移动到终端包含的文件夹例如<code>/usr/local/bin</code>,下次直接在终端输入 <code>tomcat start</code> 和 <code>tomcat stop</code> 就可以启动和关闭<code>tomcat</code>服务了</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tomcat start
+</span></span><span class="line"><span class="cl">tomcat stop
+</span></span><span class="line"><span class="cl">tomcat restart
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-06-06
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/tomcat/">tomcat</a>
+          <a href="/tags/mac/">Mac</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/16-0606_mac%E6%90%AD%E5%BB%BAmysql%E7%8E%AF%E5%A2%83/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Mac OS 搭建 mysql 环境</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/ios/16-0604_fmdb/">
+            <span class="next-text nav-default">FMDB</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

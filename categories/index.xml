@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/categories/</link>
+    <description>Recent content in Categories on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 29 Feb 2020 21:37:19 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS</title>
+      <link>https://rangolee.github.io/categories/ios/</link>
+      <pubDate>Sat, 29 Feb 2020 21:37:19 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://rangolee.github.io/categories/git/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pod</title>
+      <link>https://rangolee.github.io/categories/pod/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/pod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://rangolee.github.io/categories/linux/</link>
+      <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>swift</title>
+      <link>https://rangolee.github.io/categories/swift/</link>
+      <pubDate>Thu, 17 May 2018 23:36:05 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/swift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://rangolee.github.io/categories/c&#43;&#43;/</link>
+      <pubDate>Sun, 12 Mar 2017 21:56:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xcode</title>
+      <link>https://rangolee.github.io/categories/xcode/</link>
+      <pubDate>Thu, 09 Mar 2017 01:10:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/xcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CShape</title>
+      <link>https://rangolee.github.io/categories/cshape/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/cshape/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python3</title>
+      <link>https://rangolee.github.io/categories/python3/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/python3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>https://rangolee.github.io/categories/mac/</link>
+      <pubDate>Mon, 28 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://rangolee.github.io/categories/mysql/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>memory</title>
+      <link>https://rangolee.github.io/categories/memory/</link>
+      <pubDate>Mon, 09 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/memory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://rangolee.github.io/categories/markdown/</link>
+      <pubDate>Sun, 08 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>other</title>
+      <link>https://rangolee.github.io/categories/other/</link>
+      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/categories/other/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

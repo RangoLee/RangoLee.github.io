@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Block on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/block/</link>
+    <description>Recent content in Block on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 23 May 2016 09:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/block/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OC 中的 Block</title>
+      <link>https://rangolee.github.io/post/ios/16-0523_oc%E4%B8%AD%E7%9A%84block/</link>
+      <pubDate>Mon, 23 May 2016 09:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/16-0523_oc%E4%B8%AD%E7%9A%84block/</guid>
+      <description>OC 中 block 的严格定义，语法，格式，调用 是C语言的功能，iOS4.0之后可以使用。和其他动态语言的闭包（closure）类似，和 swift 中的 closure 闭包几乎一</description>
+    </item>
+    
+  </channel>
+</rss>

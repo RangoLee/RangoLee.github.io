@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>3.C#数据类型 - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="3.数据类型 在C#中变量分为以下几种类型 值类型（value types） 引用类型（reference types） 指针类型（pointer typ" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/cshape/03_c#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="3.C#数据类型" />
+<meta property="og:description" content="3.数据类型 在C#中变量分为以下几种类型 值类型（value types） 引用类型（reference types） 指针类型（pointer typ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/cshape/03_c#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-05-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-05-24T00:00:00+00:00" />
+
+<meta itemprop="name" content="3.C#数据类型">
+<meta itemprop="description" content="3.数据类型 在C#中变量分为以下几种类型 值类型（value types） 引用类型（reference types） 指针类型（pointer typ"><meta itemprop="datePublished" content="2016-05-24T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-05-24T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1188">
+<meta itemprop="keywords" content="CShape," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="3.C#数据类型"/>
+<meta name="twitter:description" content="3.数据类型 在C#中变量分为以下几种类型 值类型（value types） 引用类型（reference types） 指针类型（pointer typ"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">3.C#数据类型</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-24 </span>
+        <div class="post-category">
+            <a href="/categories/cshape/"> CShape </a>
+            </div>
+          <span class="more-meta"> 约 1188 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#3数据类型">3.数据类型</a>
+          <ul>
+            <li><a href="#值类型values-types">值类型（Values Types）</a></li>
+            <li><a href="#引用类型reference-types">引用类型（Reference Types）</a></li>
+            <li><a href="#指针类型pointer-types">指针类型（Pointer Types）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#cshape">cshape</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="3数据类型">3.数据类型</h2>
+<hr>
+<p>在C#中变量分为以下几种类型</p>
+<ul>
+<li>值类型（value types）</li>
+</ul>
+<ul>
+<li>引用类型（reference types）</li>
+</ul>
+<ul>
+<li>指针类型（pointer types）</li>
+</ul>
+<h3 id="值类型values-types">值类型（Values Types）</h3>
+<p>值类型变量可以直接分配给一个值。它们是从类System.ValuesTypes中派生的。
+值类型直接包含数据。比如int，char，float，它们分别存储数字、字母、浮点数。当你声明一个int类型时，系统分配内存来存储值。
+C# 2010值类型
+<img src="3.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-23%2000.35.49.png" alt="">
+如需要得到一个类型或一个变量在特定平台上的准确大小，可以使用sizeof运算符。表达式sizeof(type)产生以字节为存储单位对象或类型的存储尺寸。下面举例获取任何机器上int类型的存储尺寸</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">DataTypeApplication</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Size of int:{0}&#34;</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><!-- more -->
+<h3 id="引用类型reference-types">引用类型（Reference Types）</h3>
+<p>引用类型不包括存储在变量中的实际数据，但是包含对变量的引用。
+它们指的是一个内存位置。使用多个变量时，引用类型可以指向一个内存位置。如果内存位置数据是由一个变量改变的，其它变量会自动反映这种值的变化。内置的引用类型有：object、dynamic和string。</p>
+<h5 id="对象object类型">对象（object）类型</h5>
+<p>对象类型是C#通用类型系统（Common Type System - CTS）中所有数据类型的终极基类。object是System.Object类的别名。所以对象（Object）类型可以被分配任何其他类型（值类型、引用类型、预定义类型或自定义类型）的值。但是在分配值之前，需要先进行类型转换。
+当一个值类型转换为对象类型时，则被称为<strong>装箱</strong>；当一个对象类型转换为值类型时，则被称为<strong>拆箱</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kt">object</span> <span class="n">obj</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span> <span class="c1">// 这是装箱</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="动态dynamic类型">动态（Dynamic）类型</h5>
+<p>您可以存储任何类型的值在动态数据类型变量中。这些变量的类型检查是在运行时发生的。
+声明动态类型的语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kt">dynamic</span> <span class="p">&lt;</span><span class="n">variable_name</span><span class="p">&gt;</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kt">dynamic</span> <span class="n">d</span> <span class="p">=</span> <span class="m">20</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>动态类型与对象类型相似，但是对象类型变量的类型检查是在编译时发生<br>
+的，而动态类型变量的类型检查是在运行时发生的。</p>
+</blockquote>
+<h5 id="字符串string类型">字符串（String）类型</h5>
+<p>字符串类型允许您给变量分配任何字符串值。字符串类型是System.String类的别名。他是从对象（object）类型派生的。字符串（string）类型的值可以通过两种形式进行分配：<strong>引导</strong>和**@引号**。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">str</span> <span class="p">=</span> <span class="s">&#34;w3cschool.cc&#34;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>一个@引号字符串</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">str</span> <span class="p">=</span> <span class="s">@&#34;C:\Windows&#34;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>C# string字符串的前面可以加**@<strong>（称作“逐字字符串”）将转义字符</strong>**当作普通字符对待，比如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">str</span> <span class="p">=</span> <span class="s">@&#34;C:\Windows&#34;</span><span class="p">;</span> <span class="c1">// 等价于 &#34;C:\\Windows&#34;;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>@字符串中可以任意换行，换行符及缩进空格都计算在字符串长度之内</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">str</span> <span class="p">=</span> <span class="s">@&#34;&lt;script type = &#34;&#34;text/javascript&#34;&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s">    &lt;!--
+</span></span></span><span class="line"><span class="cl"><span class="s">    --&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s">    &lt;/script&gt;&#34;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>用户自定义类型有：class、interface和delegate。</p>
+<h3 id="指针类型pointer-types">指针类型（Pointer Types）</h3>
+<p>指针类型变量存储另一种类型的内存地址。C#中指针与C或C++中的指针有相同的功能。
+声明指针类型的语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="n">type</span> <span class="p">*</span><span class="n">identifier</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kt">char</span> <span class="p">*</span><span class="n">cptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="p">*</span><span class="n">iptr</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>将在不安全代码中继续讨论指针类型。</p>
+</blockquote>
+<hr>
+<h1 id="cshape">cshape</h1>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-05-24
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/cshape/">CShape</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ios/16-0524_mapkit_framework/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">MapKit Framework</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/ios/16-0523_oc%E4%B8%AD%E7%9A%84block/">
+            <span class="next-text nav-default">OC 中的 Block</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

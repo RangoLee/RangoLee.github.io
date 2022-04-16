@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>MapKit Framework - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="MapKit Framework   下面三项是理解（看懂代码：掌握流程）  添加大头针对象（Annotation）标注  【样例】在地图上添加系统默认提供好的大头针类（对象标注）修改大头针的默认颜色，添加标注视图（弹出框标题的坐标和右边） 【Demo01_MKMapView】 总结：  系统自动添加用户所在位置的蓝色圈（MKUserLocation 类型） 如何添加大头针对象到地图视图上 地图视图区域的概念（center 中心 &#43; span 跨度）     修改两个点  用户位置默认的蓝色圈（标注对象）颜色变成自定义颜色 点中标注对象，不显示弹出框   【样例】设置自定义的标注对象的图片【Demo02_MKAnnotationView】  此时只能使用父类 MKAnnotationView（IOS9）     " />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/ios/16-0524_mapkit_framework/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="MapKit Framework" />
+<meta property="og:description" content="
+MapKit Framework
+
+
+下面三项是理解（看懂代码：掌握流程）
+
+添加大头针对象（Annotation）标注
+
+【样例】在地图上添加系统默认提供好的大头针类（对象标注）修改大头针的默认颜色，添加标注视图（弹出框标题的坐标和右边）
+【Demo01_MKMapView】
+总结：
+
+系统自动添加用户所在位置的蓝色圈（MKUserLocation 类型）
+如何添加大头针对象到地图视图上
+地图视图区域的概念（center 中心 &#43; span 跨度）
+
+
+
+
+修改两个点
+
+用户位置默认的蓝色圈（标注对象）颜色变成自定义颜色
+点中标注对象，不显示弹出框
+
+
+【样例】设置自定义的标注对象的图片【Demo02_MKAnnotationView】
+
+此时只能使用父类 MKAnnotationView（IOS9）
+
+
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/ios/16-0524_mapkit_framework/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-05-24T09:00:00+00:00" />
+<meta property="article:modified_time" content="2016-05-24T09:00:00+00:00" />
+
+<meta itemprop="name" content="MapKit Framework">
+<meta itemprop="description" content="
+MapKit Framework
+
+
+下面三项是理解（看懂代码：掌握流程）
+
+添加大头针对象（Annotation）标注
+
+【样例】在地图上添加系统默认提供好的大头针类（对象标注）修改大头针的默认颜色，添加标注视图（弹出框标题的坐标和右边）
+【Demo01_MKMapView】
+总结：
+
+系统自动添加用户所在位置的蓝色圈（MKUserLocation 类型）
+如何添加大头针对象到地图视图上
+地图视图区域的概念（center 中心 &#43; span 跨度）
+
+
+
+
+修改两个点
+
+用户位置默认的蓝色圈（标注对象）颜色变成自定义颜色
+点中标注对象，不显示弹出框
+
+
+【样例】设置自定义的标注对象的图片【Demo02_MKAnnotationView】
+
+此时只能使用父类 MKAnnotationView（IOS9）
+
+
+
+
+"><meta itemprop="datePublished" content="2016-05-24T09:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-05-24T09:00:00+00:00" />
+<meta itemprop="wordCount" content="887">
+<meta itemprop="keywords" content="MapKit Framework,MKMapView,MKAnnotationView," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MapKit Framework"/>
+<meta name="twitter:description" content="
+MapKit Framework
+
+
+下面三项是理解（看懂代码：掌握流程）
+
+添加大头针对象（Annotation）标注
+
+【样例】在地图上添加系统默认提供好的大头针类（对象标注）修改大头针的默认颜色，添加标注视图（弹出框标题的坐标和右边）
+【Demo01_MKMapView】
+总结：
+
+系统自动添加用户所在位置的蓝色圈（MKUserLocation 类型）
+如何添加大头针对象到地图视图上
+地图视图区域的概念（center 中心 &#43; span 跨度）
+
+
+
+
+修改两个点
+
+用户位置默认的蓝色圈（标注对象）颜色变成自定义颜色
+点中标注对象，不显示弹出框
+
+
+【样例】设置自定义的标注对象的图片【Demo02_MKAnnotationView】
+
+此时只能使用父类 MKAnnotationView（IOS9）
+
+
+
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">MapKit Framework</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-24 </span>
+        <div class="post-category">
+            <a href="/categories/ios/"> iOS </a>
+            </div>
+          <span class="more-meta"> 约 887 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#mapkit-framework">MapKit Framework</a></li>
+            <li><a href="#百度地图-sdk尽量掌握">百度地图 SDK（尽量掌握）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <!-- |参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期	|文件建立日期
+|updated:   |更新日期	|文件更新日期
+|comments:  |开启文章的评论功能	|true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description| -->
+<h3 id="mapkit-framework">MapKit Framework</h3>
+<hr>
+<ol>
+<li>下面三项是理解（看懂代码：掌握流程）
+<ol>
+<li>添加大头针对象（<code>Annotation</code>）标注
+<ul>
+<li>【样例】在地图上添加系统默认提供好的大头针类（对象标注）修改大头针的默认颜色，添加标注视图（弹出框标题的坐标和右边）</li>
+<li>【Demo01_MKMapView】</li>
+<li>总结：
+<ul>
+<li>系统自动添加用户所在位置的蓝色圈（<code>MKUserLocation</code> 类型）</li>
+<li>如何添加大头针对象到地图视图上</li>
+<li>地图视图区域的概念（<code>center</code> 中心 + <code>span</code> 跨度）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>修改两个点
+<ul>
+<li>用户位置默认的蓝色圈（标注对象）颜色变成自定义颜色</li>
+<li>点中标注对象，不显示弹出框</li>
+</ul>
+</li>
+<li>【样例】设置自定义的标注对象的图片【Demo02_MKAnnotationView】
+<ul>
+<li>此时只能使用父类 <code>MKAnnotationView</code>（IOS9）</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<ol start="4">
+<li>Demo01 和 Demo02 掌握点
+- 标注视图和标注图标对象的关系（标注对象是标注视图的一个属性；标注视图可复用）
+- 自定义图片只能使用父类（<code>MKAnnotationView</code>）
+5. 改需求：灵活设置标注对象的自定义图片【Demo03_RLAnnotation】
+- 创建模型类 TRAnnotation:NSObject
+- TRAnnotation 必须遵循协议 <code>MKAnnotation</code>
+- TRAnnotation.h 声明至少一个属性（必须声明坐标/位置属性；也可以包含两个可选标题属性）；手动添加图片属性（UIImage类型）</li>
+<li>地图视图添加遮盖物 <code>Overlay</code>（画线）
+<ul>
+<li>需求：给定起始点和终点，画线（添加 overLay）；打印起点到终点的所有 step。</li>
+<li>知识点：北京-<strong>地理编码</strong>-&gt;经纬度-&gt;添加大头针（标注）；经纬度-<strong>反地理编码</strong>-&gt;详细地址(国家/城市/街道。。。)</li>
+<li>【样例】（理解）实现以上需求。【Demo04_Route】
+<ul>
+<li>界面 MKMapView + UIButton</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="百度地图-sdk尽量掌握">百度地图 SDK（尽量掌握）</h3>
+<hr>
+<ul>
+<li><code>SDK</code>(<code>Software Development Kit</code>)软件开发包
+<ul>
+<li>文档+框架Framework（API 集合）+资源（图片/配置文件）+样例代码</li>
+<li>把百度地图 SDK 中的样例代码运行起来
+<ul>
+<li>文档/主页步骤；运行 Sample 的步骤</li>
+<li>添加 key （注册来的）-&gt;<code>AppDelegate.mm</code>文件</li>
+<li><code>S2x0G***************5SGY</code></li>
+<li>安全码（ 注册时给定的）-&gt;<code>Bundle Identifier</code></li>
+<li><code>**************</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果看到如下两个 log 说明设置成功
+<ul>
+<li>IphoneMapSdkDemo[2042:188736] 联网成功</li>
+<li>IphoneMapSdkDemo[2042:188736] 授权成功</li>
+</ul>
+</li>
+<li>查看都提供了哪些功能
+<ul>
+<li>分析功能，移植功能到 Xcode 项目中来（必备技能！！！）</li>
+<li>Key 和安全码的通过官网<code>申请密钥</code>获取</li>
+<li><a href="http://lbsyun.baidu.com/index.php?title=iossdk/guide/location">配置百度地图开发环境</a></li>
+</ul>
+</li>
+</ul>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-05-24
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/mapkit-framework/">MapKit Framework</a>
+          <a href="/tags/mkmapview/">MKMapView</a>
+          <a href="/tags/mkannotationview/">MKAnnotationView</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ios/16-0524_location_corelocation-/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">CoreLocation Framework</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/cshape/03_c#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+            <span class="next-text nav-default">3.C#数据类型</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac OS X on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/mac-os-x/</link>
+    <description>Recent content in Mac OS X on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 23 May 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/mac-os-x/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac下升级Ruby</title>
+      <link>https://rangolee.github.io/post/16-0714_mac%E5%8D%87%E7%BA%A7ruby/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0714_mac%E5%8D%87%E7%BA%A7ruby/</guid>
+      <description>Mac下升级Ruby 1. 安装rvm（ruby版本管理器）ruby -v 先查看一下当前ruby版本 1 2 Rango-MBP:~ Rango$ ruby -v ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15] 1 Rango-MBP:~ Rango$ curl -L get.rvm.io | bash -s stable 2. 配置</description>
+    </item>
+    
+  </channel>
+</rss>

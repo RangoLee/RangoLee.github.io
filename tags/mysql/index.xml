@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQL on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/mysql/</link>
+    <description>Recent content in MySQL on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 30 Sep 2016 00:09:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>删除mac下的MySQL</title>
+      <link>https://rangolee.github.io/post/16-0930_%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</link>
+      <pubDate>Fri, 30 Sep 2016 00:09:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0930_%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</guid>
+      <description>删除Mac下的MySQL 首先在系统偏好设置中设置MySQL设置，停止其服务然后依次执行如下语句即可。 1 2 3 4 5 6 7 sudo rm /usr/local/mysql sudo rm -rf /usr/local/mysql* sudo rm -rf /Library/StartupItems/MySQLCOM sudo rm</description>
+    </item>
+    
+    <item>
+      <title>Mac OS 搭建 mysql 环境</title>
+      <link>https://rangolee.github.io/post/16-0606_mac%E6%90%AD%E5%BB%BAmysql%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 06 Jun 2016 11:18:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/16-0606_mac%E6%90%AD%E5%BB%BAmysql%E7%8E%AF%E5%A2%83/</guid>
+      <description>1. MySQL Wiki 双击 mysql-5.6.12-osx10.7-x86_64.dmg 双击 mysql-5.6.12-osx10.7-x86_64.pkg 双击 MySQL.prefPane 系统偏好设置里启动 MySQL 验证 1 2 3 4 Rango-MBP:~ rango$ cd /usr/local/mysql Rango-MBP:mysql rango$ cd bin Rango-MBP:bin rango$ pwd /usr/local/mysql/bin 登入MySQL服务器,首次登入无密码,直接回车即可 看到下面这</description>
+    </item>
+    
+    <item>
+      <title>Mac&#43;MySql&#43;Xcode配置</title>
+      <link>https://rangolee.github.io/post/mac&#43;mysql&#43;xcode%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/mac&#43;mysql&#43;xcode%E9%85%8D%E7%BD%AE/</guid>
+      <description>Mac+MySql+Xcode配置 安装mysql /usr/local/mysql 安装mysql workbench(数据库可视化操作软件) 配置xcode 添加__头文件__搜</description>
+    </item>
+    
+    <item>
+      <title>MySQL 报错处理</title>
+      <link>https://rangolee.github.io/post/mysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</link>
+      <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/mysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</guid>
+      <description>MySQL 报错处理 1. MySQL 启动报错 1 Warning:The /usr/local/mysql/data directory is not owned by the &amp;#39;mysql&amp;#39; or &amp;#39;_mysql&amp;#39; user 原因： 未知（可能是某种情况下导致/usr/local/mysql/data的宿主发生了改变）</description>
+    </item>
+    
+  </channel>
+</rss>

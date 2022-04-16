@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cocoapod on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/cocoapod/</link>
+    <description>Recent content in cocoapod on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/cocoapod/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pod install 速度慢的终极解决方案</title>
+      <link>https://rangolee.github.io/post/pod-install%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/pod-install%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description>问题 如今新版本的 pod 已经是默认走 CDN 的方式,不再是 master repo 的模式,但是,依然会有这个问题. 相信大家已经感受到 pod install 速度越来越慢了，网上提供了几种解决方</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>memory on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/memory/</link>
+    <description>Recent content in memory on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 May 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/memory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>内存中堆和栈的区别</title>
+      <link>https://rangolee.github.io/post/%E5%86%85%E5%AD%98%E4%B8%AD%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Mon, 09 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/%E5%86%85%E5%AD%98%E4%B8%AD%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>对堆和栈的理解一直比较模糊，在看了网友的各种解释后，记录一下，以便日后查看。 数据结构中的栈和堆 首先，我们要知道堆栈是两种数据结构：堆和栈。 堆</description>
+    </item>
+    
+  </channel>
+</rss>

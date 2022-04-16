@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>OC 中的 Block - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="OC 中 block 的严格定义，语法，格式，调用 是C语言的功能，iOS4.0之后可以使用。和其他动态语言的闭包（closure）类似，和 swift 中的 closure 闭包几乎一" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/ios/16-0523_oc%E4%B8%AD%E7%9A%84block/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="OC 中的 Block" />
+<meta property="og:description" content="OC 中 block 的严格定义，语法，格式，调用 是C语言的功能，iOS4.0之后可以使用。和其他动态语言的闭包（closure）类似，和 swift 中的 closure 闭包几乎一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/ios/16-0523_oc%E4%B8%AD%E7%9A%84block/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-05-23T09:00:00+00:00" />
+<meta property="article:modified_time" content="2016-05-23T09:00:00+00:00" />
+
+<meta itemprop="name" content="OC 中的 Block">
+<meta itemprop="description" content="OC 中 block 的严格定义，语法，格式，调用 是C语言的功能，iOS4.0之后可以使用。和其他动态语言的闭包（closure）类似，和 swift 中的 closure 闭包几乎一"><meta itemprop="datePublished" content="2016-05-23T09:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-05-23T09:00:00+00:00" />
+<meta itemprop="wordCount" content="432">
+<meta itemprop="keywords" content="OC,Block," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OC 中的 Block"/>
+<meta name="twitter:description" content="OC 中 block 的严格定义，语法，格式，调用 是C语言的功能，iOS4.0之后可以使用。和其他动态语言的闭包（closure）类似，和 swift 中的 closure 闭包几乎一"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">OC 中的 Block</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-23 </span>
+        <div class="post-category">
+            <a href="/categories/ios/"> iOS </a>
+            </div>
+          <span class="more-meta"> 约 432 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#oc-中-block-的严格定义语法格式调用">OC 中 <strong>block</strong> 的严格定义，语法，格式，调用</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <!-- |参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期	|文件建立日期
+|updated:   |更新日期	|文件更新日期
+|comments:  |开启文章的评论功能	|true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description| -->
+<h3 id="oc-中-block-的严格定义语法格式调用">OC 中 <strong>block</strong> 的严格定义，语法，格式，调用</h3>
+<hr>
+<ol>
+<li>是C语言的功能，iOS4.0之后可以使用。和其他动态语言的闭包（closure）类似，和 swift 中的 closure 闭包几乎一样。</li>
+<li>严格定义：块对象就是把可执行的代码和代码中的可以访问的变量“封装”起来，之后在某个时间点处理的包。</li>
+<li>Block 的作用：
+<ul>
+<li>可以作为函数/方法的参数</li>
+<li>可以作为函数/方法的返回对象</li>
+</ul>
+</li>
+<li>明确三个 Block 术语
+<ul>
+<li>Block 声明（Block declaration）
+<ul>
+<li>
+<blockquote>
+<p>通用词：Block （变量）声明</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Block 定义（Block literal：块句法）
+<ul>
+<li>
+<blockquote>
+<p>通用词：Block （对象）定义</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Block 调用：执行的 Block 体（Block body）中的逻辑</li>
+</ul>
+</li>
+<li>Block 声明的语法：
+<ul>
+<li><code>return_type(^block_name)(param_type,param_type...)</code>
+<ul>
+<li><code>return_type</code>:返回值类型</li>
+<li><code>block_name</code>：Block 变量名字</li>
+<li><code>param_type</code>：参数类型</li>
+<li>例子：<code>int（^blockName）(int)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Block 定义的语法：
+<ul>
+<li><code>^(param_type  param_name,param_type param_name...){block body}</code>
+<ul>
+<li><code>param_type</code>:参数类型</li>
+<li><code>param_name</code>:参数的名字</li>
+<li>例子：<code>^(int index){printf(&quot;%d\n&quot;,index);return index * 2};</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>结合声明和定义
+<ul>
+<li><code>int（^blockName）(int) = ^(int index){printf(&quot;%d\n&quot;,index);return index * 2;};</code></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>未完待续。。。</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-05-23
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/oc/">OC</a>
+          <a href="/tags/block/">Block</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/cshape/03_c#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">3.C#数据类型</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/cshape/02_c#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+            <span class="next-text nav-default">2.C#基本语法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/git/</link>
+    <description>Recent content in git on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 git 克隆 github 上的项目失败</title>
+      <link>https://rangolee.github.io/post/2019-09-05-%E4%BD%BF%E7%94%A8-git-%E5%85%8B%E9%9A%86-github-%E4%B8%8A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/2019-09-05-%E4%BD%BF%E7%94%A8-git-%E5%85%8B%E9%9A%86-github-%E4%B8%8A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</guid>
+      <description>使用 git 克隆 github 上的项目失败 现象 今天在使用 git clone nextjs demo project 源代码的时， git clone https://github.com/XXXX/next-blog.git 下载速度很慢，然后下载一段时间后，总是提示下面的错误信息 1 2 3 4 5 6 7 8 nCloning</description>
+    </item>
+    
+    <item>
+      <title>如何使用hexo搭建git博客</title>
+      <link>https://rangolee.github.io/post/others/git&#43;hexoblog/</link>
+      <pubDate>Sat, 28 May 2016 16:34:33 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/others/git&#43;hexoblog/</guid>
+      <description>&lt;h3 id=&#34;hexogitblog-安装流程&#34;&gt;Hexo+Git=Blog 安装流程&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;hexo 环境配置流程图
+&lt;img src=&#34;http://ww3.sinaimg.cn/large/741b3941gw1f4b10z0s9ij20lj0andhh.jpg&#34; alt=&#34;hexo 环境配置&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;1-安装-git&#34;&gt;1. 安装 &lt;strong&gt;Git&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;安装过 Xcode 可以直接跳过这步，因为 Xcode 自带 Git&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; // 通过 ruby 安装 HomeBrew （已安装过HomeBrew的可以直接执行下一行）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; $ /usr/bin/ruby -e &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; $ brew install git   // 通过 HomeBrew 安装Git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;也可以通过下载&lt;a href=&#34;https://sourceforge.net/projects/git-osx-installer/&#34;&gt;Git安装程序&lt;/a&gt;来安装&lt;/p&gt;
+&lt;h6 id=&#34;11-注册账户&#34;&gt;1.1 注册账户&lt;/h6&gt;
+&lt;p&gt;首先需要注册一个&lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;的账户，已有的可以直接跳过去下一步了。&lt;img src=&#34;http://ww4.sinaimg.cn/large/741b3941gw1f4o6u0ii97j218a12qam1.jpg&#34; alt=&#34;注册github&#34;&gt;&lt;/p&gt;
+&lt;h6 id=&#34;12-创建仓库&#34;&gt;1.2 创建仓库&lt;/h6&gt;
+&lt;p&gt;登入进去之后再界面的右上角点那个加号，创建一个仓库（&lt;code&gt;new repository&lt;/code&gt;）来存放我们的博客网站。Respository name 中 填写 &lt;code&gt;username.github.io&lt;/code&gt; ，这里的 &lt;code&gt;username&lt;/code&gt;.github.io 就是你以后的博客域名，这个 &lt;code&gt;username&lt;/code&gt; 可以认真想一个了。&lt;img src=&#34;http://ww1.sinaimg.cn/large/741b3941gw1f4o7csyrspj21kw1027dr.jpg&#34; alt=&#34;创建github仓库&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-安装-nvm&#34;&gt;2. 安装 &lt;strong&gt;nvm&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/creationix/nvm.git ~/.nvm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

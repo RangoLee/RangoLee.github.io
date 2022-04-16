@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>objc on Coding Night - A personal blog for Rango</title>
+    <link>https://rangolee.github.io/tags/objc/</link>
+    <description>Recent content in objc on Coding Night - A personal blog for Rango</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 29 Feb 2020 21:37:19 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/tags/objc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS 之 keyPath 自动提示宏</title>
+      <link>https://rangolee.github.io/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/</link>
+      <pubDate>Sat, 29 Feb 2020 21:37:19 +0000</pubDate>
+      
+      <guid>https://rangolee.github.io/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/</guid>
+      <description>自动提示宏 这个宏可以在使用keyPath时自动提示属性字符串，防止输入出现错误。 1 2 3 4 // 自动替换宏 #define keyPath(objc, keyPath) @(((void)objc.keyPath,#keyPath)) NSLog(@&amp;#34;%@&amp;#34;, [keyPath(self.layer, position) class]); // NSTaggedPointerString NSLog(@&amp;#34;%@&amp;#34;, keyPath(self.layer, position)); // position c语言字符</description>
+    </item>
+    
+  </channel>
+</rss>

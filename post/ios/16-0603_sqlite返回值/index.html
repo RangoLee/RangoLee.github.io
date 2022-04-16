@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>SQLite 返回值 - Coding Night - A personal blog for Rango</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Rango" /><meta name="description" content="SQLite 返回值 1 2 3 4 5 6 7 8 9 10 11 /* ** CAPI3REF: Result Codes //返回码 ** KEYWORDS: {result code definitions} ** ** Many SQLite functions return an integer result code from the set shown ** here in order to indicate success or failure. ** ** New error codes may be added in future versions of SQLite. ** ** See also:" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://rangolee.github.io/post/ios/16-0603_sqlite%E8%BF%94%E5%9B%9E%E5%80%BC/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.a659bb31b17a54f7792e1bc783fc75b31118e6a175b42337b03fae0b1a3ef2b5.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="SQLite 返回值" />
+<meta property="og:description" content="SQLite 返回值 1 2 3 4 5 6 7 8 9 10 11 /* ** CAPI3REF: Result Codes //返回码 ** KEYWORDS: {result code definitions} ** ** Many SQLite functions return an integer result code from the set shown ** here in order to indicate success or failure. ** ** New error codes may be added in future versions of SQLite. ** ** See also:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rangolee.github.io/post/ios/16-0603_sqlite%E8%BF%94%E5%9B%9E%E5%80%BC/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-06-03T21:36:00+00:00" />
+<meta property="article:modified_time" content="2016-06-03T21:36:00+00:00" />
+
+<meta itemprop="name" content="SQLite 返回值">
+<meta itemprop="description" content="SQLite 返回值 1 2 3 4 5 6 7 8 9 10 11 /* ** CAPI3REF: Result Codes //返回码 ** KEYWORDS: {result code definitions} ** ** Many SQLite functions return an integer result code from the set shown ** here in order to indicate success or failure. ** ** New error codes may be added in future versions of SQLite. ** ** See also:"><meta itemprop="datePublished" content="2016-06-03T21:36:00+00:00" />
+<meta itemprop="dateModified" content="2016-06-03T21:36:00+00:00" />
+<meta itemprop="wordCount" content="897">
+<meta itemprop="keywords" content="SQLite,OC," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQLite 返回值"/>
+<meta name="twitter:description" content="SQLite 返回值 1 2 3 4 5 6 7 8 9 10 11 /* ** CAPI3REF: Result Codes //返回码 ** KEYWORDS: {result code definitions} ** ** Many SQLite functions return an integer result code from the set shown ** here in order to indicate success or failure. ** ** New error codes may be added in future versions of SQLite. ** ** See also:"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Coding Night</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Coding Night</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">SQLite 返回值</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-03 </span>
+        <div class="post-category">
+            <a href="/categories/ios/"> iOS </a>
+            </div>
+          <span class="more-meta"> 约 897 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <!--|参数|描述|默认值|
+|-----------|-----|--------------|
+|layout:    |布局
+|title:     |标题
+|date:      |建立日期	|文件建立日期
+|updated:   |更新日期	|文件更新日期
+|comments:  |开启文章的评论功能	|true
+|tags:      |标签（不适用于分页
+|categories:|分类（不适用于分页）
+|permalink: |覆盖文章网址
+|description|文章描述信息-->
+<h4 id="sqlite-返回值">SQLite 返回值</h4>
+<hr>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-objective-c" data-lang="objective-c"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">** CAPI3REF: Result Codes //返回码
+</span></span></span><span class="line"><span class="cl"><span class="cm">** KEYWORDS: {result code definitions}
+</span></span></span><span class="line"><span class="cl"><span class="cm">**
+</span></span></span><span class="line"><span class="cl"><span class="cm">** Many SQLite functions return an integer result code from the set shown
+</span></span></span><span class="line"><span class="cl"><span class="cm">** here in order to indicate success or failure.
+</span></span></span><span class="line"><span class="cl"><span class="cm">**
+</span></span></span><span class="line"><span class="cl"><span class="cm">** New error codes may be added in future versions of SQLite.
+</span></span></span><span class="line"><span class="cl"><span class="cm">**
+</span></span></span><span class="line"><span class="cl"><span class="cm">** See also: [extended result code definitions]
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong><code>#define SQLITE_OK           0   /* Successful result */ 成功</code></strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-objective-c" data-lang="objective-c"><span class="line"><span class="cl"><span class="cm">/* beginning-of-error-codes */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_ERROR        1   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* SQL error or missing database */</span> <span class="n">SQL</span> <span class="err">语法错误</span> <span class="err">或</span> <span class="err">缺少数据库</span> 
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_INTERNAL     2   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Internal logic error in SQLite */</span> <span class="n">SQLite</span> <span class="err">内部逻辑错误</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_PERM         3   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Access permission denied */</span><span class="err">没有访问权限</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_ABORT        4   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Callback routine requested an abort */</span><span class="err">回调函数请求终止</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_BUSY         5   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* The database file is locked */</span><span class="err">数据库文件被锁定</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_LOCKED       6   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* A table in the database is locked */</span><span class="err">数据库中的表被锁定</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_NOMEM        7   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* A malloc() failed */</span><span class="err">数据库调用函数失败</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_READONLY     8   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Attempt to write a readonly database */</span><span class="err">视图对只读数据库文件进行写操作</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_INTERRUPT    9   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Operation terminated by sqlite3_interrupt()*/</span><span class="err">操作被</span> <span class="n">sqlite3_interrupt</span><span class="p">()</span> <span class="err">终止</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_IOERR       10   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Some kind of disk I/O error occurred */</span><span class="err">某些磁盘</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="err">（输入输出）错误</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_CORRUPT     11   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* The database disk image is malformed */</span><span class="err">数据库磁盘文件损坏，视图打开非</span> <span class="n">SQLite</span> <span class="err">数据库也会出现这个错误</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_NOTFOUND    12   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Unknown opcode in sqlite3_file_control() */</span><span class="err">未知的</span> <span class="n">pdcode</span> <span class="err">在</span> <span class="n">sqlite3_file_control</span><span class="p">()</span> <span class="err">中</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_FULL        13   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Insertion failed because database is full */</span><span class="err">数据库已满，插入操作失败，文件系统没有足够空间或者数据库文件无法拓展</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_CANTOPEN    14   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Unable to open the database file */</span><span class="err">无法打开数据库文件</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_PROTOCOL    15   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Database lock protocol error */</span><span class="err">数据库已锁定或者协议错误</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_EMPTY       16   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Database is empty */</span><span class="err">数据库为空</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_SCHEMA      17   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* The database schema changed */</span><span class="err">数据库模式改变</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_TOOBIG      18   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* String or BLOB exceeds size limit */</span><span class="err">字符串</span> <span class="err">或</span> <span class="n">BLOB</span> <span class="err">超出大小限制</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_CONSTRAINT  19   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Abort due to constraint violation */</span><span class="err">违反约束操作被终止</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_MISMATCH    20   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Data type mismatch */</span><span class="err">数据类型不匹配</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_MISUSE      21   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Library used incorrectly */</span><span class="err">资源库使用不正确，当你的</span> <span class="n">API</span> <span class="err">程序使用不当时可能会产生此错误</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_NOLFS       22   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Uses OS features not supported on host */</span><span class="err">使用了不被机器支持的</span> <span class="n">OS</span> <span class="err">功能，如果</span> <span class="n">SQLite</span> <span class="err">编译时启用了大文件支持，但是所在的操作系统不支持</span> <span class="n">LFS</span><span class="err">，会产生该错误</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_AUTH        23   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Authorization denied */</span><span class="err">授权被否决</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_FORMAT      24   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Auxiliary database format error */</span><span class="err">辅助性的数据库格式错误</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_RANGE       25   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* 2nd parameter to sqlite3_bind out of range */</span><span class="n">sqlite3_bind</span><span class="p">()</span> <span class="err">的第二个参数超出范围</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_NOTADB      26   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* File opened that is not a database file */</span><span class="err">打开的文件不是</span> <span class="n">SQLite</span> <span class="err">数据库文件</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_NOTICE      27   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Notifications from sqlite3_log() */</span><span class="err">来自</span><span class="n">sqlite3_log</span><span class="p">()</span><span class="err">的通知</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_WARNING     28   
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* Warnings from sqlite3_log() */</span><span class="err">来自</span><span class="n">sqlite3_log</span><span class="p">()</span><span class="err">的警告</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_ROW         100  
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* sqlite3_step() has another row ready */</span><span class="n">sqlite3_step</span><span class="p">()</span><span class="err">的另一行数据已经准备就绪</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define SQLITE_DONE        101  
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="cm">/* sqlite3_step() has finished executing */</span><span class="n">sqlite3_step</span><span class="p">()</span> <span class="err">已经执行完毕</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/* end-of-error-codes */</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Rango</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-06-03
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/sqlite/">SQLite</a>
+          <a href="/tags/oc/">OC</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/ios/16-0604_fmdb/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">FMDB</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/others/git&#43;hexoblog/">
+            <span class="next-text nav-default">如何使用hexo搭建git博客</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rangodev@163.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://rangolee.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Rango</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
