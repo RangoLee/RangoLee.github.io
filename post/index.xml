@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Coding Night - A personal blog for Rango</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Feb 2020 21:37:19 +0000</lastBuildDate><atom:link href="https://rangolee.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Apr 2022 17:41:44 +0800</lastBuildDate><atom:link href="https://rangolee.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub升级后不再支持用户名密码鉴权</title>
+      <link>https://rangolee.github.io/post/github%E4%B8%8D%E6%94%AF%E6%8C%81%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%E9%89%B4%E6%9D%83/</link>
+      <pubDate>Sat, 16 Apr 2022 17:41:44 +0800</pubDate>
+      
+      <guid>https://rangolee.github.io/post/github%E4%B8%8D%E6%94%AF%E6%8C%81%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%E9%89%B4%E6%9D%83/</guid>
+      <description>⚠️ Support for password authentication was removed on August 13, 2021. Please use a personal access token instead. 登录 GitHub 打开 Settings 找到 Developer settings 找到 Personal access tokens 点击 Generate new token 配置 token 设置名字，设置过期时间，选择权限 (默认 repo 就可)，最后点击</description>
+    </item>
+    
     <item>
       <title>iOS 之 keyPath 自动提示宏</title>
       <link>https://rangolee.github.io/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/</link>

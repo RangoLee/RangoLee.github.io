@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>iOS 之 keyPath 自动提示宏 - Coding Night - A personal blog for Rango</title>
+  <title>GitHub升级后不再支持用户名密码鉴权 - Coding Night - A personal blog for Rango</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Rango" /><meta name="description" content="自动提示宏 这个宏可以在使用keyPath时自动提示属性字符串，防止输入出现错误。 1 2 3 4 // 自动替换宏 #define keyPath(objc, keyPath) @(((void)objc.keyPath,#keyPath)) NSLog(@&amp;#34;%@&amp;#34;, [keyPath(self.layer, position) class]); // NSTaggedPointerString NSLog(@&amp;#34;%@&amp;#34;, keyPath(self.layer, position)); // position c语言字符" />
+<meta name="author" content="Rango" /><meta name="description" content="⚠️ Support for password authentication was removed on August 13, 2021. Please use a personal access token instead. 登录 GitHub 打开 Settings 找到 Developer settings 找到 Personal access tokens 点击 Generate new token 配置 token 设置名字，设置过期时间，选择权限 (默认 repo 就可)，最后点击" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.96.0 with theme even" />
 
 
-<link rel="canonical" href="https://rangolee.github.io/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/" />
+<link rel="canonical" href="https://rangolee.github.io/post/github%E4%B8%8D%E6%94%AF%E6%8C%81%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%E9%89%B4%E6%9D%83/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="iOS 之 keyPath 自动提示宏" />
-<meta property="og:description" content="自动提示宏 这个宏可以在使用keyPath时自动提示属性字符串，防止输入出现错误。 1 2 3 4 // 自动替换宏 #define keyPath(objc, keyPath) @(((void)objc.keyPath,#keyPath)) NSLog(@&#34;%@&#34;, [keyPath(self.layer, position) class]); // NSTaggedPointerString NSLog(@&#34;%@&#34;, keyPath(self.layer, position)); // position c语言字符" />
+<meta property="og:title" content="GitHub升级后不再支持用户名密码鉴权" />
+<meta property="og:description" content="⚠️ Support for password authentication was removed on August 13, 2021. Please use a personal access token instead. 登录 GitHub 打开 Settings 找到 Developer settings 找到 Personal access tokens 点击 Generate new token 配置 token 设置名字，设置过期时间，选择权限 (默认 repo 就可)，最后点击" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rangolee.github.io/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-02-29T21:37:19+00:00" />
-<meta property="article:modified_time" content="2022-04-16T00:00:00+00:00" />
+<meta property="og:url" content="https://rangolee.github.io/post/github%E4%B8%8D%E6%94%AF%E6%8C%81%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%E9%89%B4%E6%9D%83/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-16T17:41:44+08:00" />
+<meta property="article:modified_time" content="2022-04-16T17:41:44+08:00" />
 
-<meta itemprop="name" content="iOS 之 keyPath 自动提示宏">
-<meta itemprop="description" content="自动提示宏 这个宏可以在使用keyPath时自动提示属性字符串，防止输入出现错误。 1 2 3 4 // 自动替换宏 #define keyPath(objc, keyPath) @(((void)objc.keyPath,#keyPath)) NSLog(@&#34;%@&#34;, [keyPath(self.layer, position) class]); // NSTaggedPointerString NSLog(@&#34;%@&#34;, keyPath(self.layer, position)); // position c语言字符"><meta itemprop="datePublished" content="2020-02-29T21:37:19+00:00" />
-<meta itemprop="dateModified" content="2022-04-16T00:00:00+00:00" />
-<meta itemprop="wordCount" content="124">
-<meta itemprop="keywords" content="iOS,objc," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="iOS 之 keyPath 自动提示宏"/>
-<meta name="twitter:description" content="自动提示宏 这个宏可以在使用keyPath时自动提示属性字符串，防止输入出现错误。 1 2 3 4 // 自动替换宏 #define keyPath(objc, keyPath) @(((void)objc.keyPath,#keyPath)) NSLog(@&#34;%@&#34;, [keyPath(self.layer, position) class]); // NSTaggedPointerString NSLog(@&#34;%@&#34;, keyPath(self.layer, position)); // position c语言字符"/>
+<meta itemprop="name" content="GitHub升级后不再支持用户名密码鉴权">
+<meta itemprop="description" content="⚠️ Support for password authentication was removed on August 13, 2021. Please use a personal access token instead. 登录 GitHub 打开 Settings 找到 Developer settings 找到 Personal access tokens 点击 Generate new token 配置 token 设置名字，设置过期时间，选择权限 (默认 repo 就可)，最后点击"><meta itemprop="datePublished" content="2022-04-16T17:41:44+08:00" />
+<meta itemprop="dateModified" content="2022-04-16T17:41:44+08:00" />
+<meta itemprop="wordCount" content="171">
+<meta itemprop="keywords" content="github," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GitHub升级后不再支持用户名密码鉴权"/>
+<meta name="twitter:description" content="⚠️ Support for password authentication was removed on August 13, 2021. Please use a personal access token instead. 登录 GitHub 打开 Settings 找到 Developer settings 找到 Personal access tokens 点击 Generate new token 配置 token 设置名字，设置过期时间，选择权限 (默认 repo 就可)，最后点击"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">iOS 之 keyPath 自动提示宏</h1>
+      <h1 class="post-title">GitHub升级后不再支持用户名密码鉴权</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-02-29 </span>
+        <span class="post-time"> 2022-04-16 </span>
         <div class="post-category">
-            <a href="/categories/ios/"> iOS </a>
+            <a href="/categories/github/"> github </a>
             </div>
-          <span class="more-meta"> 约 124 字 </span>
+          <span class="more-meta"> 约 171 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -149,7 +149,13 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#自动提示宏">自动提示宏</a></li>
+        <li><a href="#登录-github">登录 GitHub</a></li>
+        <li><a href="#打开-settings">打开 Settings</a></li>
+        <li><a href="#找到-developer-settings">找到 Developer settings</a></li>
+        <li><a href="#找到-personal-access-tokens">找到 Personal access tokens</a></li>
+        <li><a href="#点击-generate-new-token">点击 Generate new token</a></li>
+        <li><a href="#配置-token">配置 token</a></li>
+        <li><a href="#使用token">使用token</a></li>
       </ul>
     </li>
   </ul>
@@ -157,27 +163,32 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="自动提示宏">自动提示宏</h2>
+      <blockquote>
+<p>⚠️ Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</p>
+</blockquote>
+<h2 id="登录-github">登录 GitHub</h2>
+<h2 id="打开-settings">打开 Settings</h2>
+<h2 id="找到-developer-settings">找到 Developer settings</h2>
+<h2 id="找到-personal-access-tokens">找到 Personal access tokens</h2>
+<h2 id="点击-generate-new-token">点击 Generate new token</h2>
+<h2 id="配置-token">配置 token</h2>
 <blockquote>
-<p>这个宏可以在使用keyPath时自动提示属性字符串，防止输入出现错误。</p>
+<p>设置名字，设置过期时间，选择权限 (默认 repo 就可)，最后点击 <code>Generate</code> 生成 <code>token</code><br>
+复制生成的 <code>token</code> (<strong>一定要复制保存，因为下次打开就没有了,没有了</strong>).</p>
+</blockquote>
+<h2 id="使用token">使用token</h2>
+<blockquote>
+<p>在原本的 git 地址前面加上刚才复制的 <code>token@</code> 就可以了，如下：</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-objc" data-lang="objc"><span class="line"><span class="cl"><span class="c1">// 自动替换宏
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define keyPath(objc, keyPath) @(((void)objc.keyPath,#keyPath))
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="n">NSLog</span><span class="p">(</span><span class="s">@&#34;%@&#34;</span><span class="p">,</span> <span class="p">[</span><span class="n">keyPath</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="n">layer</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span> <span class="k">class</span><span class="p">]);</span> <span class="c1">// NSTaggedPointerString
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">NSLog</span><span class="p">(</span><span class="s">@&#34;%@&#34;</span><span class="p">,</span> <span class="n">keyPath</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="n">layer</span><span class="p">,</span> <span class="n">position</span><span class="p">));</span> <span class="c1">// position
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://&lt;token&gt;@github.com/&lt;username&gt;/&lt;repo&gt;.git
+</span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>c语言字符串转objc字符串</li>
-</ul>
+</div><p>示例:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -186,11 +197,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-objc" data-lang="objc"><span class="line"><span class="cl"><span class="c1">// c语言字符串转objc字符串 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">char</span> <span class="o">*</span><span class="n">ch</span> <span class="o">=</span> <span class="s">&#34;abc&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">NSLog</span><span class="p">(</span><span class="s">@&#34;%@&#34;</span><span class="p">,</span> <span class="p">[</span><span class="l">@(</span><span class="n">ch</span><span class="l">)</span> <span class="k">class</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl"><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span> <span class="o">=</span> <span class="l">@(</span><span class="n">ch</span><span class="l">)</span><span class="p">;</span> <span class="c1">// @()直接包装成objc对象
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 你原本是这么用的:</span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/yourname/repo.git repo
+</span></span><span class="line"><span class="cl"><span class="c1"># 现在是这么用</span>
+</span></span><span class="line"><span class="cl">git clone https://ghp_lXdQ40bySDRq0jvDODSQO5NxaKDXDO360Zvq@github.com/yourname/repo.git repo
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -226,17 +237,12 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/ios/">iOS</a>
-          <a href="/tags/objc/">objc</a>
+          <a href="/tags/github/">github</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/github%E4%B8%8D%E6%94%AF%E6%8C%81%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%E9%89%B4%E6%9D%83/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">GitHub升级后不再支持用户名密码鉴权</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/pod-install%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-            <span class="next-text nav-default">pod install 速度慢的终极解决方案</span>
+        
+        <a class="next" href="/post/ios/ios-%E4%B9%8B-keypath-%E8%87%AA%E5%8A%A8%E6%8F%90%E7%A4%BA%E5%AE%8F/">
+            <span class="next-text nav-default">iOS 之 keyPath 自动提示宏</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
