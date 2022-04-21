@@ -62,12 +62,12 @@
     </item>
     
     <item>
-      <title>C&#43;&#43;11 并发指南一</title>
-      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</link>
+      <title>C&#43;&#43;11 并发指南二</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</link>
       <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</guid>
-      <description>C++并发至南一 与 C++11 多线程相关的头文件 C++11 新标准中引入了四个头文件来支持多线程编程，他们分别是 ,,,&amp;lt;condition_variabl</description>
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</guid>
+      <description>C++11 并发指南二 std::thread 在 &amp;lt;thread&amp;gt; 头文件中声明，因此使用 std::thread 时需要包含 &amp;lt;thread&amp;gt; 头文件。 std::thread 构造 default (1) thread() noexcept; initialization (2) template &amp;lt;class Fn, class... Args&amp;gt; explicit thread (Fn&amp;amp;&amp;amp; fn, Args&amp;amp;&amp;amp;&amp;hellip; args); copy [deleted] (3) thread (const thread&amp;amp;) = delete; move (4) thread (thread&amp;amp;&amp;amp; x) noexcept; (1). 默认构造</description>
     </item>
     
     <item>
@@ -80,12 +80,12 @@
     </item>
     
     <item>
-      <title>C&#43;&#43;11 并发指南二</title>
-      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</link>
+      <title>C&#43;&#43;11 并发指南一</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</link>
       <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</guid>
-      <description>C++11 并发指南二 std::thread 在 &amp;lt;thread&amp;gt; 头文件中声明，因此使用 std::thread 时需要包含 &amp;lt;thread&amp;gt; 头文件。 std::thread 构造 default (1) thread() noexcept; initialization (2) template &amp;lt;class Fn, class... Args&amp;gt; explicit thread (Fn&amp;amp;&amp;amp; fn, Args&amp;amp;&amp;amp;&amp;hellip; args); copy [deleted] (3) thread (const thread&amp;amp;) = delete; move (4) thread (thread&amp;amp;&amp;amp; x) noexcept; (1). 默认构造</description>
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</guid>
+      <description>C++并发至南一 与 C++11 多线程相关的头文件 C++11 新标准中引入了四个头文件来支持多线程编程，他们分别是 ,,,&amp;lt;condition_variabl</description>
     </item>
     
   </channel>

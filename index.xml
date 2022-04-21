@@ -116,15 +116,6 @@
     </item>
     
     <item>
-      <title>Mac 安装Python3.5.2</title>
-      <link>https://rangolee.github.io/post/python/mac%E5%AE%89%E8%A3%85python3.5.2/</link>
-      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://rangolee.github.io/post/python/mac%E5%AE%89%E8%A3%85python3.5.2/</guid>
-      <description>1.安装Python3.5.2 MacOS系统10.12.2，终端运行brew install python3 1 Rango-MBP:~ Rango$ brew install python3 报警告 1 2 3 4 Warning: You are using OS X 10.12. We do not provide support for this pre-release version. You</description>
-    </item>
-    
-    <item>
       <title>STL模板技巧</title>
       <link>https://rangolee.github.io/post/cpp/stl%E6%A8%A1%E6%9D%BF%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Fri, 02 Dec 2016 00:22:00 +0000</pubDate>
@@ -233,12 +224,12 @@
     </item>
     
     <item>
-      <title>cell的间隔线（tableView.separatorStyle）</title>
-      <link>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</link>
+      <title>设置Cell的间隔线</title>
+      <link>https://rangolee.github.io/post/ios/cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BF/</link>
       <pubDate>Sun, 19 Jun 2016 16:58:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</guid>
-      <description>cell 的间隔线 tableView 的一个属性 separatorStyle 可以设置 cell 之间的间隔线样式(三种) 1 2 3 4 5 typedef NS_ENUM(NSInteger, UITableViewCellSeparatorStyle) { UITableViewCellSeparatorStyleNone, UITableViewCellSeparatorStyleSingleLine, UITableViewCellSeparatorStyleSingleLineEtched // This separator style is only supported for grouped style table views currently } __TVOS_PROHIBITED; 默认样式有一条线 1 tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine; 设置</description>
+      <guid>https://rangolee.github.io/post/ios/cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BF/</guid>
+      <description>设置 tableView 的 Cell 的间隔先 tableview 的一个属性 separatorStyle 可以设置 cell 之间的间隔线样式(三种) 1 2 3 4 5 typedef NS_ENUM(NSInteger, UITableViewCellSeparatorStyle) { UITableViewCellSeparatorStyleNone, UITableViewCellSeparatorStyleSingleLine, UITableViewCellSeparatorStyleSingleLineEtched // This separator style is only supported for grouped style table views currently } __TVOS_PROHIBITED; 默认样式有一条线 1 tableView.separatorStyle</description>
     </item>
     
     <item>
@@ -397,7 +388,7 @@
     </item>
     
     <item>
-      <title>C# 正则表达式</title>
+      <title>7.C#正则表达式</title>
       <link>https://rangolee.github.io/post/cshape/07_c#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
       <pubDate>Sat, 28 May 2016 00:00:00 +0000</pubDate>
       
@@ -520,12 +511,12 @@
     </item>
     
     <item>
-      <title>C&#43;&#43;11 并发指南一</title>
-      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</link>
+      <title>C&#43;&#43;11 并发指南二</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</link>
       <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</guid>
-      <description>C++并发至南一 与 C++11 多线程相关的头文件 C++11 新标准中引入了四个头文件来支持多线程编程，他们分别是 ,,,&amp;lt;condition_variabl</description>
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</guid>
+      <description>C++11 并发指南二 std::thread 在 &amp;lt;thread&amp;gt; 头文件中声明，因此使用 std::thread 时需要包含 &amp;lt;thread&amp;gt; 头文件。 std::thread 构造 default (1) thread() noexcept; initialization (2) template &amp;lt;class Fn, class... Args&amp;gt; explicit thread (Fn&amp;amp;&amp;amp; fn, Args&amp;amp;&amp;amp;&amp;hellip; args); copy [deleted] (3) thread (const thread&amp;amp;) = delete; move (4) thread (thread&amp;amp;&amp;amp; x) noexcept; (1). 默认构造</description>
     </item>
     
     <item>
@@ -538,12 +529,12 @@
     </item>
     
     <item>
-      <title>C&#43;&#43;11 并发指南二</title>
-      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</link>
+      <title>C&#43;&#43;11 并发指南一</title>
+      <link>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</link>
       <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</guid>
-      <description>C++11 并发指南二 std::thread 在 &amp;lt;thread&amp;gt; 头文件中声明，因此使用 std::thread 时需要包含 &amp;lt;thread&amp;gt; 头文件。 std::thread 构造 default (1) thread() noexcept; initialization (2) template &amp;lt;class Fn, class... Args&amp;gt; explicit thread (Fn&amp;amp;&amp;amp; fn, Args&amp;amp;&amp;amp;&amp;hellip; args); copy [deleted] (3) thread (const thread&amp;amp;) = delete; move (4) thread (thread&amp;amp;&amp;amp; x) noexcept; (1). 默认构造</description>
+      <guid>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</guid>
+      <description>C++并发至南一 与 C++11 多线程相关的头文件 C++11 新标准中引入了四个头文件来支持多线程编程，他们分别是 ,,,&amp;lt;condition_variabl</description>
     </item>
     
     <item>
@@ -601,12 +592,12 @@
     </item>
     
     <item>
-      <title>Xcode 中使用自定义字体的方法</title>
-      <link>https://rangolee.github.io/post/ios/16-0420_xcode%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <title>Xcode 中使用自定义字体</title>
+      <link>https://rangolee.github.io/post/ios/xcode-%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link>
       <pubDate>Fri, 20 May 2016 22:10:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/ios/16-0420_xcode%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
-      <description>设置自定义字体 将下载好的 .otf字体文件直接拖拽到 Xcode 中，然后通过 storyboard 找到字体的实际名称，然后使用下面的方法，看到网上许多人说需要在 plist 中添加字体</description>
+      <guid>https://rangolee.github.io/post/ios/xcode-%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</guid>
+      <description>设置自定义字体 将下载好的 .otf 字体文件直接拖拽到 Xcode 中，然后通过 storyboard 找到字体的实际名称，然后使用下面的方法，需要在 plist 中添加字体 1 label.font = [UIFont fontWithName:@&amp;#34;Source Han Sans CN&amp;#34; size:18];</description>
     </item>
     
     <item>
@@ -733,10 +724,10 @@
     
     <item>
       <title>汇编中的bss、data、text、rodata、heap、stack的意义？</title>
-      <link>https://rangolee.github.io/post/assembly/16-0426_%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84bssdatatext%E7%AD%89/</link>
+      <link>https://rangolee.github.io/post/assembly/%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84bssdatatext%E7%AD%89/</link>
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/assembly/16-0426_%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84bssdatatext%E7%AD%89/</guid>
+      <guid>https://rangolee.github.io/post/assembly/%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84bssdatatext%E7%AD%89/</guid>
       <description>bss 段： BSS段（bsssegment）通常是指用来存放程序中未初始化的全局变量的一块内存区域。BSS是英文BlockStarted by Symb</description>
     </item>
     

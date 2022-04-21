@@ -268,34 +268,6 @@
   </url>
   
   <url>
-    <loc>https://rangolee.github.io/tags/mac/</loc>
-    <lastmod>2016-12-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://rangolee.github.io/post/python/mac%E5%AE%89%E8%A3%85python3.5.2/</loc>
-    <lastmod>2016-12-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://rangolee.github.io/tags/python3/</loc>
-    <lastmod>2016-12-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://rangolee.github.io/categories/python3/</loc>
-    <lastmod>2016-12-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://rangolee.github.io/tags/stl/</loc>
     <lastmod>2016-12-02T00:22:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -339,6 +311,13 @@
   
   <url>
     <loc>https://rangolee.github.io/tags/class-template/</loc>
+    <lastmod>2016-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://rangolee.github.io/tags/mac/</loc>
     <lastmod>2016-11-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -429,15 +408,15 @@
   </url>
   
   <url>
-    <loc>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</loc>
-    <lastmod>2016-06-19T16:58:00+00:00</lastmod>
+    <loc>https://rangolee.github.io/tags/separatorstyle/</loc>
+    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://rangolee.github.io/tags/separatorstyle/</loc>
-    <lastmod>2016-06-19T16:58:00+00:00</lastmod>
+    <loc>https://rangolee.github.io/post/ios/cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BF/</loc>
+    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -639,7 +618,7 @@
   </url>
   
   <url>
-    <loc>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</loc>
+    <loc>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</loc>
     <lastmod>2016-05-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -653,7 +632,7 @@
   </url>
   
   <url>
-    <loc>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%972/</loc>
+    <loc>https://rangolee.github.io/post/cpp/c&#43;&#43;11_%E5%B9%B6%E5%8F%91%E6%8C%87%E5%8D%971/</loc>
     <lastmod>2016-05-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -751,7 +730,7 @@
   </url>
   
   <url>
-    <loc>https://rangolee.github.io/post/ios/16-0420_xcode%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://rangolee.github.io/post/ios/xcode-%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</loc>
     <lastmod>2016-05-20T22:10:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -926,7 +905,7 @@
   </url>
   
   <url>
-    <loc>https://rangolee.github.io/post/assembly/16-0426_%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84bssdatatext%E7%AD%89/</loc>
+    <loc>https://rangolee.github.io/post/assembly/%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84bssdatatext%E7%AD%89/</loc>
     <lastmod>2016-04-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -35,12 +35,12 @@
     </item>
     
     <item>
-      <title>cell的间隔线（tableView.separatorStyle）</title>
-      <link>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</link>
+      <title>设置Cell的间隔线</title>
+      <link>https://rangolee.github.io/post/ios/cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BF/</link>
       <pubDate>Sun, 19 Jun 2016 16:58:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/ios/16-0619_cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BFtableview.separatorstyle/</guid>
-      <description>cell 的间隔线 tableView 的一个属性 separatorStyle 可以设置 cell 之间的间隔线样式(三种) 1 2 3 4 5 typedef NS_ENUM(NSInteger, UITableViewCellSeparatorStyle) { UITableViewCellSeparatorStyleNone, UITableViewCellSeparatorStyleSingleLine, UITableViewCellSeparatorStyleSingleLineEtched // This separator style is only supported for grouped style table views currently } __TVOS_PROHIBITED; 默认样式有一条线 1 tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine; 设置</description>
+      <guid>https://rangolee.github.io/post/ios/cell%E7%9A%84%E9%97%B4%E9%9A%94%E7%BA%BF/</guid>
+      <description>设置 tableView 的 Cell 的间隔先 tableview 的一个属性 separatorStyle 可以设置 cell 之间的间隔线样式(三种) 1 2 3 4 5 typedef NS_ENUM(NSInteger, UITableViewCellSeparatorStyle) { UITableViewCellSeparatorStyleNone, UITableViewCellSeparatorStyleSingleLine, UITableViewCellSeparatorStyleSingleLineEtched // This separator style is only supported for grouped style table views currently } __TVOS_PROHIBITED; 默认样式有一条线 1 tableView.separatorStyle</description>
     </item>
     
     <item>
@@ -140,12 +140,12 @@
     </item>
     
     <item>
-      <title>Xcode 中使用自定义字体的方法</title>
-      <link>https://rangolee.github.io/post/ios/16-0420_xcode%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <title>Xcode 中使用自定义字体</title>
+      <link>https://rangolee.github.io/post/ios/xcode-%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link>
       <pubDate>Fri, 20 May 2016 22:10:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/ios/16-0420_xcode%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
-      <description>设置自定义字体 将下载好的 .otf字体文件直接拖拽到 Xcode 中，然后通过 storyboard 找到字体的实际名称，然后使用下面的方法，看到网上许多人说需要在 plist 中添加字体</description>
+      <guid>https://rangolee.github.io/post/ios/xcode-%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</guid>
+      <description>设置自定义字体 将下载好的 .otf 字体文件直接拖拽到 Xcode 中，然后通过 storyboard 找到字体的实际名称，然后使用下面的方法，需要在 plist 中添加字体 1 label.font = [UIFont fontWithName:@&amp;#34;Source Han Sans CN&amp;#34; size:18];</description>
     </item>
     
     <item>
