@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Mac&#43;MySql&#43;Xcode配置 - Coding Night - A personal blog for Rango</title>
+  <title>macOS 之 MySQL 报错处理 - Coding Night - A personal blog for Rango</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Rango" /><meta name="description" content="Mac&#43;MySql&#43;Xcode配置 安装mysql /usr/local/mysql 安装mysql workbench(数据库可视化操作软件) 配置xcode 添加__头文件__搜" />
+<meta name="author" content="Rango" /><meta name="description" content="MySQL 启动时报错 Warning:The /usr/local/mysql/data directory is not owned by the &amp;lsquo;mysql&amp;rsquo; or &amp;lsquo;_mysql&amp;rsquo; user 原因： 未知（可能是某种情况下导致/usr/local/mysql/data的宿主发生了改变） 解决方法：终" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.97.3 with theme even" />
 
 
-<link rel="canonical" href="https://rangolee.github.io/post/mac&#43;mysql&#43;xcode%E9%85%8D%E7%BD%AE/" />
+<link rel="canonical" href="https://rangolee.github.io/post/macos%E4%B9%8Bmysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Mac&#43;MySql&#43;Xcode配置" />
-<meta property="og:description" content="Mac&#43;MySql&#43;Xcode配置 安装mysql /usr/local/mysql 安装mysql workbench(数据库可视化操作软件) 配置xcode 添加__头文件__搜" />
+<meta property="og:title" content="macOS 之 MySQL 报错处理" />
+<meta property="og:description" content="MySQL 启动时报错 Warning:The /usr/local/mysql/data directory is not owned by the &lsquo;mysql&rsquo; or &lsquo;_mysql&rsquo; user 原因： 未知（可能是某种情况下导致/usr/local/mysql/data的宿主发生了改变） 解决方法：终" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rangolee.github.io/post/mac&#43;mysql&#43;xcode%E9%85%8D%E7%BD%AE/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://rangolee.github.io/post/macos%E4%B9%8Bmysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2016-05-23T00:00:00+00:00" />
-<meta property="article:modified_time" content="2016-05-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-04-21T00:00:00+00:00" />
 
-<meta itemprop="name" content="Mac&#43;MySql&#43;Xcode配置">
-<meta itemprop="description" content="Mac&#43;MySql&#43;Xcode配置 安装mysql /usr/local/mysql 安装mysql workbench(数据库可视化操作软件) 配置xcode 添加__头文件__搜"><meta itemprop="datePublished" content="2016-05-23T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2016-05-23T00:00:00+00:00" />
-<meta itemprop="wordCount" content="219">
-<meta itemprop="keywords" content="Mac,MySQL,Xcode," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Mac&#43;MySql&#43;Xcode配置"/>
-<meta name="twitter:description" content="Mac&#43;MySql&#43;Xcode配置 安装mysql /usr/local/mysql 安装mysql workbench(数据库可视化操作软件) 配置xcode 添加__头文件__搜"/>
+<meta itemprop="name" content="macOS 之 MySQL 报错处理">
+<meta itemprop="description" content="MySQL 启动时报错 Warning:The /usr/local/mysql/data directory is not owned by the &lsquo;mysql&rsquo; or &lsquo;_mysql&rsquo; user 原因： 未知（可能是某种情况下导致/usr/local/mysql/data的宿主发生了改变） 解决方法：终"><meta itemprop="datePublished" content="2016-05-23T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-04-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="142">
+<meta itemprop="keywords" content="MySQL," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="macOS 之 MySQL 报错处理"/>
+<meta name="twitter:description" content="MySQL 启动时报错 Warning:The /usr/local/mysql/data directory is not owned by the &lsquo;mysql&rsquo; or &lsquo;_mysql&rsquo; user 原因： 未知（可能是某种情况下导致/usr/local/mysql/data的宿主发生了改变） 解决方法：终"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Mac&#43;MySql&#43;Xcode配置</h1>
+      <h1 class="post-title">macOS 之 MySQL 报错处理</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2016-05-23 </span>
         <div class="post-category">
             <a href="/categories/mysql/"> MySQL </a>
             </div>
-          <span class="more-meta"> 约 219 字 </span>
+          <span class="more-meta"> 约 142 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -147,33 +147,30 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#macmysqlxcode配置">Mac+MySql+Xcode配置</a></li>
+    <li>
+      <ul>
+        <li><a href="#mysql-启动时报错">MySQL 启动时报错</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h1 id="macmysqlxcode配置">Mac+MySql+Xcode配置</h1>
-<hr>
-<ul>
-<li><strong>安装mysql</strong>
-<ul>
-<li>/usr/local/mysql</li>
-</ul>
-</li>
-<li><strong>安装mysql workbench</strong>(数据库可视化操作软件)</li>
-<li><strong>配置xcode</strong>
-<ul>
-<li>添加__头文件__搜索路径</li>
-<li>项目属性—&gt;Build Setting-&gt;Search Paths-&gt; Header Search Paths 添加<code>/usr/local/mysql/include</code></li>
-<li>添加__库文件__搜索路径</li>
-<li>项目属性—&gt;Build Setting-&gt;Search Paths-&gt; Library Search Paths 添加<code>/usr/local/mysql/lib</code></li>
-<li>添加__链接标记__选项</li>
-<li>项目属性—&gt;Build Setting-&gt;Linking-&gt; Other Linker Flags 添加<code>-lmysqlclient</code> <code>-lm</code> <code>-lz</code>
-<img src="Mac+MySql+Xcode%E9%85%8D%E7%BD%AE/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-18%2013.34.07.png" alt=""></li>
-</ul>
-</li>
-</ul>
+      <h2 id="mysql-启动时报错">MySQL 启动时报错</h2>
+<blockquote>
+<p>Warning:The /usr/local/mysql/data directory is not owned by the &lsquo;mysql&rsquo; or &lsquo;_mysql&rsquo; user</p>
+</blockquote>
+<p><strong>原因</strong>： 未知（可能是某种情况下导致<code>/usr/local/mysql/data</code>的宿主发生了改变）</p>
+<p><strong>解决方法</strong>：终端输入 <code>sudo chown -R mysql /usr/local/mysql/data</code> 即可</p>
+<blockquote>
+<p>macOS 下运行 <code>sudo chown -R _mysql:wheel /usr/local/mysql/data</code><br>
+-c 显示更改的部分信息<br>
+-f 忽略错误信息<br>
+-h 修复符号链接<br>
+-R 处理指定目录以及其子目录下的所有文件<br>
+-v 显示详细的处理信息</p>
+</blockquote>
 
     </div>
 
@@ -185,7 +182,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2016-05-23
+        2022-04-21
         
     </span>
   </p>
@@ -208,18 +205,16 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/mac/">Mac</a>
           <a href="/tags/mysql/">MySQL</a>
-          <a href="/tags/xcode/">Xcode</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/mac%E5%AE%89%E8%A3%85cmake/">
+        <a class="prev" href="/post/mac&#43;mysql&#43;xcode%E9%85%8D%E7%BD%AE/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Mac 安装 cmake</span>
+            <span class="prev-text nav-default">Mac&#43;MySql&#43;Xcode配置</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/macos%E4%B9%8Bmysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/">
-            <span class="next-text nav-default">macOS 之 MySQL 报错处理</span>
+        <a class="next" href="/post/mac%E5%8D%87%E7%BA%A7ruby/">
+            <span class="next-text nav-default">MacOS下升级Ruby</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

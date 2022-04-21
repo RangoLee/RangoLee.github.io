@@ -18,10 +18,10 @@
     
     <item>
       <title>删除mac下的MySQL</title>
-      <link>https://rangolee.github.io/post/16-0930_%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</link>
+      <link>https://rangolee.github.io/post/%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</link>
       <pubDate>Fri, 30 Sep 2016 00:09:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/16-0930_%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</guid>
+      <guid>https://rangolee.github.io/post/%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</guid>
       <description>删除Mac下的MySQL 首先在系统偏好设置中设置MySQL设置，停止其服务然后依次执行如下语句即可。 1 2 3 4 5 6 7 sudo rm /usr/local/mysql sudo rm -rf /usr/local/mysql* sudo rm -rf /Library/StartupItems/MySQLCOM sudo rm</description>
     </item>
     
@@ -115,12 +115,12 @@
     </item>
     
     <item>
-      <title>Mac下升级Ruby</title>
-      <link>https://rangolee.github.io/post/16-0714_mac%E5%8D%87%E7%BA%A7ruby/</link>
+      <title>MacOS下升级Ruby</title>
+      <link>https://rangolee.github.io/post/mac%E5%8D%87%E7%BA%A7ruby/</link>
       <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/16-0714_mac%E5%8D%87%E7%BA%A7ruby/</guid>
-      <description>Mac下升级Ruby 1. 安装rvm（ruby版本管理器）ruby -v 先查看一下当前ruby版本 1 2 Rango-MBP:~ Rango$ ruby -v ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15] 1 Rango-MBP:~ Rango$ curl -L get.rvm.io | bash -s stable 2. 配置</description>
+      <guid>https://rangolee.github.io/post/mac%E5%8D%87%E7%BA%A7ruby/</guid>
+      <description>rvm: ruby version manager Mac下升级Ruby 1. 安装rvm（ruby版本管理器） 1 2 ruby -v ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15] 安装 rvm 1 curl -L get.rvm.io | bash -s stable 2. 配置资源 1 2 source ~/.bashrc source ~/.bash_profile 3. 查看版本 1 2</description>
     </item>
     
     <item>

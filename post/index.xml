@@ -36,19 +36,19 @@
     
     <item>
       <title>使用 git 克隆 github 上的项目失败</title>
-      <link>https://rangolee.github.io/post/2019-09-05-%E4%BD%BF%E7%94%A8-git-%E5%85%8B%E9%9A%86-github-%E4%B8%8A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</link>
+      <link>https://rangolee.github.io/post/%E4%BD%BF%E7%94%A8-git-%E5%85%8B%E9%9A%86-github-%E4%B8%8A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</link>
       <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/2019-09-05-%E4%BD%BF%E7%94%A8-git-%E5%85%8B%E9%9A%86-github-%E4%B8%8A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</guid>
+      <guid>https://rangolee.github.io/post/%E4%BD%BF%E7%94%A8-git-%E5%85%8B%E9%9A%86-github-%E4%B8%8A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%A4%B1%E8%B4%A5/</guid>
       <description>使用 git 克隆 github 上的项目失败 现象 今天在使用 git clone nextjs demo project 源代码的时， git clone https://github.com/XXXX/next-blog.git 下载速度很慢，然后下载一段时间后，总是提示下面的错误信息 1 2 3 4 5 6 7 8 nCloning</description>
     </item>
     
     <item>
       <title>CentOS6.1 install Nginx</title>
-      <link>https://rangolee.github.io/post/2019-06-39-centos6.1-install-nginx/</link>
+      <link>https://rangolee.github.io/post/centos-6.1-install-nginx/</link>
       <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/2019-06-39-centos6.1-install-nginx/</guid>
+      <guid>https://rangolee.github.io/post/centos-6.1-install-nginx/</guid>
       <description>CentOS 6.1 install Nginx 安装 1 yum install nginx 启动 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # 查看版本 nginx -v # 检查配置文件是否正确 nginx -t # 启动 Nginx /usr/sbin/nginx # 重载配置文件 nginx -s reload # 重启</description>
     </item>
     
@@ -144,10 +144,10 @@
     
     <item>
       <title>删除mac下的MySQL</title>
-      <link>https://rangolee.github.io/post/16-0930_%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</link>
+      <link>https://rangolee.github.io/post/%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</link>
       <pubDate>Fri, 30 Sep 2016 00:09:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/16-0930_%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</guid>
+      <guid>https://rangolee.github.io/post/%E5%88%A0%E9%99%A4mac%E4%B8%8B%E7%9A%84mysql/</guid>
       <description>删除Mac下的MySQL 首先在系统偏好设置中设置MySQL设置，停止其服务然后依次执行如下语句即可。 1 2 3 4 5 6 7 sudo rm /usr/local/mysql sudo rm -rf /usr/local/mysql* sudo rm -rf /Library/StartupItems/MySQLCOM sudo rm</description>
     </item>
     
@@ -547,21 +547,21 @@
     </item>
     
     <item>
-      <title>Mac下升级Ruby</title>
-      <link>https://rangolee.github.io/post/16-0714_mac%E5%8D%87%E7%BA%A7ruby/</link>
+      <title>macOS 之 MySQL 报错处理</title>
+      <link>https://rangolee.github.io/post/macos%E4%B9%8Bmysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</link>
       <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/16-0714_mac%E5%8D%87%E7%BA%A7ruby/</guid>
-      <description>Mac下升级Ruby 1. 安装rvm（ruby版本管理器）ruby -v 先查看一下当前ruby版本 1 2 Rango-MBP:~ Rango$ ruby -v ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15] 1 Rango-MBP:~ Rango$ curl -L get.rvm.io | bash -s stable 2. 配置</description>
+      <guid>https://rangolee.github.io/post/macos%E4%B9%8Bmysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</guid>
+      <description>MySQL 启动时报错 Warning:The /usr/local/mysql/data directory is not owned by the &amp;lsquo;mysql&amp;rsquo; or &amp;lsquo;_mysql&amp;rsquo; user 原因： 未知（可能是某种情况下导致/usr/local/mysql/data的宿主发生了改变） 解决方法：终</description>
     </item>
     
     <item>
-      <title>MySQL 报错处理</title>
-      <link>https://rangolee.github.io/post/mysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</link>
+      <title>MacOS下升级Ruby</title>
+      <link>https://rangolee.github.io/post/mac%E5%8D%87%E7%BA%A7ruby/</link>
       <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/mysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</guid>
-      <description>MySQL 报错处理 1. MySQL 启动报错 1 Warning:The /usr/local/mysql/data directory is not owned by the &amp;#39;mysql&amp;#39; or &amp;#39;_mysql&amp;#39; user 原因： 未知（可能是某种情况下导致/usr/local/mysql/data的宿主发生了改变）</description>
+      <guid>https://rangolee.github.io/post/mac%E5%8D%87%E7%BA%A7ruby/</guid>
+      <description>rvm: ruby version manager Mac下升级Ruby 1. 安装rvm（ruby版本管理器） 1 2 ruby -v ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15] 安装 rvm 1 curl -L get.rvm.io | bash -s stable 2. 配置资源 1 2 source ~/.bashrc source ~/.bash_profile 3. 查看版本 1 2</description>
     </item>
     
     <item>

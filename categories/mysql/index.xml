@@ -17,12 +17,12 @@
     </item>
     
     <item>
-      <title>MySQL 报错处理</title>
-      <link>https://rangolee.github.io/post/mysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</link>
+      <title>macOS 之 MySQL 报错处理</title>
+      <link>https://rangolee.github.io/post/macos%E4%B9%8Bmysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</link>
       <pubDate>Mon, 23 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rangolee.github.io/post/mysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</guid>
-      <description>MySQL 报错处理 1. MySQL 启动报错 1 Warning:The /usr/local/mysql/data directory is not owned by the &amp;#39;mysql&amp;#39; or &amp;#39;_mysql&amp;#39; user 原因： 未知（可能是某种情况下导致/usr/local/mysql/data的宿主发生了改变）</description>
+      <guid>https://rangolee.github.io/post/macos%E4%B9%8Bmysql%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</guid>
+      <description>MySQL 启动时报错 Warning:The /usr/local/mysql/data directory is not owned by the &amp;lsquo;mysql&amp;rsquo; or &amp;lsquo;_mysql&amp;rsquo; user 原因： 未知（可能是某种情况下导致/usr/local/mysql/data的宿主发生了改变） 解决方法：终</description>
     </item>
     
   </channel>
